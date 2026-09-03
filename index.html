@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>近江八幡市 くらし更新だより(非公式)</title>
+<meta name="description" content="近江八幡市公式サイトの新着ページを自動でまとめた非公式の更新情報サイトです。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F6F3EC'/%3E%3Cpath d='M4 20 L16 8 L28 20 Z' fill='none' stroke='%238C3B2E' stroke-width='2'/%3E%3Cline x1='4' y1='24' x2='28' y2='24' stroke='%232B2A26' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F6F3EC;
+    --bg-panel: #FBFAF6;
+    --ink: #2B2A26;
+    --ink-soft: #6B6558;
+    --line: #DED7C8;
+    --important: #8C3B2E;
+    --news: #35586B;
+    --bosyu: #8A6A17;
+    --event: #4B6A53;
+    --dept: #5B5850;
+    --focus: #1F5FA8;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+  }
+
+  /* ---- Hero ---- */
+  .hero {
+    position: relative;
+    padding: 56px 20px 40px;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .hero svg.wave {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    width: 100%;
+    height: 60px;
+    opacity: 0.35;
+  }
+
+  .hero h1 {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 700;
+    font-size: clamp(28px, 6vw, 40px);
+    letter-spacing: 0.04em;
+    margin: 0 0 10px;
+  }
+
+  .hero p.lead {
+    color: var(--ink-soft);
+    font-size: 15px;
+    margin: 0;
+    max-width: 46ch;
+    margin-inline: auto;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero h1 { animation: rise 0.6s ease-out; }
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ---- Notice banner ---- */
+  .notice {
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 16px 18px;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    margin: 0 0 32px;
+  }
+  .notice strong { color: var(--ink); }
+  .notice a { text-decoration: underline; text-underline-offset: 2px; }
+
+  /* ---- Meta row ---- */
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 18px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Filters ---- */
+  nav.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 36px;
+  }
+  nav.filters button {
+    font-family: inherit;
+    font-size: 13px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--bg-panel);
+    color: var(--ink-soft);
+    cursor: pointer;
+  }
+  nav.filters button[aria-pressed="true"] {
+    background: var(--ink);
+    color: var(--bg-panel);
+    border-color: var(--ink);
+  }
+  nav.filters button:focus-visible,
+  a:focus-visible,
+  summary:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  /* ---- Date groups ---- */
+  .day-group { margin-bottom: 30px; }
+  .day-label {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 8px;
+    margin-bottom: 4px;
+  }
+
+  ul.items { list-style: none; margin: 0; padding: 0; }
+  .item {
+    display: grid;
+    grid-template-columns: 4px 1fr;
+    gap: 14px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .item:last-child { border-bottom: none; }
+  .item .bar { border-radius: 2px; }
+  .item.cat-important .bar { background: var(--important); }
+  .item.cat-news .bar      { background: var(--news); }
+  .item.cat-bosyu .bar     { background: var(--bosyu); }
+  .item.cat-event .bar     { background: var(--event); }
+  .item.cat-dept .bar      { background: var(--dept); }
+
+  .item .tag {
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .item.cat-important .tag { color: var(--important); }
+  .item.cat-news .tag      { color: var(--news); }
+  .item.cat-bosyu .tag     { color: var(--bosyu); }
+  .item.cat-event .tag     { color: var(--event); }
+  .item.cat-dept .tag      { color: var(--dept); }
+
+  .item a.title {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 3px;
+    text-decoration: none;
+  }
+  .item a.title:hover,
+  .item a.title:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+
+  .item .url {
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 4px;
+    word-break: break-all;
+  }
+
+  /* ---- States ---- */
+  .state {
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 14px;
+    padding: 60px 20px;
+  }
+
+  details.about {
+    margin-top: 40px;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+  }
+  details.about summary {
+    cursor: pointer;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  details.about div { margin-top: 10px; }
+  details.about ul { padding-left: 18px; }
+
+  footer.site {
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 50px;
+  }
+  footer.site a { text-decoration: underline; text-underline-offset: 2px; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>近江八幡市 くらし更新だより</h1>
+  <p class="lead">市公式サイトに新しく掲載されたお知らせを自動でまとめています</p>
+  <svg class="wave" viewBox="0 0 720 60" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 30 Q 60 10 120 30 T 240 30 T 360 30 T 480 30 T 600 30 T 720 30" fill="none" stroke="#4B6A53" stroke-width="2"/>
+    <path d="M0 42 Q 60 22 120 42 T 240 42 T 360 42 T 480 42 T 600 42 T 720 42" fill="none" stroke="#35586B" stroke-width="1.5"/>
+  </svg>
+</div>
+
+<div class="wrap">
+
+  <div class="notice">
+    <strong>このサイトは近江八幡市の公式サイトではありません。</strong>
+    有志が市公式サイトの更新を自動で拾って一覧化した非公式のまとめです。正式な情報は必ず
+    <a href="https://www.city.omihachiman.lg.jp/index.html" target="_blank" rel="noopener">近江八幡市公式サイト</a>
+    でご確認ください。
+  </div>
+
+  <div class="meta-row">
+    <span id="updated-at">読み込み中...</span>
+    <span id="item-count"></span>
+  </div>
+
+  <nav class="filters" id="filters" aria-label="カテゴリで絞り込み"></nav>
+
+  <main id="content">
+    <div class="state">情報を読み込んでいます...</div>
+  </main>
+
+  <details class="about">
+    <summary>このサイトについて</summary>
+    <div>
+      <p>市公式サイトの各課トップページ等を定期的に確認し、新しく出現したページのタイトルとリンクを表示しています。そのため、以下のような限界があります。</p>
+      <ul>
+        <li>各課トップページから直接リンクされていない、深い階層の更新は拾えないことがあります</li>
+        <li>本文の内容修正(誤字修正・追記等)は検知していません。新しく作られたページのみを対象にしています</li>
+        <li>更新の反映は1日3回のチェックのタイミングに依存します</li>
+      </ul>
+      <p>
+        しくみのソースコードは
+        <a href="https://github.com/Sudanie2/omihachiman-rss" target="_blank" rel="noopener">GitHubリポジトリ</a>
+        で公開しています。
+      </p>
+    </div>
+  </details>
+
+  <footer class="site">
+    <p>個人により運営される非公式サイトです / データ提供: <a href="https://www.city.omihachiman.lg.jp/index.html" target="_blank" rel="noopener">近江八幡市公式サイト</a></p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  const CATEGORY_RULES = [
+    { test: (p) => p.startsWith('/juyo_info/'), key: 'important', label: '重要' },
+    { test: (p) => p.startsWith('/news/'),      key: 'news',      label: 'お知らせ' },
+    { test: (p) => p.startsWith('/bosyu/'),     key: 'bosyu',     label: '募集' },
+    { test: (p) => p.startsWith('/event/'),     key: 'event',     label: 'イベント' },
+    { test: (p) => p.startsWith('/soshiki/'),   key: 'dept',      label: '各課' },
+  ];
+  const DEFAULT_CATEGORY = { key: 'dept', label: 'その他' };
+
+  function categorize(url) {
+    try {
+      const path = new URL(url).pathname;
+      for (const rule of CATEGORY_RULES) {
+        if (rule.test(path)) return rule;
+      }
+    } catch (e) { /* fall through */ }
+    return DEFAULT_CATEGORY;
+  }
+
+  function formatDay(date) {
+    return date.toLocaleDateString('ja-JP', {
+      timeZone: 'Asia/Tokyo', month: 'long', day: 'numeric', weekday: 'short'
+    });
+  }
+  function formatUpdated(date) {
+    return date.toLocaleString('ja-JP', {
+      timeZone: 'Asia/Tokyo', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'
+    });
+  }
+
+  let allItems = [];
+  let activeFilter = 'all';
+
+  function render() {
+    const content = document.getElementById('content');
+    const filtered = activeFilter === 'all'
+      ? allItems
+      : allItems.filter((it) => it.category.key === activeFilter);
+
+    document.getElementById('item-count').textContent = `${filtered.length}件表示中`;
+
+    if (filtered.length === 0) {
+      content.innerHTML = '<div class="state">該当するお知らせはまだありません。</div>';
+      return;
+    }
+
+    // 日付ごとにグループ化
+    const groups = new Map();
+    for (const it of filtered) {
+      const key = formatDay(it.date);
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(it);
+    }
+
+    let html = '';
+    for (const [day, items] of groups) {
+      html += `<section class="day-group"><h2 class="day-label">${day}</h2><ul class="items">`;
+      for (const it of items) {
+        html += `
+          <li class="item cat-${it.category.key}">
+            <span class="bar" aria-hidden="true"></span>
+            <div>
+              <span class="tag">${it.category.label}</span>
+              <a class="title" href="${it.link}" target="_blank" rel="noopener">${escapeHtml(it.title)}</a>
+              <div class="url">${it.link}</div>
+            </div>
+          </li>`;
+      }
+      html += `</ul></section>`;
+    }
+    content.innerHTML = html;
+  }
+
+  function escapeHtml(s) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function buildFilters() {
+    const counts = { all: allItems.length };
+    for (const it of allItems) {
+      counts[it.category.key] = (counts[it.category.key] || 0) + 1;
+    }
+    const options = [
+      { key: 'all', label: 'すべて' },
+      { key: 'important', label: '重要' },
+      { key: 'news', label: 'お知らせ' },
+      { key: 'bosyu', label: '募集' },
+      { key: 'event', label: 'イベント' },
+      { key: 'dept', label: '各課' },
+    ].filter((o) => o.key === 'all' || counts[o.key] > 0);
+
+    const nav = document.getElementById('filters');
+    nav.innerHTML = '';
+    for (const opt of options) {
+      const btn = document.createElement('button');
+      btn.textContent = opt.label;
+      btn.setAttribute('aria-pressed', String(opt.key === activeFilter));
+      btn.addEventListener('click', () => {
+        activeFilter = opt.key;
+        [...nav.children].forEach((b) => b.setAttribute('aria-pressed', 'false'));
+        btn.setAttribute('aria-pressed', 'true');
+        render();
+      });
+      nav.appendChild(btn);
+    }
+  }
+
+  fetch('./rss_items.json', { cache: 'no-store' })
+    .then((res) => {
+      if (!res.ok) throw new Error('rss_items.json を取得できませんでした');
+      return res.json();
+    })
+    .then((data) => {
+      allItems = data.map((it) => ({
+        title: it.title,
+        link: it.link,
+        date: new Date(it.pubDate),
+        category: categorize(it.link),
+      }));
+
+      if (allItems.length > 0) {
+        document.getElementById('updated-at').textContent =
+          `最終確認: ${formatUpdated(allItems[0].date)}`;
+      } else {
+        document.getElementById('updated-at').textContent = '最終確認: -';
+      }
+
+      buildFilters();
+      render();
+    })
+    .catch((err) => {
+      document.getElementById('content').innerHTML =
+        '<div class="state">情報を取得できませんでした。ページを再読み込みするか、しばらく経ってからお試しください。</div>';
+      document.getElementById('updated-at').textContent = '';
+      console.error(err);
+    });
+})();
+</script>
+
+</body>
+</html>
