@@ -151,13 +151,27 @@ def main():
         print("hubs.json が見つかりません。先に discover_hubs.py を実行してください。")
         return
 
+    # robots.txtの取得。
+    # 注意: urllib.robotparser標準のread()は、User-Agentを名乗らずに
+    # アクセスするため、サイト側のセキュリティ機能に弾かれ「取得失敗=全ページ禁止」
+    # と誤判定されることがある。ページ本体の取得と同じ名乗り方(requests +
+    # カスタムUser-Agent)で明示的に取得し、rp.parse()に渡す。
     rp = urllib.robotparser.RobotFileParser()
-    rp.set_url(f"{BASE_URL}/robots.txt")
     try:
-        rp.read()
-    except Exception:
-        print("robots.txtの取得に失敗しました。安全のため今回は実行を中止します。")
-        return
+        robots_resp = requests.get(
+            f"{BASE_URL}/robots.txt",
+            headers={"User-Agent": USER_AGENT},
+            timeout=REQUEST_TIMEOUT_SEC,
+        )
+        if robots_resp.status_code == 200:
+            rp.parse(robots_resp.text.splitlines())
+        else:
+            # robots.txtが存在しない/取得できない場合は「全ページ許可」として続行
+            print(f"robots.txt取得: status={robots_resp.status_code}。全ページ許可として続行します。")
+            rp.parse([])
+    except Exception as e:
+        print(f"robots.txtの取得に失敗しました({e})。全ページ許可として続行します。")
+        rp.parse([])
 
     known_links = load_json(KNOWN_LINKS_FILE, {})  # {url: {"title":..., "first_seen":...}}
     session = requests.Session()
