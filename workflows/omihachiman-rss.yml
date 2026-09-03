@@ -1,0 +1,48 @@
+name: Generate RSS Feed (Omihachiman City)
+on:
+  schedule:
+    - cron: "10 1 * * *"   # JST 10:10
+    - cron: "10 5 * * *"   # JST 14:10
+    - cron: "10 8 * * *"   # JST 17:10
+    - cron: "0 17 1 * *"   # 毎月1日 JST 2:00 ハブページ一覧の再構築
+  workflow_dispatch: # 手動実行も可能
+    inputs:
+      rebuild_hubs:
+        description: "ハブページ一覧(hubs.json)を再構築する"
+        type: boolean
+        default: false
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4
+      - name: Rebuild hub list (monthly or manual)
+        if: github.event.schedule == '0 17 1 * *' || github.event.inputs.rebuild_hubs == 'true'
+        run: |
+          set -euo pipefail
+          python discover_hubs.py
+      - name: Detect new articles and Convert to RSS
+        run: |
+          set -euo pipefail
+          python watch_hubs_and_generate_rss.py
+      - name: Commit and Push RSS
+        run: |
+          git add hubs.json known_links.json rss.xml rss_items.json
+          if git diff --quiet --cached; then
+            echo "No changes in rss.xml. Skipping commit."
+            exit 0
+          fi
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git commit -m "Updated RSS feed"
+          git push
