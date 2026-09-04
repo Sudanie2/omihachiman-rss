@@ -19,7 +19,6 @@ from common import (
     load_json,
     now_rfc822,
     parse_pubdate,
-    source_from_url,
     FEED_ITEMS_FILE,
     FEED_FILE,
     FEED_MAX_ITEMS,
@@ -40,8 +39,7 @@ def esc(s: str) -> str:
 def build_rss(items) -> str:
     entries_xml = []
     for it in items:
-        source = it.get("source") or source_from_url(it.get("link", ""))
-        title = f"{it['title']}（出典：{source}）"
+        title = it["title"]
         guid = it.get("guid") or it["link"]
         is_permalink = "false" if it.get("guid") else "true"
         pubdate = it.get("pubDate") or now_rfc822()
