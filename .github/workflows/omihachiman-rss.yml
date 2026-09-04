@@ -61,7 +61,7 @@ jobs:
           python build_feed.py
       - name: Commit and Push RSS
         run: |
-          git add hubs.json known_links.json rss.xml rss_items.json feed_fingerprint.txt
+          git add hubs.json hub_cursor.json known_links.json rss.xml rss_items.json feed_fingerprint.txt
           if git diff --quiet --cached; then
             echo "No changes in rss.xml. Skipping commit."
             exit 0
