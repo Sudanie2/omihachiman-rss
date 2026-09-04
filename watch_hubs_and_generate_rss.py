@@ -21,6 +21,7 @@ from common import (
     get_robot_parser,
     load_json,
     merge_new_items,
+    extract_page_title,
     normalize_url,
     now_iso,
     now_rfc822,
@@ -34,7 +35,6 @@ SOURCE_NAME = "近江八幡市公式サイト"
 HUBS_FILE = "hubs.json"
 
 MAX_NEW_PAGE_FETCH_PER_RUN = 80
-TITLE_SELECTORS = ["h1", "title"]
 
 EXCLUDE_PATTERNS = [
     r"^/cgi-bin/",
@@ -53,14 +53,6 @@ def is_target_url(url: str) -> bool:
     if "." in path.rsplit("/", 1)[-1] and not path.endswith((".html", ".htm")):
         return False
     return True
-
-
-def extract_title(soup: BeautifulSoup) -> str:
-    for sel in TITLE_SELECTORS:
-        el = soup.select_one(sel)
-        if el and el.get_text(strip=True):
-            return el.get_text(strip=True)
-    return "(タイトル不明)"
 
 
 def main():
@@ -120,7 +112,7 @@ def main():
         time.sleep(REQUEST_INTERVAL_SEC)
 
         soup = BeautifulSoup(html, "html.parser")
-        title = extract_title(soup)
+        title = extract_page_title(soup)
 
         known_updates[url] = {"title": title, "first_seen": ts}
         new_items.append(
@@ -128,7 +120,6 @@ def main():
                 "title": title,
                 "link": url,
                 "source": SOURCE_NAME,
-                "description": f"新着ページを検出しました: {url}",
                 "pubDate": ts_rfc822,
             }
         )
