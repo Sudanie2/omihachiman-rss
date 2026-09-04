@@ -47,31 +47,36 @@ def clean_text(text: str) -> str:
 def extract_content_blob(full_text: str) -> str:
     """
     本文にあたる範囲を切り出す。
+
+    見出しがHTMLタグで分割されていると(例: <span>新着</span>一覧)、
+    テキスト化した際に「新着 一覧」のように空白が入り目印と一致しなくなる。
+    そのため、空白・改行を全て除去した状態で目印を探す。
     目印が見つからない場合は「最初の日付表記以降」をフォールバックとして使う。
     """
+    compact = re.sub(r"\s+", "", full_text)
+
     start_idx = -1
     for marker in SECTION_START_MARKERS:
-        idx = full_text.find(marker)
+        idx = compact.find(marker)
         if idx != -1:
             start_idx = idx + len(marker)
             break
 
     if start_idx == -1:
-        # フォールバック: 最初の日付表記の位置から
-        m = DATE_PATTERN.search(full_text)
+        m = DATE_PATTERN.search(compact)
         if not m:
             return ""
         start_idx = m.start()
         print(f"[{SOURCE_NAME}] 開始の目印が見つからないため、最初の日付表記から本文とみなします。")
 
-    end_idx = len(full_text)
+    end_idx = len(compact)
     for marker in SECTION_END_MARKERS:
-        idx = full_text.find(marker, start_idx)
+        idx = compact.find(marker, start_idx)
         if idx != -1:
             end_idx = idx
             break
 
-    return re.sub(r"\s+", " ", full_text[start_idx:end_idx]).strip()
+    return compact[start_idx:end_idx].strip()
 
 
 def main():
