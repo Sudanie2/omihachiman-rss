@@ -1,74 +1,45 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-近江八幡市サイト 軽量版・新着検知RSSジェネレーター
+近江八幡市公式サイト(city.omihachiman.lg.jp) 新着監視スクリプト
 
-discover_hubs.py で作成した hubs.json(部署トップページ + 主要一覧ページ、
-おおむね100ページ未満)だけを毎日巡回し、そこに新しく出現したリンクを
-「新着ページ」としてRSS化します。
-
-全ページのハッシュ比較は行わないため、負荷は非常に軽くなりますが、
-部署トップページに直接リンクされていない深い階層の更新は拾えません
-(要確認: どの程度の割合を拾えているかは運用しながら確認してください)。
-
-処理の流れ:
-  1. hubs.json のページを1つずつ取得(リクエスト間隔を空ける)
-  2. 各ハブページ内のリンクを抽出
-  3. known_links.json(既知リンク一覧)にないリンク = 新着
-  4. 新着リンクは1回だけ取得してタイトルを取得し、RSSエントリ化
-  5. known_links.json / rss.xml / rss_items.json を更新
+discover_hubs.py で作成した hubs.json(部署トップページ+主要一覧ページ)を巡回し、
+新しく出現したリンクを新着記事として検出する。
 """
 
-import json
-import re
+import sys
 import time
-import urllib.robotparser
-from datetime import datetime, timezone
-from pathlib import Path
 from urllib.parse import urljoin, urlparse
+import re
 
 import requests
 from bs4 import BeautifulSoup
 
+from common import (
+    fetch_bytes,
+    decode_response,
+    get_robot_parser,
+    load_json,
+    merge_new_items,
+    normalize_url,
+    now_iso,
+    now_rfc822,
+    KNOWN_LINKS_FILE,
+    REQUEST_INTERVAL_SEC,
+    USER_AGENT,
+)
+
 BASE_URL = "https://www.city.omihachiman.lg.jp"
+SOURCE_NAME = "近江八幡市公式サイト"
+HUBS_FILE = "hubs.json"
 
-USER_AGENT = "OmihachimanRSSBot/1.0 (+personal monitoring; contact: TS/KURA)"
-REQUEST_INTERVAL_SEC = 1.0
-REQUEST_TIMEOUT_SEC = 15
-
-# 新着として検出したページのうち、実際にタイトル取得のため
-# 追加でアクセスしてよい件数の上限(1回の実行あたり)。
-# 突発的に大量の新着が出た場合の負荷対策。
 MAX_NEW_PAGE_FETCH_PER_RUN = 80
-
-HUBS_FILE = Path("hubs.json")
-KNOWN_LINKS_FILE = Path("known_links.json")
-FEED_ITEMS_FILE = Path("rss_items.json")
-FEED_FILE = Path("rss.xml")
-FEED_MAX_ITEMS = 200
+TITLE_SELECTORS = ["h1", "title"]
 
 EXCLUDE_PATTERNS = [
     r"^/cgi-bin/",
     r"\.(pdf|jpg|jpeg|png|gif|zip|docx?|xlsx?|pptx?)$",
 ]
-
-TITLE_SELECTORS = ["h1", "title"]
-
-
-def load_json(path: Path, default):
-    if path.exists():
-        with open(path, "r", encoding="utf-8") as f:
-            return json.load(f)
-    return default
-
-
-def save_json(path: Path, data):
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-
-
-def normalize_url(url: str) -> str:
-    return url.split("#")[0]
 
 
 def is_target_url(url: str) -> bool:
@@ -84,14 +55,6 @@ def is_target_url(url: str) -> bool:
     return True
 
 
-def fetch(url: str, session: requests.Session) -> str:
-    headers = {"User-Agent": USER_AGENT}
-    resp = session.get(url, headers=headers, timeout=REQUEST_TIMEOUT_SEC)
-    resp.raise_for_status()
-    resp.encoding = resp.apparent_encoding
-    return resp.text
-
-
 def extract_title(soup: BeautifulSoup) -> str:
     for sel in TITLE_SELECTORS:
         el = soup.select_one(sel)
@@ -100,114 +63,57 @@ def extract_title(soup: BeautifulSoup) -> str:
     return "(タイトル不明)"
 
 
-def extract_links(soup: BeautifulSoup, base_url: str):
-    links = []
-    for a in soup.find_all("a", href=True):
-        abs_url = normalize_url(urljoin(base_url, a["href"]))
-        if is_target_url(abs_url):
-            links.append(abs_url)
-    return links
-
-
-def build_rss(items):
-    now = datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S %z")
-
-    def esc(s: str) -> str:
-        return (
-            s.replace("&", "&amp;")
-            .replace("<", "&lt;")
-            .replace(">", "&gt;")
-            .replace('"', "&quot;")
-        )
-
-    entries_xml = []
-    for it in items[:FEED_MAX_ITEMS]:
-        entries_xml.append(
-            f"""    <item>
-      <title>{esc(it['title'])}</title>
-      <link>{esc(it['link'])}</link>
-      <guid isPermaLink="true">{esc(it['link'])}</guid>
-      <pubDate>{it['pubDate']}</pubDate>
-      <description>{esc(it['description'])}</description>
-    </item>"""
-        )
-
-    return f"""<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
-  <channel>
-    <title>近江八幡市公式サイト 新着ページ(非公式・ハブ監視方式)</title>
-    <link>{BASE_URL}/index.html</link>
-    <description>各課トップページ等のハブページを監視し、新しく出現したリンクを検出した非公式RSSです。</description>
-    <lastBuildDate>{now}</lastBuildDate>
-{chr(10).join(entries_xml)}
-  </channel>
-</rss>
-"""
-
-
 def main():
-    hubs = load_json(HUBS_FILE, None)
+    from pathlib import Path
+
+    hubs = load_json(Path(HUBS_FILE), None)
     if hubs is None:
         print("hubs.json が見つかりません。先に discover_hubs.py を実行してください。")
         return
 
-    # robots.txtの取得。
-    # 注意: urllib.robotparser標準のread()は、User-Agentを名乗らずに
-    # アクセスするため、サイト側のセキュリティ機能に弾かれ「取得失敗=全ページ禁止」
-    # と誤判定されることがある。ページ本体の取得と同じ名乗り方(requests +
-    # カスタムUser-Agent)で明示的に取得し、rp.parse()に渡す。
-    rp = urllib.robotparser.RobotFileParser()
-    try:
-        robots_resp = requests.get(
-            f"{BASE_URL}/robots.txt",
-            headers={"User-Agent": USER_AGENT},
-            timeout=REQUEST_TIMEOUT_SEC,
-        )
-        if robots_resp.status_code == 200:
-            rp.parse(robots_resp.text.splitlines())
-        else:
-            # robots.txtが存在しない/取得できない場合は「全ページ許可」として続行
-            print(f"robots.txt取得: status={robots_resp.status_code}。全ページ許可として続行します。")
-            rp.parse([])
-    except Exception as e:
-        print(f"robots.txtの取得に失敗しました({e})。全ページ許可として続行します。")
-        rp.parse([])
-
-    known_links = load_json(KNOWN_LINKS_FILE, {})  # {url: {"title":..., "first_seen":...}}
+    rp = get_robot_parser(BASE_URL)
+    known = load_json(KNOWN_LINKS_FILE, {})
     session = requests.Session()
 
-    now_iso = datetime.now(timezone.utc).isoformat()
-    now_rfc822 = datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S %z")
+    candidate_new = []
+    seen_in_run = set()
 
-    candidate_new_links = set()
-
-    # 1. ハブページを巡回し、リンクを収集
     for hub_url in hubs:
         if not rp.can_fetch(USER_AGENT, hub_url):
             print(f"[robots.txtでブロック] {hub_url}")
             continue
         try:
-            html = fetch(hub_url, session)
+            resp = fetch_bytes(hub_url, session)
+            html = decode_response(resp)
         except Exception as e:
             print(f"[SKIP] {hub_url}: {e}")
             continue
         time.sleep(REQUEST_INTERVAL_SEC)
 
         soup = BeautifulSoup(html, "html.parser")
-        for link in extract_links(soup, hub_url):
-            if link not in known_links:
-                candidate_new_links.add(link)
+        for a in soup.find_all("a", href=True):
+            abs_url = normalize_url(urljoin(hub_url, a["href"]))
+            if not is_target_url(abs_url):
+                continue
+            if abs_url in known or abs_url in seen_in_run:
+                continue
+            seen_in_run.add(abs_url)
+            candidate_new.append(abs_url)
 
-    # 2. 新着リンクの中身を取得してタイトルを確認(上限あり)
     new_items = []
-    for i, url in enumerate(sorted(candidate_new_links)):
+    known_updates = {}
+    ts = now_iso()
+    ts_rfc822 = now_rfc822()
+
+    for i, url in enumerate(sorted(candidate_new)):
         if i >= MAX_NEW_PAGE_FETCH_PER_RUN:
-            print(f"上限({MAX_NEW_PAGE_FETCH_PER_RUN}件)に達したため、残りは次回に持ち越します。")
+            print(f"上限({MAX_NEW_PAGE_FETCH_PER_RUN}件)に達したため残りは次回に持ち越します。")
             break
         if not rp.can_fetch(USER_AGENT, url):
             continue
         try:
-            html = fetch(url, session)
+            resp = fetch_bytes(url, session)
+            html = decode_response(resp)
         except Exception as e:
             print(f"[SKIP] {url}: {e}")
             continue
@@ -216,27 +122,24 @@ def main():
         soup = BeautifulSoup(html, "html.parser")
         title = extract_title(soup)
 
-        known_links[url] = {"title": title, "first_seen": now_iso}
+        known_updates[url] = {"title": title, "first_seen": ts}
         new_items.append(
             {
                 "title": title,
                 "link": url,
+                "source": SOURCE_NAME,
                 "description": f"新着ページを検出しました: {url}",
-                "pubDate": now_rfc822,
+                "pubDate": ts_rfc822,
             }
         )
 
-    # 3. フィード更新
-    existing_items = load_json(FEED_ITEMS_FILE, [])
-    combined = new_items + existing_items
-    combined = combined[:FEED_MAX_ITEMS]
-
-    save_json(FEED_ITEMS_FILE, combined)
-    save_json(KNOWN_LINKS_FILE, known_links)
-    FEED_FILE.write_text(build_rss(combined), encoding="utf-8")
-
-    print(f"ハブページ巡回: {len(hubs)}件 / 新着検出: {len(new_items)}件")
+    merge_new_items(new_items, known_updates)
+    print(f"[{SOURCE_NAME}] ハブページ巡回 {len(hubs)}件 / 新着 {len(new_items)}件")
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        print(f"[ERROR] 予期しないエラー: {e}")
+        sys.exit(0)
