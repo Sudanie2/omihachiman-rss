@@ -284,6 +284,25 @@
 <script>
 (function () {
   const CITY_HOST = 'www.city.omihachiman.lg.jp';
+
+  const SOURCE_BY_HOST = {
+    'www.city.omihachiman.lg.jp': '近江八幡市公式サイト',
+    'omihachiman.keizai.biz': '近江八幡経済新聞',
+    'higashiomi-omihachiman.goguynet.jp': '号外NET',
+    'www.omi8.com': '近江八幡市観光サイト',
+    'www.kenkou1.com': '近江八幡市立総合医療センター',
+    'www.pref.shiga.lg.jp': '近江八幡警察署(滋賀県警)',
+    'library.city.omihachiman.shiga.jp': '近江八幡市立図書館',
+  };
+
+  function sourceFromUrl(url) {
+    try {
+      const host = new URL(url).hostname;
+      return SOURCE_BY_HOST[host] || host;
+    } catch (e) {
+      return '不明';
+    }
+  }
   const CATEGORY_RULES = [
     { test: (p) => p.startsWith('/juyo_info/'), key: 'important', label: '重要' },
     { test: (p) => p.startsWith('/news/'),      key: 'news',      label: 'お知らせ' },
@@ -352,7 +371,7 @@
             <div>
               <span class="tag">${it.category.label}</span>
               <a class="title" href="${it.link}" target="_blank" rel="noopener">${escapeHtml(it.title)}</a>
-              <div class="url">${it.link}</div>
+              <div class="url">出典：${escapeHtml(it.source)}</div>
             </div>
           </li>`;
       }
@@ -417,6 +436,7 @@
         link: it.link,
         date: new Date(it.pubDate),
         category: categorize(it.link),
+        source: it.source || sourceFromUrl(it.link),
       }));
 
       combined.sort((a, b) => b.date - a.date);
