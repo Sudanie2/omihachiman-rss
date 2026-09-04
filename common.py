@@ -74,10 +74,18 @@ def parse_pubdate(text):
 
 
 # ---- HTTP ----
-def fetch_bytes(url: str, session=None) -> bytes:
-    headers = {"User-Agent": USER_AGENT}
+# 一部の自治体サイト等は、ブラウザが必ず送るヘッダー(Accept等)が無いアクセスを
+# 機械的に遮断することがあるため、標準的なヘッダーを補って送信する。
+DEFAULT_HEADERS = {
+    "User-Agent": USER_AGENT,
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "ja,en-US;q=0.7,en;q=0.3",
+}
+
+
+def fetch_bytes(url: str, session=None):
     getter = session.get if session else requests.get
-    resp = getter(url, headers=headers, timeout=REQUEST_TIMEOUT_SEC)
+    resp = getter(url, headers=DEFAULT_HEADERS, timeout=REQUEST_TIMEOUT_SEC)
     resp.raise_for_status()
     return resp
 
@@ -122,7 +130,7 @@ def get_robot_parser(base_url: str):
     try:
         resp = requests.get(
             f"{base_url}/robots.txt",
-            headers={"User-Agent": USER_AGENT},
+            headers=DEFAULT_HEADERS,
             timeout=REQUEST_TIMEOUT_SEC,
         )
         if resp.status_code == 200:
