@@ -13,6 +13,10 @@ on:
         default: false
 permissions:
   contents: write
+# 実行が重なるとpushが競合するため、同時に1つしか動かさない
+concurrency:
+  group: rss-feed
+  cancel-in-progress: false
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -57,4 +61,15 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git commit -m "Updated RSS feed"
-          git push
+          # 実行が重なった場合に備え、最新を取り込んでから数回まで再試行する
+          for i in 1 2 3; do
+            if git push; then
+              echo "Push succeeded."
+              exit 0
+            fi
+            echo "Push rejected. Retrying after rebase ($i/3)..."
+            git pull --rebase --autostash origin main || true
+            sleep 5
+          done
+          echo "Push failed after retries."
+          exit 1
