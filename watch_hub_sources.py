@@ -26,6 +26,7 @@ from common import (
     get_robot_parser,
     load_json,
     merge_new_items,
+    extract_page_title,
     normalize_url,
     now_iso,
     now_rfc822,
@@ -51,8 +52,6 @@ HUB_SOURCES = [
         ],
         # 個別記事とみなすURLパターン
         "detail_pattern": r"/detail[_.]",
-        # タイトル末尾のサイト名を除去するパターン
-        "title_strip": r"[\-|｜]\s*【公式】近江八幡市観光情報サイト.*$",
     },
     {
         "name": "近江八幡市立図書館",
@@ -62,12 +61,10 @@ HUB_SOURCES = [
             "/図書館だより・行事案内/図書館だより",
         ],
         "detail_pattern": r"active_action=bbs_view_main_post.*post_id=\d+",
-        "title_strip": r"[\-|｜]\s*近江八幡市立図書館.*$",
     },
 ]
 
 MAX_NEW_PAGE_FETCH_PER_SOURCE = 60
-TITLE_SELECTORS = ["h1", "title"]
 
 
 def is_target_url(url: str, base: str, pattern: re.Pattern) -> bool:
@@ -76,18 +73,6 @@ def is_target_url(url: str, base: str, pattern: re.Pattern) -> bool:
         return False
     full = parsed.path + ("?" + parsed.query if parsed.query else "")
     return bool(pattern.search(full))
-
-
-def extract_title(soup: BeautifulSoup, title_strip: str) -> str:
-    for sel in TITLE_SELECTORS:
-        el = soup.select_one(sel)
-        if el and el.get_text(strip=True):
-            title = el.get_text(strip=True)
-            if title_strip:
-                title = re.sub(title_strip, "", title).strip()
-            if title:
-                return title
-    return "(タイトル不明)"
 
 
 def process_source(source, known, session):
@@ -144,7 +129,7 @@ def process_source(source, known, session):
         time.sleep(REQUEST_INTERVAL_SEC)
 
         soup = BeautifulSoup(html, "html.parser")
-        title = extract_title(soup, source.get("title_strip"))
+        title = extract_page_title(soup)
 
         known_updates[url] = {"title": title, "first_seen": ts}
         new_items.append(
@@ -152,7 +137,6 @@ def process_source(source, known, session):
                 "title": title,
                 "link": url,
                 "source": source["name"],
-                "description": f"新着記事を検出しました: {url}",
                 "pubDate": ts_rfc822,
             }
         )
