@@ -28,6 +28,7 @@ RSS(rss.xml)とWebサイト(index.html / GitHub Pages)で公開する仕組み�
 | watch_hub_sources.py | 観光サイト・図書館の新着収集 | 3 |
 | fetch_shiga_police_omihachiman.py | 警察署の活動ページの新着収集 | 4 |
 | build_feed.py | 収集結果からrss.xmlを生成(日付順に整列) | 5 |
+| repair_titles.py | 既存記事のタイトルを取り直す(手動実行時のみ) | 任意 |
 | index.html | 公開Webサイト(rss_items.jsonを表示) | - |
 
 収集スクリプト(1〜4)はデータファイルを更新するだけで、rss.xmlは
@@ -46,6 +47,22 @@ RSS(rss.xml)とWebサイト(index.html / GitHub Pages)で公開する仕組み�
 
 - Webサイト: https://sudanie2.github.io/omihachiman-rss/
 - RSS: https://sudanie2.github.io/omihachiman-rss/rss.xml
+
+## GitHub Pagesの利用制限と現状
+
+| 制限 | GitHubの上限 | 本サイトの見込み | 余裕 |
+|---|---|---|---|
+| リポジトリ容量 | 1 GB | 10年運用で約480MB | 十分 |
+| 帯域 | 月100 GB | Feedly購読1,800人相当まで | 十分 |
+| ビルド回数 | 1時間10回 | 1日3回(1時間あたり最大1回) | 十分 |
+
+- 記事データ(rss.xml / rss_items.json)は**常に最新200件までに自動で切り詰められる**ため、
+  いくら新着が増えても公開ファイル自体は約150KBのまま増えません。
+- 唯一増え続けるのは known_links.json(既読URLの記録)ですが、
+  対象サイトの総ページ数に応じて数千件で頭打ちになり、1〜2MB程度で安定する見込みです。
+- 実行のたびに build_feed.py が容量をログに出力します。合計50MBを超えると
+  警告が出るので、その時点で対処を検討すれば十分間に合います。
+- 変更がない場合はコミット自体をスキップするため、無駄な履歴は増えません。
 
 ## 収集対象外としたサイトと理由
 
