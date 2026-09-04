@@ -51,9 +51,9 @@ jobs:
       - name: Collect from Shiga Police page
         run: |
           python fetch_shiga_police_omihachiman.py
-      - name: Collect from 8cci topics
+      - name: Collect from list pages
         run: |
-          python fetch_8cci_topics.py
+          python fetch_list_sources.py
       - name: Repair existing titles (manual only)
         if: github.event.inputs.repair_titles == 'true'
         run: |
