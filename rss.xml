@@ -1,569 +1,1409 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>近江八幡市公式サイト 新着ページ(非公式・ハブ監視方式)</title>
+    <title>近江八幡市 くらし更新だより(非公式・複数ソース統合)</title>
     <link>https://www.city.omihachiman.lg.jp/index.html</link>
-    <description>各課トップページ等のハブページを監視し、新しく出現したリンクを検出した非公式RSSです。</description>
-    <lastBuildDate>Thu, 03 Sep 2026 13:16:14 +0000</lastBuildDate>
+    <description>近江八幡市関連の複数サイトの新着をまとめた非公式RSSです。</description>
+    <lastBuildDate>Fri, 04 Sep 2026 05:50:30 +0000</lastBuildDate>
     <item>
-      <title>市民広場ワークショップを開催しました</title>
+      <title>å³æ¸é¤¨ã ãã - è¿æ±å«å¹¡å¸ç«å³æ¸é¤¨（出典：近江八幡市立図書館）</title>
+      <link>https://library.city.omihachiman.shiga.jp/index.php?action=pages_view_main&amp;active_action=bbs_view_main_post&amp;post_id=655&amp;block_id=74</link>
+      <guid isPermaLink="true">https://library.city.omihachiman.shiga.jp/index.php?action=pages_view_main&amp;active_action=bbs_view_main_post&amp;post_id=655&amp;block_id=74</guid>
+      <pubDate>Fri, 04 Sep 2026 05:50:22 +0000</pubDate>
+      <description>新着記事を検出しました: https://library.city.omihachiman.shiga.jp/index.php?action=pages_view_main&amp;active_action=bbs_view_main_post&amp;post_id=655&amp;block_id=74</description>
+    </item>
+    <item>
+      <title>å³æ¸é¤¨ã ãã - è¿æ±å«å¹¡å¸ç«å³æ¸é¤¨（出典：近江八幡市立図書館）</title>
+      <link>https://library.city.omihachiman.shiga.jp/index.php?action=pages_view_main&amp;active_action=bbs_view_main_post&amp;post_id=656&amp;block_id=74</link>
+      <guid isPermaLink="true">https://library.city.omihachiman.shiga.jp/index.php?action=pages_view_main&amp;active_action=bbs_view_main_post&amp;post_id=656&amp;block_id=74</guid>
+      <pubDate>Fri, 04 Sep 2026 05:50:22 +0000</pubDate>
+      <description>新着記事を検出しました: https://library.city.omihachiman.shiga.jp/index.php?action=pages_view_main&amp;active_action=bbs_view_main_post&amp;post_id=656&amp;block_id=74</description>
+    </item>
+    <item>
+      <title>å³æ¸é¤¨ã ãã - è¿æ±å«å¹¡å¸ç«å³æ¸é¤¨（出典：近江八幡市立図書館）</title>
+      <link>https://library.city.omihachiman.shiga.jp/index.php?action=pages_view_main&amp;active_action=bbs_view_main_post&amp;post_id=657&amp;block_id=74</link>
+      <guid isPermaLink="true">https://library.city.omihachiman.shiga.jp/index.php?action=pages_view_main&amp;active_action=bbs_view_main_post&amp;post_id=657&amp;block_id=74</guid>
+      <pubDate>Fri, 04 Sep 2026 05:50:22 +0000</pubDate>
+      <description>新着記事を検出しました: https://library.city.omihachiman.shiga.jp/index.php?action=pages_view_main&amp;active_action=bbs_view_main_post&amp;post_id=657&amp;block_id=74</description>
+    </item>
+    <item>
+      <title>å³æ¸é¤¨ã ãã - è¿æ±å«å¹¡å¸ç«å³æ¸é¤¨（出典：近江八幡市立図書館）</title>
+      <link>https://library.city.omihachiman.shiga.jp/index.php?action=pages_view_main&amp;active_action=bbs_view_main_post&amp;post_id=658&amp;block_id=74</link>
+      <guid isPermaLink="true">https://library.city.omihachiman.shiga.jp/index.php?action=pages_view_main&amp;active_action=bbs_view_main_post&amp;post_id=658&amp;block_id=74</guid>
+      <pubDate>Fri, 04 Sep 2026 05:50:22 +0000</pubDate>
+      <description>新着記事を検出しました: https://library.city.omihachiman.shiga.jp/index.php?action=pages_view_main&amp;active_action=bbs_view_main_post&amp;post_id=658&amp;block_id=74</description>
+    </item>
+    <item>
+      <title>å³æ¸é¤¨ã ãã - è¿æ±å«å¹¡å¸ç«å³æ¸é¤¨（出典：近江八幡市立図書館）</title>
+      <link>https://library.city.omihachiman.shiga.jp/index.php?action=pages_view_main&amp;active_action=bbs_view_main_post&amp;post_id=659&amp;block_id=74</link>
+      <guid isPermaLink="true">https://library.city.omihachiman.shiga.jp/index.php?action=pages_view_main&amp;active_action=bbs_view_main_post&amp;post_id=659&amp;block_id=74</guid>
+      <pubDate>Fri, 04 Sep 2026 05:50:22 +0000</pubDate>
+      <description>新着記事を検出しました: https://library.city.omihachiman.shiga.jp/index.php?action=pages_view_main&amp;active_action=bbs_view_main_post&amp;post_id=659&amp;block_id=74</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/course/detail_11.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/course/detail_11.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/course/detail_11.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/course/detail_12.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/course/detail_12.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/course/detail_12.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/course/detail_13.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/course/detail_13.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/course/detail_13.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/course/detail_14.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/course/detail_14.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/course/detail_14.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/course/detail_15.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/course/detail_15.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/course/detail_15.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/course/detail_18.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/course/detail_18.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/course/detail_18.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/course/detail_19.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/course/detail_19.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/course/detail_19.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/course/detail_2.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/course/detail_2.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/course/detail_2.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/course/detail_20.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/course/detail_20.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/course/detail_20.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/course/detail_21.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/course/detail_21.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/course/detail_21.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/course/detail_22.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/course/detail_22.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/course/detail_22.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/course/detail_23.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/course/detail_23.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/course/detail_23.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/course/detail_24.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/course/detail_24.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/course/detail_24.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/course/detail_4.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/course/detail_4.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/course/detail_4.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/course/detail_5.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/course/detail_5.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/course/detail_5.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/course/detail_6.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/course/detail_6.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/course/detail_6.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/course/detail_7.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/course/detail_7.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/course/detail_7.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/course/detail_8.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/course/detail_8.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/course/detail_8.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/event/detail_1160.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/event/detail_1160.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/event/detail_1160.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/event/detail_1171.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/event/detail_1171.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/event/detail_1171.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/event/detail_1186.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/event/detail_1186.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/event/detail_1186.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/event/detail_1187.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/event/detail_1187.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/event/detail_1187.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/event/detail_1188.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/event/detail_1188.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/event/detail_1188.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/event/detail_1201.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/event/detail_1201.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/event/detail_1201.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/event/detail_1202.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/event/detail_1202.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/event/detail_1202.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/event/detail_1203.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/event/detail_1203.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/event/detail_1203.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/event/detail_1204.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/event/detail_1204.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/event/detail_1204.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/event/detail_1206.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/event/detail_1206.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/event/detail_1206.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/event/detail_1207.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/event/detail_1207.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/event/detail_1207.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/event/detail_1208.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/event/detail_1208.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/event/detail_1208.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/event/detail_1216.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/event/detail_1216.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/event/detail_1216.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/event/detail_1219.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/event/detail_1219.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/event/detail_1219.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/event/detail_1221.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/event/detail_1221.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/event/detail_1221.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/event/detail_1224.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/event/detail_1224.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/event/detail_1224.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/event/detail_1260.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/event/detail_1260.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/event/detail_1260.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/event/detail_1265.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/event/detail_1265.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/event/detail_1265.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/event/detail_1268.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/event/detail_1268.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/event/detail_1268.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/event/detail_1269.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/event/detail_1269.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/event/detail_1269.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/event/detail_1271.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/event/detail_1271.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/event/detail_1271.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/event/detail_1274.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/event/detail_1274.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/event/detail_1274.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/event/detail_1275.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/event/detail_1275.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/event/detail_1275.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/event/detail_1276.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/event/detail_1276.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/event/detail_1276.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/restaurant/detail_1003.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/restaurant/detail_1003.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/restaurant/detail_1003.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/restaurant/detail_1004.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/restaurant/detail_1004.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/restaurant/detail_1004.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/restaurant/detail_1023.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/restaurant/detail_1023.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/restaurant/detail_1023.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/restaurant/detail_1024.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/restaurant/detail_1024.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/restaurant/detail_1024.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/restaurant/detail_1029.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/restaurant/detail_1029.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/restaurant/detail_1029.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/restaurant/detail_1038.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/restaurant/detail_1038.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/restaurant/detail_1038.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/restaurant/detail_1039.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/restaurant/detail_1039.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/restaurant/detail_1039.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/restaurant/detail_1040.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/restaurant/detail_1040.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/restaurant/detail_1040.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/restaurant/detail_1041.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/restaurant/detail_1041.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/restaurant/detail_1041.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/restaurant/detail_1044.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/restaurant/detail_1044.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/restaurant/detail_1044.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/restaurant/detail_1045.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/restaurant/detail_1045.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/restaurant/detail_1045.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/restaurant/detail_1047.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/restaurant/detail_1047.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/restaurant/detail_1047.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/restaurant/detail_1051.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/restaurant/detail_1051.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/restaurant/detail_1051.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/restaurant/detail_1054.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/restaurant/detail_1054.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/restaurant/detail_1054.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/restaurant/detail_1077.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/restaurant/detail_1077.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/restaurant/detail_1077.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/restaurant/detail_1078.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/restaurant/detail_1078.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/restaurant/detail_1078.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/restaurant/detail_1099.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/restaurant/detail_1099.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/restaurant/detail_1099.html</description>
+    </item>
+    <item>
+      <title>近江八幡市公式観光サイト（出典：近江八幡市観光サイト）</title>
+      <link>https://www.omi8.com/restaurant/detail_1100.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/restaurant/detail_1100.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:49:03 +0000</pubDate>
+      <description>新着記事を検出しました: https://www.omi8.com/restaurant/detail_1100.html</description>
+    </item>
+    <item>
+      <title>è¿æ±å«å¹¡å¸SDGsã»MLGsåçµäºä¾éãä½æãã¾ãã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/24884.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/24884.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/24884.html</description>
+    </item>
+    <item>
+      <title>å¦å©¦å¥åº·è¨ºæ»ã®å©æã«ã¤ãã¦（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/24890.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/24890.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/24890.html</description>
+    </item>
+    <item>
+      <title>åºå ±ããã¿ã¯ã¡ã¾ã2023å¹´åº¦（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/24899.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/24899.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/24899.html</description>
+    </item>
+    <item>
+      <title>è¿æ±å«å¹¡å¸ãã¼ããã¼ã·ããå®£èªå¶åº¦（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/25241.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/25241.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/25241.html</description>
+    </item>
+    <item>
+      <title>å®åã³ãã¥ããã£ã¨ãªã¢æ§æ³(æ¡)èª¬æä¼ã®éå¬ã®ãç¥ãã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/25264.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/25264.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/25264.html</description>
+    </item>
+    <item>
+      <title>å½ã¹ãç«¶æä¼å ´ç­è¨­è¨æ¥­å(ãã¬ã¼ãã¼ã«ã»ãã³ããã¼ã«ã»è»å¼éç)ã«ä¿ãå¬ååãã­ãã¼ã¶ã«ã®çµæã«ã¤ãã¦（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/25321.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/25321.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/25321.html</description>
+    </item>
+    <item>
+      <title>å½ã¹ãç«¶æä¼å ´ç­è¨­è¨æ¥­å(ãã©ã¤ã¢ã¹ã­ã³)ã«ä¿ãå¬ååãã­ãã¼ã¶ã«ã®çµæã«ã¤ãã¦（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/25322.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/25322.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/25322.html</description>
+    </item>
+    <item>
+      <title>è¿æ±å«å¹¡å¸å°åãããååé(æ²å³¶)ã®å§å±å¼ãè¡ãã¾ãã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/25325.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/25325.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/25325.html</description>
+    </item>
+    <item>
+      <title>MLGsã¢ã¯ã·ã§ã³ã«ã¼ããä½è£½ãã¾ãã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/25358.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/25358.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/25358.html</description>
+    </item>
+    <item>
+      <title>è¾²ä½æ¥­ä¸­ã®ç±ä¸­çå¯¾ç­ã«ã¤ãã¦（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/25388.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/25388.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/25388.html</description>
+    </item>
+    <item>
+      <title>ä»¤å7å¹´6æ1æ¥ä»ã§ãããããã¹ã®ãã¤ã¤æ¹æ­£ãå®æ½ãã¾ã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/25430.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/25430.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/25430.html</description>
+    </item>
+    <item>
+      <title>ãã¤ãã³ãã¼ã«ã¼ãã¨å¥åº·ä¿éºè¨¼ã®è³æ ¼æå ±ç´ä»ãã«ãããèª¤ç»é²ã«ã¤ãã¦（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/25457.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/25457.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/25457.html</description>
+    </item>
+    <item>
+      <title>ä»¤å8å¹´åº¦ãç·å¥³ãè¼ãã¦çãããçµµæç´ä½ååéä¸­ï¼（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/25603.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/25603.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/25603.html</description>
+    </item>
+    <item>
+      <title>ã11æ8æ¥éå¬ãç¬¬50åè¨å¿µ 2026æ°´é·ã®éãã©ã½ã³ãéå¬ãã¾ã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/25780.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/25780.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/25780.html</description>
+    </item>
+    <item>
+      <title>å®¶è¨ã«ãã©ã¹ãããã«ã«ãã±ããããä½¿ããã¨ãã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/25876.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/25876.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/25876.html</description>
+    </item>
+    <item>
+      <title>å¸è·å¡æ¡ç¨PRåç»ãä½æãã¾ãã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/25954.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/25954.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/25954.html</description>
+    </item>
+    <item>
+      <title>å·¦ç¾©é·ã¾ã¤ãInstagramæç¨¿ã­ã£ã³ãã¼ã³ãçµæçºè¡¨ã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/25961.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/25961.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/25961.html</description>
+    </item>
+    <item>
+      <title>ãåæ±åºèã®çãã¾ãå®¶è¨å¿æ´ååå¸ãå®¶è¨ã«ãã©ã¹ ããã«ã«ãã±ãããã®æéæç¶ãã«ã¤ãã¦（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/25997.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/25997.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/25997.html</description>
+    </item>
+    <item>
+      <title>å¡©åä½ããã¨ã£ã¦ãï¼å¤§èª¿æ»ã¢ã³ã±ã¼ãã®çµæãå ±åãã¾ãï¼（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/26056.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/26056.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/26056.html</description>
+    </item>
+    <item>
+      <title>è¿æ±å«å¹¡å¸è±ç­ç´ æ¨é²åè­°ä¼ã«ã¤ãã¦（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/26271.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/26271.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/26271.html</description>
+    </item>
+    <item>
+      <title>æ»è³çå¨åã«ã¤ã³ãã«ã¨ã³ã¶è­¦å ±ãçºä»¤ããã¾ãã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/26281.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/26281.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/26281.html</description>
+    </item>
+    <item>
+      <title>è»½è£å¤åã®éå¹´åã«ã¤ãã¦（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/26289.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/26289.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/26289.html</description>
+    </item>
+    <item>
+      <title>R5.11 ç¬¬2åè¿æ±å«å¹¡å¸ç·åè¨ç»å¯©è­°ä¼(å¾æåºæ¬è¨ç»)（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/26303.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/26303.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/26303.html</description>
+    </item>
+    <item>
+      <title>ããªãã®ä¼ç¤¾ã¯BCP(äºæ¥­ç¶ç¶è¨ç»)ã¯ã§ãã¦ãã¾ããã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/26394.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/26394.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/26394.html</description>
+    </item>
+    <item>
+      <title>ã¹ãã¼ããã©ã³ã§ãè¨¼ææ¸ã®ã³ã³ããäº¤ä»ãµã¼ãã¹ããå©ç¨ããã ãã¾ã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/26770.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/26770.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/26770.html</description>
+    </item>
+    <item>
+      <title>ãã«ã¹ãã©ã»ãã¯ãã©å¯¾ç­ã»ããã¼ããéå¬ãã¾ã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/26806.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/26806.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/26806.html</description>
+    </item>
+    <item>
+      <title>å®åã³ãã¥ããã£ã¨ãªã¢æ´åäºæ¥­ã«ãããåå°åç¨æ³ã«åºã¥ãäºæ¥­èª¬æä¼ã®éå¬ã®ãç¥ãã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/26814.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/26814.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/26814.html</description>
+    </item>
+    <item>
+      <title>ä»¤å6å¹´è½ç»åå³¶å°éã®æ¬å¸ã®æ¯æ´ç¶æ³ããç¥ãããã¾ã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/26822.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/26822.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/26822.html</description>
+    </item>
+    <item>
+      <title>ããã©ã¤ã¢ã¹ã­ã³ç«¶æããªãã¼ãµã«å¤§ä¼ 2025å¹´æ»è³çéå¬ ç¬¬79åå½æ°ã¹ãã¼ãå¤§ä¼（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/26850.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/26850.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/26850.html</description>
+    </item>
+    <item>
+      <title>ä¹³åã®ããå®¶åº­ã«ããã¤ãå±ãã¾ã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/27027.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/27027.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/27027.html</description>
+    </item>
+    <item>
+      <title>ãå¥æ­çµæããã©ã¤ã¢ã¹ã­ã³ç«¶æä¼ã«ä¿ãäº¤éè¦å¶ãã©ã·（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/27133.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/27133.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/27133.html</description>
+    </item>
+    <item>
+      <title>ããSHIGAè¼ãå½ã¹ã ãã©ã¤ã¢ã¹ã­ã³ç«¶æãªãã¼ãµã«å¤§ä¼ ä¼å ´è¨­å¶æ¤å»ç­æ¥­åå§è¨ãçµäºãã¾ããã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/27134.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/27134.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/27134.html</description>
+    </item>
+    <item>
+      <title>ç¹å®ä¸å¦æ²»çè²»ãåé²å»çãã®å©æã«ã¤ãã¦（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/27240.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/27240.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/27240.html</description>
+    </item>
+    <item>
+      <title>ããã©ã¤ã¢ã¹ã­ã³ç«¶æãé¸æã»ç£ç£åãæ¡å (2025ããSHIGAè¼ãå½ã¹ããªãã¼ãµã«å¤§ä¼)（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/27248.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/27248.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/27248.html</description>
+    </item>
+    <item>
+      <title>ãç· ãåãã¾ãããããã©ã¤ã¢ã¹ã­ã³ç«¶æããã©ã³ãã£ã¢åé (2025ããSHIGAè¼ãå½ã¹ããªãã¼ãµã«å¤§ä¼)（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/27250.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/27250.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/27250.html</description>
+    </item>
+    <item>
+      <title>è¥¿ã®æ¹ã¨ã³ã­ã¸ã¼ããããã¹ããããå®æãã¾ããï¼（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/27414.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/27414.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/27414.html</description>
+    </item>
+    <item>
+      <title>ä¿è²æã»èªå®ãã©ãåã»å¹¼ç¨åç­ã®å©ç¨ã®ãæ¡å（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/27474.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/27474.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/27474.html</description>
+    </item>
+    <item>
+      <title>ããSHIGAè¼ãå½ã¹ã ãã¬ã¼ãã¼ã«ç«¶æãªãã¼ãµã«å¤§ä¼ ä¼å ´è¨­å¶æ¤å»ç­æ¥­åå§è¨ãçµäºãã¾ããã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/27521.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/27521.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/27521.html</description>
+    </item>
+    <item>
+      <title>ããSHIGAè¼ãå½ã¹ã ãã³ããã¼ã«ç«¶æãªãã¼ãµã«å¤§ä¼ ä¼å ´è¨­å¶æ¤å»ç­æ¥­åå§è¨ãçµäºãã¾ããã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/27525.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/27525.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/27525.html</description>
+    </item>
+    <item>
+      <title>ä»¤å8å¹´åº¦è±ç­ç´ æ¨é²çã¨ãå®¶é»è£½åè²·æãäºæ¥­è£å©é（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/27530.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/27530.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/27530.html</description>
+    </item>
+    <item>
+      <title>è¿æ±å«å¹¡å¸ç¬¬1æ¬¡ç·åè¨ç»å¾æåºæ¬è¨ç»ãç­å®ãã¾ãã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/27532.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/27532.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/27532.html</description>
+    </item>
+    <item>
+      <title>ããªã¼ã¹ã¯ã¼ã«ç­æ°éæ½è¨­éå¶æ¯æ´è£å©éãäº¤ä»ãã¾ã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/27561.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/27561.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/27561.html</description>
+    </item>
+    <item>
+      <title>èªèµ°å¼èåæ©ãä»¤å8å¹´åº¦ãè²¸åºããã¾ãï¼（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/27567.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/27567.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/27567.html</description>
+    </item>
+    <item>
+      <title>æ°ããè¦³åã¢ãã«ã³ã¼ã¹ãå®æãã¾ããï¼（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/27574.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/27574.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/27574.html</description>
+    </item>
+    <item>
+      <title>ä»æã®ã¤ãã³ãã«ã¬ã³ãã¼（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/27608.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/27608.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/27608.html</description>
+    </item>
+    <item>
+      <title>ãè¿æ±å«å¹¡å¸è±ç­ç´ ãã¸ã§ã³2050ããç­å®ãã¾ãã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/27696.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/27696.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/27696.html</description>
+    </item>
+    <item>
+      <title>ããSHIGAè¼ãå½ã¹ã è¿æ±å«å¹¡å¸è¼¸éäº¤éè¨ç»ç­ç­å®æ¥­åå§è¨ãçµäºãã¾ããã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/27704.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/27704.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/27704.html</description>
+    </item>
+    <item>
+      <title>ããã©ã¤ã¢ã¹ã­ã³ç«¶æãäº¤éè¦å¶ã®ãç¥ãã (2025ããSHIGAè¼ãå½ã¹ããªãã¼ãµã«å¤§ä¼)（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/27781.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/27781.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/27781.html</description>
+    </item>
+    <item>
+      <title>2025å¹´æ»è³çéå¬ ç¬¬79åå½æ°ã¹ãã¼ãå¤§ä¼ã»ç¬¬24åå¨å½éå®³èã¹ãã¼ãå¤§ä¼（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/27782.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/27782.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/27782.html</description>
+    </item>
+    <item>
+      <title>ãåéã¯çµäºãã¾ãããããSHIGAè¼ãå½ã¹ã ãµãã¾ããã¼ã¹åºåºèåé(ç¬¬1æ¬¡)（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/27844.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/27844.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/27844.html</description>
+    </item>
+    <item>
+      <title>ä»¤å8å¹´åº¦è£è´å¨ç¸è«ä¼ã®æ¥ç¨ã®ãç¥ãã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/27926.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/27926.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/27926.html</description>
+    </item>
+    <item>
+      <title>ããSHIGAè¼ãå½ã¹ã ãªãã¼ãµã«å¤§ä¼ã«ä¿ãäº¤éè¦å¶èªå°ç­æ¥­åå§è¨ãçµäºãã¾ããã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/27960.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/27960.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/27960.html</description>
+    </item>
+    <item>
+      <title>ããSHIGAè¼ãå½ã¹ãã»éã¹ãè¿æ±å«å¹¡å¸ ãªãã¼ãµã«å¤§ä¼è­å¥ç¨Tã·ã£ãä½æãçµäºãã¾ããã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/28002.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/28002.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/28002.html</description>
+    </item>
+    <item>
+      <title>è¿æ±å«å¹¡å¸ãªãªã¸ãã«ã­ã´ãå®æãã¾ãã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/28048.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/28048.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/28048.html</description>
+    </item>
+    <item>
+      <title>ããSHIGAè¼ãå½ã¹ã ãã³ããã¼ã«ç«¶æãªãã¼ãµã«å¤§ä¼ä¿éºå¥ç´ãçµäºãã¾ãã ä¸èª¿ã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/28115.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/28115.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/28115.html</description>
+    </item>
+    <item>
+      <title>ããç¸è«ãã ããï¼ãè¿æ±å«å¹¡å¸æ¶è²»çæ´»ã»ã³ã¿ã¼（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/28247.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/28247.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/28247.html</description>
+    </item>
+    <item>
+      <title>ã¯ã¼ãªã³ã°ã·ã§ã«ã¿ã¼(æå®æç±é¿é£æ½è¨­)ã®æå®ã»åéã«ã¤ãã¦（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/28297.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/28297.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/28297.html</description>
+    </item>
+    <item>
+      <title>æ¶è²»èæè²åºåè¬åº§ (R6.8.1_éå¬å ±å)（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/28330.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/28330.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/28330.html</description>
+    </item>
+    <item>
+      <title>ããããã®ç¸è«ããå®æ½ãã¦ãã¾ã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/28367.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/28367.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/28367.html</description>
+    </item>
+    <item>
+      <title>æ¶è²»èæè²åºåè¬åº§ (R6.9.13_éå¬å ±å)（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/28568.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/28568.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/28568.html</description>
+    </item>
+    <item>
+      <title>æ¶ç«æ ããã¯ã¹ã®ç¹æ¤ããé¡ããã¾ã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/29011.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/29011.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/29011.html</description>
+    </item>
+    <item>
+      <title>è¿æ±å«å¹¡å¸100åå(ç¶100åå)ã¹ã¿ã³ãã®è¨­ç½®å ´æã®ãç¥ãã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/29088.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/29088.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/29088.html</description>
+    </item>
+    <item>
+      <title>ãã£ãã·ã³ã°è©æ¬ºã«ãæ³¨æãã ããï¼ï¼（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/29110.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/29110.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/29110.html</description>
+    </item>
+    <item>
+      <title>å®åã³ãã¥ããã£ã¨ãªã¢æ´åæ¤è¨éä¿¡(No.7)ã®ãç¥ãã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/29114.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/29114.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/29114.html</description>
+    </item>
+    <item>
+      <title>å±å¤åºåç©ã®åºåä¸»ã®çæ§ã¸（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/29119.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/29119.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/29119.html</description>
+    </item>
+    <item>
+      <title>è¿æ±å«å¹¡å¸æ¶è²»çæ´»ã»ã³ã¿ã¼éä¿¡ : æ°´åãã®ä¿®çãµã¼ãã¹ãã©ãã«ã«ãæ³¨æãã ããï¼（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/29138.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/29138.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/29138.html</description>
+    </item>
+    <item>
+      <title>è¿æ±å«å¹¡å¸ã®ãã³ãã¼ã«ã«ã¼ãã«ã¤ãã¦（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/29251.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/29251.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/29251.html</description>
+    </item>
+    <item>
+      <title>æå­è¡¨ç¤ºæ©è½ä»ãé²ç½è¡æ¿ç¡ç·æ¸å¥åä¿¡æ©ã®è²¸ä¸ã«ã¤ãã¦（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/29381.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/29381.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/29381.html</description>
+    </item>
+    <item>
+      <title>äººæ¨©åçºåå­ãéç©º7ããä»¤å6å¹´åº¦äººæ¨©åçºè³ææ³åå¤§è£è¡¨å½°ãåè³ãã¾ãã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/29433.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/29433.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/29433.html</description>
+    </item>
+    <item>
+      <title>éè»¢åè¨±è¨¼ãèªä¸»è¿ç´ãããæ¹ã¸（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/29516.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/29516.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/29516.html</description>
+    </item>
+    <item>
+      <title>å¸ç«éåå¬åéçå ´ãã¼ãã³ã°ã©ã¤ãå¥ç´ã®èª¿å°å¼ãå·ãè¡ãã¾ãã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/29544.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/29544.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/29544.html</description>
+    </item>
+    <item>
+      <title>ä»¤å8å¹´åº¦ãå®¶åº­ç¨æå®ãã¿è¢ç°å¢åçºã¡ãã»ã¼ã¸ãã®åéã«ä¿ãæ²è¼ä½åã®æ±ºå®ç­ã«ã¤ãã¦（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/29665.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/29665.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/29665.html</description>
+    </item>
+    <item>
+      <title>è¿æ±å«å¹¡å¸æ¶è²»çæ´»ã»ã³ã¿ã¼éä¿¡ : éå»ã«è³¼å¥ããå±±æãå£²ããï¼åéåæ³ã®äºæ¬¡è¢«å®³ã«æ³¨æï¼（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/29715.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/29715.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/29715.html</description>
+    </item>
+    <item>
+      <title>ã«ã­ã¼ã©æ»è³ã¯ã¡ã¾ãã¹ã¿ã¸ã¢ã ãå®æãã¾ãã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/29724.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/29724.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/29724.html</description>
+    </item>
+    <item>
+      <title>ã9æåãã³ã³ããäº¤ä»ãµã¼ãã¹ã®ä¸æåæ­¢ã®ãç¥ãã（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/29751.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/29751.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/29751.html</description>
+    </item>
+    <item>
+      <title>è¿æ±å«å¹¡å¸å½åå¼·é­åå°åè¨ç»（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/29754.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/29754.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/29754.html</description>
+    </item>
+    <item>
+      <title>è¿æ±å«å¹¡å¸æ¶è²»çæ´»ã»ã³ã¿ã¼éä¿¡ : é»æ°ã»ã¬ã¹ã®å¥ç´ãã©ãã«ã«æ³¨æï¼（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/29850.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/29850.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/29850.html</description>
+    </item>
+    <item>
+      <title>æ»è³çã¿ã©ãã®é£æã·ã¹ãã åºæ¬è¨ç»（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/29889.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/29889.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/29889.html</description>
+    </item>
+    <item>
+      <title>ä»¤å8å¹´åº¦è±ç­ç´ æ¨é²å®éããã¯ã¹è³¼å¥æ¯æ´äºæ¥­è£å©é（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/29906.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/29906.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/29906.html</description>
+    </item>
+    <item>
+      <title>ä»¤å6å¹´åº¦äºç®（出典：近江八幡市公式サイト）</title>
+      <link>https://www.city.omihachiman.lg.jp/news/29916.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/29916.html</guid>
+      <pubDate>Fri, 04 Sep 2026 05:47:10 +0000</pubDate>
+      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/29916.html</description>
+    </item>
+    <item>
+      <title>【近江八幡市】先着2,000名様に永久トッピング特典付きの「千社札シール」をプレゼント。9月8日に一魂家近江八幡店がオープンします（出典：号外NET）</title>
+      <link>https://higashiomi-omihachiman.goguynet.jp/2026/09/04/ramen-2/</link>
+      <guid isPermaLink="true">https://higashiomi-omihachiman.goguynet.jp/2026/09/04/ramen-2/</guid>
+      <pubDate>Thu, 03 Sep 2026 21:39:44 +0000</pubDate>
+      <description>新着記事を検出しました: https://higashiomi-omihachiman.goguynet.jp/2026/09/04/ramen-2/</description>
+    </item>
+    <item>
+      <title>市民広場ワークショップを開催しました（出典：近江八幡市公式サイト）</title>
       <link>http://www.city.omihachiman.lg.jp/bosyu/29691.html</link>
       <guid isPermaLink="true">http://www.city.omihachiman.lg.jp/bosyu/29691.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: http://www.city.omihachiman.lg.jp/bosyu/29691.html</description>
     </item>
     <item>
-      <title>市営小幡観光駐車場の料金改定のお知らせ(令和6年4月1日施行)</title>
+      <title>市営小幡観光駐車場の料金改定のお知らせ(令和6年4月1日施行)（出典：近江八幡市公式サイト）</title>
       <link>http://www.city.omihachiman.lg.jp/news/27094.html</link>
       <guid isPermaLink="true">http://www.city.omihachiman.lg.jp/news/27094.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: http://www.city.omihachiman.lg.jp/news/27094.html</description>
     </item>
     <item>
-      <title>観光駐車場のご案内</title>
+      <title>観光駐車場のご案内（出典：近江八幡市公式サイト）</title>
       <link>http://www.city.omihachiman.lg.jp/news/41596.html</link>
       <guid isPermaLink="true">http://www.city.omihachiman.lg.jp/news/41596.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: http://www.city.omihachiman.lg.jp/news/41596.html</description>
     </item>
     <item>
-      <title>安土内野グラウンドのご案内</title>
+      <title>安土内野グラウンドのご案内（出典：近江八幡市公式サイト）</title>
       <link>http://www.city.omihachiman.lg.jp/soshiki/aduchi_mirai/18458.html</link>
       <guid isPermaLink="true">http://www.city.omihachiman.lg.jp/soshiki/aduchi_mirai/18458.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: http://www.city.omihachiman.lg.jp/soshiki/aduchi_mirai/18458.html</description>
     </item>
     <item>
-      <title>介護給付費通知の終了について</title>
+      <title>介護給付費通知の終了について（出典：近江八幡市公式サイト）</title>
       <link>http://www.city.omihachiman.lg.jp/soshiki/kaigo/29034.html</link>
       <guid isPermaLink="true">http://www.city.omihachiman.lg.jp/soshiki/kaigo/29034.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: http://www.city.omihachiman.lg.jp/soshiki/kaigo/29034.html</description>
     </item>
     <item>
-      <title>近江八幡市白雲館</title>
+      <title>近江八幡市白雲館（出典：近江八幡市公式サイト）</title>
       <link>http://www.city.omihachiman.lg.jp/soshiki/kanko_seisaku/kankou/shisetsu/annaijyo/847.html</link>
       <guid isPermaLink="true">http://www.city.omihachiman.lg.jp/soshiki/kanko_seisaku/kankou/shisetsu/annaijyo/847.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: http://www.city.omihachiman.lg.jp/soshiki/kanko_seisaku/kankou/shisetsu/annaijyo/847.html</description>
     </item>
     <item>
-      <title>近江八幡市地域公共交通会議</title>
+      <title>近江八幡市地域公共交通会議（出典：近江八幡市公式サイト）</title>
       <link>http://www.city.omihachiman.lg.jp/soshiki/kotsu/koukyoukoutsukaigi/index.html</link>
       <guid isPermaLink="true">http://www.city.omihachiman.lg.jp/soshiki/kotsu/koukyoukoutsukaigi/index.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: http://www.city.omihachiman.lg.jp/soshiki/kotsu/koukyoukoutsukaigi/index.html</description>
     </item>
     <item>
-      <title>ヤングケアラー相談窓口</title>
+      <title>ヤングケアラー相談窓口（出典：近江八幡市公式サイト）</title>
       <link>http://www.city.omihachiman.lg.jp/soshiki/shien/31204.html</link>
       <guid isPermaLink="true">http://www.city.omihachiman.lg.jp/soshiki/shien/31204.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: http://www.city.omihachiman.lg.jp/soshiki/shien/31204.html</description>
     </item>
     <item>
-      <title>個人情報の取扱い</title>
+      <title>個人情報の取扱い（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/2075.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/2075.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/2075.html</description>
     </item>
     <item>
-      <title>リンク・著作権について</title>
+      <title>リンク・著作権について（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/2077.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/2077.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/2077.html</description>
     </item>
     <item>
-      <title>ご利用方法</title>
+      <title>ご利用方法（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/2078.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/2078.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/2078.html</description>
     </item>
     <item>
-      <title>Foreign Language</title>
+      <title>Foreign Language（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/2079.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/2079.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/2079.html</description>
     </item>
     <item>
-      <title>各課の窓口</title>
+      <title>各課の窓口（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/2085.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/2085.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/2085.html</description>
     </item>
     <item>
-      <title>「市ホームページ」への有料広告(令和8年度分)を募集します</title>
+      <title>「市ホームページ」への有料広告(令和8年度分)を募集します（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/bosyu/17293.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/17293.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/17293.html</description>
     </item>
     <item>
-      <title>期日前投票立会人を募集します</title>
+      <title>期日前投票立会人を募集します（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/bosyu/20732.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/20732.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/20732.html</description>
     </item>
     <item>
-      <title>滋賀県政150周年記念事業パートナー募集について</title>
+      <title>滋賀県政150周年記念事業パートナー募集について（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/bosyu/21074.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/21074.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/21074.html</description>
     </item>
     <item>
-      <title>令和8年度まちづくり団体育成支援補助金事業のご案内</title>
+      <title>令和8年度まちづくり団体育成支援補助金事業のご案内（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/bosyu/22393.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/22393.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/22393.html</description>
     </item>
     <item>
-      <title>ふるさと住民制度募集開始しました</title>
+      <title>ふるさと住民制度募集開始しました（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/bosyu/22618.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/22618.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/22618.html</description>
     </item>
     <item>
-      <title>『滋賀の眺望景観ビューポイント30選』を選定しました</title>
+      <title>『滋賀の眺望景観ビューポイント30選』を選定しました（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/bosyu/22636.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/22636.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/22636.html</description>
     </item>
     <item>
-      <title>市職員採用試験(障がい者対象)のご案内【来春(令和9年4月)採用】</title>
+      <title>市職員採用試験(障がい者対象)のご案内【来春(令和9年4月)採用】（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/bosyu/22826.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/22826.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/22826.html</description>
     </item>
     <item>
-      <title>まちのコイン「ビワコ」の加盟スポット募集！！</title>
+      <title>まちのコイン「ビワコ」の加盟スポット募集！！（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/bosyu/23396.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/23396.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/23396.html</description>
     </item>
     <item>
-      <title>令和9年4月保育所・幼稚園等入所募集(一斉募集)について</title>
+      <title>令和9年4月保育所・幼稚園等入所募集(一斉募集)について（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/bosyu/23437.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/23437.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/23437.html</description>
     </item>
     <item>
-      <title>令和8年度「男女が輝いて生きる」絵手紙作品募集中！</title>
+      <title>令和8年度「男女が輝いて生きる」絵手紙作品募集中！（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/bosyu/25604.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/25604.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/25604.html</description>
     </item>
     <item>
-      <title>市職員採用試験のご案内(【初級】一般行政職)【来春(令和9年4月)採用】</title>
+      <title>市職員採用試験のご案内(【初級】一般行政職)【来春(令和9年4月)採用】（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/bosyu/25623.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/25623.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/25623.html</description>
     </item>
     <item>
-      <title>近江八幡市新庁舎ネットワーク基盤等構築業務 委託公募型プロポーザルの実施について</title>
+      <title>近江八幡市新庁舎ネットワーク基盤等構築業務 委託公募型プロポーザルの実施について（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/bosyu/25749.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/25749.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/25749.html</description>
     </item>
     <item>
-      <title>指定管理者の募集状況をお知らせします</title>
+      <title>指定管理者の募集状況をお知らせします（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/bosyu/25971.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/25971.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/25971.html</description>
     </item>
     <item>
-      <title>【締め切りました】「トライアスロン競技」ボランティア募集 (2025わたSHIGA輝く国スポリハーサル大会)</title>
+      <title>【締め切りました】「トライアスロン競技」ボランティア募集 (2025わたSHIGA輝く国スポリハーサル大会)（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/bosyu/27251.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/27251.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/27251.html</description>
     </item>
     <item>
-      <title>全国大会選考会開催のお知らせ【第64回滋賀県障害者スポーツ大会】</title>
+      <title>全国大会選考会開催のお知らせ【第64回滋賀県障害者スポーツ大会】（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/bosyu/27711.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/27711.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/27711.html</description>
     </item>
     <item>
-      <title>【募集は終了しました】わたSHIGA輝く国スポ ふるまいブース出店者募集(第1次)</title>
+      <title>【募集は終了しました】わたSHIGA輝く国スポ ふるまいブース出店者募集(第1次)（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/bosyu/27844.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/27844.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/27844.html</description>
     </item>
     <item>
-      <title>津田干拓果樹団地入植者を募集します</title>
+      <title>津田干拓果樹団地入植者を募集します（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/bosyu/27920.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/27920.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/27920.html</description>
     </item>
     <item>
-      <title>2026年度(令和8年度) 人権擁護のための作品を募集します！！</title>
+      <title>2026年度(令和8年度) 人権擁護のための作品を募集します！！（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/bosyu/28025.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/28025.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/28025.html</description>
     </item>
     <item>
-      <title>近江八幡市子ども健康部 健康推進課【会計年度任用】保健師(母子保健業務)を募集します</title>
+      <title>近江八幡市子ども健康部 健康推進課【会計年度任用】保健師(母子保健業務)を募集します（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/bosyu/28128.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/28128.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/28128.html</description>
     </item>
     <item>
-      <title>空き家情報誌にかかる広告掲載の募集について</title>
+      <title>空き家情報誌にかかる広告掲載の募集について（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/bosyu/28249.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/28249.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/28249.html</description>
     </item>
     <item>
-      <title>ネーミングライツパートナーの募集</title>
+      <title>ネーミングライツパートナーの募集（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/bosyu/28834.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/28834.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/28834.html</description>
     </item>
     <item>
-      <title>幼稚園、保育所、認定こども園及び小中学校用務員業務委託に係る公募型プロポーザルの実施について</title>
+      <title>幼稚園、保育所、認定こども園及び小中学校用務員業務委託に係る公募型プロポーザルの実施について（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/bosyu/28845.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/28845.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/28845.html</description>
     </item>
     <item>
-      <title>「近江八幡市脱炭素ビジョン」の賛同団体を募集します</title>
+      <title>「近江八幡市脱炭素ビジョン」の賛同団体を募集します（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/bosyu/29163.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/29163.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/29163.html</description>
     </item>
     <item>
-      <title>令和8年度採用の会計年度任用職員(7時間45分勤務保育教諭・延長保育含む短時間勤務保育教諭)を募集します。</title>
+      <title>令和8年度採用の会計年度任用職員(7時間45分勤務保育教諭・延長保育含む短時間勤務保育教諭)を募集します。（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/bosyu/29505.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/29505.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/29505.html</description>
     </item>
     <item>
-      <title>【入札結果】わたSHIGA輝く国スポ・障スポ近江八幡市大会報告書作成業務委託</title>
+      <title>【入札結果】わたSHIGA輝く国スポ・障スポ近江八幡市大会報告書作成業務委託（出典：近江八幡市公式サイト）</title>
       <link>https://www.city.omihachiman.lg.jp/bosyu/30163.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/30163.html</guid>
       <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
       <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/30163.html</description>
     </item>
     <item>
-      <title>会計年度任用職員【市立中学校部活動指導員】募集</title>
-      <link>https://www.city.omihachiman.lg.jp/bosyu/30215.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/30215.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/30215.html</description>
+      <title>【東近江市・近江八幡市】7日ごろまで大雨が続く可能性。あなたの家の浸水リスク、知っていますか？（出典：号外NET）</title>
+      <link>https://higashiomi-omihachiman.goguynet.jp/2026/09/03/mamorioh-heavyrain/</link>
+      <guid isPermaLink="true">https://higashiomi-omihachiman.goguynet.jp/2026/09/03/mamorioh-heavyrain/</guid>
+      <pubDate>Thu, 03 Sep 2026 09:40:37 +0000</pubDate>
+      <description>新着記事を検出しました: https://higashiomi-omihachiman.goguynet.jp/2026/09/03/mamorioh-heavyrain/</description>
     </item>
     <item>
-      <title>わたSHIGA輝く国スポ 観戦ガイドブック掲載店舗募集(第2次)</title>
-      <link>https://www.city.omihachiman.lg.jp/bosyu/30749.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/30749.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/30749.html</description>
+      <title>令和８年度下半期近江八幡市立総合医療センターにおける医薬品の供給業務の入札について（出典：近江八幡市立総合医療センター）</title>
+      <link>https://www.kenkou1.com/bid/20260226-22922/</link>
+      <guid isPermaLink="true">https://www.kenkou1.com/bid/20260226-22922/</guid>
+      <pubDate>Thu, 03 Sep 2026 17:00:00 +0900</pubDate>
+      <description>新着記事を検出しました: https://www.kenkou1.com/bid/20260226-22922/</description>
     </item>
     <item>
-      <title>データサイエンス入門クラブ参加者募集</title>
-      <link>https://www.city.omihachiman.lg.jp/bosyu/30838.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/30838.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/30838.html</description>
+      <title>【近江八幡市】ドラマ出演者がズラリ。「秀吉の城」の関連行事として「豊臣兄弟！」全身パネル展が安土城考古博物館でスタートしました（出典：号外NET）</title>
+      <link>https://higashiomi-omihachiman.goguynet.jp/2026/09/03/panel-3/</link>
+      <guid isPermaLink="true">https://higashiomi-omihachiman.goguynet.jp/2026/09/03/panel-3/</guid>
+      <pubDate>Wed, 02 Sep 2026 21:39:35 +0000</pubDate>
+      <description>新着記事を検出しました: https://higashiomi-omihachiman.goguynet.jp/2026/09/03/panel-3/</description>
     </item>
     <item>
-      <title>図書館システム再構築事業の公募型プロポーザルについて【終了】</title>
-      <link>https://www.city.omihachiman.lg.jp/bosyu/31946.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/31946.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/31946.html</description>
+      <title>駐車場有料化のお知らせ（出典：近江八幡市立総合医療センター）</title>
+      <link>https://www.kenkou1.com/news/tyuusyajou/index.html</link>
+      <guid isPermaLink="true">https://www.kenkou1.com/news/tyuusyajou/index.html</guid>
+      <pubDate>Tue, 01 Sep 2026 09:00:00 +0900</pubDate>
+      <description>新着記事を検出しました: https://www.kenkou1.com/news/tyuusyajou/index.html</description>
     </item>
     <item>
-      <title>広報おうみはちまんへの有料広告(令和8年度分)を募集します</title>
-      <link>https://www.city.omihachiman.lg.jp/bosyu/40967.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/40967.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/40967.html</description>
+      <title>【近江八幡市】安土城発掘調査の最新情報に触れるチャンス。入場無料の「令和の大調査　特別史跡安土城跡発掘調査講演会」が9月6日に開催予定（出典：号外NET）</title>
+      <link>https://higashiomi-omihachiman.goguynet.jp/2026/08/29/azuti/</link>
+      <guid isPermaLink="true">https://higashiomi-omihachiman.goguynet.jp/2026/08/29/azuti/</guid>
+      <pubDate>Fri, 28 Aug 2026 21:39:47 +0000</pubDate>
+      <description>新着記事を検出しました: https://higashiomi-omihachiman.goguynet.jp/2026/08/29/azuti/</description>
     </item>
     <item>
-      <title>マルチスポーツクラブ参加者募集</title>
-      <link>https://www.city.omihachiman.lg.jp/bosyu/41375.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/41375.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/41375.html</description>
+      <title>市民公開講座の開催について（出典：近江八幡市立総合医療センター）</title>
+      <link>https://www.kenkou1.com/medical-center/seminar-66629/</link>
+      <guid isPermaLink="true">https://www.kenkou1.com/medical-center/seminar-66629/</guid>
+      <pubDate>Thu, 27 Aug 2026 15:00:00 +0900</pubDate>
+      <description>新着記事を検出しました: https://www.kenkou1.com/medical-center/seminar-66629/</description>
     </item>
     <item>
-      <title>近江八幡市地域クラブ活動紹介</title>
-      <link>https://www.city.omihachiman.lg.jp/bosyu/41396.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/41396.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/41396.html</description>
+      <title>【近江八幡市】ゲーム・ワークショップのコーナーも同時開催。ウーパールーパー道場が8月29日・30日にイオン近江八幡で催される予定です（出典：号外NET）</title>
+      <link>https://higashiomi-omihachiman.goguynet.jp/2026/08/27/wooper/</link>
+      <guid isPermaLink="true">https://higashiomi-omihachiman.goguynet.jp/2026/08/27/wooper/</guid>
+      <pubDate>Wed, 26 Aug 2026 21:39:55 +0000</pubDate>
+      <description>新着記事を検出しました: https://higashiomi-omihachiman.goguynet.jp/2026/08/27/wooper/</description>
     </item>
     <item>
-      <title>日本伝統文化クラブ参加者募集</title>
-      <link>https://www.city.omihachiman.lg.jp/bosyu/41400.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/41400.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/41400.html</description>
+      <title>医師事務作業補助者（会計年度任用職員）を募集します。（出典：近江八幡市立総合医療センター）</title>
+      <link>https://www.kenkou1.com/recruit/medicalclerk/</link>
+      <guid isPermaLink="true">https://www.kenkou1.com/recruit/medicalclerk/</guid>
+      <pubDate>Mon, 24 Aug 2026 17:00:00 +0900</pubDate>
+      <description>新着記事を検出しました: https://www.kenkou1.com/recruit/medicalclerk/</description>
     </item>
     <item>
-      <title>令和8年度「近江八幡市まちづくり芸術振興事業補助金・二次募集」事業計画を募集します</title>
-      <link>https://www.city.omihachiman.lg.jp/bosyu/41888.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/41888.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/41888.html</description>
+      <title>医療事務業務委託選定にかかる公募型プロポーザルについて（出典：近江八幡市立総合医療センター）</title>
+      <link>https://www.kenkou1.com/news/20260422-13940-47039-32957/index.html</link>
+      <guid isPermaLink="true">https://www.kenkou1.com/news/20260422-13940-47039-32957/index.html</guid>
+      <pubDate>Mon, 10 Aug 2026 13:00:00 +0900</pubDate>
+      <description>新着記事を検出しました: https://www.kenkou1.com/news/20260422-13940-47039-32957/index.html</description>
     </item>
     <item>
-      <title>本市の部活動の地域展開の取組について</title>
-      <link>https://www.city.omihachiman.lg.jp/bosyu/42236.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/42236.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/42236.html</description>
+      <title>患者給食業務委託業者選定にかかる公募型プロポーザルについて（出典：近江八幡市立総合医療センター）</title>
+      <link>https://www.kenkou1.com/news/20260422-13940/index.html</link>
+      <guid isPermaLink="true">https://www.kenkou1.com/news/20260422-13940/index.html</guid>
+      <pubDate>Tue, 14 Jul 2026 17:00:00 +0900</pubDate>
+      <description>新着記事を検出しました: https://www.kenkou1.com/news/20260422-13940/index.html</description>
     </item>
     <item>
-      <title>第64回滋賀県障害者スポーツ大会【団体競技】兼全国大会選考会のチーム事前エントリーについて</title>
-      <link>https://www.city.omihachiman.lg.jp/bosyu/42266.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/42266.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/42266.html</description>
+      <title>開設20周年記念講演会の開催について（出典：近江八幡市立総合医療センター）</title>
+      <link>https://www.kenkou1.com/news/seminar-20th-20260618/index.html</link>
+      <guid isPermaLink="true">https://www.kenkou1.com/news/seminar-20th-20260618/index.html</guid>
+      <pubDate>Fri, 19 Jun 2026 09:00:00 +0900</pubDate>
+      <description>新着記事を検出しました: https://www.kenkou1.com/news/seminar-20th-20260618/index.html</description>
     </item>
     <item>
-      <title>第70回 近江八幡市美術展覧会「鑑賞のしおり」広告主募集について</title>
-      <link>https://www.city.omihachiman.lg.jp/bosyu/42326.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/42326.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/42326.html</description>
+      <title>駐車場運営管理業務公募型プロポーザルについて（質疑および回答）（出典：近江八幡市立総合医療センター）</title>
+      <link>https://www.kenkou1.com/news/20260420-19239/index.html</link>
+      <guid isPermaLink="true">https://www.kenkou1.com/news/20260420-19239/index.html</guid>
+      <pubDate>Fri, 01 May 2026 19:00:00 +0900</pubDate>
+      <description>新着記事を検出しました: https://www.kenkou1.com/news/20260420-19239/index.html</description>
     </item>
     <item>
-      <title>市職員採用試験のご案内(一般行政職〔ICT・デジタル採用〕、図書館司書、土木・建築技術職)【令和9年4月採用】</title>
-      <link>https://www.city.omihachiman.lg.jp/bosyu/42401.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/42401.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/42401.html</description>
+      <title>レストラン・職員食堂・売店出店事業者 公募型プロポーザルについて（出典：近江八幡市立総合医療センター）</title>
+      <link>https://www.kenkou1.com/bid/20260422/</link>
+      <guid isPermaLink="true">https://www.kenkou1.com/bid/20260422/</guid>
+      <pubDate>Wed, 22 Apr 2026 15:00:00 +0900</pubDate>
+      <description>新着記事を検出しました: https://www.kenkou1.com/bid/20260422/</description>
     </item>
     <item>
-      <title>募集情報</title>
-      <link>https://www.city.omihachiman.lg.jp/bosyu/index.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/index.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/bosyu/index.html</description>
+      <title>2026年4月からの外来診療担当表について（出典：近江八幡市立総合医療センター）</title>
+      <link>https://www.kenkou1.com/media/gairaitantou20260401.pdf</link>
+      <guid isPermaLink="true">https://www.kenkou1.com/media/gairaitantou20260401.pdf</guid>
+      <pubDate>Thu, 26 Mar 2026 11:10:21 +0900</pubDate>
+      <description>新着記事を検出しました: https://www.kenkou1.com/media/gairaitantou20260401.pdf</description>
     </item>
     <item>
-      <title>一日合同行政相談所(行政なんでも相談所)を開設します！</title>
-      <link>https://www.city.omihachiman.lg.jp/event/23468.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/event/23468.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/event/23468.html</description>
+      <title>令和8年度近江八幡市病院企業職員（看護職）を募集します。（出典：近江八幡市立総合医療センター）</title>
+      <link>https://www.kenkou1.com/nurse/</link>
+      <guid isPermaLink="true">https://www.kenkou1.com/nurse/</guid>
+      <pubDate>Mon, 02 Mar 2026 17:00:00 +0900</pubDate>
+      <description>新着記事を検出しました: https://www.kenkou1.com/nurse/</description>
     </item>
     <item>
-      <title>令和9年(2027年)成人式を開催します</title>
-      <link>https://www.city.omihachiman.lg.jp/event/26430.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/event/26430.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/event/26430.html</description>
-    </item>
-    <item>
-      <title>【11月8日開催】第50回記念 2026水郷の里マラソンを開催します</title>
-      <link>https://www.city.omihachiman.lg.jp/event/28251.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/event/28251.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/event/28251.html</description>
-    </item>
-    <item>
-      <title>【開催報告】西の湖・三ぽうヨシ交流会【オープンガバナンス推進事業】を開催しました！</title>
-      <link>https://www.city.omihachiman.lg.jp/event/29734.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/event/29734.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/event/29734.html</description>
-    </item>
-    <item>
-      <title>SDGsこども特派員vol.8を実施しました！</title>
-      <link>https://www.city.omihachiman.lg.jp/event/29852.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/event/29852.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/event/29852.html</description>
-    </item>
-    <item>
-      <title>地域おこし協力隊【沖島】卒業展のお知らせ</title>
-      <link>https://www.city.omihachiman.lg.jp/event/41474.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/event/41474.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/event/41474.html</description>
-    </item>
-    <item>
-      <title>令和8年度市民大学講座</title>
-      <link>https://www.city.omihachiman.lg.jp/event/41605.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/event/41605.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/event/41605.html</description>
-    </item>
-    <item>
-      <title>「西の湖(みずべ)の宝さがし！」生き物・植物から見つけるオーガニックな未来</title>
-      <link>https://www.city.omihachiman.lg.jp/event/42252.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/event/42252.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/event/42252.html</description>
-    </item>
-    <item>
-      <title>【毎週金曜日11時から16時まで】地域おこし協力隊による空き家相談窓口を開設しています</title>
-      <link>https://www.city.omihachiman.lg.jp/event/42345.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/event/42345.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/event/42345.html</description>
-    </item>
-    <item>
-      <title>ふるさと音楽祭2026</title>
-      <link>https://www.city.omihachiman.lg.jp/event/42360.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/event/42360.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/event/42360.html</description>
-    </item>
-    <item>
-      <title>安土城発掘調査の最新情報を開催します</title>
-      <link>https://www.city.omihachiman.lg.jp/event/42404.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/event/42404.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/event/42404.html</description>
-    </item>
-    <item>
-      <title>イベント情報</title>
-      <link>https://www.city.omihachiman.lg.jp/event/index.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/event/index.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/event/index.html</description>
-    </item>
-    <item>
-      <title>ホーム／近江八幡市</title>
-      <link>https://www.city.omihachiman.lg.jp/index.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/index.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/index.html</description>
-    </item>
-    <item>
-      <title>り災に対する支援制度をお知らせします</title>
-      <link>https://www.city.omihachiman.lg.jp/juyo_info/25614.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/juyo_info/25614.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/juyo_info/25614.html</description>
-    </item>
-    <item>
-      <title>近江八幡市役所の開庁時間と電話受付時間の変更について</title>
-      <link>https://www.city.omihachiman.lg.jp/juyo_info/36950.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/juyo_info/36950.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/juyo_info/36950.html</description>
-    </item>
-    <item>
-      <title>重要なお知らせ</title>
-      <link>https://www.city.omihachiman.lg.jp/juyo_info/index.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/juyo_info/index.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/juyo_info/index.html</description>
-    </item>
-    <item>
-      <title>観光・特産</title>
-      <link>https://www.city.omihachiman.lg.jp/kanko/kanko/index.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/kanko/kanko/index.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/kanko/kanko/index.html</description>
-    </item>
-    <item>
-      <title>市庁舎整備基本設計(案)の市民説明会でいただいたご意見について</title>
-      <link>https://www.city.omihachiman.lg.jp/news/18860.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/18860.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/18860.html</description>
-    </item>
-    <item>
-      <title>就学前施設における感染症対策について</title>
-      <link>https://www.city.omihachiman.lg.jp/news/19496.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/19496.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/19496.html</description>
-    </item>
-    <item>
-      <title>新しい市庁舎 Times</title>
-      <link>https://www.city.omihachiman.lg.jp/news/20058.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/20058.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/20058.html</description>
-    </item>
-    <item>
-      <title>健康ふれあい公園『児童遊戯場』利用開始のお知らせ</title>
-      <link>https://www.city.omihachiman.lg.jp/news/22021.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/22021.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/22021.html</description>
-    </item>
-    <item>
-      <title>琵琶湖版SDGs「マザーレイクゴールズ(MLGs)」への賛同について</title>
-      <link>https://www.city.omihachiman.lg.jp/news/22274.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/22274.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/22274.html</description>
-    </item>
-    <item>
-      <title>ふるさと住民制度募集開始しました</title>
-      <link>https://www.city.omihachiman.lg.jp/news/22617.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/22617.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/22617.html</description>
-    </item>
-    <item>
-      <title>近江八幡市職員採用試験の結果について【令和8年8月21日、22日及び23日】</title>
-      <link>https://www.city.omihachiman.lg.jp/news/23241.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/23241.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/23241.html</description>
-    </item>
-    <item>
-      <title>まちのコイン「ビワコ」で、もっとまちを楽しんでみませんか</title>
-      <link>https://www.city.omihachiman.lg.jp/news/23397.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/23397.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/23397.html</description>
-    </item>
-    <item>
-      <title>5類感染症へ移行後(5月8日から)の学校における新型コロナウイルス感染症対策について(お知らせ)</title>
-      <link>https://www.city.omihachiman.lg.jp/news/23773.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/23773.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/23773.html</description>
-    </item>
-    <item>
-      <title>地図情報を利用した行政情報の公開について</title>
-      <link>https://www.city.omihachiman.lg.jp/news/23992.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/23992.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/23992.html</description>
-    </item>
-    <item>
-      <title>市内のSDGs・MLGsの取組事例を募集します【募集終了】</title>
-      <link>https://www.city.omihachiman.lg.jp/news/24129.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/24129.html</guid>
-      <pubDate>Thu, 03 Sep 2026 13:13:21 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/news/24129.html</description>
+      <title>病院情報の公表について（出典：近江八幡市立総合医療センター）</title>
+      <link>https://www.kenkou1.com/medical-center/announce/</link>
+      <guid isPermaLink="true">https://www.kenkou1.com/medical-center/announce/</guid>
+      <pubDate>Tue, 30 Sep 2025 11:00:00 +0900</pubDate>
+      <description>新着記事を検出しました: https://www.kenkou1.com/medical-center/announce/</description>
     </item>
   </channel>
 </rss>
