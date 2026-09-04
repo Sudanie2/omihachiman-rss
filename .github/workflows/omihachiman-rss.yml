@@ -11,6 +11,10 @@ on:
         description: "ハブページ一覧(hubs.json)を再構築する"
         type: boolean
         default: false
+      repair_titles:
+        description: "既存記事のタイトルを取り直す(不具合修復用)"
+        type: boolean
+        default: false
 permissions:
   contents: write
 # 実行が重なるとpushが競合するため、同時に1つしか動かさない
@@ -47,6 +51,10 @@ jobs:
       - name: Collect from Shiga Police page
         run: |
           python fetch_shiga_police_omihachiman.py
+      - name: Repair existing titles (manual only)
+        if: github.event.inputs.repair_titles == 'true'
+        run: |
+          python repair_titles.py
       - name: Build RSS feed
         run: |
           set -euo pipefail
