@@ -93,7 +93,11 @@ def main():
 
     content_blob = extract_content_blob(full_text)
     if not content_blob:
-        print(f"[{SOURCE_NAME}] 本文が見つかりません。ページ構造が変わった可能性があります。")
+        # 原因調査のため、実際に何を受け取ったかを出力する
+        compact = re.sub(r"\s+", "", full_text)
+        print(f"[{SOURCE_NAME}] 本文が見つかりません。")
+        print(f"  HTTPステータス: {resp.status_code} / HTML長: {len(html)}文字 / テキスト長: {len(compact)}文字")
+        print(f"  受信テキスト冒頭: {compact[:200]}")
         return
 
     matches = list(DATE_PATTERN.finditer(content_blob))
