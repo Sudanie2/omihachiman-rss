@@ -48,9 +48,18 @@ def load_json(path: Path, default):
     return default
 
 
-def save_json(path: Path, data):
+def save_json(path: Path, data, compact: bool = False):
+    """
+    JSONを保存する。
+    compact=True の場合は改行・空白を省いて保存する。
+    件数が増え続けるファイル(known_links.json)はGit履歴の肥大を抑えるため
+    compactで保存する。
+    """
     with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+        if compact:
+            json.dump(data, f, ensure_ascii=False, separators=(",", ":"))
+        else:
+            json.dump(data, f, ensure_ascii=False, indent=2)
 
 
 # ---- 時刻 ----
@@ -181,6 +190,77 @@ def get_robot_parser(base_url: str):
     return rp
 
 
+# ---- ページタイトルの抽出 ----
+# タイトル末尾に付くサイト名を除去するパターン
+TITLE_STRIP_PATTERNS = [
+    r"\s*[|｜\-–—/／]\s*【公式】近江八幡市観光情報サイト\s*$",
+    r"\s*[|｜\-–—/／]\s*近江八幡市観光情報サイト\s*$",
+    r"\s*[|｜\-–—/／]\s*近江八幡市立図書館\s*$",
+    r"\s*[|｜\-–—/／]\s*滋賀県警\s*$",
+    r"\s*[|｜\-–—/／]\s*近江八幡市立総合医療センター\s*$",
+    r"\s*[|｜\-–—/／]\s*近江八幡市\s*$",
+    r"\s*[|｜\-–—/／]\s*新着情報\s*$",
+    # 「記事名｜カテゴリ｜サイト名」形式のカテゴリ部分
+    r"\s*[|｜]\s*(イベント|スポット・体験|スポット体験|グルメ|特集|モデルコース|土産|お土産|宿泊|アクセス|お気に入り|観光情報)\s*$",
+]
+
+# これ自体が出てきた場合は「記事名ではなくサイト名」とみなし、次の候補を探す
+REJECT_TITLES = {
+    "近江八幡市公式観光サイト",
+    "【公式】近江八幡市観光情報サイト",
+    "近江八幡市観光情報サイト",
+    "近江八幡市立図書館",
+    "近江八幡市",
+    "滋賀県警",
+    "近江八幡市立総合医療センター",
+    "新着情報",
+    "",
+}
+
+
+def _clean_title(text: str) -> str:
+    text = re.sub(r"\s+", " ", text or "").strip()
+    # サイト名の除去は繰り返し適用する(「記事名｜カテゴリ｜サイト名」への対応)
+    for _ in range(3):
+        before = text
+        for pattern in TITLE_STRIP_PATTERNS:
+            text = re.sub(pattern, "", text).strip()
+        if text == before:
+            break
+    return text
+
+
+def extract_page_title(soup) -> str:
+    """
+    ページから記事タイトルを取り出す。
+
+    サイトによって記事名の置き場所が異なる(h1がサイトロゴになっている等)ため、
+    og:title → title → h1 → h2 の順に候補を試し、
+    サイト名そのものだった場合は次の候補へ進む。
+    """
+    candidates = []
+
+    for prop in ("og:title", "twitter:title"):
+        el = soup.find("meta", attrs={"property": prop}) or soup.find(
+            "meta", attrs={"name": prop}
+        )
+        if el and el.get("content"):
+            candidates.append(el["content"])
+
+    if soup.title and soup.title.string:
+        candidates.append(soup.title.string)
+
+    for sel in ("h1", "h2"):
+        el = soup.select_one(sel)
+        if el:
+            candidates.append(el.get_text(strip=True))
+
+    for raw in candidates:
+        cleaned = _clean_title(raw)
+        if cleaned and cleaned not in REJECT_TITLES:
+            return cleaned
+
+    return "(タイトル不明)"
 # ---- URL ----
 def normalize_url(url: str) -> str:
     return url.split("#")[0]
@@ -205,7 +285,7 @@ def merge_new_items(new_items, known_updates):
 
     known = load_json(KNOWN_LINKS_FILE, {})
     known.update(known_updates)
-    save_json(KNOWN_LINKS_FILE, known)
+    save_json(KNOWN_LINKS_FILE, known, compact=True)
 
     if new_items:
         items = load_json(FEED_ITEMS_FILE, [])
