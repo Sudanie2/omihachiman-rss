@@ -37,6 +37,8 @@ SOURCE_BY_HOST = {
     "www.kenkou1.com": "近江八幡市立総合医療センター",
     "www.pref.shiga.lg.jp": "近江八幡警察署(滋賀県警)",
     "library.city.omihachiman.shiga.jp": "近江八幡市立図書館",
+    "bungei.or.jp": "安土文芸の郷",
+    "www.bungei.or.jp": "安土文芸の郷",
 }
 
 
@@ -72,14 +74,31 @@ def now_rfc822() -> str:
 
 
 def parse_pubdate(text):
-    """RFC822形式の日時文字列をdatetimeに変換。失敗時は現在時刻。"""
+    """
+    日時文字列をdatetimeに変換する。
+    RSS 2.0のRFC822形式("Thu, 11 Sep 2025 00:00:00 +0900")と、
+    RSS 1.0/AtomのISO8601形式("2025-09-11T00:00:00+09:00")の両方に対応。
+    失敗時は現在時刻を返す。
+    """
+    if not text:
+        return datetime.now(timezone.utc)
+    text = text.strip()
+
     try:
         dt = parsedate_to_datetime(text)
-        if dt.tzinfo is None:
-            dt = dt.replace(tzinfo=timezone.utc)
-        return dt
+        if dt is not None:
+            return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
     except Exception:
-        return datetime.now(timezone.utc)
+        pass
+
+    try:
+        iso = text.replace("Z", "+00:00")
+        dt = datetime.fromisoformat(iso)
+        return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
+    except Exception:
+        pass
+
+    return datetime.now(timezone.utc)
 
 
 # ---- HTTP ----
