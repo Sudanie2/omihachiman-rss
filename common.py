@@ -39,6 +39,7 @@ SOURCE_BY_HOST = {
     "library.city.omihachiman.shiga.jp": "近江八幡市立図書館",
     "bungei.or.jp": "安土文芸の郷",
     "8cci.com": "近江八幡商工会議所",
+    "www.omi8man-kenkofureai.jp": "近江八幡市立健康ふれあい公園",
     "www.8cci.com": "近江八幡商工会議所",
     "www.bungei.or.jp": "安土文芸の郷",
 }
