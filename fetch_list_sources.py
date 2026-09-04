@@ -6,8 +6,12 @@
 RSS配信がなく、「日付 + タイトルリンク」が並ぶ一覧ページを持つサイトを扱う。
 
 対象:
-  - 近江八幡商工会議所      : カテゴリタグ「お知らせ」の記事のみ
+  - 近江八幡商工会議所           : カテゴリタグ「お知らせ」の記事のみ
+  - ラコリーナ近江八幡           : 新着情報の全記事
   - 近江八幡市立健康ふれあい公園 : 新着情報の全記事
+
+注意: サイトによっては「日付」と「タイトル」が別々のリンクになっており、
+どちらも同じ記事を指す。日付だけのリンクはタイトルとして採用しない。
 
 1つのサイトで取得に失敗しても、他のサイトの処理は続行する。
 """
@@ -50,6 +54,15 @@ LIST_SOURCES = [
         "drop_query": [],
     },
     {
+        "name": "ラコリーナ近江八幡",
+        "base": "https://taneya.jp",
+        "url": "https://taneya.jp/la_collina/news/",
+        "tags": [],
+        "tag_filter": None,
+        "link_pattern": r"/la_collina/news/detail/\d+",
+        "drop_query": [],
+    },
+    {
         "name": "近江八幡市立健康ふれあい公園",
         "base": "https://www.omi8man-kenkofureai.jp",
         "url": "https://www.omi8man-kenkofureai.jp/news/index.html",
@@ -62,6 +75,8 @@ LIST_SOURCES = [
 ]
 
 DATE_PATTERN = re.compile(r"(20\d{2})[.\-/年](\d{1,2})[.\-/月](\d{1,2})")
+# 「2026年9月1日」のように日付だけのリンク(タイトルではない)を判定する
+DATE_ONLY_PATTERN = re.compile(r"^\s*20\d{2}[.\-/年]\s*\d{1,2}[.\-/月]\s*\d{1,2}\s*日?\s*$")
 
 
 def clean_url(url: str, drop_query) -> str:
@@ -135,6 +150,10 @@ def process_source(source, known, seen):
 
         raw_text = a.get_text(" ", strip=True)
         if not raw_text:
+            continue
+
+        # 日付だけのリンクは、同じ記事のタイトルリンクが別にあるので飛ばす
+        if DATE_ONLY_PATTERN.match(raw_text):
             continue
 
         tag, title = split_tag_and_title(raw_text, source["tags"])
