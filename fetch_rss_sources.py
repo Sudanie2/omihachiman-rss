@@ -30,7 +30,9 @@ from common import (
 RSS_SOURCES = [
     {
         "name": "近江八幡経済新聞",
-        "url": "https://omihachiman.keizai.biz/rss.html",
+        # 注意: /rss.html は「RSSについて」の説明ページ(HTML)。
+        # 実際のフィードは /rss.xml
+        "url": "https://omihachiman.keizai.biz/rss.xml",
         "title_filter": None,
     },
     {
