@@ -95,7 +95,6 @@ def process_source(source, known):
                 "title": title,
                 "link": link,
                 "source": source["name"],
-                "description": f"新着記事を検出しました: {link}",
                 "pubDate": pub_rfc822,
             }
         )
