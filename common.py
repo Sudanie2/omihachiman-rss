@@ -90,19 +90,58 @@ def fetch_bytes(url: str, session=None):
     return resp
 
 
+# Pythonが直接扱えない文字コード名の読み替え表
+ENCODING_ALIASES = {
+    "cp51932": "euc_jp",
+    "x-sjis": "cp932",
+    "shift-jis": "shift_jis",
+    "x-euc-jp": "euc_jp",
+    "windows-31j": "cp932",
+}
+
+
+def _normalize_encoding(enc):
+    if not enc:
+        return None
+    return ENCODING_ALIASES.get(enc.strip().lower(), enc)
+
+
 def decode_response(resp) -> str:
     """
-    文字コードを頑健に判定してテキスト化する。
-    サーバー申告の文字コード名がPythonで認識できない場合(例: cp51932)は
-    次の候補へ順に切り替える。
+    文字コードを正しく判定してテキスト化する。
+
+    注意: requestsは、応答ヘッダーに文字コードの指定が無いHTMLを
+    一律「ISO-8859-1(欧文用)」とみなすため、resp.encodingをそのまま
+    信用すると日本語が文字化けする。そこで以下の順に候補を試す。
+      1. 応答ヘッダーで文字コードが明示されている場合のみ、その指定
+      2. HTML/XML内の <meta charset> 等の宣言
+      3. 中身から推定した文字コード
+      4. utf-8
     """
-    for enc in (resp.encoding, resp.apparent_encoding, "utf-8"):
+    candidates = []
+
+    content_type = resp.headers.get("Content-Type", "").lower()
+    if "charset=" in content_type:
+        candidates.append(resp.encoding)
+
+    # HTML/XMLの冒頭にある文字コード宣言を読む
+    head = resp.content[:4096]
+    m = re.search(rb"""charset=["']?([\w\-]+)""", head, re.IGNORECASE)
+    if m:
+        candidates.append(m.group(1).decode("ascii", errors="ignore"))
+
+    candidates.append(resp.apparent_encoding)
+    candidates.append("utf-8")
+
+    for enc in candidates:
+        enc = _normalize_encoding(enc)
         if not enc:
             continue
         try:
             return resp.content.decode(enc, errors="replace")
         except (LookupError, TypeError):
             continue
+
     return resp.content.decode("utf-8", errors="replace")
 
 
