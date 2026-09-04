@@ -9,6 +9,7 @@
 """
 
 import json
+import re
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
@@ -26,6 +27,15 @@ FEED_ITEMS_FILE = Path("rss_items.json")
 FEED_FILE = Path("rss.xml")
 FEED_MAX_ITEMS = 200
 
+
+
+def sanitize_xml_text(text: str) -> str:
+    """RSS配信元の不正なXML(制御文字・未エスケープの&等)を補正する"""
+    # XML 1.0で許可されない制御文字を除去
+    text = re.sub(r"[^\x09\x0A\x0D\x20-\uD7FF\uE000-\uFFFD]", "", text)
+    # 実体参照でない生の "&" を "&amp;" にエスケープ
+    text = re.sub(r"&(?!(?:amp|lt|gt|quot|apos|#\d+|#x[0-9a-fA-F]+);)", "&amp;", text)
+    return text
 
 def load_json(path: Path, default):
     if path.exists():
@@ -90,7 +100,13 @@ def main():
     resp = requests.get(SOURCE_RSS_URL, headers=headers, timeout=REQUEST_TIMEOUT_SEC)
     resp.raise_for_status()
 
-    root = ET.fromstring(resp.content)
+    raw_text = resp.content.decode(resp.encoding or resp.apparent_encoding or "utf-8", errors="replace")
+    cleaned_text = sanitize_xml_text(raw_text)
+    try:
+        root = ET.fromstring(cleaned_text)
+    except ET.ParseError as e:
+        print(f"RSSのXML解析に失敗しました: {e}")
+        return
     channel = root.find("channel")
     if channel is None:
         print("RSSの形式が想定と異なります(channel要素が見つかりません)。中止します。")
