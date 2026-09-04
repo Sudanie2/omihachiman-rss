@@ -21,6 +21,7 @@
     --bosyu: #8A6A17;
     --event: #4B6A53;
     --dept: #5B5850;
+    --external: #6B4A85;
     --focus: #1F5FA8;
   }
 
@@ -164,6 +165,7 @@
   .item.cat-bosyu .bar     { background: var(--bosyu); }
   .item.cat-event .bar     { background: var(--event); }
   .item.cat-dept .bar      { background: var(--dept); }
+  .item.cat-external .bar  { background: var(--external); }
 
   .item .tag {
     font-size: 12px;
@@ -174,6 +176,7 @@
   .item.cat-bosyu .tag     { color: var(--bosyu); }
   .item.cat-event .tag     { color: var(--event); }
   .item.cat-dept .tag      { color: var(--dept); }
+  .item.cat-external .tag  { color: var(--external); }
 
   .item a.title {
     display: block;
@@ -280,6 +283,7 @@
 
 <script>
 (function () {
+  const CITY_HOST = 'www.city.omihachiman.lg.jp';
   const CATEGORY_RULES = [
     { test: (p) => p.startsWith('/juyo_info/'), key: 'important', label: '重要' },
     { test: (p) => p.startsWith('/news/'),      key: 'news',      label: 'お知らせ' },
@@ -288,12 +292,16 @@
     { test: (p) => p.startsWith('/soshiki/'),   key: 'dept',      label: '各課' },
   ];
   const DEFAULT_CATEGORY = { key: 'dept', label: 'その他' };
+  const EXTERNAL_CATEGORY = { key: 'external', label: '地域ニュース' };
 
   function categorize(url) {
     try {
-      const path = new URL(url).pathname;
+      const u = new URL(url);
+      if (u.hostname !== CITY_HOST) {
+        return EXTERNAL_CATEGORY;
+      }
       for (const rule of CATEGORY_RULES) {
-        if (rule.test(path)) return rule;
+        if (rule.test(u.pathname)) return rule;
       }
     } catch (e) { /* fall through */ }
     return DEFAULT_CATEGORY;
@@ -369,6 +377,7 @@
       { key: 'bosyu', label: '募集' },
       { key: 'event', label: 'イベント' },
       { key: 'dept', label: '各課' },
+      { key: 'external', label: '地域ニュース' },
     ].filter((o) => o.key === 'all' || counts[o.key] > 0);
 
     const nav = document.getElementById('filters');
@@ -387,25 +396,35 @@
     }
   }
 
-  fetch('./rss_items.json', { cache: 'no-store' })
-    .then((res) => {
-      if (!res.ok) throw new Error('rss_items.json を取得できませんでした');
-      return res.json();
-    })
-    .then((data) => {
-      allItems = data.map((it) => ({
+  function fetchJsonSafe(path) {
+    // manual_items.json はまだ存在しない場合があるため、失敗時は空配列として扱う
+    return fetch(path, { cache: 'no-store' })
+      .then((res) => (res.ok ? res.json() : []))
+      .catch(() => []);
+  }
+
+  Promise.all([
+    fetchJsonSafe('./rss_items.json'),
+    fetchJsonSafe('./manual_items.json'),
+  ])
+    .then(([rssData, manualData]) => {
+      if (rssData.length === 0 && manualData.length === 0) {
+        throw new Error('情報を取得できませんでした');
+      }
+
+      const combined = [...rssData, ...manualData].map((it) => ({
         title: it.title,
         link: it.link,
         date: new Date(it.pubDate),
         category: categorize(it.link),
       }));
 
-      if (allItems.length > 0) {
-        document.getElementById('updated-at').textContent =
-          `最終確認: ${formatUpdated(allItems[0].date)}`;
-      } else {
-        document.getElementById('updated-at').textContent = '最終確認: -';
-      }
+      combined.sort((a, b) => b.date - a.date);
+      allItems = combined;
+
+      document.getElementById('updated-at').textContent = allItems.length > 0
+        ? `最終確認: ${formatUpdated(allItems[0].date)}`
+        : '最終確認: -';
 
       buildFilters();
       render();
