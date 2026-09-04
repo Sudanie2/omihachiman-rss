@@ -46,13 +46,16 @@ def build_rss(items) -> str:
         is_permalink = "false" if it.get("guid") else "true"
         pubdate = it.get("pubDate") or now_rfc822()
 
+        # 中身のある説明文がある場合のみ description を出力する
+        desc = (it.get("description") or "").strip()
+        desc_xml = f"\n      <description>{esc(desc)}</description>" if desc else ""
+
         entries_xml.append(
             f"""    <item>
       <title>{esc(title)}</title>
       <link>{esc(it['link'])}</link>
       <guid isPermaLink="{is_permalink}">{esc(guid)}</guid>
-      <pubDate>{pubdate}</pubDate>
-      <description>{esc(it.get('description', ''))}</description>
+      <pubDate>{pubdate}</pubDate>{desc_xml}
     </item>"""
         )
 
@@ -67,6 +70,28 @@ def build_rss(items) -> str:
   </channel>
 </rss>
 """
+
+
+def report_sizes():
+    """
+    公開ファイルの容量を報告する。
+    GitHub Pagesの制限(リポジトリ1GB)に対する余裕を毎回確認できるようにする。
+    """
+    targets = ["rss.xml", "rss_items.json", "known_links.json", "hubs.json", "index.html"]
+    total = 0
+    parts = []
+    for name in targets:
+        path = Path(name)
+        if path.exists():
+            kb = path.stat().st_size / 1024
+            total += kb
+            parts.append(f"{name} {kb:.0f}KB")
+    print("ファイル容量: " + " / ".join(parts) + f" (合計 {total/1024:.1f}MB)")
+
+    # 目安として合計50MBを超えたら知らせる(1GB上限に対して十分手前)
+    if total / 1024 > 50:
+        print("【注意】公開ファイルの合計が50MBを超えました。GitHubの1GB上限に備え、"
+              "known_links.jsonの整理を検討してください。")
 
 
 def main():
@@ -87,11 +112,13 @@ def main():
     )
     if fingerprint == prev_fingerprint and FEED_FILE.exists():
         print("記事に変化がないため rss.xml の更新をスキップします。")
+        report_sizes()
         return
 
     FEED_FILE.write_text(build_rss(items), encoding="utf-8")
     FINGERPRINT_FILE.write_text(fingerprint, encoding="utf-8")
     print(f"rss.xml を更新しました({len(items)}件)。")
+    report_sizes()
 
 
 if __name__ == "__main__":
