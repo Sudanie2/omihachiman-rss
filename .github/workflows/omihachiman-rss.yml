@@ -47,6 +47,10 @@ jobs:
         run: |
           set -euo pipefail
           python watch_omi8_hubs.py
+      - name: Fetch Kenkou1 RSS and merge
+        run: |
+          set -euo pipefail
+          python fetch_kenkou1_rss.py
       - name: Commit and Push RSS
         run: |
           git add hubs.json known_links.json rss.xml rss_items.json
