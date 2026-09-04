@@ -1,5 +1,491 @@
 [
   {
+    "title": "近江八幡の日吉、「びわ湖の日基金」へ寄付　感謝状贈呈式",
+    "link": "http://omihachiman.keizai.biz/headline/200/",
+    "source": "近江八幡経済新聞",
+    "pubDate": "Fri, 04 Sep 2026 15:16:12 +0900"
+  },
+  {
+    "title": "補助金",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kankyo/hojyokin/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "生活環境課",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kankyo/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "火葬場",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kankyo/kasou/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "家庭ごみ",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kankyo/kateigomi/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "し尿収集",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kankyo/sinyou/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "食品ロス",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kankyo/syokuhin/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "事業ごみ",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kankyo/zigyogomi/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "野生鳥獣の被害に遭わないために！",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/1726.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "STOP ポイ捨て！ 啓発看板ができました",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/27625.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "エコ・環境保全",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/eco/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "はちまんECOインフォ",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/hachimanecoinfo/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "環境政策課",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "基本計画・審議会等",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/keikakusingi/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "外来生物・動物",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/pet/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "公害・自然環境",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/seikatu/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "ゼロカーボンチャレンジコンテスト",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/zerocarboncontest/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "浄化槽",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/zyoukasou/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "監査委員制度のお知らせ",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kansa/1287.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "監査委員事務局",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kansa/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "しごと・産業",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kanzai/1/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "行政情報",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kanzai/3/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "契約検査課",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kanzai/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "建築関係法規・手続きに関すること",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kenchiku/houkitetuduki/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "建築課",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kenchiku/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "市条例・規則関係",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kenchiku/jyoureikisoku/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "建築指導に関すること",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kenchiku/kenchikushidou/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "建築課からのお知らせ",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kenchiku/osirase/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "指定道路図の公表について",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kenchiku/shiteidourozu/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "耐震・アスベスト・ブロック塀に関すること",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kenchiku/taishinasubesutoburokkubei/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "長期優良住宅の普及の促進に関する法律に関すること",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kenchiku/tyouki/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "2026年度版 健康ガイドブックのお知らせ",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kenko/1143.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "急患・急病のときは",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kenko/1678.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "申請書ダウンロード(検診・予防接種・特定不妊治療［先進医療］・不育症治療)",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kenko/2052.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "母子の健康管理について",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kenko/boshi/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "行政の情報",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kenko/gyousei/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "健康推進課",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kenko/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "医療機関の方",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kenko/iryou-kikan/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "啓発",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kenko/keihatsu/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "健(検)診情報",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kenko/kenshin/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "こころ健康",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kenko/kokoro/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "妊娠について",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kenko/ninshin/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "採用情報",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kenko/saiyou/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "各種支援",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kenko/shien/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "予防接種",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kenko/yobou/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "SDGs",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kikaku/SDGs/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "地域おこし協力隊",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kikaku/chiki-okoshi/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "住民活動・コミュニティ・協働",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kikaku/community/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "脱炭素",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kikaku/datsu-CO2/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "イベント",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kikaku/event/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "行政情報",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kikaku/gyousei/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "企画課",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kikaku/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "婚活・結婚支援",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kikaku/konkatsu/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "オーガニックビレッジ",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kikaku/organic-village/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "パブリックコメント",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kikaku/public/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "総合教育会議",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kikaku/sougou-kyouiku/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "統計",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kikaku/tou-kei/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "トクする防災",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/14719/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "申請書・資料のダウンロード",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/1_1/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "防災・停電情報などの各種リンク",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/1_2/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "行政情報",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/2/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "補助金・り災証明・無線機貸与など",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/3/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "施設案内",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/5/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "防災情報",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/bousai/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "外国の方向け情報",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/foreigners/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "危機管理課",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "お知らせ",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/osirase/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "消防団関係",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/syouboudan/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "認定こども園",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kodomoen/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "馬淵こども園",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kodomoen/mabuti/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "武佐こども園",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kodomoen/musa/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "老蘇こども園",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kodomoen/oiso/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "放課後児童クラブ",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kosodateseisaku/7/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "子育て政策課",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kosodateseisaku/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "子育て会議一覧",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kosodateseisaku/kosodatekyouiku/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "運転免許証を自主返納される方へ",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kotsu/1991.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "行政情報",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kotsu/3/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "市民バス(あかこんバス)",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kotsu/akakonbus/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "放置自転車",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kotsu/houchi/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "交通政策課",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kotsu/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
+    "title": "交通安全",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kotsu/koutsuuanzen/index.html",
+    "source": "近江八幡市公式サイト",
+    "pubDate": "Fri, 04 Sep 2026 09:38:35 +0000"
+  },
+  {
     "title": "まちや倶楽部｜宿泊施設",
     "link": "https://www.omi8.com/stay/detail_1193.html",
     "source": "近江八幡市観光サイト",
@@ -744,572 +1230,5 @@
     "source": "近江八幡市観光サイト",
     "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1010.html",
     "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "ヴォーリズ記念館（一柳記念館）",
-    "link": "https://www.omi8.com/spot/detail_1012.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1012.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "旧八幡郵便局",
-    "link": "https://www.omi8.com/spot/detail_1014.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1014.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "近江兄弟社メンターム資料館",
-    "link": "https://www.omi8.com/spot/detail_1019.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1019.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "ＣＯＧＯＣＯＲＯ",
-    "link": "https://www.omi8.com/spot/detail_1028.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1028.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "八幡堀めぐり",
-    "link": "https://www.omi8.com/spot/detail_1030.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1030.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "旧西川家住宅",
-    "link": "https://www.omi8.com/spot/detail_1034.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1034.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "かわらミュージアム",
-    "link": "https://www.omi8.com/spot/detail_1035.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1035.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "旧伴家住宅",
-    "link": "https://www.omi8.com/spot/detail_1037.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1037.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "八幡山ロープウェー",
-    "link": "https://www.omi8.com/spot/detail_1048.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1048.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "県立安土城考古博物館",
-    "link": "https://www.omi8.com/spot/detail_1067.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1067.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "安土城天主 信長の館",
-    "link": "https://www.omi8.com/spot/detail_1076.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1076.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "長命寺",
-    "link": "https://www.omi8.com/spot/detail_1122.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1122.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "賀茂神社",
-    "link": "https://www.omi8.com/spot/detail_1123.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1123.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "休暇村近江八幡",
-    "link": "https://www.omi8.com/spot/detail_1130.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1130.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "大中垣見ぶどう園",
-    "link": "https://www.omi8.com/spot/detail_1135.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1135.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "近江八幡和船観光協同組合",
-    "link": "https://www.omi8.com/spot/detail_1137.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1137.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "（株）水郷のさと まるやま",
-    "link": "https://www.omi8.com/spot/detail_1138.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1138.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "島真珠水郷観光船部",
-    "link": "https://www.omi8.com/spot/detail_1139.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1139.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "びわ湖観光（株）",
-    "link": "https://www.omi8.com/spot/detail_1140.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1140.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "ラコリーナ近江八幡",
-    "link": "https://www.omi8.com/spot/detail_1141.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1141.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "水茎焼 陶芸の里",
-    "link": "https://www.omi8.com/spot/detail_1157.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1157.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "八幡山",
-    "link": "https://www.omi8.com/spot/detail_1176.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1176.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "新町通り",
-    "link": "https://www.omi8.com/spot/detail_1177.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1177.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "沖島",
-    "link": "https://www.omi8.com/spot/detail_1180.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1180.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "白雲館（観光案内所）",
-    "link": "https://www.omi8.com/spot/detail_1181.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1181.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "安土駅観光案内所",
-    "link": "https://www.omi8.com/spot/detail_1183.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1183.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "西の湖すてーしょん",
-    "link": "https://www.omi8.com/spot/detail_1184.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1184.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "安土城郭資料館",
-    "link": "https://www.omi8.com/spot/detail_1185.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1185.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "まちや倶楽部",
-    "link": "https://www.omi8.com/spot/detail_1193.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1193.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "長命寺温泉 天葉の湯",
-    "link": "https://www.omi8.com/spot/detail_1213.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1213.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "安土城跡",
-    "link": "https://www.omi8.com/spot/detail_1217.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1217.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "八幡堀",
-    "link": "https://www.omi8.com/spot/detail_1228.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1228.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "城なび館（特別史跡安土城跡ガイダンス施設）",
-    "link": "https://www.omi8.com/spot/detail_1230.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1230.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "八幡堀めぐり（和でん）",
-    "link": "https://www.omi8.com/spot/detail_1239.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1239.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "お堀めぐり（ラビットハウス）",
-    "link": "https://www.omi8.com/spot/detail_1242.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1242.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "安土城タイムトリップVR",
-    "link": "https://www.omi8.com/spot/detail_1261.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1261.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "空色ワイナリー ハーベストツアー",
-    "link": "https://www.omi8.com/spot/detail_1268.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1268.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "近江八幡・安土サウンドトリップ",
-    "link": "https://www.omi8.com/spot/detail_1271.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1271.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "周遊謎解き in 近江八幡 ～織田信長と絡繰仕掛けの城下町～",
-    "link": "https://www.omi8.com/spot/detail_1275.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/spot/detail_1275.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "ＭＡＣＨＩＹＡ ＩＮＮ｜宿泊施設",
-    "link": "https://www.omi8.com/stay/detail_1016.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/stay/detail_1016.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "Guesthouse Mio 澪｜宿泊施設",
-    "link": "https://www.omi8.com/stay/detail_1020.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/stay/detail_1020.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "Little Birds hostel｜宿泊施設",
-    "link": "https://www.omi8.com/stay/detail_1033.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/stay/detail_1033.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "コンフォートイン近江八幡｜宿泊施設",
-    "link": "https://www.omi8.com/stay/detail_1081.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/stay/detail_1081.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "ビジネス第一ホテル｜宿泊施設",
-    "link": "https://www.omi8.com/stay/detail_1085.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/stay/detail_1085.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "グリーンホテルYes近江八幡｜宿泊施設",
-    "link": "https://www.omi8.com/stay/detail_1086.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/stay/detail_1086.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "ホテルはちまん｜宿泊施設",
-    "link": "https://www.omi8.com/stay/detail_1097.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/stay/detail_1097.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "ホテル ニューオウミ｜宿泊施設",
-    "link": "https://www.omi8.com/stay/detail_1109.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/stay/detail_1109.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "旅宿うさぎとかめ（GuestHouse USAGI to KAME）｜宿泊施設",
-    "link": "https://www.omi8.com/stay/detail_1114.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/stay/detail_1114.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "ビジネスホテル 西ノ庄｜宿泊施設",
-    "link": "https://www.omi8.com/stay/detail_1120.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/stay/detail_1120.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "ビジネスホテル シェル｜宿泊施設",
-    "link": "https://www.omi8.com/stay/detail_1125.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/stay/detail_1125.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "近江八幡ユースホステル｜宿泊施設",
-    "link": "https://www.omi8.com/stay/detail_1127.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/stay/detail_1127.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "宿院妙覚院｜宿泊施設",
-    "link": "https://www.omi8.com/stay/detail_1128.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/stay/detail_1128.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "休暇村近江八幡｜宿泊施設",
-    "link": "https://www.omi8.com/stay/detail_1130.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/stay/detail_1130.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "漁家民宿 湖上荘｜宿泊施設",
-    "link": "https://www.omi8.com/stay/detail_1132.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/stay/detail_1132.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "Guesthouse En｜宿泊施設",
-    "link": "https://www.omi8.com/stay/detail_1142.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/stay/detail_1142.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "旅宿ありときりぎりす（GuestHouse ARI to KIRIGIRISU）｜宿泊施設",
-    "link": "https://www.omi8.com/stay/detail_1166.html",
-    "source": "近江八幡市観光サイト",
-    "description": "新着記事を検出しました: https://www.omi8.com/stay/detail_1166.html",
-    "pubDate": "Fri, 04 Sep 2026 06:19:42 +0000"
-  },
-  {
-    "title": "安土未来づくり課",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/aduchi_mirai/index.html",
-    "source": "近江八幡市公式サイト",
-    "description": "新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/aduchi_mirai/index.html",
-    "pubDate": "Fri, 04 Sep 2026 06:17:46 +0000"
-  },
-  {
-    "title": "お知らせ",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/aduchi_mirai/osirase/index.html",
-    "source": "近江八幡市公式サイト",
-    "description": "新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/aduchi_mirai/osirase/index.html",
-    "pubDate": "Fri, 04 Sep 2026 06:17:46 +0000"
-  },
-  {
-    "title": "安土学区コミュニティエリア整備のお知らせ",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/aduchikyouiku/21707.html",
-    "source": "近江八幡市公式サイト",
-    "description": "新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/aduchikyouiku/21707.html",
-    "pubDate": "Fri, 04 Sep 2026 06:17:46 +0000"
-  },
-  {
-    "title": "安土小学校整備",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/aduchikyouiku/adutisyous_seibi/index.html",
-    "source": "近江八幡市公式サイト",
-    "description": "新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/aduchikyouiku/adutisyous_seibi/index.html",
-    "pubDate": "Fri, 04 Sep 2026 06:17:46 +0000"
-  },
-  {
-    "title": "安土コミュニティエリア整備推進室",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/aduchikyouiku/index.html",
-    "source": "近江八幡市公式サイト",
-    "description": "新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/aduchikyouiku/index.html",
-    "pubDate": "Fri, 04 Sep 2026 06:17:46 +0000"
-  },
-  {
-    "title": "説明会・公聴会",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/aduchikyouiku/setsumeikai/index.html",
-    "source": "近江八幡市公式サイト",
-    "description": "新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/aduchikyouiku/setsumeikai/index.html",
-    "pubDate": "Fri, 04 Sep 2026 06:17:46 +0000"
-  },
-  {
-    "title": "整備(検討)通信",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/aduchikyouiku/tsushin/index.html",
-    "source": "近江八幡市公式サイト",
-    "description": "新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/aduchikyouiku/tsushin/index.html",
-    "pubDate": "Fri, 04 Sep 2026 06:17:46 +0000"
-  },
-  {
-    "title": "行政情報",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/choju/2/index.html",
-    "source": "近江八幡市公式サイト",
-    "description": "新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/choju/2/index.html",
-    "pubDate": "Fri, 04 Sep 2026 06:17:46 +0000"
-  },
-  {
-    "title": "地域包括支援センター・介護予防支援事業所",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/choju/center/index.html",
-    "source": "近江八幡市公式サイト",
-    "description": "新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/choju/center/index.html",
-    "pubDate": "Fri, 04 Sep 2026 06:17:46 +0000"
-  },
-  {
-    "title": "生きがい対策(老人クラブ)",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/choju/club/index.html",
-    "source": "近江八幡市公式サイト",
-    "description": "新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/choju/club/index.html",
-    "pubDate": "Fri, 04 Sep 2026 06:17:46 +0000"
-  },
-  {
-    "title": "長寿福祉課",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/choju/index.html",
-    "source": "近江八幡市公式サイト",
-    "description": "新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/choju/index.html",
-    "pubDate": "Fri, 04 Sep 2026 06:17:46 +0000"
-  },
-  {
-    "title": "介護予防",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/choju/kaigoyobou/index.html",
-    "source": "近江八幡市公式サイト",
-    "description": "新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/choju/kaigoyobou/index.html",
-    "pubDate": "Fri, 04 Sep 2026 06:17:46 +0000"
-  },
-  {
-    "title": "認知症について",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/choju/ninchishou/index.html",
-    "source": "近江八幡市公式サイト",
-    "description": "新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/choju/ninchishou/index.html",
-    "pubDate": "Fri, 04 Sep 2026 06:17:46 +0000"
-  },
-  {
-    "title": "近江八幡市ささえあい商助推進事業者",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/choju/sasaeai/index.html",
-    "source": "近江八幡市公式サイト",
-    "description": "新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/choju/sasaeai/index.html",
-    "pubDate": "Fri, 04 Sep 2026 06:17:46 +0000"
-  },
-  {
-    "title": "高齢者の助成・支援制度",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/choju/shien/index.html",
-    "source": "近江八幡市公式サイト",
-    "description": "新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/choju/shien/index.html",
-    "pubDate": "Fri, 04 Sep 2026 06:17:46 +0000"
-  },
-  {
-    "title": "その他の高齢者福祉",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/choju/sonota/index.html",
-    "source": "近江八幡市公式サイト",
-    "description": "新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/choju/sonota/index.html",
-    "pubDate": "Fri, 04 Sep 2026 06:17:46 +0000"
-  },
-  {
-    "title": "暮らし・手続き",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/citypromotion/1/index.html",
-    "source": "近江八幡市公式サイト",
-    "description": "新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/citypromotion/1/index.html",
-    "pubDate": "Fri, 04 Sep 2026 06:17:46 +0000"
-  },
-  {
-    "title": "しごと・産業",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/citypromotion/2/index.html",
-    "source": "近江八幡市公式サイト",
-    "description": "新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/citypromotion/2/index.html",
-    "pubDate": "Fri, 04 Sep 2026 06:17:46 +0000"
-  },
-  {
-    "title": "本市魅力発信課の公式X(旧ツイッター)アカウントへの不正アクセスのご報告",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/citypromotion/31350.html",
-    "source": "近江八幡市公式サイト",
-    "description": "新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/citypromotion/31350.html",
-    "pubDate": "Fri, 04 Sep 2026 06:17:46 +0000"
-  },
-  {
-    "title": "魅力発信課",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/citypromotion/index.html",
-    "source": "近江八幡市公式サイト",
-    "description": "新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/citypromotion/index.html",
-    "pubDate": "Fri, 04 Sep 2026 06:17:46 +0000"
-  },
-  {
-    "title": "申請書ダウンロード【道路法、河川法、法定外公共物管理条例、官民境界、ヘドロ配車関係】",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/doboku/1079.html",
-    "source": "近江八幡市公式サイト",
-    "description": "新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/doboku/1079.html",
-    "pubDate": "Fri, 04 Sep 2026 06:17:46 +0000"
-  },
-  {
-    "title": "滋賀県水害情報発信サイト",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/doboku/1533.html",
-    "source": "近江八幡市公式サイト",
-    "description": "新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/doboku/1533.html",
-    "pubDate": "Fri, 04 Sep 2026 06:17:46 +0000"
-  },
-  {
-    "title": "官民境界に関すること",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/doboku/1887.html",
-    "source": "近江八幡市公式サイト",
-    "description": "新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/doboku/1887.html",
-    "pubDate": "Fri, 04 Sep 2026 06:17:46 +0000"
-  },
-  {
-    "title": "土木課業務内容",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/doboku/706.html",
-    "source": "近江八幡市公式サイト",
-    "description": "新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/doboku/706.html",
-    "pubDate": "Fri, 04 Sep 2026 06:17:46 +0000"
-  },
-  {
-    "title": "はじめに",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/doboku/877.html",
-    "source": "近江八幡市公式サイト",
-    "description": "新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/doboku/877.html",
-    "pubDate": "Fri, 04 Sep 2026 06:17:46 +0000"
   }
 ]

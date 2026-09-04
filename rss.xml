@@ -4,1301 +4,1220 @@
     <title>近江八幡市 くらし更新だより(非公式・複数ソース統合)</title>
     <link>https://www.city.omihachiman.lg.jp/index.html</link>
     <description>近江八幡市関連の複数サイトの新着をまとめた非公式RSSです。</description>
-    <lastBuildDate>Fri, 04 Sep 2026 06:46:05 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 04 Sep 2026 09:40:41 +0000</lastBuildDate>
     <item>
-      <title>まちや倶楽部｜宿泊施設（出典：近江八幡市観光サイト）</title>
+      <title>補助金</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kankyo/hojyokin/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kankyo/hojyokin/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>生活環境課</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kankyo/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kankyo/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>火葬場</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kankyo/kasou/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kankyo/kasou/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>家庭ごみ</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kankyo/kateigomi/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kankyo/kateigomi/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>し尿収集</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kankyo/sinyou/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kankyo/sinyou/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>食品ロス</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kankyo/syokuhin/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kankyo/syokuhin/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>事業ごみ</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kankyo/zigyogomi/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kankyo/zigyogomi/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>野生鳥獣の被害に遭わないために！</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/1726.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/1726.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>STOP ポイ捨て！ 啓発看板ができました</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/27625.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/27625.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>エコ・環境保全</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/eco/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/eco/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>はちまんECOインフォ</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/hachimanecoinfo/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/hachimanecoinfo/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>環境政策課</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>基本計画・審議会等</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/keikakusingi/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/keikakusingi/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>外来生物・動物</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/pet/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/pet/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>公害・自然環境</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/seikatu/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/seikatu/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>ゼロカーボンチャレンジコンテスト</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/zerocarboncontest/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/zerocarboncontest/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>浄化槽</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/zyoukasou/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kankyoseisaku/zyoukasou/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>監査委員制度のお知らせ</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kansa/1287.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kansa/1287.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>監査委員事務局</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kansa/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kansa/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>しごと・産業</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kanzai/1/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kanzai/1/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>行政情報</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kanzai/3/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kanzai/3/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>契約検査課</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kanzai/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kanzai/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>建築関係法規・手続きに関すること</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kenchiku/houkitetuduki/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kenchiku/houkitetuduki/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>建築課</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kenchiku/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kenchiku/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>市条例・規則関係</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kenchiku/jyoureikisoku/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kenchiku/jyoureikisoku/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>建築指導に関すること</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kenchiku/kenchikushidou/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kenchiku/kenchikushidou/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>建築課からのお知らせ</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kenchiku/osirase/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kenchiku/osirase/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>指定道路図の公表について</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kenchiku/shiteidourozu/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kenchiku/shiteidourozu/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>耐震・アスベスト・ブロック塀に関すること</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kenchiku/taishinasubesutoburokkubei/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kenchiku/taishinasubesutoburokkubei/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>長期優良住宅の普及の促進に関する法律に関すること</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kenchiku/tyouki/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kenchiku/tyouki/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>2026年度版 健康ガイドブックのお知らせ</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kenko/1143.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kenko/1143.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>急患・急病のときは</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kenko/1678.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kenko/1678.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>申請書ダウンロード(検診・予防接種・特定不妊治療［先進医療］・不育症治療)</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kenko/2052.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kenko/2052.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>母子の健康管理について</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kenko/boshi/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kenko/boshi/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>行政の情報</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kenko/gyousei/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kenko/gyousei/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>健康推進課</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kenko/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kenko/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>医療機関の方</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kenko/iryou-kikan/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kenko/iryou-kikan/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>啓発</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kenko/keihatsu/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kenko/keihatsu/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>健(検)診情報</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kenko/kenshin/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kenko/kenshin/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>こころ健康</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kenko/kokoro/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kenko/kokoro/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>妊娠について</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kenko/ninshin/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kenko/ninshin/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>採用情報</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kenko/saiyou/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kenko/saiyou/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>各種支援</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kenko/shien/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kenko/shien/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>予防接種</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kenko/yobou/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kenko/yobou/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>SDGs</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kikaku/SDGs/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kikaku/SDGs/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>地域おこし協力隊</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kikaku/chiki-okoshi/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kikaku/chiki-okoshi/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>住民活動・コミュニティ・協働</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kikaku/community/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kikaku/community/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>脱炭素</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kikaku/datsu-CO2/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kikaku/datsu-CO2/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>イベント</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kikaku/event/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kikaku/event/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>行政情報</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kikaku/gyousei/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kikaku/gyousei/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>企画課</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kikaku/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kikaku/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>婚活・結婚支援</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kikaku/konkatsu/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kikaku/konkatsu/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>オーガニックビレッジ</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kikaku/organic-village/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kikaku/organic-village/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>パブリックコメント</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kikaku/public/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kikaku/public/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>総合教育会議</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kikaku/sougou-kyouiku/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kikaku/sougou-kyouiku/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>統計</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kikaku/tou-kei/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kikaku/tou-kei/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>トクする防災</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/14719/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/14719/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>申請書・資料のダウンロード</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/1_1/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/1_1/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>防災・停電情報などの各種リンク</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/1_2/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/1_2/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>行政情報</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/2/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/2/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>補助金・り災証明・無線機貸与など</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/3/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/3/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>施設案内</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/5/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/5/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>防災情報</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/bousai/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/bousai/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>外国の方向け情報</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/foreigners/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/foreigners/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>危機管理課</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>お知らせ</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/osirase/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/osirase/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>消防団関係</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/syouboudan/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kiki_kanri/syouboudan/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>認定こども園</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kodomoen/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kodomoen/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>馬淵こども園</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kodomoen/mabuti/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kodomoen/mabuti/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>武佐こども園</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kodomoen/musa/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kodomoen/musa/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>老蘇こども園</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kodomoen/oiso/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kodomoen/oiso/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>放課後児童クラブ</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kosodateseisaku/7/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kosodateseisaku/7/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>子育て政策課</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kosodateseisaku/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kosodateseisaku/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>子育て会議一覧</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kosodateseisaku/kosodatekyouiku/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kosodateseisaku/kosodatekyouiku/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>運転免許証を自主返納される方へ</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kotsu/1991.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kotsu/1991.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>行政情報</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kotsu/3/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kotsu/3/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>市民バス(あかこんバス)</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kotsu/akakonbus/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kotsu/akakonbus/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>放置自転車</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kotsu/houchi/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kotsu/houchi/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>交通政策課</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kotsu/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kotsu/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>交通安全</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kotsu/koutsuuanzen/index.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kotsu/koutsuuanzen/index.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:38:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>まちや倶楽部｜宿泊施設</title>
       <link>https://www.omi8.com/stay/detail_1193.html</link>
       <guid isPermaLink="true">https://www.omi8.com/stay/detail_1193.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:44:18 +0000</pubDate>
     </item>
     <item>
-      <title>沖島民泊 湖心｜宿泊施設（出典：近江八幡市観光サイト）</title>
+      <title>沖島民泊 湖心｜宿泊施設</title>
       <link>https://www.omi8.com/stay/detail_1214.html</link>
       <guid isPermaLink="true">https://www.omi8.com/stay/detail_1214.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:44:18 +0000</pubDate>
     </item>
     <item>
-      <title>琵琶湖に浮かぶ離島 沖島でのんびり島時間（出典：近江八幡市観光サイト）</title>
+      <title>琵琶湖に浮かぶ離島 沖島でのんびり島時間</title>
       <link>https://www.omi8.com/stories/detail_126.html</link>
       <guid isPermaLink="true">https://www.omi8.com/stories/detail_126.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:44:18 +0000</pubDate>
     </item>
     <item>
-      <title>親子で楽しむラ コリーナ完全攻略法（出典：近江八幡市観光サイト）</title>
+      <title>親子で楽しむラ コリーナ完全攻略法</title>
       <link>https://www.omi8.com/stories/detail_130.html</link>
       <guid isPermaLink="true">https://www.omi8.com/stories/detail_130.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:44:18 +0000</pubDate>
     </item>
     <item>
-      <title>ラ コリーナだけじゃない！近江八幡の地元民が選ぶお土産8選（出典：近江八幡市観光サイト）</title>
+      <title>ラ コリーナだけじゃない！近江八幡の地元民が選ぶお土産8選</title>
       <link>https://www.omi8.com/stories/detail_131.html</link>
       <guid isPermaLink="true">https://www.omi8.com/stories/detail_131.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:44:18 +0000</pubDate>
     </item>
     <item>
-      <title>近江八幡ライフスタイルツーリズム①八幡堀、徹底解剖。（出典：近江八幡市観光サイト）</title>
+      <title>近江八幡ライフスタイルツーリズム①八幡堀、徹底解剖。</title>
       <link>https://www.omi8.com/stories/detail_141.html</link>
       <guid isPermaLink="true">https://www.omi8.com/stories/detail_141.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:44:18 +0000</pubDate>
     </item>
     <item>
-      <title>コーヒー中毒の地元民が選ぶ、絶対外さない近江八幡のコーヒー店4選（出典：近江八幡市観光サイト）</title>
+      <title>コーヒー中毒の地元民が選ぶ、絶対外さない近江八幡のコーヒー店4選</title>
       <link>https://www.omi8.com/stories/detail_146.html</link>
       <guid isPermaLink="true">https://www.omi8.com/stories/detail_146.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:44:18 +0000</pubDate>
     </item>
     <item>
-      <title>【春と秋だけのとっておき】近江八幡の知る人ぞ知る名所「教林坊」。苔と紅葉の石の寺へ（出典：近江八幡市観光サイト）</title>
+      <title>【春と秋だけのとっておき】近江八幡の知る人ぞ知る名所「教林坊」。苔と紅葉の石の寺へ</title>
       <link>https://www.omi8.com/stories/detail_149.html</link>
       <guid isPermaLink="true">https://www.omi8.com/stories/detail_149.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:44:18 +0000</pubDate>
     </item>
     <item>
-      <title>【近江八幡の食と歴史を味わう】あきんど道商店街つまみ食いツアー体験記（出典：近江八幡市観光サイト）</title>
+      <title>【近江八幡の食と歴史を味わう】あきんど道商店街つまみ食いツアー体験記</title>
       <link>https://www.omi8.com/stories/detail_152.html</link>
       <guid isPermaLink="true">https://www.omi8.com/stories/detail_152.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:44:18 +0000</pubDate>
     </item>
     <item>
-      <title>戦国時代の近江八幡を歩く ― 大河ドラマ『豊臣兄弟！』の時代背景と歴史スポット―（出典：近江八幡市観光サイト）</title>
+      <title>戦国時代の近江八幡を歩く ― 大河ドラマ『豊臣兄弟！』の時代背景と歴史スポット―</title>
       <link>https://www.omi8.com/stories/detail_154.html</link>
       <guid isPermaLink="true">https://www.omi8.com/stories/detail_154.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:44:18 +0000</pubDate>
     </item>
     <item>
-      <title>【369Terrace Café 近江八幡】琵琶湖が一望できる、心と体を整えるカフェ（出典：近江八幡市観光サイト）</title>
+      <title>【369Terrace Café 近江八幡】琵琶湖が一望できる、心と体を整えるカフェ</title>
       <link>https://www.omi8.com/stories/detail_155.html</link>
       <guid isPermaLink="true">https://www.omi8.com/stories/detail_155.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:44:18 +0000</pubDate>
     </item>
     <item>
-      <title>湖畔に町家、近江八幡の魅力を堪能できるSNS映えカフェ5選（出典：近江八幡市観光サイト）</title>
+      <title>湖畔に町家、近江八幡の魅力を堪能できるSNS映えカフェ5選</title>
       <link>https://www.omi8.com/stories/detail_160.html</link>
       <guid isPermaLink="true">https://www.omi8.com/stories/detail_160.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:44:18 +0000</pubDate>
     </item>
     <item>
-      <title>【2026年最新】近江八幡のテイクアウトお弁当3選！お花見に持っていきたい「神3店」（出典：近江八幡市観光サイト）</title>
+      <title>【2026年最新】近江八幡のテイクアウトお弁当3選！お花見に持っていきたい「神3店」</title>
       <link>https://www.omi8.com/stories/detail_163.html</link>
       <guid isPermaLink="true">https://www.omi8.com/stories/detail_163.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:44:18 +0000</pubDate>
     </item>
     <item>
-      <title>地元民おすすめ！近江八幡で絶品近江牛ランチが味わえるおすすめレストラン6選（出典：近江八幡市観光サイト）</title>
+      <title>地元民おすすめ！近江八幡で絶品近江牛ランチが味わえるおすすめレストラン6選</title>
       <link>https://www.omi8.com/stories/detail_56.html</link>
       <guid isPermaLink="true">https://www.omi8.com/stories/detail_56.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:44:18 +0000</pubDate>
     </item>
     <item>
-      <title>はじめての近江八幡 近江八幡ってどんなところ？ 観光地やグルメなど見どころをまとめてご紹介（出典：近江八幡市観光サイト）</title>
+      <title>はじめての近江八幡 近江八幡ってどんなところ？ 観光地やグルメなど見どころをまとめてご紹介</title>
       <link>https://www.omi8.com/stories/detail_60.html</link>
       <guid isPermaLink="true">https://www.omi8.com/stories/detail_60.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:44:18 +0000</pubDate>
     </item>
     <item>
-      <title>近江八幡の丁稚羊羹を5店舗で買って食べ比べ！＆ういろ（出典：近江八幡市観光サイト）</title>
+      <title>近江八幡の丁稚羊羹を5店舗で買って食べ比べ！＆ういろ</title>
       <link>https://www.omi8.com/stories/detail_63.html</link>
       <guid isPermaLink="true">https://www.omi8.com/stories/detail_63.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:44:18 +0000</pubDate>
     </item>
     <item>
-      <title>八幡堀めぐりの魅力と楽しみ方！水郷めぐりとの違いは？【地元民の体験レポート】（出典：近江八幡市観光サイト）</title>
+      <title>八幡堀めぐりの魅力と楽しみ方！水郷めぐりとの違いは？【地元民の体験レポート】</title>
       <link>https://www.omi8.com/stories/detail_68.html</link>
       <guid isPermaLink="true">https://www.omi8.com/stories/detail_68.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:44:18 +0000</pubDate>
     </item>
     <item>
-      <title>近江八幡の老舗「和た与」で伝統体験！親子で楽しむでっち羊羹づくり（出典：近江八幡市観光サイト）</title>
+      <title>近江八幡の老舗「和た与」で伝統体験！親子で楽しむでっち羊羹づくり</title>
       <link>https://www.omi8.com/stories/detail_72.html</link>
       <guid isPermaLink="true">https://www.omi8.com/stories/detail_72.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:44:18 +0000</pubDate>
     </item>
     <item>
-      <title>〇八幡山紹介〇初心者にもおすすめ！お手軽登山と絶景＆立ち寄りスポット（出典：近江八幡市観光サイト）</title>
+      <title>〇八幡山紹介〇初心者にもおすすめ！お手軽登山と絶景＆立ち寄りスポット</title>
       <link>https://www.omi8.com/stories/detail_73.html</link>
       <guid isPermaLink="true">https://www.omi8.com/stories/detail_73.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:44:18 +0000</pubDate>
     </item>
     <item>
-      <title>子連れOK！靴を脱いでランチやカフェが楽しめる地元民ママおすすめのお店7選（出典：近江八幡市観光サイト）</title>
+      <title>子連れOK！靴を脱いでランチやカフェが楽しめる地元民ママおすすめのお店7選</title>
       <link>https://www.omi8.com/stories/detail_80.html</link>
       <guid isPermaLink="true">https://www.omi8.com/stories/detail_80.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:44:18 +0000</pubDate>
     </item>
     <item>
-      <title>信長と安土城をめぐる！安土観光のすすめ（出典：近江八幡市観光サイト）</title>
+      <title>信長と安土城をめぐる！安土観光のすすめ</title>
       <link>https://www.omi8.com/stories/detail_90.html</link>
       <guid isPermaLink="true">https://www.omi8.com/stories/detail_90.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:44:18 +0000</pubDate>
     </item>
     <item>
-      <title>沖島保育所（出典：近江八幡市公式サイト）</title>
+      <title>沖島保育所</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/hoiku/2/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/hoiku/2/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>家庭的保育事業所（出典：近江八幡市公式サイト）</title>
+      <title>家庭的保育事業所</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/hoiku/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/hoiku/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>八幡保育所（出典：近江八幡市公式サイト）</title>
+      <title>八幡保育所</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/hoikusho/hachiman/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/hoikusho/hachiman/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>保育所（出典：近江八幡市公式サイト）</title>
+      <title>保育所</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/hoikusho/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/hoikusho/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>桐原保育所（出典：近江八幡市公式サイト）</title>
+      <title>桐原保育所</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/hoikusho/kirihara/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/hoikusho/kirihara/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>国民年金（出典：近江八幡市公式サイト）</title>
+      <title>国民年金</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/hoken_nenkin/3_1/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/hoken_nenkin/3_1/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>申請書ダウンロード(保険年金関係)（出典：近江八幡市公式サイト）</title>
+      <title>申請書ダウンロード(保険年金関係)</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/hoken_nenkin/995.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/hoken_nenkin/995.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>福祉医療費・子ども医療費（出典：近江八幡市公式サイト）</title>
+      <title>福祉医療費・子ども医療費</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/hoken_nenkin/fukushiiryouhi-kodomoiryouhi/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/hoken_nenkin/fukushiiryouhi-kodomoiryouhi/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>保険年金課（出典：近江八幡市公式サイト）</title>
+      <title>保険年金課</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/hoken_nenkin/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/hoken_nenkin/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>国民健康保険・後期高齢者医療保険（出典：近江八幡市公式サイト）</title>
+      <title>国民健康保険・後期高齢者医療保険</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/hoken_nenkin/kenkouhoken/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/hoken_nenkin/kenkouhoken/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>令和8年熊本地震に係る寄付の受付について（出典：近江八幡市公式サイト）</title>
+      <title>令和8年熊本地震に係る寄付の受付について</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/hukushi_seisaku/41851.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/hukushi_seisaku/41851.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>地域福祉・地域づくり（出典：近江八幡市公式サイト）</title>
+      <title>地域福祉・地域づくり</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/hukushi_seisaku/chiikihukushi/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/hukushi_seisaku/chiikihukushi/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>平和・慰霊関係施策（出典：近江八幡市公式サイト）</title>
+      <title>平和・慰霊関係施策</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/hukushi_seisaku/heiwa/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/hukushi_seisaku/heiwa/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>福祉政策課（出典：近江八幡市公式サイト）</title>
+      <title>福祉政策課</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/hukushi_seisaku/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/hukushi_seisaku/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>生活支援・相談支援（出典：近江八幡市公式サイト）</title>
+      <title>生活支援・相談支援</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/hukushi_seisaku/seikatusien/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/hukushi_seisaku/seikatusien/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>施設案内（出典：近江八幡市公式サイト）</title>
+      <title>施設案内</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/hukushi_seisaku/shisetsu/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/hukushi_seisaku/shisetsu/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>組織から探す（出典：近江八幡市公式サイト）</title>
+      <title>組織から探す</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>近江八幡市職員の採用に係る情報を公開します！（出典：近江八幡市公式サイト）</title>
+      <title>近江八幡市職員の採用に係る情報を公開します！</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/jinji/18316.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/jinji/18316.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>職員採用PR（出典：近江八幡市公式サイト）</title>
+      <title>職員採用PR</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/jinji/PR/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/jinji/PR/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>行政情報（出典：近江八幡市公式サイト）</title>
+      <title>行政情報</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/jinji/gyousei/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/jinji/gyousei/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>人事課（出典：近江八幡市公式サイト）</title>
+      <title>人事課</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/jinji/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/jinji/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>採用試験の結果（出典：近江八幡市公式サイト）</title>
+      <title>採用試験の結果</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/jinji/kekka/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/jinji/kekka/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>お知らせ（出典：近江八幡市公式サイト）</title>
+      <title>お知らせ</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/jinji/osirase/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/jinji/osirase/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>採用試験の案内（出典：近江八幡市公式サイト）</title>
+      <title>採用試験の案内</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/jinji/shiken/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/jinji/shiken/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>パブリックコメント（出典：近江八幡市公式サイト）</title>
+      <title>パブリックコメント</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/jinken/PublicComments/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/jinken/PublicComments/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>防犯（出典：近江八幡市公式サイト）</title>
+      <title>防犯</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/jinken/bouhan/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/jinken/bouhan/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>男女共同参画（出典：近江八幡市公式サイト）</title>
+      <title>男女共同参画</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/jinken/danjokyoudousankaku/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/jinken/danjokyoudousankaku/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>人権・市民生活課（出典：近江八幡市公式サイト）</title>
+      <title>人権・市民生活課</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/jinken/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/jinken/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>人権（出典：近江八幡市公式サイト）</title>
+      <title>人権</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/jinken/jinken/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/jinken/jinken/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>消費生活（出典：近江八幡市公式サイト）</title>
+      <title>消費生活</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/jinken/shohi/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/jinken/shohi/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>消費者教育（出典：近江八幡市公式サイト）</title>
+      <title>消費者教育</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/jinken/shouhishakyouiku/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/jinken/shouhishakyouiku/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>相談（出典：近江八幡市公式サイト）</title>
+      <title>相談</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/jinken/soudan/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/jinken/soudan/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>情報管理事業（出典：近江八幡市公式サイト）</title>
+      <title>情報管理事業</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/joho_seisaku/1083.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/joho_seisaku/1083.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>しごと・産業（出典：近江八幡市公式サイト）</title>
+      <title>しごと・産業</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/joho_seisaku/4/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/joho_seisaku/4/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>近江八幡市デジタルトランスフォーメーション（出典：近江八幡市公式サイト）</title>
+      <title>近江八幡市デジタルトランスフォーメーション</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/joho_seisaku/Digital_Transformation/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/joho_seisaku/Digital_Transformation/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>おうみ自治体クラウド協議会（出典：近江八幡市公式サイト）</title>
+      <title>おうみ自治体クラウド協議会</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/joho_seisaku/cloud/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/joho_seisaku/cloud/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>情報政策課（出典：近江八幡市公式サイト）</title>
+      <title>情報政策課</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/joho_seisaku/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/joho_seisaku/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>情報セキュリティ（出典：近江八幡市公式サイト）</title>
+      <title>情報セキュリティ</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/joho_seisaku/information_security/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/joho_seisaku/information_security/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>入札等（出典：近江八幡市公式サイト）</title>
+      <title>入札等</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/joho_seisaku/nyusatsu/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/joho_seisaku/nyusatsu/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>行政情報（出典：近江八幡市公式サイト）</title>
+      <title>行政情報</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/jutaku/gyousei/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/jutaku/gyousei/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>市営住宅課（出典：近江八幡市公式サイト）</title>
+      <title>市営住宅課</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/jutaku/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/jutaku/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>入居について（出典：近江八幡市公式サイト）</title>
+      <title>入居について</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/jutaku/nyuukyo/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/jutaku/nyuukyo/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>お知らせ（出典：近江八幡市公式サイト）</title>
+      <title>お知らせ</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/jutaku/osirase/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/jutaku/osirase/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>空家対策に関すること（出典：近江八幡市公式サイト）</title>
+      <title>空家対策に関すること</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/jyutakusesaku/akiyataisaku/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/jyutakusesaku/akiyataisaku/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>住宅施策推進室（出典：近江八幡市公式サイト）</title>
+      <title>住宅施策推進室</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/jyutakusesaku/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/jyutakusesaku/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>お知らせ（出典：近江八幡市公式サイト）</title>
+      <title>お知らせ</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/jyutakusesaku/osirase/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/jyutakusesaku/osirase/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>住まい・まちづくり（出典：近江八幡市公式サイト）</title>
+      <title>住まい・まちづくり</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/jyutakusesaku/sumai/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/jyutakusesaku/sumai/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>業務内容（出典：近江八幡市公式サイト）</title>
+      <title>業務内容</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kaigo/gyoumu/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kaigo/gyoumu/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>保険料業務（出典：近江八幡市公式サイト）</title>
+      <title>保険料業務</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kaigo/hokenryou/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kaigo/hokenryou/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>介護保険課（出典：近江八幡市公式サイト）</title>
+      <title>介護保険課</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kaigo/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kaigo/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>介護保険計画（出典：近江八幡市公式サイト）</title>
+      <title>介護保険計画</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kaigo/keikaku/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kaigo/keikaku/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>給付業務（出典：近江八幡市公式サイト）</title>
+      <title>給付業務</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kaigo/kyufu/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kaigo/kyufu/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>関係リンク集（出典：近江八幡市公式サイト）</title>
+      <title>関係リンク集</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kaigo/link/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kaigo/link/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>認定業務（出典：近江八幡市公式サイト）</title>
+      <title>認定業務</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kaigo/nintei/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kaigo/nintei/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>申請書・様式ダウンロード（出典：近江八幡市公式サイト）</title>
+      <title>申請書・様式ダウンロード</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kaigo/shinseisho/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kaigo/shinseisho/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>指定・施設業務（出典：近江八幡市公式サイト）</title>
+      <title>指定・施設業務</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kaigo/shitei/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kaigo/shitei/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>イベント情報（出典：近江八幡市公式サイト）</title>
+      <title>イベント情報</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kaikan/1/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kaikan/1/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>施設案内（出典：近江八幡市公式サイト）</title>
+      <title>施設案内</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kaikan/2/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kaikan/2/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>近江八幡市文化会館チケット販売サイト（出典：近江八幡市公式サイト）</title>
+      <title>近江八幡市文化会館チケット販売サイト</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kaikan/41726.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kaikan/41726.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>文化会館（出典：近江八幡市公式サイト）</title>
+      <title>文化会館</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kaikan/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kaikan/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>近江八幡市歳入歳出決算書（出典：近江八幡市公式サイト）</title>
+      <title>近江八幡市歳入歳出決算書</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kaikei/23412.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kaikei/23412.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>電子請求書システムをご利用ください（出典：近江八幡市公式サイト）</title>
+      <title>電子請求書システムをご利用ください</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kaikei/31887.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kaikei/31887.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>会計課（出典：近江八幡市公式サイト）</title>
+      <title>会計課</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kaikei/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kaikei/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>市庁舎整備推進室（出典：近江八幡市公式サイト）</title>
+      <title>市庁舎整備推進室</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kan-zai/chosha/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kan-zai/chosha/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>管財課（出典：近江八幡市公式サイト）</title>
+      <title>管財課</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kan-zai/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kan-zai/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>プロポーザル関係（出典：近江八幡市公式サイト）</title>
+      <title>プロポーザル関係</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kan-zai/puropo1/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kan-zai/puropo1/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>文化・芸術（出典：近江八幡市公式サイト）</title>
+      <title>文化・芸術</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kanko/3_1/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kanko/3_1/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>行政情報（出典：近江八幡市公式サイト）</title>
+      <title>行政情報</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kanko/4/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kanko/4/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>歴史・文化財（出典：近江八幡市公式サイト）</title>
+      <title>歴史・文化財</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kanko/4_1/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kanko/4_1/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>イベント（出典：近江八幡市公式サイト）</title>
+      <title>イベント</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kanko/5/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kanko/5/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>文化振興課（出典：近江八幡市公式サイト）</title>
+      <title>文化振興課</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kanko/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kanko/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>近江八幡市の新しい観光ウェブサイトを公開しました！（出典：近江八幡市公式サイト）</title>
+      <title>近江八幡市の新しい観光ウェブサイトを公開しました！</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kanko_seisaku/30047.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kanko_seisaku/30047.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>行政情報（出典：近江八幡市公式サイト）</title>
+      <title>行政情報</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kanko_seisaku/gyousei/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kanko_seisaku/gyousei/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>観光政策課（出典：近江八幡市公式サイト）</title>
+      <title>観光政策課</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kanko_seisaku/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kanko_seisaku/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>観光情報（出典：近江八幡市公式サイト）</title>
+      <title>観光情報</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kanko_seisaku/kankou/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kanko_seisaku/kankou/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>お知らせ（出典：近江八幡市公式サイト）</title>
+      <title>お知らせ</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kanko_seisaku/osirase/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kanko_seisaku/osirase/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>最終処分場（出典：近江八幡市公式サイト）</title>
+      <title>最終処分場</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kankyo/1_1/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kankyo/1_1/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>ペット・動物（出典：近江八幡市公式サイト）</title>
+      <title>ペット・動物</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kankyo/1_2/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kankyo/1_2/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>エコ・環境保全（出典：近江八幡市公式サイト）</title>
+      <title>エコ・環境保全</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kankyo/eco/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kankyo/eco/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>行政情報（出典：近江八幡市公式サイト）</title>
+      <title>行政情報</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kankyo/gyousei/index.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kankyo/gyousei/index.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:42:22 +0000</pubDate>
     </item>
     <item>
-      <title>郷土食フェス in OMIHACHIMAN（出典：近江八幡市観光サイト）</title>
+      <title>郷土食フェス in OMIHACHIMAN</title>
       <link>https://www.omi8.com/souvenir/detail_1265.html</link>
       <guid isPermaLink="true">https://www.omi8.com/souvenir/detail_1265.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
       <description>新着記事を検出しました: https://www.omi8.com/souvenir/detail_1265.html</description>
     </item>
     <item>
-      <title>空色ワイナリー ハーベストツアー（出典：近江八幡市観光サイト）</title>
+      <title>空色ワイナリー ハーベストツアー</title>
       <link>https://www.omi8.com/souvenir/detail_1268.html</link>
       <guid isPermaLink="true">https://www.omi8.com/souvenir/detail_1268.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
       <description>新着記事を検出しました: https://www.omi8.com/souvenir/detail_1268.html</description>
     </item>
     <item>
-      <title>日牟禮八幡宮（出典：近江八幡市観光サイト）</title>
+      <title>日牟禮八幡宮</title>
       <link>https://www.omi8.com/spot/detail_1008.html</link>
       <guid isPermaLink="true">https://www.omi8.com/spot/detail_1008.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
       <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1008.html</description>
     </item>
     <item>
-      <title>村雲御所瑞龍寺（出典：近江八幡市観光サイト）</title>
+      <title>村雲御所瑞龍寺</title>
       <link>https://www.omi8.com/spot/detail_1010.html</link>
       <guid isPermaLink="true">https://www.omi8.com/spot/detail_1010.html</guid>
       <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
       <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1010.html</description>
     </item>
     <item>
-      <title>ヴォーリズ記念館（一柳記念館）（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1012.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1012.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1012.html</description>
+      <title>近江八幡の日吉、「びわ湖の日基金」へ寄付　感謝状贈呈式</title>
+      <link>http://omihachiman.keizai.biz/headline/200/</link>
+      <guid isPermaLink="true">http://omihachiman.keizai.biz/headline/200/</guid>
+      <pubDate>Fri, 04 Sep 2026 15:16:12 +0900</pubDate>
     </item>
     <item>
-      <title>旧八幡郵便局（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1014.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1014.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1014.html</description>
-    </item>
-    <item>
-      <title>近江兄弟社メンターム資料館（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1019.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1019.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1019.html</description>
-    </item>
-    <item>
-      <title>ＣＯＧＯＣＯＲＯ（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1028.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1028.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1028.html</description>
-    </item>
-    <item>
-      <title>八幡堀めぐり（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1030.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1030.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1030.html</description>
-    </item>
-    <item>
-      <title>旧西川家住宅（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1034.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1034.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1034.html</description>
-    </item>
-    <item>
-      <title>かわらミュージアム（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1035.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1035.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1035.html</description>
-    </item>
-    <item>
-      <title>旧伴家住宅（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1037.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1037.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1037.html</description>
-    </item>
-    <item>
-      <title>八幡山ロープウェー（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1048.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1048.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1048.html</description>
-    </item>
-    <item>
-      <title>県立安土城考古博物館（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1067.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1067.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1067.html</description>
-    </item>
-    <item>
-      <title>安土城天主 信長の館（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1076.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1076.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1076.html</description>
-    </item>
-    <item>
-      <title>長命寺（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1122.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1122.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1122.html</description>
-    </item>
-    <item>
-      <title>賀茂神社（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1123.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1123.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1123.html</description>
-    </item>
-    <item>
-      <title>休暇村近江八幡（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1130.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1130.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1130.html</description>
-    </item>
-    <item>
-      <title>大中垣見ぶどう園（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1135.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1135.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1135.html</description>
-    </item>
-    <item>
-      <title>近江八幡和船観光協同組合（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1137.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1137.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1137.html</description>
-    </item>
-    <item>
-      <title>（株）水郷のさと まるやま（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1138.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1138.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1138.html</description>
-    </item>
-    <item>
-      <title>島真珠水郷観光船部（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1139.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1139.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1139.html</description>
-    </item>
-    <item>
-      <title>びわ湖観光（株）（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1140.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1140.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1140.html</description>
-    </item>
-    <item>
-      <title>ラコリーナ近江八幡（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1141.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1141.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1141.html</description>
-    </item>
-    <item>
-      <title>水茎焼 陶芸の里（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1157.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1157.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1157.html</description>
-    </item>
-    <item>
-      <title>八幡山（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1176.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1176.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1176.html</description>
-    </item>
-    <item>
-      <title>新町通り（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1177.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1177.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1177.html</description>
-    </item>
-    <item>
-      <title>沖島（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1180.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1180.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1180.html</description>
-    </item>
-    <item>
-      <title>白雲館（観光案内所）（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1181.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1181.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1181.html</description>
-    </item>
-    <item>
-      <title>安土駅観光案内所（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1183.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1183.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1183.html</description>
-    </item>
-    <item>
-      <title>西の湖すてーしょん（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1184.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1184.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1184.html</description>
-    </item>
-    <item>
-      <title>安土城郭資料館（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1185.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1185.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1185.html</description>
-    </item>
-    <item>
-      <title>まちや倶楽部（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1193.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1193.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1193.html</description>
-    </item>
-    <item>
-      <title>長命寺温泉 天葉の湯（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1213.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1213.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1213.html</description>
-    </item>
-    <item>
-      <title>安土城跡（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1217.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1217.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1217.html</description>
-    </item>
-    <item>
-      <title>八幡堀（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1228.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1228.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1228.html</description>
-    </item>
-    <item>
-      <title>城なび館（特別史跡安土城跡ガイダンス施設）（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1230.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1230.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1230.html</description>
-    </item>
-    <item>
-      <title>八幡堀めぐり（和でん）（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1239.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1239.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1239.html</description>
-    </item>
-    <item>
-      <title>お堀めぐり（ラビットハウス）（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1242.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1242.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1242.html</description>
-    </item>
-    <item>
-      <title>安土城タイムトリップVR（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1261.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1261.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1261.html</description>
-    </item>
-    <item>
-      <title>空色ワイナリー ハーベストツアー（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1268.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1268.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1268.html</description>
-    </item>
-    <item>
-      <title>近江八幡・安土サウンドトリップ（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1271.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1271.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1271.html</description>
-    </item>
-    <item>
-      <title>周遊謎解き in 近江八幡 ～織田信長と絡繰仕掛けの城下町～（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/spot/detail_1275.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/spot/detail_1275.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/spot/detail_1275.html</description>
-    </item>
-    <item>
-      <title>ＭＡＣＨＩＹＡ ＩＮＮ｜宿泊施設（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/stay/detail_1016.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/stay/detail_1016.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/stay/detail_1016.html</description>
-    </item>
-    <item>
-      <title>Guesthouse Mio 澪｜宿泊施設（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/stay/detail_1020.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/stay/detail_1020.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/stay/detail_1020.html</description>
-    </item>
-    <item>
-      <title>Little Birds hostel｜宿泊施設（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/stay/detail_1033.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/stay/detail_1033.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/stay/detail_1033.html</description>
-    </item>
-    <item>
-      <title>コンフォートイン近江八幡｜宿泊施設（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/stay/detail_1081.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/stay/detail_1081.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/stay/detail_1081.html</description>
-    </item>
-    <item>
-      <title>ビジネス第一ホテル｜宿泊施設（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/stay/detail_1085.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/stay/detail_1085.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/stay/detail_1085.html</description>
-    </item>
-    <item>
-      <title>グリーンホテルYes近江八幡｜宿泊施設（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/stay/detail_1086.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/stay/detail_1086.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/stay/detail_1086.html</description>
-    </item>
-    <item>
-      <title>ホテルはちまん｜宿泊施設（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/stay/detail_1097.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/stay/detail_1097.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/stay/detail_1097.html</description>
-    </item>
-    <item>
-      <title>ホテル ニューオウミ｜宿泊施設（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/stay/detail_1109.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/stay/detail_1109.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/stay/detail_1109.html</description>
-    </item>
-    <item>
-      <title>旅宿うさぎとかめ（GuestHouse USAGI to KAME）｜宿泊施設（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/stay/detail_1114.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/stay/detail_1114.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/stay/detail_1114.html</description>
-    </item>
-    <item>
-      <title>ビジネスホテル 西ノ庄｜宿泊施設（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/stay/detail_1120.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/stay/detail_1120.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/stay/detail_1120.html</description>
-    </item>
-    <item>
-      <title>ビジネスホテル シェル｜宿泊施設（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/stay/detail_1125.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/stay/detail_1125.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/stay/detail_1125.html</description>
-    </item>
-    <item>
-      <title>近江八幡ユースホステル｜宿泊施設（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/stay/detail_1127.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/stay/detail_1127.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/stay/detail_1127.html</description>
-    </item>
-    <item>
-      <title>宿院妙覚院｜宿泊施設（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/stay/detail_1128.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/stay/detail_1128.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/stay/detail_1128.html</description>
-    </item>
-    <item>
-      <title>休暇村近江八幡｜宿泊施設（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/stay/detail_1130.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/stay/detail_1130.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/stay/detail_1130.html</description>
-    </item>
-    <item>
-      <title>漁家民宿 湖上荘｜宿泊施設（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/stay/detail_1132.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/stay/detail_1132.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/stay/detail_1132.html</description>
-    </item>
-    <item>
-      <title>Guesthouse En｜宿泊施設（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/stay/detail_1142.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/stay/detail_1142.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/stay/detail_1142.html</description>
-    </item>
-    <item>
-      <title>旅宿ありときりぎりす（GuestHouse ARI to KIRIGIRISU）｜宿泊施設（出典：近江八幡市観光サイト）</title>
-      <link>https://www.omi8.com/stay/detail_1166.html</link>
-      <guid isPermaLink="true">https://www.omi8.com/stay/detail_1166.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:19:42 +0000</pubDate>
-      <description>新着記事を検出しました: https://www.omi8.com/stay/detail_1166.html</description>
-    </item>
-    <item>
-      <title>安土未来づくり課（出典：近江八幡市公式サイト）</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/aduchi_mirai/index.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/aduchi_mirai/index.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:17:46 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/aduchi_mirai/index.html</description>
-    </item>
-    <item>
-      <title>お知らせ（出典：近江八幡市公式サイト）</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/aduchi_mirai/osirase/index.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/aduchi_mirai/osirase/index.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:17:46 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/aduchi_mirai/osirase/index.html</description>
-    </item>
-    <item>
-      <title>安土学区コミュニティエリア整備のお知らせ（出典：近江八幡市公式サイト）</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/aduchikyouiku/21707.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/aduchikyouiku/21707.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:17:46 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/aduchikyouiku/21707.html</description>
-    </item>
-    <item>
-      <title>安土小学校整備（出典：近江八幡市公式サイト）</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/aduchikyouiku/adutisyous_seibi/index.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/aduchikyouiku/adutisyous_seibi/index.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:17:46 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/aduchikyouiku/adutisyous_seibi/index.html</description>
-    </item>
-    <item>
-      <title>安土コミュニティエリア整備推進室（出典：近江八幡市公式サイト）</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/aduchikyouiku/index.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/aduchikyouiku/index.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:17:46 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/aduchikyouiku/index.html</description>
-    </item>
-    <item>
-      <title>説明会・公聴会（出典：近江八幡市公式サイト）</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/aduchikyouiku/setsumeikai/index.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/aduchikyouiku/setsumeikai/index.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:17:46 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/aduchikyouiku/setsumeikai/index.html</description>
-    </item>
-    <item>
-      <title>整備(検討)通信（出典：近江八幡市公式サイト）</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/aduchikyouiku/tsushin/index.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/aduchikyouiku/tsushin/index.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:17:46 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/aduchikyouiku/tsushin/index.html</description>
-    </item>
-    <item>
-      <title>行政情報（出典：近江八幡市公式サイト）</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/choju/2/index.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/choju/2/index.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:17:46 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/choju/2/index.html</description>
-    </item>
-    <item>
-      <title>地域包括支援センター・介護予防支援事業所（出典：近江八幡市公式サイト）</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/choju/center/index.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/choju/center/index.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:17:46 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/choju/center/index.html</description>
-    </item>
-    <item>
-      <title>生きがい対策(老人クラブ)（出典：近江八幡市公式サイト）</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/choju/club/index.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/choju/club/index.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:17:46 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/choju/club/index.html</description>
-    </item>
-    <item>
-      <title>長寿福祉課（出典：近江八幡市公式サイト）</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/choju/index.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/choju/index.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:17:46 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/choju/index.html</description>
-    </item>
-    <item>
-      <title>介護予防（出典：近江八幡市公式サイト）</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/choju/kaigoyobou/index.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/choju/kaigoyobou/index.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:17:46 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/choju/kaigoyobou/index.html</description>
-    </item>
-    <item>
-      <title>認知症について（出典：近江八幡市公式サイト）</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/choju/ninchishou/index.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/choju/ninchishou/index.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:17:46 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/choju/ninchishou/index.html</description>
-    </item>
-    <item>
-      <title>近江八幡市ささえあい商助推進事業者（出典：近江八幡市公式サイト）</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/choju/sasaeai/index.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/choju/sasaeai/index.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:17:46 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/choju/sasaeai/index.html</description>
-    </item>
-    <item>
-      <title>高齢者の助成・支援制度（出典：近江八幡市公式サイト）</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/choju/shien/index.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/choju/shien/index.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:17:46 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/choju/shien/index.html</description>
-    </item>
-    <item>
-      <title>その他の高齢者福祉（出典：近江八幡市公式サイト）</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/choju/sonota/index.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/choju/sonota/index.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:17:46 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/choju/sonota/index.html</description>
-    </item>
-    <item>
-      <title>暮らし・手続き（出典：近江八幡市公式サイト）</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/citypromotion/1/index.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/citypromotion/1/index.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:17:46 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/citypromotion/1/index.html</description>
-    </item>
-    <item>
-      <title>しごと・産業（出典：近江八幡市公式サイト）</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/citypromotion/2/index.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/citypromotion/2/index.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:17:46 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/citypromotion/2/index.html</description>
-    </item>
-    <item>
-      <title>本市魅力発信課の公式X(旧ツイッター)アカウントへの不正アクセスのご報告（出典：近江八幡市公式サイト）</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/citypromotion/31350.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/citypromotion/31350.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:17:46 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/citypromotion/31350.html</description>
-    </item>
-    <item>
-      <title>魅力発信課（出典：近江八幡市公式サイト）</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/citypromotion/index.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/citypromotion/index.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:17:46 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/citypromotion/index.html</description>
-    </item>
-    <item>
-      <title>申請書ダウンロード【道路法、河川法、法定外公共物管理条例、官民境界、ヘドロ配車関係】（出典：近江八幡市公式サイト）</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/doboku/1079.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/doboku/1079.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:17:46 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/doboku/1079.html</description>
-    </item>
-    <item>
-      <title>滋賀県水害情報発信サイト（出典：近江八幡市公式サイト）</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/doboku/1533.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/doboku/1533.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:17:46 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/doboku/1533.html</description>
-    </item>
-    <item>
-      <title>官民境界に関すること（出典：近江八幡市公式サイト）</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/doboku/1887.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/doboku/1887.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:17:46 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/doboku/1887.html</description>
-    </item>
-    <item>
-      <title>土木課業務内容（出典：近江八幡市公式サイト）</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/doboku/706.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/doboku/706.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:17:46 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/doboku/706.html</description>
-    </item>
-    <item>
-      <title>はじめに（出典：近江八幡市公式サイト）</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/doboku/877.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/doboku/877.html</guid>
-      <pubDate>Fri, 04 Sep 2026 06:17:46 +0000</pubDate>
-      <description>新着ページを検出しました: https://www.city.omihachiman.lg.jp/soshiki/doboku/877.html</description>
-    </item>
-    <item>
-      <title>近江八幡警察署の活動（6月19日）（出典：近江八幡警察署(滋賀県警)）</title>
+      <title>近江八幡警察署の活動（6月19日）</title>
       <link>https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html</link>
       <guid isPermaLink="false">https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html#2026-06-19</guid>
       <pubDate>Fri, 19 Jun 2026 00:00:00 +0900</pubDate>
       <description>6月19日（金曜日）、詐欺の被害を未然に防いでくれた武佐郵便局局員さんのお2人に、セブンイレブン近江八幡池田本町店の店員さんに署長感謝状を贈呈したよ。郵便局員さんは、高齢のお客さんが「ゆうちょ銀行の限度額を引き上げて欲しい。」「手続きした書類の控えも欲しい。」等と言って来店したので、詐欺に遭ってるのではないかと思って警察に通報してくれたよ。店員さんは、電話をつないだまま来店した高齢のお客さんが「孫のゲーム代と言えばいいから。」「電話は絶対に切ってはだめ。」等と書かれたメモを出して電子マネーを購入しようとしたのを不審に思い、すぐに詐欺だと気付いてくれたんだ。本当にありがとうございました！</description>
     </item>
     <item>
-      <title>近江八幡警察署の活動（2月13日）（出典：近江八幡警察署(滋賀県警)）</title>
+      <title>近江八幡警察署の活動（2月13日）</title>
       <link>https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html</link>
       <guid isPermaLink="false">https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html#2026-02-13</guid>
       <pubDate>Fri, 13 Feb 2026 00:00:00 +0900</pubDate>
       <description>2月13日（金曜日）、湖東信用金庫近江八幡支店や関西みらい銀行八幡駅前支店のみなさんと一緒に啓発をしたよ。ロッテさんから御協力を頂き、「チョコは甘くておいしいけれど甘い話にはご用心！」とのメッセージシールを貼ったチョコレートや啓発チラシなどを手渡しながら、来店されたお客さんに注意を呼び掛けたよ！みなさんもだまされないように気を付けてね！</description>
     </item>
     <item>
-      <title>近江八幡警察署の活動（3月1日）（出典：近江八幡警察署(滋賀県警)）</title>
+      <title>近江八幡警察署の活動（3月1日）</title>
       <link>https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html</link>
       <guid isPermaLink="false">https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html#2025-03-01</guid>
       <pubDate>Sat, 01 Mar 2025 00:00:00 +0900</pubDate>
       <description>3月1日（日曜日）午後1時30分から午後4時までの間、近江八幡警察署で、「東近江行政組合消防本部」「自衛隊」との公務員合同説明会を開催するよ！予約は不要なので、警察官、消防士、自衛官に興味がある方はぜひ足を運んでね。</description>
     </item>
     <item>
-      <title>近江八幡警察署の活動（12月2日）（出典：近江八幡警察署(滋賀県警)）</title>
+      <title>近江八幡警察署の活動（12月2日）</title>
       <link>https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html</link>
       <guid isPermaLink="false">https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html#2024-12-02</guid>
       <pubDate>Mon, 02 Dec 2024 00:00:00 +0900</pubDate>
       <description>12月2日（火曜日）、事件事故の多発が懸念される年末に向けて、特別歳末警戒出動式をしたよ。ゲストとして、近江八幡観光物産協会の会員や有志で結成された「信長隊安土衆」のみなさんに出席してもらったんだ。出動式の後、イオン近江八幡店で、「信長隊安土衆」のみなさんと一緒に特殊詐欺被害の防止などを呼び掛けたよ！</description>
     </item>
     <item>
-      <title>近江八幡警察署の活動（11月13日）（出典：近江八幡警察署(滋賀県警)）</title>
+      <title>近江八幡警察署の活動（11月13日）</title>
       <link>https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html</link>
       <guid isPermaLink="false">https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html#2024-11-13</guid>
       <pubDate>Wed, 13 Nov 2024 00:00:00 +0900</pubDate>
       <description>11月13日（木曜日）、山岳遭難救助訓練を実施したよ。「登山者が山中で負傷して救助を求めている」という想定で、負傷した人を発見してからヘリコプターで救助するまでの訓練をしたんだ。登山者にチラシ等を配って、安全な登山を呼び掛けたよ。</description>
     </item>
     <item>
-      <title>近江八幡警察署の活動（11月10日）（出典：近江八幡警察署(滋賀県警)）</title>
+      <title>近江八幡警察署の活動（11月10日）</title>
       <link>https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html</link>
       <guid isPermaLink="false">https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html#2024-11-10</guid>
       <pubDate>Sun, 10 Nov 2024 00:00:00 +0900</pubDate>
       <description>11月10日（月曜日）、イオン近江八幡ショッピングセンターで、警備員さんや店員さんと一緒に不審者対応訓練をしたよ。刃物を持った男が暴れているという想定で、店員さんがお客さんに避難を呼びかけ、警備員さんが男を確保したんだ。不審な行動をする人物を見かけたときは、すぐに警察等に通報してね！</description>
     </item>
     <item>
-      <title>近江八幡警察署の活動（10月15日）（出典：近江八幡警察署(滋賀県警)）</title>
+      <title>近江八幡警察署の活動（10月15日）</title>
       <link>https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html</link>
       <guid isPermaLink="false">https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html#2024-10-15</guid>
       <pubDate>Tue, 15 Oct 2024 00:00:00 +0900</pubDate>
       <description>10月15日（水曜日）、セブンイレブン江頭町店の店員さんに署長感謝状を贈呈したよ。店員さんは、高額のギフトカードを購入しようと来店した高齢のお客さんに、「騙されていませんか。」と声をかけ、警察に連絡して詐欺の被害を未然に防いでくれたんだ。また、日頃から詐欺被害防止の取組をしていただいている同店を、「特殊詐欺被害防止対策優良店」に認証したよ。いつもありがとうございます</description>
     </item>
     <item>
-      <title>近江八幡警察署の活動（9月2日）（出典：近江八幡警察署(滋賀県警)）</title>
+      <title>近江八幡警察署の活動（9月2日）</title>
       <link>https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html</link>
       <guid isPermaLink="false">https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html#2024-09-02</guid>
       <pubDate>Mon, 02 Sep 2024 00:00:00 +0900</pubDate>
       <description>9月2日（火曜日）、JR近江八幡駅で痴漢等被害防止の啓発活動をしたよ。駅を利用される方に啓発品のティッシュやチラシを配りながら、被害の防止を呼びかけたよ。</description>
     </item>
     <item>
-      <title>近江八幡警察署の活動（7月16日）（出典：近江八幡警察署(滋賀県警)）</title>
+      <title>近江八幡警察署の活動（7月16日）</title>
       <link>https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html</link>
       <guid isPermaLink="false">https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html#2024-07-16</guid>
       <pubDate>Tue, 16 Jul 2024 00:00:00 +0900</pubDate>
       <description>7月16日（水曜日）、琵琶湖で水難救助訓練をしたよ。船から湖に落ちた人を安全に引き上げる訓練、カヌーやサップが転覆したとの想定で乗船者を救助する訓練を行って、もしものときに備えているんだ。船に乗る時は、必ずライフジャケットを身につけてね！</description>
     </item>
     <item>
-      <title>近江八幡警察署の活動（7月3日）（出典：近江八幡警察署(滋賀県警)）</title>
+      <title>近江八幡警察署の活動（7月3日）</title>
       <link>https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html</link>
       <guid isPermaLink="false">https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html#2024-07-03</guid>
       <pubDate>Wed, 03 Jul 2024 00:00:00 +0900</pubDate>
       <description>7月3日（木曜日）、イオン近江八幡ショッピングセンターの警備員さんに署長感謝状を贈呈したよ！警備員さんは、店内で刃物を持った女性がいたので、刺又等を上手に使って女性に声を掛けて刃物を取り上げたんだ。警備員さんの冷静な判断と行動で、誰も怪我をせずに事件も解決したよ！詐欺の被害を未然に防いでくれたローソン竜王西横関店の店長さんに署長感謝状を贈呈したよ。店長さんは、高齢のお客さんが、サイトにお金を払おうとしていた様子から詐欺ではないかと思って警察に連絡し、被害を未然に防いでくれたんだ！</description>
     </item>
     <item>
-      <title>近江八幡警察署の活動（6月13日）（出典：近江八幡警察署(滋賀県警)）</title>
+      <title>近江八幡警察署の活動（6月13日）</title>
       <link>https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html</link>
       <guid isPermaLink="false">https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html#2024-06-13</guid>
       <pubDate>Thu, 13 Jun 2024 00:00:00 +0900</pubDate>
       <description>6月13日（金曜日）、近江八幡市鷹飼町の滋賀銀行八幡駅前支店さんに協力してもらって同店に来店された方に特殊詐欺被害防止の啓発をしたよ！みなさん、詐欺の被害に遭わないように気を付けてね！</description>
     </item>
     <item>
-      <title>近江八幡警察署の活動（7月6日）（出典：近江八幡警察署(滋賀県警)）</title>
+      <title>近江八幡警察署の活動（7月6日）</title>
       <link>https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html</link>
       <guid isPermaLink="false">https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html#2023-07-06</guid>
       <pubDate>Thu, 06 Jul 2023 00:00:00 +0900</pubDate>
       <description>7月6日（日曜日）、午後1時30分から午後4時までの間、近江八幡警察署において、「近江八幡警察署」「東近江警察署」「東近江行政組合消防本部」「自衛隊」の合同で就職説明会を開催するよ！予約は不要なので、警察官、消防士、自衛官に興味がある方はぜひ足を運んでね！</description>
     </item>
     <item>
-      <title>近江八幡警察署の活動（5月19日）（出典：近江八幡警察署(滋賀県警)）</title>
+      <title>近江八幡警察署の活動（5月19日）</title>
       <link>https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html</link>
       <guid isPermaLink="false">https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html#2023-05-19</guid>
       <pubDate>Fri, 19 May 2023 00:00:00 +0900</pubDate>
       <description>5月19日（月曜日）、滋賀銀行八幡駅前支店の行員さんに署長感謝状を贈呈したよ。行員さんは、来店したお客さんがSNSのアプリを操作しながら、「SNSで知り合った相手に投資の資金を返済しないといけない。」などと言っている様子を見て詐欺ではないかと思い、警察に通報して被害を未然に防いでくれたんだ。行員さん、ありがとうございます！</description>
     </item>
     <item>
-      <title>近江八幡警察署の活動（4月21日）（出典：近江八幡警察署(滋賀県警)）</title>
+      <title>近江八幡警察署の活動（4月21日）</title>
       <link>https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html</link>
       <guid isPermaLink="false">https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.html#2023-04-21</guid>
       <pubDate>Fri, 21 Apr 2023 00:00:00 +0900</pubDate>
