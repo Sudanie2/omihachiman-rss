@@ -31,37 +31,25 @@ jobs:
         run: |
           set -euo pipefail
           python discover_hubs.py
-      - name: Detect new articles and Convert to RSS
+      - name: Collect from city website
         run: |
-          set -euo pipefail
           python watch_hubs_and_generate_rss.py
-      - name: Fetch Keizai Shimbun RSS and merge
+      - name: Collect from RSS sources
         run: |
-          set -euo pipefail
-          python fetch_keizai_rss.py
-      - name: Fetch Goguynet RSS and merge
+          python fetch_rss_sources.py
+      - name: Collect from hub-watch sources
         run: |
-          set -euo pipefail
-          python fetch_goguynet_rss.py
-      - name: Watch omi8.com hubs and merge
+          python watch_hub_sources.py
+      - name: Collect from Shiga Police page
         run: |
-          set -euo pipefail
-          python watch_omi8_hubs.py
-      - name: Fetch Kenkou1 RSS and merge
-        run: |
-          set -euo pipefail
-          python fetch_kenkou1_rss.py
-      - name: Fetch Shiga Police Omihachiman activity and merge
-        run: |
-          set -euo pipefail
           python fetch_shiga_police_omihachiman.py
-      - name: Fetch Omihachiman Library new posts and merge
+      - name: Build RSS feed
         run: |
           set -euo pipefail
-          python fetch_omihachiman_library.py
+          python build_feed.py
       - name: Commit and Push RSS
         run: |
-          git add hubs.json known_links.json rss.xml rss_items.json
+          git add hubs.json known_links.json rss.xml rss_items.json feed_fingerprint.txt
           if git diff --quiet --cached; then
             echo "No changes in rss.xml. Skipping commit."
             exit 0
