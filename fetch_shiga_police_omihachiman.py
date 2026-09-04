@@ -30,15 +30,48 @@ PAGE_URL = "https://www.pref.shiga.lg.jp/police/sikumi/profile/303371/318537.htm
 BASE_URL = "https://www.pref.shiga.lg.jp"
 SOURCE_NAME = "近江八幡警察署(滋賀県警)"
 
-SECTION_START_MARKER = "新着一覧"
-SECTION_END_MARKER = "お問い合わせ"
-DATE_PATTERN = re.compile(r"(\d{1,2})月(\d{1,2})日(?:\s*[（(][^）)]{1,4}曜日[）)])?")
+# 本文の開始・終了を示す目印の候補(上から順に試す)
+SECTION_START_MARKERS = ["新着一覧", "近江八幡警察署の活動"]
+SECTION_END_MARKERS = ["お問い合わせ", "ページの先頭へ戻る", "県内の警察施設"]
+# 「6月19日（金曜日）」のような記事冒頭の日付にマッチする。
+# 「2026年7月8日」(ページ更新日)のような年付き日付は除外する。
+DATE_PATTERN = re.compile(r"(?<!年)(\d{1,2})月(\d{1,2})日(?:\s*[（(][^）)]{1,4}曜日[）)])?")
 
 
 def clean_text(text: str) -> str:
     text = text.replace("byけいたくん", "").replace("by けいたくん", "")
     text = re.sub(r"\s+", " ", text).strip()
     return text
+
+
+def extract_content_blob(full_text: str) -> str:
+    """
+    本文にあたる範囲を切り出す。
+    目印が見つからない場合は「最初の日付表記以降」をフォールバックとして使う。
+    """
+    start_idx = -1
+    for marker in SECTION_START_MARKERS:
+        idx = full_text.find(marker)
+        if idx != -1:
+            start_idx = idx + len(marker)
+            break
+
+    if start_idx == -1:
+        # フォールバック: 最初の日付表記の位置から
+        m = DATE_PATTERN.search(full_text)
+        if not m:
+            return ""
+        start_idx = m.start()
+        print(f"[{SOURCE_NAME}] 開始の目印が見つからないため、最初の日付表記から本文とみなします。")
+
+    end_idx = len(full_text)
+    for marker in SECTION_END_MARKERS:
+        idx = full_text.find(marker, start_idx)
+        if idx != -1:
+            end_idx = idx
+            break
+
+    return re.sub(r"\s+", " ", full_text[start_idx:end_idx]).strip()
 
 
 def main():
@@ -53,14 +86,10 @@ def main():
     soup = BeautifulSoup(html, "html.parser")
     full_text = soup.get_text("\n")
 
-    start_idx = full_text.find(SECTION_START_MARKER)
-    end_idx = full_text.find(SECTION_END_MARKER, start_idx if start_idx >= 0 else 0)
-    if start_idx == -1 or end_idx == -1:
-        print(f"[{SOURCE_NAME}] 記事本文の範囲が見つかりません。ページ構造が変わった可能性があります。")
+    content_blob = extract_content_blob(full_text)
+    if not content_blob:
+        print(f"[{SOURCE_NAME}] 本文が見つかりません。ページ構造が変わった可能性があります。")
         return
-
-    content_blob = full_text[start_idx + len(SECTION_START_MARKER):end_idx]
-    content_blob = re.sub(r"\s+", " ", content_blob).strip()
 
     matches = list(DATE_PATTERN.finditer(content_blob))
     if not matches:
