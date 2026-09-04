@@ -7,6 +7,7 @@
   - 近江八幡経済新聞
   - 号外NET 東近江市・近江八幡市 (タイトルに「近江八幡」を含む記事のみ)
   - 近江八幡市立総合医療センター
+  - 近江八幡市立資料館・かわらミュージアム
   - 安土文芸の郷 ニュース＆お知らせ
   - 安土文芸の郷 事業・活動のご報告
 
@@ -46,6 +47,11 @@ RSS_SOURCES = [
     {
         "name": "近江八幡市立総合医療センター",
         "url": "https://www.kenkou1.com/news.xml",
+        "title_filter": None,
+    },
+    {
+        "name": "近江八幡市立資料館・かわらミュージアム",
+        "url": "https://www.omihachiman-shiryoukan-kawara.jp/feed/",
         "title_filter": None,
     },
     {
