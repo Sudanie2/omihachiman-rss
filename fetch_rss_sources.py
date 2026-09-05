@@ -8,6 +8,7 @@
   - 号外NET 東近江市・近江八幡市 (タイトルに「近江八幡」を含む記事のみ)
   - 近江八幡市立総合医療センター
   - 近江八幡市立資料館・かわらミュージアム
+  - シガブンシンブン(近江八幡市で検索した結果のみ)
   - 安土城考古博物館
   - 安土城考古博物館長のつぶやき(Bloggerブログ / Atom形式)
   - 安土文芸の郷 ニュース＆お知らせ
@@ -56,6 +57,12 @@ RSS_SOURCES = [
     {
         "name": "近江八幡市立資料館・かわらミュージアム",
         "url": "https://www.omihachiman-shiryoukan-kawara.jp/feed/",
+        "title_filter": None,
+    },
+    {
+        "name": "シガブンシンブン(滋賀県文化財保護協会)",
+        # 「近江八幡市」で検索した結果をRSS化したもの(WordPressの検索フィード)
+        "url": "https://www.shiga-bunkazai.jp/shigabun-shinbun/?s=%E8%BF%91%E6%B1%9F%E5%85%AB%E5%B9%A1%E5%B8%82&feed=rss2",
         "title_filter": None,
     },
     {
