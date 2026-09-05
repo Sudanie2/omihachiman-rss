@@ -8,6 +8,8 @@
   - 号外NET 東近江市・近江八幡市 (タイトルに「近江八幡」を含む記事のみ)
   - 近江八幡市立総合医療センター
   - 近江八幡市立資料館・かわらミュージアム
+  - 安土城考古博物館
+  - 安土城考古博物館長のつぶやき(Bloggerブログ / Atom形式)
   - 安土文芸の郷 ニュース＆お知らせ
   - 安土文芸の郷 事業・活動のご報告
 
@@ -16,10 +18,12 @@
 1つのサイトで取得に失敗しても、他のサイトの処理は続行する。
 """
 
+import re
 import sys
 import xml.etree.ElementTree as ET
 
 import requests
+from bs4 import BeautifulSoup
 
 from common import (
     fetch_bytes,
@@ -55,6 +59,16 @@ RSS_SOURCES = [
         "title_filter": None,
     },
     {
+        "name": "安土城考古博物館",
+        "url": "https://azuchi-museum.or.jp/feed/",
+        "title_filter": None,
+    },
+    {
+        "name": "安土城考古博物館長のつぶやき",
+        "url": "https://azuchi-museum.blogspot.com/feeds/posts/default",
+        "title_filter": None,
+    },
+    {
         "name": "安土文芸の郷",
         "url": "http://bungei.or.jp/files/rss/block6.xml",  # ニュース＆お知らせ
         "title_filter": None,
@@ -70,6 +84,10 @@ RSS_SOURCES = [
 ITEM_TAGS = {"item", "entry"}
 # 日付を表す要素名の候補
 DATE_TAGS = ("pubdate", "date", "published", "updated")
+# 本文を表す要素名の候補(タイトルが空の記事で見出しを作るために使う)
+BODY_TAGS = ("description", "summary", "content", "encoded")
+# 本文から作る見出しの長さ
+FALLBACK_TITLE_LENGTH = 60
 
 
 def local_name(tag) -> str:
@@ -89,6 +107,23 @@ def child_text(item, names):
         if local_name(child.tag) in names and child.text and child.text.strip():
             return child.text.strip()
     return None
+
+
+def title_from_body(item) -> str:
+    """
+    タイトルが空の記事(ブログでよくある)で、本文の冒頭から見出しを作る。
+    HTMLタグを取り除き、先頭の一定文字数を使う。
+    """
+    body = child_text(item, set(BODY_TAGS))
+    if not body:
+        return ""
+    text = BeautifulSoup(body, "html.parser").get_text(" ", strip=True)
+    text = re.sub(r"\s+", " ", text).strip()
+    if not text:
+        return ""
+    if len(text) > FALLBACK_TITLE_LENGTH:
+        return text[:FALLBACK_TITLE_LENGTH].rstrip() + "…"
+    return text
 
 
 def extract_link(item):
@@ -121,7 +156,7 @@ def process_source(source, known, seen_links):
     found = 0
 
     for item in iter_items(root):
-        title = child_text(item, {"title"})
+        title = child_text(item, {"title"}) or title_from_body(item)
         link = extract_link(item)
         if not title or not link:
             continue
