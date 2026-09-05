@@ -42,6 +42,7 @@ SOURCE_BY_HOST = {
     "taneya.jp": "ラコリーナ近江八幡",
     "azuchi-museum.blogspot.com": "安土城考古博物館長のつぶやき",
     "azuchi-museum.or.jp": "安土城考古博物館",
+    "www.shiga-bunkazai.jp": "シガブンシンブン(滋賀県文化財保護協会)",
     "www.azuchi-museum.or.jp": "安土城考古博物館",
     "www.omihachiman-shiryoukan-kawara.jp": "近江八幡市立資料館・かわらミュージアム",
     "www.omi8man-kenkofureai.jp": "近江八幡市立健康ふれあい公園",
