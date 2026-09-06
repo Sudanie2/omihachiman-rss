@@ -27,6 +27,7 @@ from common import (
     load_json,
     merge_new_items,
     extract_page_date,
+    extract_page_summary,
     extract_page_title,
     normalize_url,
     now_iso,
@@ -135,6 +136,7 @@ def process_source(source, known, session):
         # ページに書かれた更新日を優先し、無ければ取得日を使う
         page_date = extract_page_date(soup)
         pub = page_date.strftime("%a, %d %b %Y %H:%M:%S %z") if page_date else ts_rfc822
+        summary = extract_page_summary(soup)
 
         known_updates[url] = {"title": title, "first_seen": ts}
         new_items.append(
@@ -142,6 +144,7 @@ def process_source(source, known, session):
                 "title": title,
                 "link": url,
                 "source": source["name"],
+                "description": summary,
                 "pubDate": pub,
             }
         )
