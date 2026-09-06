@@ -54,6 +54,9 @@ jobs:
       - name: Collect from list pages
         run: |
           python fetch_list_sources.py
+      - name: Collect from section pages
+        run: |
+          python fetch_section_links.py
       - name: Repair existing titles (manual only)
         if: github.event.inputs.repair_titles == 'true'
         run: |
