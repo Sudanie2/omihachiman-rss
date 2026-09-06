@@ -60,9 +60,9 @@ def build_rss(items) -> str:
     return f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>近江八幡市 くらし更新だより(非公式・複数ソース統合)</title>
+    <title>近江八幡市.com</title>
     <link>https://www.city.omihachiman.lg.jp/index.html</link>
-    <description>近江八幡市関連の複数サイトの新着をまとめた非公式RSSです。</description>
+    <description>近江八幡市に関する各種公式サイトの新着情報をまとめた非公式RSSです。</description>
     <lastBuildDate>{now_rfc822()}</lastBuildDate>
 {chr(10).join(entries_xml)}
   </channel>
