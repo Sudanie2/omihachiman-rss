@@ -12,7 +12,7 @@ on:
         type: boolean
         default: false
       repair_titles:
-        description: "既存記事のタイトル・日付を取り直す(修復用)"
+        description: "既存記事のタイトル・日付・要約を取り直す(修復用)"
         type: boolean
         default: false
 permissions:
@@ -39,6 +39,9 @@ jobs:
         run: |
           set -euo pipefail
           python discover_hubs.py
+      - name: Collect city top-page lists (JSON)
+        run: |
+          python fetch_city_lists.py
       - name: Collect from city website
         run: |
           python watch_hubs_and_generate_rss.py
