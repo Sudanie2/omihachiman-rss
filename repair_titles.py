@@ -1,17 +1,22 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-既存記事のタイトル修復スクリプト(必要な時だけ実行)
+既存記事のタイトル・日付の修復スクリプト(必要な時だけ実行)
 
-タイトル抽出の不具合により、記事名ではなくサイト名(例:「近江八幡市公式観光サイト」)
-が保存されてしまった記事を洗い出し、ページを開き直して正しいタイトルに直す。
+ページを開き直して、以下を修正する。
+  - サイト名などが記事名として保存されてしまったタイトル
+  - 取得日が入っている日付を、ページに書かれた本来の更新日・公開日に置き換え
+
+対象は、ページを直接解析して集めたサイト(市公式サイト・観光サイト・図書館)のみ。
+RSSから取得したサイトは配信元の日付をそのまま使っているため対象外。
 
 ワークフローの手動実行で repair_titles にチェックを入れた時だけ動く。
-通常運転では実行されない。
 """
 
 import sys
 import time
+from email.utils import parsedate_to_datetime
+from urllib.parse import urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -19,6 +24,7 @@ from bs4 import BeautifulSoup
 from common import (
     fetch_bytes,
     decode_response,
+    extract_page_date,
     extract_page_title,
     load_json,
     save_json,
@@ -28,29 +34,38 @@ from common import (
     REQUEST_INTERVAL_SEC,
 )
 
+# ページを解析して収集しているサイト(ここだけが修復対象)
+TARGET_HOSTS = {
+    "www.city.omihachiman.lg.jp",
+    "www.omi8.com",
+    "library.city.omihachiman.shiga.jp",
+}
+
 # 修復対象とみなすタイトル(サイト名や不明表記)
 BAD_TITLES = set(REJECT_TITLES) | {"(タイトル不明)"}
 
-MAX_REPAIR_PER_RUN = 120
+MAX_REPAIR_PER_RUN = 200
 
 
 def main():
     items = load_json(FEED_ITEMS_FILE, [])
     known = load_json(KNOWN_LINKS_FILE, {})
 
-    targets = [it for it in items if (it.get("title") or "").strip() in BAD_TITLES]
+    targets = [
+        it for it in items
+        if urlparse(it.get("link", "")).netloc in TARGET_HOSTS
+    ]
     if not targets:
-        print("修復が必要な記事はありませんでした。")
+        print("修復対象の記事はありませんでした。")
         return
 
-    print(f"修復対象: {len(targets)}件")
+    print(f"確認対象: {len(targets)}件(上限{MAX_REPAIR_PER_RUN}件)")
     session = requests.Session()
-    repaired = 0
+    fixed_title = 0
+    fixed_date = 0
 
     for it in targets[:MAX_REPAIR_PER_RUN]:
         url = it.get("link")
-        if not url:
-            continue
         try:
             resp = fetch_bytes(url, session)
             html = decode_response(resp)
@@ -60,22 +75,33 @@ def main():
         time.sleep(REQUEST_INTERVAL_SEC)
 
         soup = BeautifulSoup(html, "html.parser")
-        new_title = extract_page_title(soup)
 
-        if new_title in BAD_TITLES:
-            print(f"  [変化なし] {url}")
-            continue
+        # タイトルの修復
+        if (it.get("title") or "").strip() in BAD_TITLES:
+            new_title = extract_page_title(soup)
+            if new_title not in BAD_TITLES:
+                print(f"  タイトル修復: 「{it.get('title')}」 -> 「{new_title}」")
+                it["title"] = new_title
+                if url in known:
+                    known[url]["title"] = new_title
+                fixed_title += 1
 
-        old_title = it.get("title")
-        it["title"] = new_title
-        if url in known:
-            known[url]["title"] = new_title
-        repaired += 1
-        print(f"  修復: 「{old_title}」 -> 「{new_title}」")
+        # 日付の修復(ページに書かれた更新日を優先)
+        page_date = extract_page_date(soup)
+        if page_date:
+            new_pub = page_date.strftime("%a, %d %b %Y %H:%M:%S %z")
+            try:
+                same = parsedate_to_datetime(it.get("pubDate", "")).date() == page_date.date()
+            except Exception:
+                same = False
+            if not same:
+                print(f"  日付修復: {page_date.strftime('%Y-%m-%d')}  {it.get('title', '')[:30]}")
+                it["pubDate"] = new_pub
+                fixed_date += 1
 
     save_json(FEED_ITEMS_FILE, items)
     save_json(KNOWN_LINKS_FILE, known, compact=True)
-    print(f"{repaired}件のタイトルを修復しました。")
+    print(f"タイトル {fixed_title}件 / 日付 {fixed_date}件 を修復しました。")
 
 
 if __name__ == "__main__":
