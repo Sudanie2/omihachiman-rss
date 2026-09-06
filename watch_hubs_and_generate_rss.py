@@ -30,6 +30,7 @@ from bs4 import BeautifulSoup
 from common import (
     fetch_bytes,
     decode_response,
+    extract_page_date,
     extract_page_title,
     get_robot_parser,
     load_json,
@@ -168,13 +169,17 @@ def main():
         soup = BeautifulSoup(html, "html.parser")
         title = extract_page_title(soup)
 
+        # ページに書かれた更新日を優先し、無ければ取得日を使う
+        page_date = extract_page_date(soup)
+        pub = page_date.strftime("%a, %d %b %Y %H:%M:%S %z") if page_date else ts_rfc822
+
         known_updates[url] = {"title": title, "first_seen": ts}
         new_items.append(
             {
                 "title": title,
                 "link": url,
                 "source": SOURCE_NAME,
-                "pubDate": ts_rfc822,
+                "pubDate": pub,
             }
         )
 
