@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-既存記事のタイトル・日付の修復スクリプト(必要な時だけ実行)
+既存記事のタイトル・日付・要約の修復スクリプト(必要な時だけ実行)
 
-ページを開き直して、以下を修正する。
+ページを開き直して、以下を修正・補完する。
   - サイト名などが記事名として保存されてしまったタイトル
   - 取得日が入っている日付を、ページに書かれた本来の更新日・公開日に置き換え
+  - 未設定の要約(記事内容の100〜150字程度の紹介文)
 
 対象は、ページを直接解析して集めたサイト(市公式サイト・観光サイト・図書館)のみ。
 RSSから取得したサイトは配信元の日付をそのまま使っているため対象外。
@@ -25,6 +26,7 @@ from common import (
     fetch_bytes,
     decode_response,
     extract_page_date,
+    extract_page_summary,
     extract_page_title,
     load_json,
     save_json,
@@ -63,6 +65,7 @@ def main():
     session = requests.Session()
     fixed_title = 0
     fixed_date = 0
+    fixed_summary = 0
 
     for it in targets[:MAX_REPAIR_PER_RUN]:
         url = it.get("link")
@@ -99,9 +102,16 @@ def main():
                 it["pubDate"] = new_pub
                 fixed_date += 1
 
+        # 要約の補完
+        if not (it.get("description") or "").strip():
+            summary = extract_page_summary(soup)
+            if summary:
+                it["description"] = summary
+                fixed_summary += 1
+
     save_json(FEED_ITEMS_FILE, items)
     save_json(KNOWN_LINKS_FILE, known, compact=True)
-    print(f"タイトル {fixed_title}件 / 日付 {fixed_date}件 を修復しました。")
+    print(f"タイトル {fixed_title}件 / 日付 {fixed_date}件 / 要約 {fixed_summary}件 を修復しました。")
 
 
 if __name__ == "__main__":
