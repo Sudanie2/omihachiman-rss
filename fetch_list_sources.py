@@ -7,7 +7,6 @@ RSS配信がなく、「日付 + タイトルリンク」が並ぶ一覧ペー�
 
 対象:
   - 近江八幡商工会議所           : カテゴリタグ「お知らせ」の記事のみ
-  - ラコリーナ近江八幡           : 新着情報の全記事
   - 近江八幡市立健康ふれあい公園 : 新着情報の全記事
 
 注意: サイトによっては「日付」と「タイトル」が別々のリンクになっており、
@@ -51,15 +50,6 @@ LIST_SOURCES = [
         # 記事リンクと判定するURLパターン(Noneならタグで判定)
         "link_pattern": None,
         # URLから取り除くクエリ(同じ記事が別URL扱いになるのを防ぐ)
-        "drop_query": [],
-    },
-    {
-        "name": "ラコリーナ近江八幡",
-        "base": "https://taneya.jp",
-        "url": "https://taneya.jp/la_collina/news/",
-        "tags": [],
-        "tag_filter": None,
-        "link_pattern": r"/la_collina/news/detail/\d+",
         "drop_query": [],
     },
     {
