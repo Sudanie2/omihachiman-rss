@@ -40,6 +40,7 @@ SOURCE_BY_HOST = {
     "bungei.or.jp": "安土文芸の郷",
     "8cci.com": "近江八幡商工会議所",
     "taneya.jp": "ラコリーナ近江八幡",
+    "ohshakyo.or.jp": "近江八幡市社会福祉協議会",
     "www.zd.ztv.ne.jp": "安土学区まちづくり協議会",
     "azuchi-shiga.com": "安土学区まちづくり協議会",
     "azuchi-museum.blogspot.com": "安土城考古博物館長のつぶやき",
