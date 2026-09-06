@@ -1,5 +1,565 @@
 [
   {
+    "title": "市庁舎整備基本設計概略案について(令和3年1月現在)",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/17658.html",
+    "source": "近江八幡市公式サイト",
+    "description": "新市庁舎整備事業は、基本計画の整備方針に基づき基本設計を進めています。この概略案は市ホームページなどでの公表や学区説明会を開催するなどして周知してまいりました。市は、概略案に対するご意見や異なる考え方についてもしっかり聴取しながら、設計精度を高めたいと考えています。",
+    "pubDate": "Tue, 24 Aug 2021 00:00:00 +0900"
+  },
+  {
+    "title": "「主要な施策の成果に関する説明書」を公表します",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/17661.html",
+    "source": "近江八幡市公式サイト",
+    "description": "主要な施策の成果に関する説明書の公表ページ",
+    "pubDate": "Mon, 22 Dec 2025 00:00:00 +0900"
+  },
+  {
+    "title": "市民広場アンケート調査結果",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/18144.html",
+    "source": "近江八幡市公式サイト",
+    "description": "市民の交流や活動拠点、災害時の広域防災活動に利用できる空間として、市役所北側の病院跡地一帯に市民広場の整備を検討しています。市民広場の具体的な整備については、広く市民の皆さまから意見を聞きながら、協働で創り上げていくため、令和3年1月に市民ニーズを把握するアンケート調査を実施しました。",
+    "pubDate": "Fri, 23 Apr 2021 00:00:00 +0900"
+  },
+  {
+    "title": "令和2年度新型コロナウイルス感染症対策支援に係る市独自施策の検証結果",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/18243.html",
+    "source": "近江八幡市公式サイト",
+    "description": "近江八幡市では新型コロナウイルスの拡大感染を受け令和2年度に市独自施策として、感染拡大防止に対する支援策、家計への支援策、事業者への支援策など様々な事業を実施してきました。つきましては各事業の一覧と効果検証結果を掲載いたします。",
+    "pubDate": "Mon, 27 May 2024 00:00:00 +0900"
+  },
+  {
+    "title": "近江八幡市オープンデータ",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/20312.html",
+    "source": "近江八幡市公式サイト",
+    "description": "本市では、保有する様々な公共データの利活用促進を図るため、誰でも自由に二次利用ができ、かつコンピュータによる利用が容易な形式で提供するオープンデータの推進に取り組んでいます。",
+    "pubDate": "Mon, 10 Nov 2025 00:00:00 +0900"
+  },
+  {
+    "title": "令和3年度新型コロナウイルス感染症対策支援に係る市独自施策の検証結果",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/22007.html",
+    "source": "近江八幡市公式サイト",
+    "description": "本市では、新型コロナウイルス感染症による影響を受ける市民生活や、経済活動への支援を目的として、感染拡大防止に対する支援や、家計支援、事業者支援などの市独自施策を実施しています。この度、令和3年度に実施した各事業の一覧と効果検証結果を取りまとめましたのでお知らせいたします。",
+    "pubDate": "Tue, 17 May 2022 00:00:00 +0900"
+  },
+  {
+    "title": "監査委員制度のお知らせ",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/23186.html",
+    "source": "近江八幡市公式サイト",
+    "description": "監査委員、監査委員事務局の業務及び監査の種類等について説明します。",
+    "pubDate": "Mon, 01 Jun 2026 00:00:00 +0900"
+  },
+  {
+    "title": "平成31(令和元)年度施設管理運営の評価およびモニタリング結果",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/23824.html",
+    "source": "近江八幡市公式サイト",
+    "description": "近江八幡市の公の施設の管理運営に指定管理者制度を導入している施設について、その管理状況と事業内容を施設所管課がモニタリングをした評価結果を掲載しています。",
+    "pubDate": "Thu, 20 Oct 2022 00:00:00 +0900"
+  },
+  {
+    "title": "令和2年度施設管理運営の評価およびモニタリング結果",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/23825.html",
+    "source": "近江八幡市公式サイト",
+    "description": "近江八幡市の公の施設の管理運営に指定管理者制度を導入している施設について、その管理状況と事業内容を施設所管課がモニタリングをした評価結果を掲載しています。",
+    "pubDate": "Thu, 20 Oct 2022 00:00:00 +0900"
+  },
+  {
+    "title": "令和3年度施設管理運営の評価およびモニタリング結果",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/23826.html",
+    "source": "近江八幡市公式サイト",
+    "description": "近江八幡市の公の施設の管理運営に指定管理者制度を導入している施設について、その管理状況と事業内容を施設所管課がモニタリングをした評価結果を掲載しています。",
+    "pubDate": "Thu, 20 Oct 2022 00:00:00 +0900"
+  },
+  {
+    "title": "公平委員会のお知らせ",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/24198.html",
+    "source": "近江八幡市公式サイト",
+    "description": "公平委員会は、地方公共団体の執行機関(行政委員会)の一つで、公平・公正な行政を確保するために必要なものとして、地方公務員法等の定めるところにより、市職員の勤務条件に関する措置の要求及び市職員に対する不利益処分に関する審査請求について審査し、必要な措置を講ずるために設置されています。",
+    "pubDate": "Tue, 10 Jan 2023 00:00:00 +0900"
+  },
+  {
+    "title": "個人情報ファイル簿の公表",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/25558.html",
+    "source": "近江八幡市公式サイト",
+    "description": "個人情報の保護に関する法律(平成15年法律第57号)の規定に基づき、個人情報ファイル簿の作成及び公表します。 個人情報ファイルとは、「保有個人情報」を含む情報の集合物であって、一定の事務の目的を達成するために特定の保有個人情報を容易に検索できるよう体系的に体系的に構成したものです。",
+    "pubDate": "Fri, 28 Aug 2026 00:00:00 +0900"
+  },
+  {
+    "title": "文書管理・電子決裁システムの導入に伴う公文書の電子的管理について",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/26012.html",
+    "source": "近江八幡市公式サイト",
+    "description": "公文書は、市の諸活動や歴史的事実の記録となるものであり、適切に処理・管理することは、市の業務を進める上で、きわめて重要な事項です。本市では、公文書に係る業務を全て紙文書により行ってきましたが、紙文書による処理・管理には、膨大な量となる紙文書を保管する場所の確保、紛失のリスク等の課題があります。",
+    "pubDate": "Mon, 11 Sep 2023 00:00:00 +0900"
+  },
+  {
+    "title": "施設管理運営の評価およびモニタリングの結果を公表します",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/2626.html",
+    "source": "近江八幡市公式サイト",
+    "description": "近江八幡市の公の施設の管理運営に指定管理者制度を導入している施設について、その管理状況と事業内容を施設所管課がモニタリングをした評価結果を掲載しています。",
+    "pubDate": "Fri, 24 Jul 2026 00:00:00 +0900"
+  },
+  {
+    "title": "令和5年度 第1回近江八幡市公共下水道事業審議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/26666.html",
+    "source": "近江八幡市公式サイト",
+    "description": "令和5年度 第1回近江八幡市公共下水道事業審議会 会議録・資料を公開します",
+    "pubDate": "Wed, 20 Dec 2023 00:00:00 +0900"
+  },
+  {
+    "title": "令和4年度施設管理運営の評価およびモニタリング結果",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/27007.html",
+    "source": "近江八幡市公式サイト",
+    "description": "近江八幡市の公の施設の管理運営に指定管理者制度を導入している施設について、その管理状況と事業内容を施設所管課がモニタリングをした評価結果を掲載しています。",
+    "pubDate": "Thu, 15 Feb 2024 00:00:00 +0900"
+  },
+  {
+    "title": "令和5年度 第2回近江八幡市水道事業運営委員会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/27297.html",
+    "source": "近江八幡市公式サイト",
+    "description": "会議録(別記様式第3号) (PDFファイル: 39.9KB) 会議録(別紙) (PDFファイル: 92.1KB) 次第 (PDFファイル: 63.0KB) 委員名簿 (PDFファイル: 51.4KB) 規程 (PDFファイル: 43.3KB)",
+    "pubDate": "Fri, 22 Mar 2024 00:00:00 +0900"
+  },
+  {
+    "title": "令和5年度 第2回近江八幡市公共下水道事業審議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/27302.html",
+    "source": "近江八幡市公式サイト",
+    "description": "会議録(別記様式第3号) (PDFファイル: 41.9KB) 会議録(別紙) (PDFファイル: 76.0KB) 次第 (PDFファイル: 67.4KB) 委員名簿 (PDFファイル: 51.0KB) 条例 (PDFファイル: 41.2KB)",
+    "pubDate": "Fri, 22 Mar 2024 00:00:00 +0900"
+  },
+  {
+    "title": "情報公開制度",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/2779.html",
+    "source": "近江八幡市公式サイト",
+    "description": "近江八幡市では、これまで市民の皆さんに対して、広報紙や各種刊行物、パンフレット、または窓ロでさまざまな情報を提供してきました。 平成11年10月1日からスタートした情報公開制度は、これらの情報提供に加え、市が保有する公文書を市民の皆さんの請求に応じて公開することにより、市民の知る権利を実効的に保障し…",
+    "pubDate": "Tue, 25 Aug 2026 00:00:00 +0900"
+  },
+  {
+    "title": "令和5年度施設管理運営の評価およびモニタリング結果",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/28303.html",
+    "source": "近江八幡市公式サイト",
+    "description": "近江八幡市の公の施設の管理運営に指定管理者制度を導入している施設について、その管理状況と事業内容を施設所管課がモニタリングをした評価結果を掲載しています。",
+    "pubDate": "Fri, 11 Oct 2024 00:00:00 +0900"
+  },
+  {
+    "title": "近江八幡市第1次総合計画を策定",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/2859.html",
+    "source": "近江八幡市公式サイト",
+    "description": "平成31(令和元)年度から令和10年度までを期間とする「近江八幡市第1次総合計画」を策定しました。 本市固有の様々な資源を活かした活力ある地域をつくり、次の世代が地域に愛着と誇りをもち引き継いでいけるようなまちであることを願い、【人がつながり 未来をつむぐ 「ふるさと近江八幡」】を将来のまちの姿とし…",
+    "pubDate": "Mon, 08 Jun 2020 00:00:00 +0900"
+  },
+  {
+    "title": "令和6年度 第1回近江八幡市水道事業運営委員会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/28847.html",
+    "source": "近江八幡市公式サイト",
+    "description": "会議録(別記様式第3号) (PDFファイル: 43.4KB) 会議録(別紙) (PDFファイル: 86.8KB) 次第 (PDFファイル: 27.9KB) 委員名簿 (PDFファイル: 53.0KB) 規程 (PDFファイル: 43.3KB)",
+    "pubDate": "Mon, 28 Oct 2024 00:00:00 +0900"
+  },
+  {
+    "title": "令和6年度 第1回近江八幡市公共下水道事業審議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/28850.html",
+    "source": "近江八幡市公式サイト",
+    "description": "令和6年度 第1回近江八幡市公共下水道事業審議会 会議録・資料を公開します",
+    "pubDate": "Mon, 28 Oct 2024 00:00:00 +0900"
+  },
+  {
+    "title": "令和6年度 第2回近江八幡市水道事業運営委員会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/29914.html",
+    "source": "近江八幡市公式サイト",
+    "description": "会議録(別記様式第3号) (PDFファイル: 43.0KB) 会議録(別紙) (PDFファイル: 124.7KB) 次第 (PDFファイル: 27.1KB) 委員名簿 (PDFファイル: 53.0KB) 規程 (PDFファイル: 43.3KB)",
+    "pubDate": "Tue, 25 Mar 2025 00:00:00 +0900"
+  },
+  {
+    "title": "令和6年度 第2回近江八幡市公共下水道事業審議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/29921.html",
+    "source": "近江八幡市公式サイト",
+    "description": "令和6年度 第2回近江八幡市公共下水道事業審議会 会議録・資料を公開します",
+    "pubDate": "Tue, 25 Mar 2025 00:00:00 +0900"
+  },
+  {
+    "title": "物価高騰対応重点支援地方創生臨時交付金の活用状況について",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/31292.html",
+    "source": "近江八幡市公式サイト",
+    "description": "本市では、市民の皆様の生活支援を最優先に、食料品をはじめとする幅広い分野での物価高騰への支援となること、また、国の経済対策(物価高騰対応重点支援地方創生臨時交付金)を速やかに事業化し、一刻も早く市民の皆様へ支援を届けることを目的に、次のとおり事業を実施します。",
+    "pubDate": "Wed, 01 Jul 2026 00:00:00 +0900"
+  },
+  {
+    "title": "個人情報保護制度",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/3190.html",
+    "source": "近江八幡市公式サイト",
+    "description": "個人情報保護制度は、個人情報を適正に取り扱うためのルールを定めるとともに、市が保有する自己の個人情報の開示、訂正及び利用停止を請求する権利を保障するものです。この制度により、個人の権利利益(プライバシー)を保護し、一層公正で民主的な市政の発展を図ります。",
+    "pubDate": "Tue, 25 Aug 2026 00:00:00 +0900"
+  },
+  {
+    "title": "特定個人情報保護評価の公表",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/3231.html",
+    "source": "近江八幡市公式サイト",
+    "description": "特定個人情報ファイルを保有しようとする又は保有する国の行政機関や地方公共団体などが、個人のプライバシーなどの権利利益に与える影響を予測した上で特定個人情報の漏えいその他の事態を発生させるリスクを分析し、そのようなリスクを軽減するための適切な措置を講ずることを宣言するものです。",
+    "pubDate": "Thu, 06 Jul 2023 00:00:00 +0900"
+  },
+  {
+    "title": "平成24年度公開事業診断の結果について",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/3586.html",
+    "source": "近江八幡市公式サイト",
+    "description": "9月22日（土曜日）近江八幡市文化会館において「公開事業診断」を実施しました。 コーディネーター1名、診断員6名、市民判定員16名の合わせて23名の委員が市の6事業について、必要性やあり方について診断されました。",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "公文書公開請求書",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/3628.html",
+    "source": "近江八幡市公式サイト",
+    "description": "公文書公開請求書 (PDFファイル: 26.1KB) 公文書公開請求書(word) (Wordファイル: 30.0KB)",
+    "pubDate": "Tue, 25 Aug 2026 00:00:00 +0900"
+  },
+  {
+    "title": "第106回近江八幡市安土町地域自治区地域協議会会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/3935.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 第106回近江八幡市安土町地域自治区地域協議会 近江八幡市安土町総合支所 3階 旧議員控室 第106回近江八幡市安土町地域自治区地域協議会会議録 (PDFファイル: 276.6KB)",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "市長とはちまん夢トーク",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/4005.html",
+    "source": "近江八幡市公式サイト",
+    "description": "「市民が主役」の市政をモットーに、市民の皆さんとの直接対話による市政運営を行っていきます。近江八幡のまちづくりや市政運営について、熱い想いを市長と話してみませんか。",
+    "pubDate": "Sun, 01 Aug 2021 00:00:00 +0900"
+  },
+  {
+    "title": "平成31年度 第1回行政改革推進委員会を開催しました。",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/4025.html",
+    "source": "近江八幡市公式サイト",
+    "description": "第1回行政改革推進委員会会議記録の公開をします。",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "地方行政サービス改革の取組状況等の公表について（平成30年度）",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/4068.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地方行政サービス改革については、平成27年8月に総務省から「地方行政サービス改革の推進に関する留意事項について」が発出され、地方財政が依然として厳しい状況にある中で、効率的・効果的に行政サービスを提供する観点から、民間委託等の業務改革の推進に努めるよう要請がありました。",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "行財政改革の進捗状況について（平成30年度までの取り組み状況）",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/4090.html",
+    "source": "近江八幡市公式サイト",
+    "description": "本市では、前期行政改革大綱（取組期間：平成22年度～平成26年度）の3本柱を引き継いだ第2次行政改革大綱及び具体的な取り組みを示す「行財政改革プラン」を平成28年3月に策定し、更なる行政改革に取り組んでいます。",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第2回行政改革推進委員会を開催しました。",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/4098.html",
+    "source": "近江八幡市公式サイト",
+    "description": "第2回行政改革推進委員会会議記録の公開をします。",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第1回行政改革推進委員会を開催しました。",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/4149.html",
+    "source": "近江八幡市公式サイト",
+    "description": "第1回行政改革推進委員会会議記録の公開をします。",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "H30.2 第2回近江八幡市第1次総合計画審議会",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/4175.html",
+    "source": "近江八幡市公式サイト",
+    "description": "本市では、平成29年度から平成30年度にかけて、市の最上位計画となる「近江八幡市第1次総合計画」の策定を行っております。 策定にあたり、専門的な議論や審議を行っていただくため、「近江八幡市第1次総合計画審議会」を諮問機関として設置して、議論していただくこととなりました。",
+    "pubDate": "Tue, 23 May 2023 00:00:00 +0900"
+  },
+  {
+    "title": "令和7年度施設管理運営の評価およびモニタリング結果",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/42204.html",
+    "source": "近江八幡市公式サイト",
+    "description": "近江八幡市の公の施設の管理運営に指定管理者制度を導入している施設について、その管理状況と事業内容を施設所管課がモニタリングをした評価結果を掲載しています。",
+    "pubDate": "Wed, 22 Jul 2026 00:00:00 +0900"
+  },
+  {
+    "title": "令和6年度施設管理運営の評価およびモニタリング結果",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/42205.html",
+    "source": "近江八幡市公式サイト",
+    "description": "近江八幡市の公の施設の管理運営に指定管理者制度を導入している施設について、その管理状況と事業内容を施設所管課がモニタリングをした評価結果を掲載しています。",
+    "pubDate": "Mon, 13 Jul 2026 00:00:00 +0900"
+  },
+  {
+    "title": "近江八幡市行政改革大綱と実施計画を策定しました",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/4251.html",
+    "source": "近江八幡市公式サイト",
+    "description": "合併により新たに作成した、近江八幡市行政改革大綱及び行政改革実施計画と各方針等の内容をお知らせします。",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第2次近江八幡市行政改革大綱及び行財政改革プラン",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/4252.html",
+    "source": "近江八幡市公式サイト",
+    "description": "第2次行政改革大綱と行財政改革プランを策定しました",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "旧近江八幡市の住所表示",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/4286.html",
+    "source": "近江八幡市公式サイト",
+    "description": "",
+    "pubDate": "Thu, 25 Mar 2021 00:00:00 +0900"
+  },
+  {
+    "title": "旧安土町の住所表示",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/4287.html",
+    "source": "近江八幡市公式サイト",
+    "description": "",
+    "pubDate": "Thu, 25 Mar 2021 00:00:00 +0900"
+  },
+  {
+    "title": "令和5年度 第1回近江八幡市水道事業運営委員会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kokai/4299.html",
+    "source": "近江八幡市公式サイト",
+    "description": "会議録(別記様式第3号) (PDFファイル: 104.6KB) 会議録(別紙) (PDFファイル: 208.9KB) 次第 (PDFファイル: 72.4KB) 委員名簿 (PDFファイル: 100.1KB)",
+    "pubDate": "Fri, 20 Oct 2023 00:00:00 +0900"
+  },
+  {
+    "title": "地方税法に基づく公示送達",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/koujisotatsu/41792.html",
+    "source": "近江八幡市公式サイト",
+    "description": "令和8年度近江八幡市告示第243号 (PDFファイル: 932.4KB)",
+    "pubDate": "Thu, 06 Aug 2026 00:00:00 +0900"
+  },
+  {
+    "title": "安土町地域自治区地域協議会だより",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/13883.html",
+    "source": "近江八幡市公式サイト",
+    "description": "安土町地域自治区地域協議会だより総括号 (PDFファイル: 9.4MB) 安土町総合支所 安土未来づくり課 〒521-1392 滋賀県近江八幡市安土町小中1番地8",
+    "pubDate": "Fri, 17 Apr 2020 00:00:00 +0900"
+  },
+  {
+    "title": "令和7年度第1回総合介護市民協議会を開催します",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/28361.html",
+    "source": "近江八幡市公式サイト",
+    "description": "令和7年度第1回総合介護市民協議会の開催について (PDFファイル: 68.5KB)",
+    "pubDate": "Fri, 08 Aug 2025 00:00:00 +0900"
+  },
+  {
+    "title": "第105回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4082.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第105回近江八幡市安土町地域自治区地域協議会 開催日：平成31年3月18日 （月曜日） 場所：近江八幡市安土町総合支所 3階旧議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第104回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4103.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第104回近江八幡市安土町地域自治区地域協議会 開催日：平成31年2月25日 （月曜日） 場所：近江八幡市安土町総合支所 3階旧議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第103回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4105.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第103回近江八幡市安土町地域自治区地域協議会 開催日：平成31年1月28日 （月曜日） 場所：近江八幡市安土町総合支所 3階旧議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第102回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4111.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第102回近江八幡市安土町地域自治区地域協議会 開催日：平成30年12月17日 （月曜日） 場所：近江八幡市安土町総合支所 3階旧議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第101回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4112.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第101回近江八幡市安土町地域自治区地域協議会 開催日：平成30年11月26日 （月曜日） 場所：近江八幡市安土町総合支所 3階旧議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第100回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4115.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第100回近江八幡市安土町地域自治区地域協議会 開催日：平成30年10月22日 （月曜日） 場所：近江八幡市安土町総合支所 3階旧議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第99回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4125.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第99回近江八幡市安土町地域自治区地域協議会 開催日：平成30年9月25日 （火曜日） 場所：近江八幡市安土町総合支所 3階旧議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第98回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4133.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第98回近江八幡市安土町地域自治区地域協議会 開催日：平成30年8月20日 （月曜日） 場所：近江八幡市安土町総合支所 3階旧議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第97回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4140.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第97回近江八幡市安土町地域自治区地域協議会 開催日：平成30年7月23日 （月曜日） 場所：近江八幡市安土町総合支所 3階旧議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第96回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4148.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第96回近江八幡市安土町地域自治区地域協議会 開催日：平成30年6月25日 （月曜日） 場所：近江八幡市安土町総合支所 3階旧議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第95回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4151.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第95回近江八幡市安土町地域自治区地域協議会 開催日：平成30年5月22日 （火曜日） 場所：近江八幡市安土町総合支所 3階旧議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第94回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4166.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第94回近江八幡市安土町地域自治区地域協議会 開催日：平成30年4月18日 （水曜日） 場所：近江八幡市安土町総合支所 3階旧議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第93回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4170.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第93回近江八幡市安土町地域自治区地域協議会 開催日：平成30年3月20日 （火曜日） 場所：近江八幡市安土町総合支所 3階議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第92回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4174.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第92回近江八幡市安土町地域自治区地域協議会 開催日：平成30年2月21日 （水曜日） 場所：近江八幡市安土町総合支所 3階議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第86回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4178.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第86回近江八幡市安土町地域自治区地域協議会 開催日：平成29年8月24日 （木曜日） 場所：近江八幡市安土町総合支所 3階旧議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第89回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4179.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第89回近江八幡市安土町地域自治区地域協議会 開催日：平成29年11月22日 （水曜日） 場所：近江八幡市安土町総合支所 3階旧議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第88回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4180.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第88回近江八幡市安土町地域自治区地域協議会 開催日：平成29年10月18日 （水曜日） 場所：近江八幡市安土町総合支所 3階旧議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第87回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4181.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第87回近江八幡市安土町地域自治区地域協議会 開催日：平成29年9月28日 （木曜日） 場所：近江八幡市安土町総合支所 3階旧議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第81回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4182.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第81回近江八幡市安土町地域自治区地域協議会 開催日：平成29年3月22日 （水曜日） 場所：近江八幡市安土町総合支所 3階旧議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第80回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4183.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第80回近江八幡市安土町地域自治区地域協議会 開催日：平成29年2月22日 （水曜日） 場所：近江八幡市安土町総合支所 3階旧議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第79回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4184.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第79回近江八幡市安土町地域自治区地域協議会 開催日：平成29年1月18日 （水曜日） 場所：近江八幡市安土町総合支所 3階旧議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第91回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4186.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第91回近江八幡市安土町地域自治区地域協議会 開催日：平成30年1月24日 （水曜日） 場所：近江八幡市安土町総合支所 3階旧議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第90回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4188.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第90回近江八幡市安土町地域自治区地域協議会 開催日：平成29年12月20日 （水曜日） 場所：近江八幡市安土町総合支所 3階旧議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第78回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4192.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第78回近江八幡市安土町地域自治区地域協議会 開催日：平成28年12月21日 （水曜日） 場所：近江八幡市安土町総合支所 3階議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第77回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4193.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第77回近江八幡市安土町地域自治区地域協議会 開催日：平成28年11月16日 （水曜日） 場所：近江八幡市安土町総合支所 3階議員控室第77回（平成28年11月）定例協議会 会議録",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "令和7年度近江八幡市国民健康保険運営協議会",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/41960.html",
+    "source": "近江八幡市公式サイト",
+    "description": "第2回近江八幡市国民健康保険運営協議会を開催しましたので、会議録を公開します。 会議録はこちらをご覧ください令和7年度第2回近江八幡市国民健康保険運営協議会会議録(PDFファイル:274.6KB)",
+    "pubDate": "Fri, 12 Jun 2026 00:00:00 +0900"
+  },
+  {
+    "title": "令和8年度近江八幡市国民健康保険運営協議会",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/42013.html",
+    "source": "近江八幡市公式サイト",
+    "description": "第1回近江八幡市国民健康保険運営協議会を開催しましたので、会議録を公開します。 会議録はこちらをご覧ください令和8年度第1回近江八幡市国民健康保険運営協議会会議録(PDFファイル:266.3KB)",
+    "pubDate": "Thu, 25 Jun 2026 00:00:00 +0900"
+  },
+  {
+    "title": "第85回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4204.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第85回近江八幡市安土町地域自治区地域協議会 開催日：平成29年7月19日 （木曜日） 場所：近江八幡市安土町総合支所 3階旧議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第83回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4205.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第83回近江八幡市安土町地域自治区地域協議会 開催日：平成29年5月25日 （木曜日） 場所：近江八幡市安土町総合支所 3階旧議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第84回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4206.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第84回近江八幡市安土町地域自治区地域協議会 開催日：平成29年6月22日 （木曜日） 場所：近江八幡市安土町総合支所 3階旧議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第82回 近江八幡市安土町地域自治区地域協議会 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4207.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第82回近江八幡市安土町地域自治区地域協議会 開催日：平成29年4月19日 （水曜日） 場所：近江八幡市安土町総合支所 3階旧議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
+    "title": "第75回 近江八幡市安土町地域自治区地域協議会（臨時会） 会議録",
+    "link": "https://www.city.omihachiman.lg.jp/gyosei/kyogi/4223.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域協議会の会議録を公開します。 会議名：第75回近江八幡市安土町地域自治区地域協議会（臨時会） 開催日：平成28年9月26日 （水曜日） 場所：近江八幡市安土町総合支所 3階旧議員控室",
+    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900"
+  },
+  {
     "title": "近江八幡市空き家情報バンク",
     "link": "https://www.city.omihachiman.lg.jp/soshiki/jyutakusesaku/sumai/30821.html",
     "source": "近江八幡市公式サイト",
@@ -838,565 +1398,5 @@
     "source": "近江八幡市公式サイト",
     "pubDate": "Mon, 20 Apr 2026 00:00:00 +0900",
     "description": "国では、国土強靱化基本法が平成 25 年 12 月 11 日に公布・施行され、平成 26 年6月に国土強靭化の指針となる「国土強靱化基本計画」が閣議決定されました。その後、令和5年6月に法改正が行われ、同年7月に新たな基本計画が閣議決定され、「大規模自然災害等に強い国土及び地域を作るとともに、自らの…"
-  },
-  {
-    "title": "近江八幡市業務継続計画【地震災害編】",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/kakushu/24199.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Fri, 01 Mar 2024 00:00:00 +0900",
-    "description": "大規模地震災害が発生した場合、行政自らも被災し、人、物、情報など利用できる資源に制約がある状況下において優先的に実施すべき業務を特定するとともに、業務の継続に必要な資源の確保などを定めた「近江八幡市業務継続計画【地震災害編】を策定しました。"
-  },
-  {
-    "title": "近江八幡市立看護専門学校閉校のお知らせ",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/kangosenmon/13466.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Wed, 01 Apr 2020 00:00:00 +0900",
-    "description": "近江八幡市立看護専門学校は、令和2年3月31日をもって閉校いたしました。今後、卒業証明書・成績証明書 等の発行は、近江八幡市役所 総務課で行います。尚、同窓会につきましても、令和2年3月31日をもって解散いたしました。"
-  },
-  {
-    "title": "City Information on January 2026",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/1/29414.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Thu, 01 Jan 2026 00:00:00 +0900",
-    "description": "January 2026 (PDFファイル: 514.9KB)"
-  },
-  {
-    "title": "City Information on February 2026",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/1/29630.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Sun, 01 Feb 2026 00:00:00 +0900",
-    "description": "February 2026 (PDFファイル: 551.6KB)"
-  },
-  {
-    "title": "City Information on March 2026",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/1/29770.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Sun, 01 Mar 2026 00:00:00 +0900",
-    "description": "March 2026 (PDFファイル: 761.2KB)"
-  },
-  {
-    "title": "City Information on April 2026",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/1/30192.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Wed, 01 Apr 2026 00:00:00 +0900",
-    "description": "April 2026 (PDFファイル: 706.5KB)"
-  },
-  {
-    "title": "City Information on June 2026",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/1/30698.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Thu, 05 Jun 2025 00:00:00 +0900",
-    "description": "June 2026 (PDFファイル: 698.9KB)"
-  },
-  {
-    "title": "City Information on July 2026",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/1/30864.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Wed, 01 Jul 2026 00:00:00 +0900",
-    "description": "July 2026 (PDFファイル: 765.9KB)"
-  },
-  {
-    "title": "City Information on August 2026",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/1/31102.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Tue, 04 Aug 2026 00:00:00 +0900",
-    "description": "August 2026 (PDFファイル: 706.2KB)"
-  },
-  {
-    "title": "City Information on September 2026",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/1/31197.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Tue, 01 Sep 2026 00:00:00 +0900",
-    "description": "September 2026 (PDFファイル: 781.1KB)"
-  },
-  {
-    "title": "City Information on October 2025",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/1/31433.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Tue, 07 Oct 2025 00:00:00 +0900",
-    "description": "October 2025 (PDFファイル: 593.1KB)"
-  },
-  {
-    "title": "City Information on November 2025",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/1/31846.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Sat, 01 Nov 2025 00:00:00 +0900",
-    "description": "November 2025 (PDFファイル: 564.0KB)"
-  },
-  {
-    "title": "City Information on December 2025",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/1/36944.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Thu, 04 Dec 2025 00:00:00 +0900",
-    "description": "December 2025 (PDFファイル: 649.7KB)"
-  },
-  {
-    "title": "広報おうみはちまん「いんふぉめーしょんてんこもり」掲載記事の募集",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/12272.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Mon, 09 Mar 2020 00:00:00 +0900",
-    "description": "「広報おうみはちまん」では、皆さんからお寄せいただいた記事を掲載する「いんふぉめーしょんてんこもり」のコーナーを設けています。掲載基準は以下のとおりです。"
-  },
-  {
-    "title": "声の広報",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/13167.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Tue, 01 Sep 2026 00:00:00 +0900",
-    "description": "広報おうみはちまんの内容を一つの音声ファイルにまとめた「声の広報」を作成しています。音声ファイルは最新号のみ掲載します。"
-  },
-  {
-    "title": "広報おうみはちまん2020年度",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/13552.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Wed, 24 Feb 2021 00:00:00 +0900",
-    "description": "広報おうみはちまんは、「マイ広報紙」「マチイロ」のアプリでもご覧いただけます。"
-  },
-  {
-    "title": "広報おうみはちまん2022年度",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/18042.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Fri, 24 Feb 2023 00:00:00 +0900",
-    "description": "広報おうみはちまんをホームページでご覧いただけます。最新の3月号では、総合医療センターで導入したダビンチや、市役所で行われている働き方改革の情報を掲載しています。"
-  },
-  {
-    "title": "Boletim informativo de Janeiro 2026",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/2/29416.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Thu, 01 Jan 2026 00:00:00 +0900",
-    "description": "Janeiro 2026 (PDFファイル: 440.6KB)"
-  },
-  {
-    "title": "Boletim informativo de Fevereiro 2026",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/2/29632.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Sun, 01 Feb 2026 00:00:00 +0900",
-    "description": "Fevereiro 2026 (PDFファイル: 552.7KB)"
-  },
-  {
-    "title": "Boletim informativo de Março 2026",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/2/29772.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Sun, 01 Mar 2026 00:00:00 +0900",
-    "description": "Março 2026 (PDFファイル: 706.1KB)"
-  },
-  {
-    "title": "Boletim informativo de Abril 2026",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/2/30194.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Wed, 01 Apr 2026 00:00:00 +0900",
-    "description": "Abril 2026 (PDFファイル: 603.6KB)"
-  },
-  {
-    "title": "Boletim informativo de Junho 2026",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/2/30700.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Thu, 05 Jun 2025 00:00:00 +0900",
-    "description": "Junho 2026 (PDFファイル: 649.5KB)"
-  },
-  {
-    "title": "Boletim informativo de Julho 2026",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/2/30866.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Wed, 01 Jul 2026 00:00:00 +0900",
-    "description": "Julho 2026 (PDFファイル: 658.9KB)"
-  },
-  {
-    "title": "Boletim informativo de Agosto 2026",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/2/31104.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Tue, 04 Aug 2026 00:00:00 +0900",
-    "description": "Agosto 2026 (PDFファイル: 512.3KB)"
-  },
-  {
-    "title": "Boletim informativo de Setembro 2026",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/2/31199.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Tue, 01 Sep 2026 00:00:00 +0900",
-    "description": "Setembro 2026 (PDFファイル: 521.0KB)"
-  },
-  {
-    "title": "Boletim informativo de Outubro 2025",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/2/31435.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Tue, 07 Oct 2025 00:00:00 +0900",
-    "description": "Outubro 2025 (PDFファイル: 473.8KB)"
-  },
-  {
-    "title": "Boletim informativo de Novembro 2025",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/2/31848.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Sat, 01 Nov 2025 00:00:00 +0900",
-    "description": "Novembro 2025 (PDFファイル: 549.9KB)"
-  },
-  {
-    "title": "Boletim informativo de Dezembro 2025",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/2/36946.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Thu, 04 Dec 2025 00:00:00 +0900",
-    "description": "Dezembro 2025 (PDFファイル: 4.4MB)"
-  },
-  {
-    "title": "広報おうみはちまん2021年度",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/21945.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Wed, 20 Apr 2022 00:00:00 +0900",
-    "description": "広報おうみはちまんは、「マイ広報紙」「マチイロ」のアプリでもご覧いただけます。"
-  },
-  {
-    "title": "広報おうみはちまん2023年度",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/24898.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Thu, 22 Feb 2024 00:00:00 +0900",
-    "description": "広報おうみはちまんをホームページでご覧いただけます。最新の3月号では、地域おこし協力隊やまちづくり協議会、空家対策などの特集を掲載しています。"
-  },
-  {
-    "title": "広報おうみはちまん2019年度",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/2567.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Mon, 02 Mar 2020 00:00:00 +0900",
-    "description": "広報おうみはちまん2019年度分のご案内"
-  },
-  {
-    "title": "「広報おうみはちまん」を設置いただける店舗・事業所を募集しています",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/25700.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Wed, 26 Jul 2023 00:00:00 +0900",
-    "description": "より多くの市民の皆さんに、身近な場所で手に取っていただけるよう、「広報おうみはちまん」を設置いただける市内店舗・事業所を募集しています。「広報おうみはちまん」は、次の場所に置いています。「広報おうみはちまん」の設置場所一覧"
-  },
-  {
-    "title": "「広報おうみはちまん」の設置場所",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/2586.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Fri, 20 Jun 2025 00:00:00 +0900",
-    "description": "「広報おうみはちまん」は、毎月各自治会等を通じて配布をお願いしていますが、次のところにも置いていただいていますのでご利用ください。"
-  },
-  {
-    "title": "広報おうみはちまん2024年度",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/27517.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Wed, 26 Feb 2025 00:00:00 +0900",
-    "description": "広報おうみはちまんをホームページでご覧いただけます。最新の3月号では、スタジアムの紹介とイベント開催周知・ノーサインインタビュー、フードロスの取り組みなどの特集を掲載しています。"
-  },
-  {
-    "title": "広報おうみはちまん2025年度",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/29919.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Wed, 25 Feb 2026 00:00:00 +0900",
-    "description": "広報おうみはちまんをホームページでご覧いただけます。最新の3月号では、特集「祈りが息づく左義長まつり」「地域包括ケアシステムでつながる」を掲載しています。"
-  },
-  {
-    "title": "「広報おうみはちまん」を「マイ広報紙」・「マチイロ」でデジタル配信しています。",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/3531.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900",
-    "description": "近江八幡市では市政や地域情報などをお知らせするために「広報おうみはちまん」を月1回発行しています。「マイ広報紙」、「マチイロ」に登録すると無料で利用者のスマートフォンやタブレット端末へ「広報おうみはちまん」の記事が配信されます。このサービスを利用するためには、アプリのダウンロードが必要です。"
-  },
-  {
-    "title": "広報おうみはちまんへの有料広告(令和8年度分)を募集します",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/40968.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Mon, 26 Jan 2026 00:00:00 +0900",
-    "description": "「広報おうみはちまん」の有料広告の募集の案内です。"
-  },
-  {
-    "title": "広報おうみはちまん2026年度",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho/41490.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Tue, 25 Aug 2026 00:00:00 +0900",
-    "description": "広報おうみはちまんをホームページでご覧いただけます。最新の9月号では、特集「やってみたい、その想いに応えたい」を掲載しています。"
-  },
-  {
-    "title": "近江八幡市公式instagram",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho_kocho/12271.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Tue, 04 Feb 2020 00:00:00 +0900",
-    "description": "新たな情報発信ツールとして、写真で市の魅力を発信するインスタグラム公式アカウントを開設しています。」四季折々の風景やイベントなど、近江八幡の魅力を一緒に発信しませんか。投稿いただいた写真は、公式アカウント上でのリポスト（再投稿）や広報紙、シティプロモーションなど市の広報媒体で使用させていただく場合が…"
-  },
-  {
-    "title": "ZTVで市広報番組を放送しています",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho_kocho/18523.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Thu, 01 Apr 2021 00:00:00 +0900",
-    "description": "市の取り組みや魅力を発信する広報番組「テレはち」がZTVで放送中です。旬の出来事や行政情報などを取り上げていますので、ぜひご覧ください。"
-  },
-  {
-    "title": "市長とはちまん夢トーク",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho_kocho/2561.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Sun, 01 Aug 2021 00:00:00 +0900",
-    "description": "「市民が主役」の市政をモットーに、市民の皆さんとの直接対話による市政運営を行っていきます。近江八幡のまちづくりや市政運営について、熱い想いを市長と話してみませんか。"
-  },
-  {
-    "title": "市政への提言",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho_kocho/3041.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Tue, 01 Apr 2025 00:00:00 +0900",
-    "description": "市では、市民の皆さまからいただくご意見やご提案を、市政運営や施策の改善・充実に活かすため、市政に関する政策的・建設的なご意見・ご提案を受け付けています。 お寄せいただいたご意見は、関係部署で共有し、市政運営や施策検討及び業務改善の参考とさせていただきます。"
-  },
-  {
-    "title": "近江八幡市公式YouTubeチャンネル",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho_kocho/3435.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900",
-    "description": "広報紙面や市公式Facebookページで伝えきれない市の魅力や市政情報などを、動画でお届けします！ 是非ご覧ください！"
-  },
-  {
-    "title": "近江八幡市公式Facebookページ",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koho_kocho/3575.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900",
-    "description": "近江八幡市の公式Facebookページでは、地域で活躍する人たちの活動や近江八幡市内のイベントなど旬な情報をお届けします。取材でお会いした際には素敵な笑顔を撮影させてくださいね。よろしくお願いします！ Facebookユーザーネーム：@omihachimanshi URL：https://www.f…"
-  },
-  {
-    "title": "軽装勤務の通年化について",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinji/osirase/26249.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Wed, 01 Nov 2023 00:00:00 +0900",
-    "description": "近江八幡市では、これまで5月から10月までを「クールビズ」期間とし、職員の軽装勤務(ノーネクタイ・ノー上着)を実施していました。環境省において令和3年度からクールビズ及びウォームビズの実施期間を一律に設けることをやめ、各自の判断による快適で働きやすい服装を呼び掛けていることから、本市においても働きや…"
-  },
-  {
-    "title": "職員の名札の表記の見直しについて",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinji/osirase/28092.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Fri, 05 Jul 2024 00:00:00 +0900",
-    "description": "SNS等の普及により氏名を基に個人情報が検索されたり、インターネット上に氏名が公開されたりするなど職員のプライバシー侵害につながる懸念があることから、名札の着用による市民の安心感や信頼感を保ちつつ、職員のプライバシーを守り、職員が安心して働けるよう職員が着用する名札の名前の表記について、現在、フルネ…"
-  },
-  {
-    "title": "カスタマーハラスメントへの対応について",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinji/osirase/31069.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Wed, 06 Aug 2025 00:00:00 +0900",
-    "description": "市民等からの正当な苦情・クレームに対して真摯に対応することは市役所職員として当然の責務です。一方で職員に対する著しく不当な要求や言動(いわゆるカスタマーハラスメント)は、職場における効率的な業務遂行に著しい支障を与えるだけでなく、他の利用者へのサービス低下や被害に遭った職員の心身の健康を損なうおそれ…"
-  },
-  {
-    "title": "近江八幡市パートナーシップの宣誓に関する要綱(素案)に係るパブリックコメントの結果を公表します。",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/PublicComments/24077.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Mon, 20 Feb 2023 00:00:00 +0900",
-    "description": "令和5年1月16日(月曜日)から令和5年2月6日(月曜日)まで意見を募集しましたところ、2件のご意見をいただきました。お寄せいただいたご意見と、ご意見に対する当市の考え方は別紙のとおりです。なお、ご意見については、要約等をしたうえで掲載しております。"
-  },
-  {
-    "title": "男女共同参画おうみはちまん2030プラン中間改訂に係るパブリックコメント結果を公表します",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/PublicComments/40908.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Fri, 27 Mar 2026 00:00:00 +0900",
-    "description": "令和8年1月23日から令和8年2月13日まで意見を募集しましたところ、9件のご意見をいただきました。お寄せいただいたご意見と、ご意見に対する当市の考え方は別紙のとおりです。なお、ご意見については、要約等をしたうえで掲載しております。このたびは、貴重なご意見を頂戴し、ありがとうございました。"
-  },
-  {
-    "title": "犯罪被害者等支援条例",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/bouhan/23391.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Thu, 15 Sep 2022 00:00:00 +0900",
-    "description": "この条例は、自らに責任がないにもかかわらず、通り魔等による人の生命又は身体を害する犯罪行為により、不幸にして不慮の死を遂げた市民の遺族又は傷害を受けた市民を支援することにより、その精神的被害の軽減を図ることを目的としています。"
-  },
-  {
-    "title": "全国地域安全運動の取組について",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/bouhan/28553.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Mon, 22 Sep 2025 00:00:00 +0900",
-    "description": "地域安全活動とは、安全で安心して暮らせるまちを実現するため、それぞれの地域において、地域ぐるみで犯罪等の防止に取り組む活動をいいます。「みんなでつくろう安全な街」をスローガンに防犯活動に取り組んでいきましょう。"
-  },
-  {
-    "title": "犯罪被害者支援について",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/bouhan/28972.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Thu, 21 Nov 2024 00:00:00 +0900",
-    "description": "凶悪な犯罪などにより被害に遭われた方やその家族など、犯罪被害等による被害者の方々を支援するため、相談窓口を紹介します。"
-  },
-  {
-    "title": "「闇バイト」は犯罪です！その仕事「闇バイト」かもしれない！",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/bouhan/29040.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Fri, 15 Nov 2024 00:00:00 +0900",
-    "description": "最近、首都圏を中心に「闇バイト」が関係した事件が頻発しています。SNSで闇バイト仲間を募り、強盗を行った男性やその仲間が逮捕されています。高額な報酬に目がくらみ、目先の金銭を得るため、安易な考えでアルバイトに応募してしまうと取り返しのつかない結果を招いてしまいます。"
-  },
-  {
-    "title": "「アポ電」に注意しましょう！",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/bouhan/29139.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Wed, 04 Dec 2024 00:00:00 +0900",
-    "description": "「アポ電」とは、詐欺犯人が、お金をだまし取るために事前にターゲットとなる住宅に警察官や消防署員、市職員などを装い、1.家族構成 「災害救助に備えて確認します。お住まいは一人暮らしですか？」2.財産状況 「還付金の対象になるか確認します。"
-  },
-  {
-    "title": "「ぽけっとポリスしが」をご活用ください",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/bouhan/29279.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Wed, 18 Dec 2024 00:00:00 +0900",
-    "description": "防犯アプリ「ぽけっとポリスしが」の活用促進"
-  },
-  {
-    "title": "近江八幡市特殊詐欺対策電話機等購入補助事業について",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/bouhan/29814.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Tue, 07 Apr 2026 00:00:00 +0900",
-    "description": "この事業は「ふるさと納税寄付金」を活用しています"
-  },
-  {
-    "title": "ニセ警察詐欺に注意！",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/bouhan/41055.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Wed, 21 Jan 2026 00:00:00 +0900",
-    "description": "ニセ警察詐欺にご注意ください！特殊詐欺に使われる電話の約7割が国際電話です。固定電話については、国際電話不取扱受付センター(0120-210-364)にて、国際電話の着信を休止することができます。"
-  },
-  {
-    "title": "近江八幡市地域防犯活動推進補助金について",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/bouhan/41185.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Wed, 13 May 2026 00:00:00 +0900",
-    "description": "近年、全国的に犯罪が増加しており、当市においても令和5年度以降は増加傾向にあります。パトロール活動を通じて地域における人の目を増やし、犯罪者に狙われにくいまちづくりを進めるため、地域における防犯活動を行う団体(自主防犯団体)の活動に係る経費の一部を補助します。"
-  },
-  {
-    "title": "「市犯罪等警戒警報等に関する協定」及び「市高齢者支援活動に関する協定」について",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/bouhan/670.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Fri, 20 Jun 2025 00:00:00 +0900",
-    "description": "平成27年7月17日に近江八幡市と近江八幡警察署との間で、「近江八幡市犯罪等警戒警報等に関する協定」と「近江八幡市高齢者支援活動に関する協定」を締結しています。"
-  },
-  {
-    "title": "男女共同参画おうみはちまん2030プラン-男女共同参画近江八幡市行動計画-中間改訂版を策定しました",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/danjokyoudousankaku/18394.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Wed, 01 Apr 2026 00:00:00 +0900",
-    "description": "この度、計画策定から5年が経過したことから、社会情勢の変化やこれまでの進捗状況を踏まえ、中間見直しを行い「中間改訂版」を策定しました。計画期間は令和3年度から令和12年度までの10年間であり、今回の改訂版は、令和8年度から令和12年度までの後半5年間の指針となるものです。"
-  },
-  {
-    "title": "11月12日から25日は「女性に対する暴力をなくす運動」期間です。",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/danjokyoudousankaku/19894.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Thu, 06 Nov 2025 00:00:00 +0900",
-    "description": "11月12日から25日は「女性に対する暴力をなくす運動」期間です。配偶者等からの暴力、性犯罪・性暴力、ストーカー行為等、女性に対する暴力は、女性の人権を侵害するものであり、決して許される行為ではありません。"
-  },
-  {
-    "title": "令和8年度「男女が輝いて生きる」絵手紙作品募集中！",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/danjokyoudousankaku/20088.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Fri, 26 Jun 2026 00:00:00 +0900",
-    "description": "性別による固定観念にとらわれることなく、その人らしさを尊重し、あらゆる場面でそれぞれの個性と能力を発揮できる男女共同参画社会の実現をめざすため、地域・職場・家庭・学校の中で、男女共同参画のイメージをわかりやすく伝える絵手紙を募集します。"
-  },
-  {
-    "title": "令和7年度「男女が輝いて生きる」絵手紙の入賞作品が決まりました！",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/danjokyoudousankaku/23953.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Fri, 14 Nov 2025 00:00:00 +0900",
-    "description": "地域・職場・学校などにおいて、男女共同参画のイメージをわかりやすく伝えようと、令和7年度「男女が輝いて生きる」絵手紙を募集しました。審査員による審査の結果、10作品が入賞作品として選ばれました。ご応募ありがとうございました。"
-  },
-  {
-    "title": "令和4年度 近江八幡市男女共同参画審議会",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/danjokyoudousankaku/24593.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Fri, 14 Apr 2023 00:00:00 +0900",
-    "description": "日時 令和5年3月16日木曜日 午後2時から午後3時30分場所 近江八幡市文化会館2階会議室1"
-  },
-  {
-    "title": "令和5年度 近江八幡市男女共同参画審議会",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/danjokyoudousankaku/25822.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Thu, 06 Mar 2025 00:00:00 +0900",
-    "description": "日時 令和6年3月21日木曜日 午後2時から午後3時30分場所 本庁舎4階 第1委員会室"
-  },
-  {
-    "title": "近江八幡市の男女共同参画の取組を取材していただきました。",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/danjokyoudousankaku/26901.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Tue, 30 Jan 2024 00:00:00 +0900",
-    "description": "JobQにて、インタビュー記事が掲載されています。"
-  },
-  {
-    "title": "令和6年度 近江八幡市男女共同参画審議会",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/danjokyoudousankaku/27989.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Wed, 26 Mar 2025 00:00:00 +0900",
-    "description": "【事前送付資料】男女共同参画に関する市民意識調査アンケート調査結果報告書(容量が大きいため分割しています)"
-  },
-  {
-    "title": "毎年4月は「若年層の性暴力被害予防月間」です",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/danjokyoudousankaku/29895.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Mon, 09 Mar 2026 00:00:00 +0900",
-    "description": "毎年4月にある「若年層の性暴力被害予防月間」に関する啓発ページです。"
-  },
-  {
-    "title": "近江八幡市男女共同参画に関する市民意識調査結果",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/danjokyoudousankaku/30179.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Mon, 28 Apr 2025 00:00:00 +0900",
-    "description": "本市では、男女が性別にかかわりなく個性や能力を発揮できる男女共同参画社会の実現に向けて、令和3年に「男女共同参画おうみはちまん2030プラン-男女共同参画近江八幡市行動計画-」を策定し、市民や事業者の皆様と協働し、連携を図りながらさまざまな取組を進めています。"
-  },
-  {
-    "title": "令和7年度 近江八幡市男女共同参画審議会",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/danjokyoudousankaku/30905.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Tue, 17 Mar 2026 00:00:00 +0900",
-    "description": "日時 令和8年2月24日(火曜日) 14時00分 から 15時30分場所 近江八幡市役所 4階 第4委員会室内容 おうみはちまん2030プラン-男女共同参画近江八幡市行動計画-の令和7年度中間改訂について 他"
-  },
-  {
-    "title": "令和8年度 保活直前！お仕事探し応援ウィーク",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/danjokyoudousankaku/31056.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Sat, 01 Aug 2026 00:00:00 +0900",
-    "description": "保育所等の一斉申込みに間に合う子育てに配慮した求人を集めた就職フェア・合同企業面接会を県内3会場で開催します。"
-  },
-  {
-    "title": "男女共同参画おうみはちまん2030プラン中間改訂に係るパブリックコメント結果を公表します",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/danjokyoudousankaku/38649.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Fri, 27 Mar 2026 00:00:00 +0900",
-    "description": "令和8年1月23日から令和8年2月13日まで意見を募集しましたところ、9件のご意見をいただきました。お寄せいただいたご意見と、ご意見に対する当市の考え方は別紙のとおりです。なお、ご意見については、要約等をしたうえで掲載しております。このたびは、貴重なご意見を頂戴し、ありがとうございました。"
-  },
-  {
-    "title": "人権尊重のまちづくり懇談会・男女共同参画懇談会",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/danjokyoudousankaku/41802.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Fri, 01 May 2026 00:00:00 +0900",
-    "description": "人権尊重のまちづくり懇談会(自治会・区での人権学習会)に関する様式集です。"
-  },
-  {
-    "title": "令和8年度 近江八幡市男女共同参画審議会",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/danjokyoudousankaku/42082.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Tue, 30 Jun 2026 00:00:00 +0900",
-    "description": "日時 令和8年7月29日(水曜日) 14時00分 から 15時30分場所 近江八幡市役所 4階 委員会室4内容 おうみはちまん2030プラン-男女共同参画近江八幡市行動計画-進捗状況報告 他"
-  },
-  {
-    "title": "近江八幡市男女共同参画推進条例",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/danjokyoudousankaku/842.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Fri, 31 Jan 2020 00:00:00 +0900",
-    "description": "近江八幡市男女共同参画推進条例の概要です。"
-  },
-  {
-    "title": "【ご相談ください！】近江八幡市消費生活センター",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/shohi/19191.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Mon, 05 Jan 2026 00:00:00 +0900",
-    "description": "消費生活センターでは、契約や商品の購入等に関するご相談についてお聞きし、問題解決に向けた支援をしています。例えば… 会員登録のつもりが、別サイトのサブスク契約だった 初回特典でお試しのつもりが、定期購入だった SNSで投資に誘われ参加したが、出金できない相談者の個人情報、相談内容の秘密は厳守します。"
-  },
-  {
-    "title": "消費生活サポーター「はちサポ」メンバー募集中！",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/shohi/28543.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Mon, 05 Jan 2026 00:00:00 +0900",
-    "description": "近江八幡市消費生活センターでは、悪質商法や特殊詐欺の事例について寸劇等で分かりやすく説明し、消費者トラブルに遭わないためのポイントを紹介する、消費者教育出前講座(消費生活出前講座)を随時開催しています。"
-  },
-  {
-    "title": "SDGsこども特派員vol.3を実施しました！(動画公開)",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/shouhishakyouiku/13142.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Wed, 29 May 2024 00:00:00 +0900",
-    "description": "このプログラムは『日々の何気ない消費行動による影響』『持続可能な社会を作っていくために簡単にできること』を小学生が親子で楽しく学ぶプログラムです。平成29年度より実施しており、市民による実行委員で企画、運営しています。さらに令和元年度は5名の中学生がリーダーとして参加してくれました。"
-  },
-  {
-    "title": "SDGsこども特派員vol.5を実施しました！(動画公開)",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/shouhishakyouiku/21263.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Wed, 29 May 2024 00:00:00 +0900",
-    "description": "このプログラムは、小学生の親子で市内の生産者さん・事業者さんを訪問し、その方々の思いやこだわり等のひみつを見つけ、「日々のなにげない消費行動による影響」「持続可能な社会を作っていくために簡単にできること」を楽しく学びます。平成29年度より実施しており、市民による実行委員会で企画・運営しています。"
-  },
-  {
-    "title": "SDGsこども特派員vol.6を実施しました！",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/jinken/shouhishakyouiku/25198.html",
-    "source": "近江八幡市公式サイト",
-    "pubDate": "Wed, 29 May 2024 00:00:00 +0900",
-    "description": "このプログラムは、小学生の親子で市内の生産者さん・事業者さんを訪問し、その方々の思いやこだわり等のひみつを見つけ、「日々のなにげない消費行動による影響」「持続可能な社会を作っていくために簡単にできること」を楽しく学びます。平成29年度から実施しており、市民による実行委員会で企画・運営しています。"
   }
 ]
