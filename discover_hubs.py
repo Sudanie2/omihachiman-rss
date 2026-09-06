@@ -56,6 +56,10 @@ MAX_DEPTH = 3
 MAX_FETCH = 500
 
 HUBS_FILE = Path("hubs.json")
+DEPT_NAMES_FILE = Path("dept_names.json")
+
+# 部署トップ: /soshiki/xxxx/index.html (課名の対応表を作るために使う)
+DEPT_TOP_PATTERN = re.compile(r"^/soshiki/([^/]+)/index\.html$")
 
 
 fetch_count = 0
@@ -87,6 +91,37 @@ def collect_index_links(url, session, rp, pattern):
         if pattern.match(parsed.path):
             found.append(abs_url)
     return found
+
+
+def collect_department_names(url, session, rp):
+    """
+    「各課の窓口」ページから、URLの部署名(slug)と実際の課名の対応表を作る。
+    例: "suidou_sisetsu" -> "上下水道課 施設グループ"
+    記事の出典表示で「各課」ではなく実際の課名を出すために使う。
+    """
+    global fetch_count
+    if not rp.can_fetch(USER_AGENT, url):
+        return {}
+    try:
+        resp = fetch_bytes(url, session)
+        html = decode_response(resp)
+    except Exception as e:
+        print(f"  [SKIP] {url}: {e}")
+        return {}
+    fetch_count += 1
+    time.sleep(REQUEST_INTERVAL_SEC)
+
+    soup = BeautifulSoup(html, "html.parser")
+    names = {}
+    for a in soup.find_all("a", href=True):
+        abs_url = normalize_url(urljoin(url, a["href"]))
+        m = DEPT_TOP_PATTERN.match(urlparse(abs_url).path)
+        if not m:
+            continue
+        text = re.sub(r"\s+", " ", a.get_text(" ", strip=True)).strip()
+        if text and len(text) <= 30:
+            names[m.group(1)] = text
+    return names
 
 
 def main():
@@ -121,6 +156,13 @@ def main():
 
     if fetch_count >= MAX_FETCH:
         print(f"取得上限({MAX_FETCH}件)に達しました。未探索の階層は日々の巡回時に自動で追加されます。")
+
+    # 3. 課名の対応表を作る
+    dept_names = collect_department_names(DEPARTMENT_LIST_URL, session, rp)
+    DEPT_NAMES_FILE.write_text(
+        json.dumps(dept_names, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    print(f"課名の対応表: {len(dept_names)}件を dept_names.json に保存しました。")
 
     hubs = sorted(all_hubs)
     HUBS_FILE.write_text(json.dumps(hubs, ensure_ascii=False, indent=2), encoding="utf-8")
