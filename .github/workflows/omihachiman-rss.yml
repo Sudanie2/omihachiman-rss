@@ -12,7 +12,7 @@ on:
         type: boolean
         default: false
       repair_titles:
-        description: "既存記事のタイトルを取り直す(不具合修復用)"
+        description: "既存記事のタイトル・日付を取り直す(修復用)"
         type: boolean
         default: false
 permissions:
@@ -57,7 +57,7 @@ jobs:
       - name: Collect from section pages
         run: |
           python fetch_section_links.py
-      - name: Repair existing titles (manual only)
+      - name: Repair existing titles and dates (manual only)
         if: github.event.inputs.repair_titles == 'true'
         run: |
           python repair_titles.py
