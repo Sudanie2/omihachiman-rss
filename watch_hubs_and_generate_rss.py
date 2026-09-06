@@ -11,7 +11,9 @@ hubs.json に登録された一覧ページ(全体一覧・部署トップ・小
   - それ以外のhtmlページ           = 個別記事。新着検出の対象。
 
 巡回中に hubs.json に無い一覧ページを見つけた場合は hubs.json に追記し、
-次回以降その配下も巡回対象になる(部署の新設や事業ページ追加への自動追従)。
+次回以降その配下も巡回対象になる。これにより、組織別(/soshiki/)だけでなく
+分野別(/gyosei/ 行政情報、/kurashi/ くらし等)の階層も自動的に取り込まれ、
+新しい分野やページが追加されても追従できる。
 
 1回の実行で巡回するハブ数には上限を設け、続きは次回に持ち越す(サーバー負荷への配慮)。
 """
@@ -48,13 +50,14 @@ HUBS_FILE = Path("hubs.json")
 HUB_CURSOR_FILE = Path("hub_cursor.json")
 
 # 1回の実行あたりの上限(サーバー負荷と実行時間の抑制)
-MAX_HUBS_PER_RUN = 250
+MAX_HUBS_PER_RUN = 300
 MAX_NEW_PAGE_FETCH_PER_RUN = 80
 
 # 一覧ページ(ハブ)とみなすURL
 HUB_PATH_PATTERN = re.compile(r"/index\.html$")
-# 部署配下の一覧ページ(自動でハブに追加する対象)
-SOSHIKI_INDEX_PATTERN = re.compile(r"^/soshiki/.+/index\.html$")
+# 自動でハブに追加する一覧ページ。
+# 組織別(/soshiki/)だけでなく分野別(/gyosei/ 行政情報、/kurashi/ くらし等)も対象にする。
+AUTO_HUB_PATTERN = re.compile(r"^/.+/index\.html$")
 
 EXCLUDE_PATTERNS = [
     r"^/cgi-bin/",
@@ -127,7 +130,7 @@ def main():
             if is_hub_page(abs_url):
                 # 一覧ページは記事ではない。未登録なら次回以降の巡回対象に加える。
                 path = urlparse(abs_url).path
-                if SOSHIKI_INDEX_PATTERN.match(path) and abs_url not in hubs:
+                if AUTO_HUB_PATTERN.match(path) and abs_url not in hubs:
                     new_hubs.add(abs_url)
                 continue
 
