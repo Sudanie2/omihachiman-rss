@@ -292,6 +292,68 @@ def extract_page_title(soup) -> str:
             return cleaned
 
     return "(タイトル不明)"
+# ---- ページの要約 ----
+SUMMARY_MAX_LENGTH = 150
+SUMMARY_MIN_LENGTH = 100
+
+# 要約に使わない定型文
+SUMMARY_NOISE = [
+    "現在の位置", "ページID", "更新日", "この記事に関するお問い合わせ先",
+    "メールフォームによるお問い合わせ", "検索したいキーワード",
+]
+
+
+def _trim_summary(text: str) -> str:
+    text = re.sub(r"\s+", " ", text or "").strip()
+    if not text:
+        return ""
+    if len(text) <= SUMMARY_MAX_LENGTH:
+        return text
+    # 句点で区切れる場合はそこで終える(文の途中で切らない)
+    cut = text[:SUMMARY_MAX_LENGTH]
+    for mark in ("。", "！", "？"):
+        pos = cut.rfind(mark)
+        if pos >= SUMMARY_MIN_LENGTH:
+            return cut[: pos + 1]
+    return cut.rstrip() + "…"
+
+
+def extract_page_summary(soup) -> str:
+    """
+    記事ページから100〜150字程度の要約を作る。
+    多くのページは og:description に本文冒頭が入っているため、それを優先する。
+    """
+    for attrs in ({"property": "og:description"}, {"name": "description"}):
+        el = soup.find("meta", attrs=attrs)
+        if el and (el.get("content") or "").strip():
+            summary = _trim_summary(el["content"])
+            if len(summary) >= 20:
+                return summary
+
+    # メタ情報が無い場合は本文の段落から作る
+    container = (
+        soup.find(id="main")
+        or soup.find("article")
+        or soup.find(id="container")
+        or soup.body
+    )
+    if not container:
+        return ""
+
+    parts = []
+    for para in container.find_all("p"):
+        text = re.sub(r"\s+", " ", para.get_text(" ", strip=True))
+        if len(text) < 15:
+            continue
+        if any(noise in text for noise in SUMMARY_NOISE):
+            continue
+        parts.append(text)
+        if sum(len(x) for x in parts) >= SUMMARY_MIN_LENGTH:
+            break
+
+    return _trim_summary(" ".join(parts))
+
+
 # ---- ページ内の日付 ----
 # 「更新日：2022年07月01日」「公開日 2026/9/1」などにマッチする
 PAGE_DATE_PATTERNS = [
