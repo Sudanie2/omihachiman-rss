@@ -35,6 +35,7 @@ from common import (
     merge_new_items,
     now_iso,
     parse_pubdate,
+    _trim_summary,
     KNOWN_LINKS_FILE,
 )
 
@@ -187,6 +188,14 @@ def process_source(source, known, seen_links):
             else None
         )
 
+        # 配信元の説明文を要約として使う(タイトルと同じ内容なら省く)
+        body = child_text(item, set(BODY_TAGS)) or ""
+        summary = _trim_summary(
+            BeautifulSoup(body, "html.parser").get_text(" ", strip=True)
+        ) if body else ""
+        if summary and (summary == title or summary in title):
+            summary = ""
+
         seen_links.add(link)
         known_updates[link] = {"title": title, "first_seen": ts}
         new_items.append(
@@ -194,6 +203,7 @@ def process_source(source, known, seen_links):
                 "title": title,
                 "link": link,
                 "source": source["name"],
+                "description": summary,
                 "pubDate": pub_rfc822,
             }
         )
