@@ -198,6 +198,12 @@
   .item a.title:hover,
   .item a.title:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
 
+  .item .summary {
+    margin: 6px 0 0;
+    font-size: 13.5px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+  }
   .item .url {
     font-size: 12px;
     color: var(--ink-soft);
@@ -405,7 +411,9 @@
     if (searchQuery) {
       const q = searchQuery.toLowerCase();
       filtered = filtered.filter((it) =>
-        it.title.toLowerCase().includes(q) || it.sourceLabel.toLowerCase().includes(q)
+        it.title.toLowerCase().includes(q)
+        || it.sourceLabel.toLowerCase().includes(q)
+        || it.summary.toLowerCase().includes(q)
       );
     }
 
@@ -434,6 +442,7 @@
             <div>
               <span class="tag">${it.tags.map((t) => escapeHtml(t.label)).join(' / ') || 'お知らせ'}</span>
               <a class="title" href="${it.link}" target="_blank" rel="noopener">${escapeHtml(it.title)}</a>
+              ${it.summary ? `<p class="summary">${escapeHtml(it.summary)}</p>` : ''}
               <div class="url">出典：${escapeHtml(it.sourceLabel)}</div>
             </div>
           </li>`;
@@ -504,6 +513,7 @@
           title: it.title,
           link: it.link,
           date: new Date(it.pubDate),
+          summary: (it.description || '').trim(),
           tags,
           // 「各課」ではなく実際の課名を出す
           sourceLabel: dept ? `${source}（${dept}）` : source,
