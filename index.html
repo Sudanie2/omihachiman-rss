@@ -272,7 +272,7 @@
   </main>
 
   <footer class="site">
-    <p>掲載日は当サイトが更新を確認した日のため、元記事の公開日と異なる場合があります</p>
+    <p>掲載日は元記事の更新日です（記載がない場合は当サイトが更新を確認した日）</p>
     <p>RSSで購読: <a href="./rss.xml">rss.xml</a>（FeedlyなどのRSSリーダーに登録できます）</p>
     <p>個人により運営される非公式サイトです</p>
   </footer>
@@ -383,12 +383,13 @@
 
   function formatDay(date) {
     return date.toLocaleDateString('ja-JP', {
-      timeZone: 'Asia/Tokyo', month: 'long', day: 'numeric', weekday: 'short'
+      timeZone: 'Asia/Tokyo', year: 'numeric', month: 'long', day: 'numeric', weekday: 'short'
     });
   }
   function formatUpdated(date) {
     return date.toLocaleString('ja-JP', {
-      timeZone: 'Asia/Tokyo', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'
+      timeZone: 'Asia/Tokyo', year: 'numeric', month: 'numeric', day: 'numeric',
+      hour: '2-digit', minute: '2-digit'
     });
   }
 
