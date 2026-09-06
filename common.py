@@ -292,6 +292,59 @@ def extract_page_title(soup) -> str:
             return cleaned
 
     return "(タイトル不明)"
+# ---- ページ内の日付 ----
+# 「更新日：2022年07月01日」「公開日 2026/9/1」などにマッチする
+PAGE_DATE_PATTERNS = [
+    re.compile(r"(?:更新日|公開日|掲載日|登録日)[：:\s]*(\d{4})[年/\-.](\d{1,2})[月/\-.](\d{1,2})"),
+    re.compile(r"(\d{4})[年/\-.](\d{1,2})[月/\-.](\d{1,2})日?\s*(?:更新|公開|掲載)"),
+]
+
+
+def extract_page_date(soup):
+    """
+    ページ本文から記事の更新日・公開日を読み取る。
+
+    多くの自治体サイトは本文に「更新日：2022年07月01日」と明記しているため、
+    それを記事の日付として使う。見つからない場合は None を返し、
+    呼び出し側で取得日を代わりに使う。
+    """
+    # 1. HTMLの日付メタ情報(time要素・meta要素)
+    for el in soup.find_all("time"):
+        value = (el.get("datetime") or "").strip()
+        if value:
+            try:
+                dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
+                return dt if dt.tzinfo else dt.replace(tzinfo=JST)
+            except ValueError:
+                pass
+
+    for attrs in (
+        {"property": "article:modified_time"},
+        {"property": "article:published_time"},
+        {"property": "og:updated_time"},
+        {"name": "last-modified"},
+    ):
+        el = soup.find("meta", attrs=attrs)
+        if el and el.get("content"):
+            try:
+                dt = datetime.fromisoformat(el["content"].strip().replace("Z", "+00:00"))
+                return dt if dt.tzinfo else dt.replace(tzinfo=JST)
+            except ValueError:
+                pass
+
+    # 2. 本文中の「更新日：〜」表記
+    text = re.sub(r"\s+", "", soup.get_text(" "))
+    for pattern in PAGE_DATE_PATTERNS:
+        m = pattern.search(text)
+        if m:
+            try:
+                return datetime(int(m.group(1)), int(m.group(2)), int(m.group(3)), tzinfo=JST)
+            except ValueError:
+                continue
+
+    return None
+
+
 # ---- URL ----
 def normalize_url(url: str) -> str:
     return url.split("#")[0]
