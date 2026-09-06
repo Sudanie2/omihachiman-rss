@@ -261,6 +261,10 @@
     <span id="item-count"></span>
   </div>
 
+  <div class="search-row">
+    <input type="search" id="search-box" placeholder="キーワードで探す（例：ごみ、保育、健診）" aria-label="キーワード検索">
+  </div>
+
   <nav class="filters" id="filters" aria-label="カテゴリで絞り込み"></nav>
 
   <main id="content">
@@ -268,6 +272,8 @@
   </main>
 
   <footer class="site">
+    <p>掲載日は当サイトが更新を確認した日のため、元記事の公開日と異なる場合があります</p>
+    <p>RSSで購読: <a href="./rss.xml">rss.xml</a>（FeedlyなどのRSSリーダーに登録できます）</p>
     <p>個人により運営される非公式サイトです</p>
   </footer>
 
@@ -388,12 +394,19 @@
 
   let allItems = [];
   let activeFilter = 'all';
+  let searchQuery = '';
 
   function render() {
     const content = document.getElementById('content');
-    const filtered = activeFilter === 'all'
+    let filtered = activeFilter === 'all'
       ? allItems
       : allItems.filter((it) => it.tags.some((t) => t.key === activeFilter));
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase();
+      filtered = filtered.filter((it) =>
+        it.title.toLowerCase().includes(q) || it.sourceLabel.toLowerCase().includes(q)
+      );
+    }
 
     document.getElementById('item-count').textContent = `${filtered.length}件表示中`;
 
@@ -504,6 +517,10 @@
         : '最終確認: -';
 
       buildFilters();
+      document.getElementById('search-box').addEventListener('input', (e) => {
+        searchQuery = e.target.value.trim();
+        render();
+      });
       render();
     })
     .catch((err) => {
