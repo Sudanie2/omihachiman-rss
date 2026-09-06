@@ -39,7 +39,7 @@ RSS(rss.xml)とWebサイト(index.html / GitHub Pages)で公開する仕組み�
 | fetch_list_sources.py | RSSのない一覧ページ型サイトの新着収集 | 5 |
 | fetch_section_links.py | ページ内の指定範囲のリンクを収集(安土学区まちづくり協議会) | 6 |
 | build_feed.py | 収集結果からrss.xmlを生成(日付順に整列) | 7 |
-| repair_titles.py | 既存記事のタイトルを取り直す(手動実行時のみ) | 任意 |
+| repair_titles.py | 既存記事のタイトル・日付を取り直す(手動実行時のみ) | 任意 |
 | index.html | 公開Webサイト(rss_items.jsonを表示) | - |
 
 収集スクリプト(1〜4)はデータファイルを更新するだけで、rss.xmlは
@@ -55,6 +55,12 @@ RSS(rss.xml)とWebサイト(index.html / GitHub Pages)で公開する仕組み�
 - rss_items.json : 収集した記事データ(Webサイトの表示元)
 - rss.xml : RSSフィード(Feedlyに登録するのはこれ)
 - feed_fingerprint.txt : 前回生成時の内容記録(無変更時のコミット抑制用)
+
+## 記事の日付の扱い
+
+- ページに「更新日：2022年07月01日」等の記載があれば、それを記事の日付として使う。
+- 記載がない場合のみ、当システムが更新を確認した日を使う。
+- RSSから取得したサイトは、配信元が示す日付をそのまま使う。
 
 ## Webサイトの記事分類
 
