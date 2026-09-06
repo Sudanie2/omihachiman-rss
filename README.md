@@ -7,7 +7,8 @@ RSS(rss.xml)とWebサイト(index.html / GitHub Pages)で公開する仕組み�
 
 | 出典 | 方式 |
 |---|---|
-| 近江八幡市公式サイト | ハブページ監視(組織別/soshiki/ と分野別/gyosei/・/kurashi/等の一覧ページを巡回し、その配下の個別記事を検出) |
+| 近江八幡市公式サイト(トップページ掲載) | 重要なおしらせ・お知らせ・募集情報・イベント情報のJSONを取得(日付と要約付き) |
+| 近江八幡市公式サイト(全体) | ハブページ監視(組織別/soshiki/ と分野別/gyosei/・/kurashi/等の一覧ページを巡回し、その配下の個別記事を検出) |
 | 近江八幡経済新聞 | 公式RSS取得 |
 | 号外NET(東近江市・近江八幡市) | 公式RSS取得(タイトルに「近江八幡」を含む記事のみ) |
 | 近江八幡市立総合医療センター | 公式RSS取得 |
@@ -32,7 +33,8 @@ RSS(rss.xml)とWebサイト(index.html / GitHub Pages)で公開する仕組み�
 |---|---|---|
 | common.py | 全スクリプト共通の処理(通信・文字コード・XML補正・重複管理) | - |
 | discover_hubs.py | 市サイトの部署ページ一覧(hubs.json)を作成 | 月1回 |
-| watch_hubs_and_generate_rss.py | 市サイトの新着収集 | 1 |
+| fetch_city_lists.py | 市サイト トップページ掲載一覧の収集(JSON) | 1 |
+| watch_hubs_and_generate_rss.py | 市サイト全体の新着収集 | 2 |
 | fetch_rss_sources.py | 公式RSSを持つサイトの新着収集(RSS2.0/RSS1.0/Atom対応) | 2 |
 | watch_hub_sources.py | 観光サイト・図書館の新着収集 | 3 |
 | fetch_shiga_police_omihachiman.py | 警察署の活動ページの新着収集 | 4 |
@@ -55,6 +57,16 @@ RSS(rss.xml)とWebサイト(index.html / GitHub Pages)で公開する仕組み�
 - rss_items.json : 収集した記事データ(Webサイトの表示元)
 - rss.xml : RSSフィード(Feedlyに登録するのはこれ)
 - feed_fingerprint.txt : 前回生成時の内容記録(無変更時のコミット抑制用)
+
+## 記事の要約
+
+各記事に100〜150字程度の要約を付ける。取得元は次の順。
+
+1. 市サイトのトップページ一覧はJSONに含まれる説明文
+2. ページの og:description / meta description(本文冒頭が入っていることが多い)
+3. 本文の段落から生成
+
+文の途中で切れないよう、句点で区切って整える。
 
 ## 記事の日付の扱い
 
