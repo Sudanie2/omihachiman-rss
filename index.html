@@ -349,6 +349,18 @@
 
   let deptNames = {};  // 部署slug -> 課名
 
+  function sourceLabelOf(source, dept) {
+    // 市公式サイトは「近江八幡市公式サイト（○○課）」とくくらず、担当部署を正確に示す。
+    //   生活環境課(課・室など) -> 近江八幡市HP生活環境課
+    //   文化会館(施設名)       -> 近江八幡市文化会館
+    if (source !== '近江八幡市公式サイト') return source;
+    if (!dept) return '近江八幡市HP';
+    if (/(課|室|局|係|グループ|担当|本部|事務局)$/.test(dept)) {
+      return `近江八幡市HP${dept}`;
+    }
+    return `近江八幡市${dept}`;
+  }
+
   function departmentOf(url) {
     try {
       const u = new URL(url);
@@ -515,8 +527,7 @@
           date: new Date(it.pubDate),
           summary: (it.description || '').trim(),
           tags,
-          // 「各課」ではなく実際の課名を出す
-          sourceLabel: dept ? `${source}（${dept}）` : source,
+          sourceLabel: sourceLabelOf(source, dept),
         };
       });
 
