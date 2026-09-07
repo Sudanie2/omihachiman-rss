@@ -26,7 +26,10 @@ JST = timezone(timedelta(hours=9))
 KNOWN_LINKS_FILE = Path("known_links.json")
 FEED_ITEMS_FILE = Path("rss_items.json")
 FEED_FILE = Path("rss.xml")
-FEED_MAX_ITEMS = 200
+# rss.xmlに書き出す最大件数(表示用の上限)。
+# 収集データ(rss_items.json)側は件数で切らず、日付(FEED_MIN_DATE)で管理する。
+# 件数で切ると、記事数の多い市サイトが枠を占有し、他サイトが押し出されてしまう。
+FEED_MAX_ITEMS = 400
 
 # 公開ページ・RSSに載せる記事の下限日付(これより古い記事は掲載しない)。
 # 古い記事が枠を埋めて新着が押し出されるのを防ぐ。
@@ -440,9 +443,8 @@ def merge_new_items(new_items, known_updates):
 
     if new_items:
         items = load_json(FEED_ITEMS_FILE, [])
-        combined = new_items + items
-        combined = combined[:FEED_MAX_ITEMS]
-        save_json(FEED_ITEMS_FILE, combined)
+        # ここでは件数で切らない。古い記事の整理は build_feed.py が日付で行う。
+        save_json(FEED_ITEMS_FILE, new_items + items)
 
 
 def is_known(key: str) -> bool:
