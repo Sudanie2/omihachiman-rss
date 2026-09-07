@@ -15,6 +15,10 @@ on:
         description: "既存記事のタイトル・日付・要約を取り直す(修復用)"
         type: boolean
         default: false
+      rebuild_items:
+        description: "掲載枠から消えた既知記事を復元する(復旧用・複数回実行可)"
+        type: boolean
+        default: false
 permissions:
   contents: write
 # 実行が重なるとpushが競合するため、同時に1つしか動かさない
@@ -64,6 +68,10 @@ jobs:
         if: github.event.inputs.repair_titles == 'true'
         run: |
           python repair_titles.py
+      - name: Rebuild items from known links (manual only)
+        if: github.event.inputs.rebuild_items == 'true'
+        run: |
+          python rebuild_from_known.py
       - name: Build RSS feed
         run: |
           set -euo pipefail
