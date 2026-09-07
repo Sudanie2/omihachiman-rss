@@ -23,6 +23,7 @@
 import re
 import sys
 import xml.etree.ElementTree as ET
+from datetime import datetime, timezone
 
 import requests
 from bs4 import BeautifulSoup
@@ -167,6 +168,7 @@ def process_source(source, known, seen_links):
     new_items = []
     known_updates = {}
     ts = now_iso()
+    collected_at = datetime.now(timezone.utc)
     found = 0
 
     for item in iter_items(root):
@@ -181,12 +183,11 @@ def process_source(source, known, seen_links):
         if source["title_filter"] and source["title_filter"] not in title:
             continue
 
+        # 配信元に日付が無い場合も、収集時刻を固定で入れる。
+        # 空のままだと表示のたびに現在時刻とみなされ、常に最上位に居座ってしまう。
         date_text = child_text(item, set(DATE_TAGS))
-        pub_rfc822 = (
-            parse_pubdate(date_text).strftime("%a, %d %b %Y %H:%M:%S %z")
-            if date_text
-            else None
-        )
+        pub_dt = parse_pubdate(date_text) if date_text else collected_at
+        pub_rfc822 = pub_dt.strftime("%a, %d %b %Y %H:%M:%S %z")
 
         # 配信元の説明文を要約として使う(タイトルと同じ内容なら省く)
         body = child_text(item, set(BODY_TAGS)) or ""
