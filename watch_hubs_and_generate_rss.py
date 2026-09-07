@@ -150,8 +150,8 @@ def main():
     # 記事候補を開いてタイトルを取得
     new_items = []
     known_updates = {}
+    skipped_no_date = 0
     ts = now_iso()
-    ts_rfc822 = now_rfc822()
 
     for i, url in enumerate(sorted(article_candidates)):
         if i >= MAX_NEW_PAGE_FETCH_PER_RUN:
@@ -170,9 +170,16 @@ def main():
         soup = BeautifulSoup(html, "html.parser")
         title = extract_page_title(soup)
 
-        # ページに書かれた更新日を優先し、無ければ取得日を使う
+        # 市サイトの記事ページには必ず「更新日」が書かれている。
+        # 記載が無いページは、他ページへのリンクを並べただけの中継ページなので掲載しない。
+        # (取得日で代用すると、更新の無い古いページが最新記事として並んでしまう)
         page_date = extract_page_date(soup)
-        pub = page_date.strftime("%a, %d %b %Y %H:%M:%S %z") if page_date else ts_rfc822
+        if page_date is None:
+            skipped_no_date += 1
+            known_updates[url] = {"title": title, "first_seen": ts, "no_date": True}
+            continue
+
+        pub = page_date.strftime("%a, %d %b %Y %H:%M:%S %z")
         summary = extract_page_summary(soup)
 
         known_updates[url] = {"title": title, "first_seen": ts}
@@ -189,6 +196,8 @@ def main():
     merge_new_items(new_items, known_updates)
     save_json(HUB_CURSOR_FILE, {"index": next_cursor})
 
+    if skipped_no_date:
+        print(f"[{SOURCE_NAME}] 更新日の記載が無いページ {skipped_no_date}件は掲載対象外としました。")
     print(
         f"[{SOURCE_NAME}] ハブ巡回 {len(target_hubs)}/{len(hubs)}件"
         f"(次回は{next_cursor}件目から) / 記事候補 {len(article_candidates)}件 / 新着 {len(new_items)}件"
