@@ -12,6 +12,7 @@ rss.xml 生成スクリプト(最終ステップ)
 
 import hashlib
 import json
+import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -88,6 +89,32 @@ def item_date(it):
     return dt
 
 
+def dedupe(items):
+    """
+    同じ記事が複数のURLで掲載されている場合(市サイトは分野別と組織別の
+    両方に同じ内容を載せることがある)、1件にまとめる。
+    タイトルと出典が同じものを同一とみなし、日付が新しいものを残す。
+    """
+    best = {}
+    order = []
+    for it in items:
+        key = (
+            re.sub(r"\s+", "", it.get("title", "")),
+            it.get("source", ""),
+        )
+        if key not in best:
+            best[key] = it
+            order.append(key)
+            continue
+        # 日付が新しい方を残す。同じなら短いURL(元ページに近い)を残す。
+        current = best[key]
+        if item_date(it) > item_date(current):
+            best[key] = it
+        elif item_date(it) == item_date(current) and len(it.get("link", "")) < len(current.get("link", "")):
+            best[key] = it
+    return [best[k] for k in order]
+
+
 def report_sizes():
     """
     公開ファイルの容量を報告する。
@@ -118,14 +145,21 @@ def main():
     items = [it for it in items if item_date(it) >= FEED_MIN_DATE]
     removed = before - len(items)
 
+    # 同じ内容の重複をまとめる
+    deduped = dedupe(items)
+    duplicates = len(items) - len(deduped)
+    items = deduped
+
     # 日付の新しい順に並べ替え
     items.sort(key=item_date, reverse=True)
-    items = items[:FEED_MAX_ITEMS]
 
-    # 除外した分をデータ側にも反映する(次回以降の処理を軽くする)
-    if removed or before > len(items):
+    # 整理結果をデータ側にも反映する(次回以降の処理を軽くする)
+    if before != len(items):
         save_json(FEED_ITEMS_FILE, items)
-        print(f"掲載対象外({FEED_MIN_DATE.strftime('%Y年%m月%d日')}より前)の記事 {removed}件を整理しました。")
+        print(
+            f"整理: 期間外 {removed}件 / 重複 {duplicates}件 を除きました"
+            f"(残り {len(items)}件)。"
+        )
 
     # 記事内容に変化がなければ書き換えない
     fingerprint = hashlib.sha256(
@@ -141,7 +175,7 @@ def main():
         report_sizes()
         return
 
-    FEED_FILE.write_text(build_rss(items), encoding="utf-8")
+    FEED_FILE.write_text(build_rss(items[:FEED_MAX_ITEMS]), encoding="utf-8")
     FINGERPRINT_FILE.write_text(fingerprint, encoding="utf-8")
     print(f"rss.xml を更新しました({len(items)}件)。")
     report_sizes()
