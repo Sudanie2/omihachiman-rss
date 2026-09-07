@@ -13,6 +13,7 @@ rss.xml 生成スクリプト(最終ステップ)
 import hashlib
 import json
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 from common import (
@@ -72,6 +73,21 @@ def build_rss(items) -> str:
 """
 
 
+def item_date(it):
+    """
+    並べ替え用の日付。日付が無い・壊れている記事は現在時刻とみなさず、
+    最も古い扱いにする(誤って最新記事として先頭に出るのを防ぐ)。
+    """
+    text = (it.get("pubDate") or "").strip()
+    if not text:
+        return datetime(1970, 1, 1, tzinfo=timezone.utc)
+    dt = parse_pubdate(text)
+    # parse_pubdateは解釈できない場合に現在時刻を返すため、その場合も最古扱いにする
+    if abs((dt - datetime.now(timezone.utc)).total_seconds()) < 5:
+        return datetime(1970, 1, 1, tzinfo=timezone.utc)
+    return dt
+
+
 def report_sizes():
     """
     公開ファイルの容量を報告する。
@@ -98,12 +114,12 @@ def main():
     items = load_json(FEED_ITEMS_FILE, [])
     before = len(items)
 
-    # 掲載対象期間より古い記事を取り除く
-    items = [it for it in items if parse_pubdate(it.get("pubDate", "")) >= FEED_MIN_DATE]
+    # 掲載対象期間より古い記事(および日付不明の記事)を取り除く
+    items = [it for it in items if item_date(it) >= FEED_MIN_DATE]
     removed = before - len(items)
 
     # 日付の新しい順に並べ替え
-    items.sort(key=lambda it: parse_pubdate(it.get("pubDate", "")), reverse=True)
+    items.sort(key=item_date, reverse=True)
     items = items[:FEED_MAX_ITEMS]
 
     # 除外した分をデータ側にも反映する(次回以降の処理を軽くする)
