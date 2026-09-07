@@ -17,11 +17,13 @@ from pathlib import Path
 
 from common import (
     load_json,
+    save_json,
     now_rfc822,
     parse_pubdate,
     FEED_ITEMS_FILE,
     FEED_FILE,
     FEED_MAX_ITEMS,
+    FEED_MIN_DATE,
 )
 
 FINGERPRINT_FILE = Path("feed_fingerprint.txt")
@@ -94,10 +96,20 @@ def report_sizes():
 
 def main():
     items = load_json(FEED_ITEMS_FILE, [])
+    before = len(items)
+
+    # 掲載対象期間より古い記事を取り除く
+    items = [it for it in items if parse_pubdate(it.get("pubDate", "")) >= FEED_MIN_DATE]
+    removed = before - len(items)
 
     # 日付の新しい順に並べ替え
     items.sort(key=lambda it: parse_pubdate(it.get("pubDate", "")), reverse=True)
     items = items[:FEED_MAX_ITEMS]
+
+    # 除外した分をデータ側にも反映する(次回以降の処理を軽くする)
+    if removed or before > len(items):
+        save_json(FEED_ITEMS_FILE, items)
+        print(f"掲載対象外({FEED_MIN_DATE.strftime('%Y年%m月%d日')}より前)の記事 {removed}件を整理しました。")
 
     # 記事内容に変化がなければ書き換えない
     fingerprint = hashlib.sha256(
