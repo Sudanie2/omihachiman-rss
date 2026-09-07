@@ -28,6 +28,11 @@ FEED_ITEMS_FILE = Path("rss_items.json")
 FEED_FILE = Path("rss.xml")
 FEED_MAX_ITEMS = 200
 
+# 公開ページ・RSSに載せる記事の下限日付(これより古い記事は掲載しない)。
+# 古い記事が枠を埋めて新着が押し出されるのを防ぐ。
+# 期間を変えたい場合はこの日付だけ書き換える。
+FEED_MIN_DATE = datetime(2026, 8, 1, tzinfo=JST)
+
 # URLのドメインから出典名を引くための対応表
 SOURCE_BY_HOST = {
     "www.city.omihachiman.lg.jp": "近江八幡市公式サイト",
