@@ -41,19 +41,23 @@ HUB_SOURCES = [
     {
         "name": "近江八幡市観光サイト",
         "base": "https://www.omi8.com",
+        # 公共性のある情報のみを対象にする。
+        # グルメ・土産・宿泊は個別店舗の紹介で、更新日の記載もなく
+        # 新着かどうかも判別できないため対象外とする(下のexclude_patternで除外)。
         "hubs": [
-            "/stories/index.html",
-            "/course/index.html",
-            "/spot/index.html",
-            "/event/index.html",
-            "/restaurant/index.html",
-            "/souvenir/index.html",
-            "/stay/index.html",
-            "/access/index.html",
-            "/favorite/index.html",
+            "/index.html",                          # トップ(Pick up!)
+            "/news/index.html",                     # お知らせ
+            "/stories/index.html",                  # 特集
+            "/stories/index_1_2__11__0___.html",    # はちまん観光ライター
+            "/course/index.html",                   # モデルコース
+            "/spot/index.html",                     # スポット・体験
+            "/event/index.html",                    # イベント
+            "/pamphlet/index.html",                 # パンフレット
         ],
         # 個別記事とみなすURLパターン
         "detail_pattern": r"/detail[_.]",
+        # 個別店舗の紹介は収集しない
+        "exclude_pattern": r"^/(restaurant|souvenir|stay|access|favorite)/",
     },
     {
         "name": "近江八幡市立図書館",
@@ -63,15 +67,18 @@ HUB_SOURCES = [
             "/図書館だより・行事案内/図書館だより",
         ],
         "detail_pattern": r"active_action=bbs_view_main_post.*post_id=\d+",
+        "exclude_pattern": None,
     },
 ]
 
 MAX_NEW_PAGE_FETCH_PER_SOURCE = 60
 
 
-def is_target_url(url: str, base: str, pattern: re.Pattern) -> bool:
+def is_target_url(url: str, base: str, pattern: re.Pattern, exclude: re.Pattern = None) -> bool:
     parsed = urlparse(url)
     if parsed.netloc and parsed.netloc != urlparse(base).netloc:
+        return False
+    if exclude and exclude.search(parsed.path):
         return False
     full = parsed.path + ("?" + parsed.query if parsed.query else "")
     return bool(pattern.search(full))
@@ -81,6 +88,7 @@ def process_source(source, known, session):
     """1つのハブ監視ソースを処理し、新着itemsと既知キー更新を返す"""
     base = source["base"]
     pattern = re.compile(source["detail_pattern"])
+    exclude = re.compile(source["exclude_pattern"]) if source.get("exclude_pattern") else None
     rp = get_robot_parser(base)
 
     candidate_new = []
@@ -103,7 +111,7 @@ def process_source(source, known, session):
         soup = BeautifulSoup(html, "html.parser")
         for a in soup.find_all("a", href=True):
             abs_url = normalize_url(urljoin(hub_url, a["href"]))
-            if not is_target_url(abs_url, base, pattern):
+            if not is_target_url(abs_url, base, pattern, exclude):
                 continue
             if abs_url in known or abs_url in seen_in_run:
                 continue
