@@ -8,6 +8,7 @@ RSS配信がなく、「日付 + タイトルリンク」が並ぶ一覧ペー�
 対象:
   - 近江八幡商工会議所           : カテゴリタグ「お知らせ」の記事のみ
   - 近江八幡市立健康ふれあい公園 : 新着情報の全記事
+  - 近江八幡地域勤労者福祉サービスセンター(ワークピア近江八幡) : お知らせの全記事
 
 注意: サイトによっては「日付」と「タイトル」が別々のリンクになっており、
 どちらも同じ記事を指す。日付だけのリンクはタイトルとして採用しない。
@@ -50,6 +51,15 @@ LIST_SOURCES = [
         # 記事リンクと判定するURLパターン(Noneならタグで判定)
         "link_pattern": None,
         # URLから取り除くクエリ(同じ記事が別URL扱いになるのを防ぐ)
+        "drop_query": [],
+    },
+    {
+        "name": "近江八幡地域勤労者福祉サービスセンター",
+        "base": "https://www.workpia-omi-hachiman.jp",
+        "url": "https://www.workpia-omi-hachiman.jp/info",
+        "tags": [],
+        "tag_filter": None,
+        "link_pattern": r"/info/detail\?id=\d+",
         "drop_query": [],
     },
     {
