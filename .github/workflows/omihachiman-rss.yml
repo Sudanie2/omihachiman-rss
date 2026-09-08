@@ -61,6 +61,9 @@ jobs:
       - name: Collect from list pages
         run: |
           python fetch_list_sources.py
+      - name: Collect Tabelog new-open shops
+        run: |
+          python fetch_tabelog_newopen.py
       - name: Collect from section pages
         run: |
           python fetch_section_links.py
