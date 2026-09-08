@@ -49,6 +49,7 @@ RSS(rss.xml)とWebサイト(index.html / GitHub Pages)で公開する仕組み�
 | build_feed.py | 収集結果からrss.xmlを生成(日付順に整列) | 8 |
 | repair_titles.py | 既存記事のタイトル・日付・要約を取り直す(手動実行時のみ) | 任意 |
 | rebuild_from_known.py | 掲載枠から消えた既知記事を復元する(手動実行時のみ) | 任意 |
+| reset_omi8_stories.py | 観光サイトの記事を削除し新着順一覧から取り直す(1回限り・手動実行時のみ) | 任意 |
 | index.html | 公開Webサイト(rss_items.jsonを表示) | - |
 
 収集スクリプト(1〜4)はデータファイルを更新するだけで、rss.xmlは
