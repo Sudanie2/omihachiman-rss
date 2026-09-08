@@ -31,6 +31,18 @@ FEED_FILE = Path("rss.xml")
 # 件数で切ると、記事数の多い市サイトが枠を占有し、他サイトが押し出されてしまう。
 FEED_MAX_ITEMS = 400
 
+# 掲載対象外とするURL。
+# 観光サイトのグルメ・土産・宿泊は個別店舗の紹介であり、
+# 更新日の記載もなく新着かどうか判別できないため掲載しない。
+EXCLUDED_LINK_PATTERNS = [
+    re.compile(r"^https?://(www\.)?omi8\.com/(restaurant|souvenir|stay|access|favorite)/"),
+]
+
+
+def is_excluded_link(url: str) -> bool:
+    return any(p.search(url or "") for p in EXCLUDED_LINK_PATTERNS)
+
+
 # 公開ページ・RSSに載せる記事の下限日付(これより古い記事は掲載しない)。
 # 古い記事が枠を埋めて新着が押し出されるのを防ぐ。
 # 期間を変えたい場合はこの日付だけ書き換える。
@@ -48,6 +60,8 @@ SOURCE_BY_HOST = {
     "bungei.or.jp": "安土文芸の郷",
     "8cci.com": "近江八幡商工会議所",
     "taneya.jp": "ラコリーナ近江八幡",
+    "tabelog.com": "食べログ(新規オープン)",
+    "www.workpia-omi-hachiman.jp": "近江八幡地域勤労者福祉サービスセンター",
     "ohshakyo.or.jp": "近江八幡市社会福祉協議会",
     "www.zd.ztv.ne.jp": "安土学区まちづくり協議会",
     "azuchi-shiga.com": "安土学区まちづくり協議会",
