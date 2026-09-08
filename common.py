@@ -62,6 +62,7 @@ SOURCE_BY_HOST = {
     "taneya.jp": "ラコリーナ近江八幡",
     "tabelog.com": "食べログ(新規オープン)",
     "www.ohmitetudo.co.jp": "八幡山ロープウェー",
+    "himure.jp": "日牟禮八幡宮",
     "www.workpia-omi-hachiman.jp": "近江八幡地域勤労者福祉サービスセンター",
     "ohshakyo.or.jp": "近江八幡市社会福祉協議会",
     "www.zd.ztv.ne.jp": "安土学区まちづくり協議会",
