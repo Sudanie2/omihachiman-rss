@@ -19,6 +19,10 @@ on:
         description: "掲載枠から消えた既知記事を復元する(復旧用・複数回実行可)"
         type: boolean
         default: false
+      reset_omi8_stories:
+        description: "観光サイトの記事を削除し新着順一覧から取り直す(1回限り)"
+        type: boolean
+        default: false
 permissions:
   contents: write
 # 実行が重なるとpushが競合するため、同時に1つしか動かさない
@@ -43,6 +47,10 @@ jobs:
         run: |
           set -euo pipefail
           python discover_hubs.py
+      - name: Reset omi8.com stories (manual only, one-time)
+        if: github.event.inputs.reset_omi8_stories == 'true'
+        run: |
+          python reset_omi8_stories.py
       - name: Collect city top-page lists (JSON)
         run: |
           python fetch_city_lists.py
