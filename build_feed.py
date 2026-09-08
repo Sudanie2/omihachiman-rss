@@ -18,6 +18,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from common import (
+    is_excluded_link,
     load_json,
     save_json,
     now_rfc822,
@@ -141,9 +142,14 @@ def main():
     items = load_json(FEED_ITEMS_FILE, [])
     before = len(items)
 
+    # 掲載対象外のURL(個別店舗の紹介など)を取り除く
+    items = [it for it in items if not is_excluded_link(it.get("link", ""))]
+    excluded = before - len(items)
+
     # 掲載対象期間より古い記事(および日付不明の記事)を取り除く
-    items = [it for it in items if item_date(it) >= FEED_MIN_DATE]
-    removed = before - len(items)
+    kept = [it for it in items if item_date(it) >= FEED_MIN_DATE]
+    removed = len(items) - len(kept)
+    items = kept
 
     # 同じ内容の重複をまとめる
     deduped = dedupe(items)
@@ -157,8 +163,8 @@ def main():
     if before != len(items):
         save_json(FEED_ITEMS_FILE, items)
         print(
-            f"整理: 期間外 {removed}件 / 重複 {duplicates}件 を除きました"
-            f"(残り {len(items)}件)。"
+            f"整理: 期間外 {removed}件 / 対象外 {excluded}件 / 重複 {duplicates}件 "
+            f"を除きました(残り {len(items)}件)。"
         )
 
     # 記事内容に変化がなければ書き換えない
