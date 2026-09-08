@@ -15,6 +15,7 @@
 import re
 import sys
 import time
+from datetime import datetime, timedelta, timezone
 from urllib.parse import urljoin, urlparse
 
 import requests
@@ -31,7 +32,6 @@ from common import (
     extract_page_title,
     normalize_url,
     now_iso,
-    now_rfc822,
     KNOWN_LINKS_FILE,
     REQUEST_INTERVAL_SEC,
     USER_AGENT,
@@ -44,15 +44,18 @@ HUB_SOURCES = [
         # 公共性のある情報のみを対象にする。
         # グルメ・土産・宿泊は個別店舗の紹介で、更新日の記載もなく
         # 新着かどうかも判別できないため対象外とする(下のexclude_patternで除外)。
+        # 特集・モデルコース・スポット・イベントは、記事ページに日付の記載が無い。
+        # 新着順に並ぶ一覧ページ(index_1_0____0___.html)を先に巡回することで、
+        # 一覧の並び順をそのまま公開順として保てるようにする。
         "hubs": [
-            "/index.html",                          # トップ(Pick up!)
+            "/stories/index_1_0____0___.html",      # 特集(新着順)
+            "/course/index_1_0____0___.html",       # モデルコース(新着順)
+            "/spot/index_1_0____0___.html",         # スポット・体験(新着順)
+            "/event/index_1_0____0___.html",        # イベント(新着順)
             "/news/index.html",                     # お知らせ
-            "/stories/index.html",                  # 特集
             "/stories/index_1_2__11__0___.html",    # はちまん観光ライター
-            "/course/index.html",                   # モデルコース
-            "/spot/index.html",                     # スポット・体験
-            "/event/index.html",                    # イベント
             "/pamphlet/index.html",                 # パンフレット
+            "/index.html",                          # トップ(Pick up!)
         ],
         # 個別記事とみなすURLパターン
         "detail_pattern": r"/detail[_.]",
@@ -122,9 +125,11 @@ def process_source(source, known, session):
     new_items = []
     known_updates = {}
     ts = now_iso()
-    ts_rfc822 = now_rfc822()
+    detected_at = datetime.now(timezone.utc)
 
-    for i, url in enumerate(sorted(candidate_new)):
+    # 一覧ページに並んでいた順(新しい順)を保つ。
+    # アルファベット順に並べ替えると、公開順の情報が失われてしまう。
+    for i, url in enumerate(candidate_new):
         if i >= MAX_NEW_PAGE_FETCH_PER_SOURCE:
             print(f"[{source['name']}] 上限に達したため残りは次回に持ち越します。")
             break
@@ -141,9 +146,15 @@ def process_source(source, known, session):
         soup = BeautifulSoup(html, "html.parser")
         title = extract_page_title(soup)
 
-        # ページに書かれた更新日を優先し、無ければ取得日を使う
+        # ページに書かれた更新日を優先する。
+        # 記載が無いサイト(観光サイトの特集など)は、掲載を確認した日を使う。
+        # その際、一覧ページでの並び順(新しい順)を保てるよう、
+        # 後ろの記事ほど少しずつ古い時刻にする。
         page_date = extract_page_date(soup)
-        pub = page_date.strftime("%a, %d %b %Y %H:%M:%S %z") if page_date else ts_rfc822
+        if page_date:
+            pub = page_date.strftime("%a, %d %b %Y %H:%M:%S %z")
+        else:
+            pub = (detected_at - timedelta(seconds=i)).strftime("%a, %d %b %Y %H:%M:%S %z")
         summary = extract_page_summary(soup)
 
         known_updates[url] = {"title": title, "first_seen": ts}
