@@ -9,6 +9,7 @@ RSS配信がなく、「日付 + タイトルリンク」が並ぶ一覧ペー�
   - 近江八幡商工会議所           : カテゴリタグ「お知らせ」の記事のみ
   - 近江八幡市立健康ふれあい公園 : 新着情報の全記事
   - 近江八幡地域勤労者福祉サービスセンター(ワークピア近江八幡) : お知らせの全記事
+  - 八幡山ロープウェー(近江鉄道) : イベント・キャンペーン / お知らせ / ニュースリリース
 
 注意: サイトによっては「日付」と「タイトル」が別々のリンクになっており、
 どちらも同じ記事を指す。日付だけのリンクはタイトルとして採用しない。
@@ -62,6 +63,39 @@ LIST_SOURCES = [
         "link_pattern": r"/info/detail\?id=\d+",
         "drop_query": [],
     },
+    # 八幡山ロープウェー(近江鉄道)
+    # 記事URLの形式が一定でない(/ropeway/info/… /file.jsp?id=… 外部リンク)ため、
+    # URLの形ではなく「近くに日付があるリンク」を記事とみなす(require_date)。
+    {
+        "name": "八幡山ロープウェー",
+        "base": "https://www.ohmitetudo.co.jp",
+        "url": "https://www.ohmitetudo.co.jp/icoico/event/list/?business=%E5%85%AB%E5%B9%A1%E5%B1%B1%E3%83%AD%E3%83%BC%E3%83%97%E3%82%A6%E3%82%A7%E3%83%BC",
+        "tags": [],
+        "tag_filter": None,
+        "link_pattern": None,
+        "drop_query": [],
+        "require_date": True,
+    },
+    {
+        "name": "八幡山ロープウェー",
+        "base": "https://www.ohmitetudo.co.jp",
+        "url": "https://www.ohmitetudo.co.jp/info/index.html?office-category-name=%E5%85%AB%E5%B9%A1%E5%B1%B1%E3%83%AD%E3%83%BC%E3%83%97%E3%82%A6%E3%82%A7%E3%83%BC",
+        "tags": [],
+        "tag_filter": None,
+        "link_pattern": None,
+        "drop_query": [],
+        "require_date": True,
+    },
+    {
+        "name": "八幡山ロープウェー",
+        "base": "https://www.ohmitetudo.co.jp",
+        "url": "https://www.ohmitetudo.co.jp/news/index.html?office-category-name=%E5%85%AB%E5%B9%A1%E5%B1%B1%E3%83%AD%E3%83%BC%E3%83%97%E3%82%A6%E3%82%A7%E3%83%BC",
+        "tags": [],
+        "tag_filter": None,
+        "link_pattern": None,
+        "drop_query": [],
+        "require_date": True,
+    },
     {
         "name": "近江八幡市立健康ふれあい公園",
         "base": "https://www.omi8man-kenkofureai.jp",
@@ -75,6 +109,12 @@ LIST_SOURCES = [
 ]
 
 DATE_PATTERN = re.compile(r"(20\d{2})[.\-/年](\d{1,2})[.\-/月](\d{1,2})")
+# 記事ではない案内リンク(ボタン・ページ送り等)の文言
+NAVIGATION_TEXTS = {
+    "一覧をみる", "一覧を見る", "もっと見る", "詳細はこちら", "こちら",
+    "次へ", "前へ", "最初", "最後", "トップ", "もっと読む", "過去一覧を見る",
+}
+
 # 「2026年9月1日」のように日付だけのリンク(タイトルではない)を判定する
 DATE_ONLY_PATTERN = re.compile(r"^\s*20\d{2}[.\-/年]\s*\d{1,2}[.\-/月]\s*\d{1,2}\s*日?\s*$")
 
@@ -155,6 +195,9 @@ def process_source(source, known, seen):
         # 日付だけのリンクは、同じ記事のタイトルリンクが別にあるので飛ばす
         if DATE_ONLY_PATTERN.match(raw_text):
             continue
+        # 「一覧をみる」等のボタンは記事ではない
+        if re.sub(r"\s+", "", raw_text) in NAVIGATION_TEXTS:
+            continue
 
         tag, title = split_tag_and_title(raw_text, source["tags"])
         if source["tag_filter"] and tag != source["tag_filter"]:
@@ -176,6 +219,10 @@ def process_source(source, known, seen):
             except ValueError:
                 pub_dt = None
         if pub_dt is None:
+            # 日付が必須のサイトでは、日付の無いリンク(メニュー等)は記事とみなさない
+            if source.get("require_date"):
+                seen.discard(url)
+                continue
             pub_dt = datetime.now(JST)
 
         known_updates[url] = {"title": title, "first_seen": ts}
