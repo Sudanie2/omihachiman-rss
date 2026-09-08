@@ -8,6 +8,7 @@
   - 号外NET 東近江市・近江八幡市 (タイトルに「近江八幡」を含む記事のみ)
   - 近江八幡市立総合医療センター
   - 近江八幡市立資料館・かわらミュージアム
+  - 日牟禮八幡宮(要約は保存しない)
   - 近江八幡市社会福祉協議会
   - シガブンシンブン(近江八幡市で検索した結果のみ)
   - 安土城考古博物館
@@ -61,6 +62,14 @@ RSS_SOURCES = [
         "name": "近江八幡市立資料館・かわらミュージアム",
         "url": "https://www.omihachiman-shiryoukan-kawara.jp/feed/",
         "title_filter": None,
+    },
+    {
+        "name": "日牟禮八幡宮",
+        "url": "https://himure.jp/news/feed/",
+        "title_filter": None,
+        # サイトに「無断で転載・複製を行なうことはできません」と明記があるため、
+        # 本文の要約は保存せず、タイトルとリンクのみを扱う。
+        "no_summary": True,
     },
     {
         "name": "近江八幡市社会福祉協議会",
@@ -189,13 +198,17 @@ def process_source(source, known, seen_links):
         pub_dt = parse_pubdate(date_text) if date_text else collected_at
         pub_rfc822 = pub_dt.strftime("%a, %d %b %Y %H:%M:%S %z")
 
-        # 配信元の説明文を要約として使う(タイトルと同じ内容なら省く)
-        body = child_text(item, set(BODY_TAGS)) or ""
-        summary = _trim_summary(
-            BeautifulSoup(body, "html.parser").get_text(" ", strip=True)
-        ) if body else ""
-        if summary and (summary == title or summary in title):
+        # 配信元の説明文を要約として使う(タイトルと同じ内容なら省く)。
+        # no_summary が指定されたサイトでは要約を保存しない。
+        if source.get("no_summary"):
             summary = ""
+        else:
+            body = child_text(item, set(BODY_TAGS)) or ""
+            summary = _trim_summary(
+                BeautifulSoup(body, "html.parser").get_text(" ", strip=True)
+            ) if body else ""
+            if summary and (summary == title or summary in title):
+                summary = ""
 
         seen_links.add(link)
         known_updates[link] = {"title": title, "first_seen": ts}
