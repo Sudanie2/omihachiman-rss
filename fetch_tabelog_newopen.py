@@ -1,21 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-ハブページ監視型の新着取得(統合版)
+食べログ「近江八幡市のニューオープンのお店」の取得
 
-一覧ページ(ハブページ)を巡回し、新しく出現したリンクを新着記事として検出する。
+地域の新規開店情報として、店名・URL・オープン日のみを収集する。
 
-対象:
-  - 近江八幡市観光サイト(omi8.com): 9カテゴリの一覧ページ
-  - 近江八幡市立図書館: トップページと図書館だより一覧
-
-1つのサイトで取得に失敗しても、他のサイトの処理は続行する。
+配慮している点:
+  - robots.txtで許可された範囲のみ取得する(1回の実行で一覧1ページのみ)
+  - 点数・口コミ・写真は取得しない(サイト側の資産であり「無断転載禁止」のため)
+  - オープン日が読み取れない店舗は掲載しない(新着かどうか判断できないため)
 """
 
 import re
 import sys
-import time
-from urllib.parse import urljoin, urlparse
+from datetime import datetime
 
 import requests
 from bs4 import BeautifulSoup
@@ -26,158 +24,95 @@ from common import (
     get_robot_parser,
     load_json,
     merge_new_items,
-    extract_page_date,
-    extract_page_summary,
-    extract_page_title,
     normalize_url,
     now_iso,
-    now_rfc822,
+    JST,
     KNOWN_LINKS_FILE,
-    REQUEST_INTERVAL_SEC,
     USER_AGENT,
 )
 
-HUB_SOURCES = [
-    {
-        "name": "近江八幡市観光サイト",
-        "base": "https://www.omi8.com",
-        # 公共性のある情報のみを対象にする。
-        # グルメ・土産・宿泊は個別店舗の紹介で、更新日の記載もなく
-        # 新着かどうかも判別できないため対象外とする(下のexclude_patternで除外)。
-        "hubs": [
-            "/index.html",                          # トップ(Pick up!)
-            "/news/index.html",                     # お知らせ
-            "/stories/index.html",                  # 特集
-            "/stories/index_1_2__11__0___.html",    # はちまん観光ライター
-            "/course/index.html",                   # モデルコース
-            "/spot/index.html",                     # スポット・体験
-            "/event/index.html",                    # イベント
-            "/pamphlet/index.html",                 # パンフレット
-        ],
-        # 個別記事とみなすURLパターン
-        "detail_pattern": r"/detail[_.]",
-        # 個別店舗の紹介は収集しない
-        "exclude_pattern": r"^/(restaurant|souvenir|stay|access|favorite)/",
-    },
-    {
-        "name": "近江八幡市立図書館",
-        "base": "https://library.city.omihachiman.shiga.jp",
-        "hubs": [
-            "/",
-            "/図書館だより・行事案内/図書館だより",
-        ],
-        "detail_pattern": r"active_action=bbs_view_main_post.*post_id=\d+",
-        "exclude_pattern": None,
-    },
-]
+BASE_URL = "https://tabelog.com"
+PAGE_URL = f"{BASE_URL}/shiga/C25204/rstLst/cond16-00-00/"
+SOURCE_NAME = "食べログ(新規オープン)"
 
-MAX_NEW_PAGE_FETCH_PER_SOURCE = 60
+# 「2026年9月8日オープン」から日付を取り出す
+OPEN_DATE_PATTERN = re.compile(r"(20\d{2})年\s*(\d{1,2})月\s*(\d{1,2})日")
 
 
-def is_target_url(url: str, base: str, pattern: re.Pattern, exclude: re.Pattern = None) -> bool:
-    parsed = urlparse(url)
-    if parsed.netloc and parsed.netloc != urlparse(base).netloc:
-        return False
-    if exclude and exclude.search(parsed.path):
-        return False
-    full = parsed.path + ("?" + parsed.query if parsed.query else "")
-    return bool(pattern.search(full))
+def main():
+    rp = get_robot_parser(BASE_URL)
+    if not rp.can_fetch(USER_AGENT, PAGE_URL):
+        print(f"[{SOURCE_NAME}] robots.txtでブロックされているため中止します。")
+        return
 
+    resp = fetch_bytes(PAGE_URL)
+    soup = BeautifulSoup(decode_response(resp), "html.parser")
 
-def process_source(source, known, session):
-    """1つのハブ監視ソースを処理し、新着itemsと既知キー更新を返す"""
-    base = source["base"]
-    pattern = re.compile(source["detail_pattern"])
-    exclude = re.compile(source["exclude_pattern"]) if source.get("exclude_pattern") else None
-    rp = get_robot_parser(base)
+    known = load_json(KNOWN_LINKS_FILE, {})
+    ts = now_iso()
 
-    candidate_new = []
-    seen_in_run = set()
-
-    # 1. ハブページを巡回して新出リンクを収集
-    for hub_path in source["hubs"]:
-        hub_url = base + hub_path if hub_path.startswith("/") else hub_path
-        if not rp.can_fetch(USER_AGENT, hub_url):
-            print(f"[{source['name']}] robots.txtでブロック: {hub_url}")
-            continue
-        try:
-            resp = fetch_bytes(hub_url, session)
-            html = decode_response(resp)
-        except Exception as e:
-            print(f"[{source['name']}] ハブページ取得失敗 {hub_url}: {e}")
-            continue
-        time.sleep(REQUEST_INTERVAL_SEC)
-
-        soup = BeautifulSoup(html, "html.parser")
-        for a in soup.find_all("a", href=True):
-            abs_url = normalize_url(urljoin(hub_url, a["href"]))
-            if not is_target_url(abs_url, base, pattern, exclude):
-                continue
-            if abs_url in known or abs_url in seen_in_run:
-                continue
-            seen_in_run.add(abs_url)
-            candidate_new.append(abs_url)
-
-    # 2. 新出リンクを1回だけ開いてタイトルを取得
     new_items = []
     known_updates = {}
-    ts = now_iso()
-    ts_rfc822 = now_rfc822()
+    found = 0
+    skipped_no_date = 0
 
-    for i, url in enumerate(sorted(candidate_new)):
-        if i >= MAX_NEW_PAGE_FETCH_PER_SOURCE:
-            print(f"[{source['name']}] 上限に達したため残りは次回に持ち越します。")
-            break
-        if not rp.can_fetch(USER_AGENT, url):
+    # 店舗ごとの区画を取り出す
+    for card in soup.select("div.list-rst"):
+        url = (card.get("data-detail-url") or "").strip()
+        if not url:
+            link = card.select_one("a.list-rst__rst-name-target")
+            url = link.get("href", "").strip() if link else ""
+        if not url:
+            continue
+        url = normalize_url(url)
+
+        name_el = card.select_one("a.list-rst__rst-name-target") or card.select_one("h3")
+        name = name_el.get_text(" ", strip=True) if name_el else ""
+        if not name:
+            continue
+
+        found += 1
+
+        open_el = card.select_one(".list-rst__newopen")
+        m = OPEN_DATE_PATTERN.search(open_el.get_text(" ", strip=True)) if open_el else None
+        if not m:
+            # オープン日が読めない店舗は「新着」と判断できないため掲載しない
+            skipped_no_date += 1
             continue
         try:
-            resp = fetch_bytes(url, session)
-            html = decode_response(resp)
-        except Exception as e:
-            print(f"[{source['name']}] 記事取得失敗 {url}: {e}")
+            open_dt = datetime(int(m.group(1)), int(m.group(2)), int(m.group(3)), tzinfo=JST)
+        except ValueError:
+            skipped_no_date += 1
             continue
-        time.sleep(REQUEST_INTERVAL_SEC)
 
-        soup = BeautifulSoup(html, "html.parser")
-        title = extract_page_title(soup)
+        if url in known or url in known_updates:
+            continue
 
-        # ページに書かれた更新日を優先し、無ければ取得日を使う
-        page_date = extract_page_date(soup)
-        pub = page_date.strftime("%a, %d %b %Y %H:%M:%S %z") if page_date else ts_rfc822
-        summary = extract_page_summary(soup)
+        # 所在地とジャンル(事実情報のみ)
+        genre_el = card.select_one(".list-rst__area-genre")
+        genre = re.sub(r"\s+", " ", genre_el.get_text(" ", strip=True)) if genre_el else ""
+
+        title = f"【新規オープン】{name}"
+        description = f"{open_dt.strftime('%Y年%-m月%-d日')}オープン" + (f"／{genre}" if genre else "")
 
         known_updates[url] = {"title": title, "first_seen": ts}
         new_items.append(
             {
                 "title": title,
                 "link": url,
-                "source": source["name"],
-                "description": summary,
-                "pubDate": pub,
+                "source": SOURCE_NAME,
+                "description": description,
+                "pubDate": open_dt.strftime("%a, %d %b %Y %H:%M:%S %z"),
             }
         )
 
-    return new_items, known_updates
+    if found == 0:
+        print(f"[{SOURCE_NAME}] 店舗情報が見つかりません。ページ構造が変わった可能性があります。")
+    if skipped_no_date:
+        print(f"[{SOURCE_NAME}] オープン日が読めない店舗 {skipped_no_date}件は掲載対象外としました。")
 
-
-def main():
-    known = load_json(KNOWN_LINKS_FILE, {})
-    session = requests.Session()
-
-    all_new = []
-    all_known_updates = {}
-
-    for source in HUB_SOURCES:
-        try:
-            new_items, known_updates = process_source(source, known, session)
-            all_new.extend(new_items)
-            all_known_updates.update(known_updates)
-            print(f"[{source['name']}] 新着 {len(new_items)}件")
-        except Exception as e:
-            print(f"[{source['name']}] 取得失敗: {e}")
-
-    merge_new_items(all_new, all_known_updates)
-    print(f"ハブ監視ソース合計: 新着 {len(all_new)}件")
+    merge_new_items(new_items, known_updates)
+    print(f"[{SOURCE_NAME}] 掲載中の店舗 {found}件 / 新着 {len(new_items)}件")
 
 
 if __name__ == "__main__":
