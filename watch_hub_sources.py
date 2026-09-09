@@ -71,6 +71,11 @@ HUB_SOURCES = [
         ],
         "detail_pattern": r"active_action=bbs_view_main_post.*post_id=\d+",
         "exclude_pattern": None,
+        # このサイトの記事詳細ページは、本文(タイトル含む)をJavaScriptで
+        # 後から読み込む作りになっており、静的HTMLの時点では中身が空。
+        # そのため詳細ページは開かず、一覧ページに表示されているリンクの
+        # 文字列そのものを記事タイトルとして使う。
+        "title_from_hub_link": True,
     },
 ]
 
@@ -96,6 +101,7 @@ def process_source(source, known, session):
 
     candidate_new = []
     seen_in_run = set()
+    hub_link_titles = {}  # url -> 一覧ページ上でのリンク文字列(title_from_hub_link用)
 
     # 1. ハブページを巡回して新出リンクを収集
     for hub_path in source["hubs"]:
@@ -120,6 +126,10 @@ def process_source(source, known, session):
                 continue
             seen_in_run.add(abs_url)
             candidate_new.append(abs_url)
+            if source.get("title_from_hub_link"):
+                text = re.sub(r"\s+", " ", a.get_text(" ", strip=True)).strip()
+                if text:
+                    hub_link_titles[abs_url] = text
 
     # 2. 新出リンクを1回だけ開いてタイトルを取得
     new_items = []
@@ -135,27 +145,36 @@ def process_source(source, known, session):
             break
         if not rp.can_fetch(USER_AGENT, url):
             continue
-        try:
-            resp = fetch_bytes(url, session)
-            html = decode_response(resp)
-        except Exception as e:
-            print(f"[{source['name']}] 記事取得失敗 {url}: {e}")
-            continue
-        time.sleep(REQUEST_INTERVAL_SEC)
 
-        soup = BeautifulSoup(html, "html.parser")
-        title = extract_page_title(soup)
-
-        # ページに書かれた更新日を優先する。
-        # 記載が無いサイト(観光サイトの特集など)は、掲載を確認した日を使う。
-        # その際、一覧ページでの並び順(新しい順)を保てるよう、
-        # 後ろの記事ほど少しずつ古い時刻にする。
-        page_date = extract_page_date(soup)
-        if page_date:
-            pub = page_date.strftime("%a, %d %b %Y %H:%M:%S %z")
-        else:
+        if source.get("title_from_hub_link"):
+            # 詳細ページはJavaScriptで本文を後から読み込む作りで、
+            # 静的HTMLの時点では中身が空(タイトルも取得できない)。
+            # 開いても無駄なので、一覧ページ上のリンク文字をそのままタイトルに使う。
+            title = hub_link_titles.get(url) or "(タイトル不明)"
             pub = (detected_at - timedelta(seconds=i)).strftime("%a, %d %b %Y %H:%M:%S %z")
-        summary = extract_page_summary(soup)
+            summary = ""
+        else:
+            try:
+                resp = fetch_bytes(url, session)
+                html = decode_response(resp)
+            except Exception as e:
+                print(f"[{source['name']}] 記事取得失敗 {url}: {e}")
+                continue
+            time.sleep(REQUEST_INTERVAL_SEC)
+
+            soup = BeautifulSoup(html, "html.parser")
+            title = extract_page_title(soup)
+
+            # ページに書かれた更新日を優先する。
+            # 記載が無いサイト(観光サイトの特集など)は、掲載を確認した日を使う。
+            # その際、一覧ページでの並び順(新しい順)を保てるよう、
+            # 後ろの記事ほど少しずつ古い時刻にする。
+            page_date = extract_page_date(soup)
+            if page_date:
+                pub = page_date.strftime("%a, %d %b %Y %H:%M:%S %z")
+            else:
+                pub = (detected_at - timedelta(seconds=i)).strftime("%a, %d %b %Y %H:%M:%S %z")
+            summary = extract_page_summary(soup)
 
         known_updates[url] = {"title": title, "first_seen": ts}
         new_items.append(
