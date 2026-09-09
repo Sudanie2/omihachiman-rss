@@ -12,7 +12,7 @@ import re
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urlunparse
 import urllib.robotparser
 
 import requests
@@ -432,8 +432,44 @@ def extract_page_date(soup):
 
 
 # ---- URL ----
+# httpsで正しく応答することを、当システム自身の通信で確認済みのドメイン。
+# RSSや一覧ページの中に http:// のまま書かれたリンクが紛れていても、
+# ここに載っているドメインなら安全に https:// へ統一する。
+# (httpsで確認できていないドメインは対象に含めない。誤って追加すると
+#  かえってページを開けなくする可能性があるため)
+HTTPS_CONFIRMED_HOSTS = {
+    "www.city.omihachiman.lg.jp",
+    "omihachiman.keizai.biz",
+    "higashiomi-omihachiman.goguynet.jp",
+    "www.kenkou1.com",
+    "www.omi8.com",
+    "library.city.omihachiman.shiga.jp",
+    "www.pref.shiga.lg.jp",
+    "8cci.com",
+    "www.omi8man-kenkofureai.jp",
+    "www.zd.ztv.ne.jp",
+    "www.omihachiman-shiryoukan-kawara.jp",
+    "azuchi-museum.or.jp",
+    "azuchi-museum.blogspot.com",
+    "ohshakyo.or.jp",
+    "www.shiga-bunkazai.jp",
+    "www.workpia-omi-hachiman.jp",
+    "tabelog.com",
+    "www.ohmitetudo.co.jp",
+    "himure.jp",
+}
+
+
+def upgrade_to_https(url: str) -> str:
+    """http:// のリンクを、https対応が確認できているドメインに限り https:// へ統一する"""
+    parsed = urlparse(url)
+    if parsed.scheme == "http" and parsed.netloc in HTTPS_CONFIRMED_HOSTS:
+        parsed = parsed._replace(scheme="https")
+        return urlunparse(parsed)
+    return url
 def normalize_url(url: str) -> str:
-    return url.split("#")[0]
+    url = url.split("#")[0]
+    return upgrade_to_https(url)
 
 
 def source_from_url(url: str) -> str:
