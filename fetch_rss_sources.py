@@ -36,6 +36,7 @@ from common import (
     load_json,
     merge_new_items,
     now_iso,
+    normalize_url,
     parse_pubdate,
     _trim_summary,
     KNOWN_LINKS_FILE,
@@ -185,6 +186,7 @@ def process_source(source, known, seen_links):
         link = extract_link(item)
         if not title or not link:
             continue
+        link = normalize_url(link)  # httpのままのリンクをhttpsへ統一
         found += 1
 
         if link in known or link in seen_links:
