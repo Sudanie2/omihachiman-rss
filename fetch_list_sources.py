@@ -6,7 +6,7 @@
 RSS配信がなく、「日付 + タイトルリンク」が並ぶ一覧ページを持つサイトを扱う。
 
 対象:
-  - 近江八幡商工会議所           : カテゴリタグ「お知らせ」の記事のみ
+  - 近江八幡商工会議所           : カテゴリタグ「お知らせ」「補助金」の記事のみ
   - 近江八幡市立健康ふれあい公園 : 新着情報の全記事
   - 近江八幡地域勤労者福祉サービスセンター(ワークピア近江八幡) : お知らせの全記事
   - 八幡山ロープウェー(近江鉄道) : イベント・キャンペーン / お知らせ / ニュースリリース
@@ -48,7 +48,7 @@ LIST_SOURCES = [
             "相談会", "創業支援", "保険・共済", "支援金", "事業承継",
         ],
         # このタグの記事だけ採用する(Noneなら全件)
-        "tag_filter": "お知らせ",
+        "tag_filter": ["お知らせ", "補助金"],
         # 記事リンクと判定するURLパターン(Noneならタグで判定)
         "link_pattern": None,
         # URLから取り除くクエリ(同じ記事が別URL扱いになるのを防ぐ)
@@ -200,8 +200,12 @@ def process_source(source, known, seen):
             continue
 
         tag, title = split_tag_and_title(raw_text, source["tags"])
-        if source["tag_filter"] and tag != source["tag_filter"]:
-            continue
+        tag_filter = source["tag_filter"]
+        if tag_filter:
+            # 単一指定・複数指定のどちらにも対応する
+            allowed = [tag_filter] if isinstance(tag_filter, str) else tag_filter
+            if tag not in allowed:
+                continue
         if not title:
             continue
 
