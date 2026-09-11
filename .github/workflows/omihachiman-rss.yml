@@ -97,15 +97,19 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git commit -m "Updated RSS feed"
-          # 実行が重なった場合に備え、最新を取り込んでから数回まで再試行する
-          for i in 1 2 3; do
-            if git push; then
-              echo "Push succeeded."
-              exit 0
-            fi
-            echo "Push rejected. Retrying after rebase ($i/3)..."
-            git pull --rebase --autostash origin main || true
-            sleep 5
-          done
-          echo "Push failed after retries."
-          exit 1
+
+          if git push; then
+            echo "Push succeeded."
+            exit 0
+          fi
+
+          # 競合した場合、自動生成されたJSONファイルはテキストとして
+          # 安全に混ぜ合わせられないため、無理なrebaseはしない。
+          # リモート側を正として今回の収集結果は諦める(次回実行で再収集される)。
+          echo "Push rejected. Discarding this run's changes and deferring to the next run."
+          git rebase --abort 2>/dev/null || true
+          git merge --abort 2>/dev/null || true
+          git fetch origin main
+          git reset --hard origin/main
+          echo "今回の更新は破棄しました。次回の実行で改めて収集されます。"
+          exit 0
