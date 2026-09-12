@@ -20,6 +20,13 @@
     "pubDate": "Thu, 10 Sep 2026 10:00:00 +0900"
   },
   {
+    "title": "地方税法に基づく公示送達(課税通知以外)",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/shuno/41814.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地方税法に基づく公示送達について(課税通知以外)",
+    "pubDate": "Thu, 10 Sep 2026 00:00:00 +0900"
+  },
+  {
     "title": "ヤングケアラー相談窓口",
     "link": "https://www.city.omihachiman.lg.jp/soshiki/shien/31204.html",
     "source": "近江八幡市公式サイト",
@@ -38,13 +45,6 @@
     "link": "https://www.city.omihachiman.lg.jp/news/27027.html",
     "source": "近江八幡市公式サイト",
     "description": "昨今の物価高騰による影響を受けている子育て世帯の経済的負担軽減のため、紙おむつ等の追加配布を行います。〈対象者〉1歳未満の乳児がいる子育て世帯〈配布期間〉令和8年10月分から令和9年3月分〈配布数量〉通常時の2倍相当(例:1か月につき通常時紙おむつ1パックのところ、2パック配布)ご希望の商品が異なる…",
-    "pubDate": "Thu, 10 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "地方税法に基づく公示送達(課税通知以外)",
-    "link": "https://www.city.omihachiman.lg.jp/gyosei/koujisotatsu/41816.html",
-    "source": "近江八幡市公式サイト",
-    "description": "地方税法に基づく公示送達について(課税通知以外)",
     "pubDate": "Thu, 10 Sep 2026 00:00:00 +0900"
   },
   {
@@ -1020,6 +1020,20 @@
     "pubDate": "Tue, 01 Sep 2026 10:51:20 +0900"
   },
   {
+    "title": "エネルギー価格高騰事業者支援金について",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/shoko/sangyou/tyusyou/energy/42413.html",
+    "source": "近江八幡市公式サイト",
+    "description": "エネルギー価格の高騰が事業の実施にあたって負担となっている中小企業や個人事業主をはじめとする事業者に対し、支援金を支給します。",
+    "pubDate": "Tue, 01 Sep 2026 00:00:00 +0900"
+  },
+  {
+    "title": "余暇カレンダー(9月)",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/shougai/event/42448.html",
+    "source": "近江八幡市公式サイト",
+    "description": "余暇カレンダー(9月) 日 月 火 水 木 金 土 1 2 3 4 5 よか・すぺーす(市民共生センター) 6 7 8 9 10 11 12 スペシャルスポーツの広場 (湖北THGツインアリーナ) 13 よかっとたいむ(市民共生センター) ※要申込(9/8締切) 14 15 16 17 18 19…",
+    "pubDate": "Tue, 01 Sep 2026 00:00:00 +0900"
+  },
+  {
     "title": "県予算ならびに施策に対する要望",
     "link": "https://www.city.omihachiman.lg.jp/soshiki/kikaku/gyousei/6/34294.html",
     "source": "近江八幡市公式サイト",
@@ -1181,6 +1195,13 @@
     "pubDate": "Tue, 01 Sep 2026 00:00:00 +0900"
   },
   {
+    "title": "市民共生センター10月に開催するイベントのご案内",
+    "link": "https://www.city.omihachiman.lg.jp/iryo/3/42435.html",
+    "source": "近江八幡市公式サイト",
+    "description": "日本最初の健康体操で、呼吸法により心身のバランスを整えます。体調に合わせ、身体のすみずみまで動かす全身体操です。",
+    "pubDate": "Mon, 31 Aug 2026 00:00:00 +0900"
+  },
+  {
     "title": "【追加募集】【滋賀県事業】滋賀県農畜水産業経営強化緊急対策事業について",
     "link": "https://www.city.omihachiman.lg.jp/soshiki/nogyou_shinko/nougyou/ninaite/30012.html",
     "source": "近江八幡市公式サイト",
@@ -1199,13 +1220,6 @@
     "link": "https://www.city.omihachiman.lg.jp/soshiki/kikaku/organic-village/41944.html",
     "source": "近江八幡市公式サイト",
     "description": "近江八幡市では、作業規模の拡大や作業の効率化を促進することにより、農業の継続性を高め、有機農業の推進につなげることを目的として、市が整備した農機具シェアリングの実証事業を行いました。本報告書では、令和8年度に実施した実証の結果について報告します。",
-    "pubDate": "Mon, 31 Aug 2026 00:00:00 +0900"
-  },
-  {
-    "title": "市民共生センター10月に開催するイベントのご案内",
-    "link": "https://www.city.omihachiman.lg.jp/iryo/3/42435.html",
-    "source": "近江八幡市公式サイト",
-    "description": "日本最初の健康体操で、呼吸法により心身のバランスを整えます。体調に合わせ、身体のすみずみまで動かす全身体操です。",
     "pubDate": "Mon, 31 Aug 2026 00:00:00 +0900"
   },
   {
@@ -1397,6 +1411,13 @@
     "pubDate": "Fri, 21 Aug 2026 11:50:28 +0900"
   },
   {
+    "title": "令和8年度市民大学講座",
+    "link": "https://www.city.omihachiman.lg.jp/event/41605.html",
+    "source": "近江八幡市公式サイト",
+    "description": "地域課題や社会課題について学び、学びを生かした取組がつながることで、生涯学習社会づくりが実現するよう「市民大学講座」を開講します。",
+    "pubDate": "Fri, 21 Aug 2026 00:00:00 +0900"
+  },
+  {
     "title": "居宅介護支援における特定事業所集中減算について",
     "link": "https://www.city.omihachiman.lg.jp/riyoushabetu/koureisha/3/1/4679.html",
     "source": "近江八幡市公式サイト",
@@ -1425,13 +1446,6 @@
     "pubDate": "Fri, 21 Aug 2026 00:00:00 +0900"
   },
   {
-    "title": "令和8年度市民大学講座",
-    "link": "https://www.city.omihachiman.lg.jp/event/41605.html",
-    "source": "近江八幡市公式サイト",
-    "description": "地域課題や社会課題について学び、学びを生かした取組がつながることで、生涯学習社会づくりが実現するよう「市民大学講座」を開講します。",
-    "pubDate": "Fri, 21 Aug 2026 00:00:00 +0900"
-  },
-  {
     "title": "近江八幡の3社、梅酒の梅をクラフトビールに　アップサイクルで商品開発",
     "link": "https://omihachiman.keizai.biz/headline/197/",
     "source": "近江八幡経済新聞",
@@ -1444,6 +1458,13 @@
     "source": "近江八幡市公式サイト",
     "description": "試験職種 一般行政職(ICT・デジタル採用) 試験職種 図書館司書 試験職種 土木技術職・建築技術職",
     "pubDate": "Thu, 20 Aug 2026 08:00:00 +0900"
+  },
+  {
+    "title": "近江八幡市地域生活支援拠点等について",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/shougai/gyousei/officeinformation/41598.html",
+    "source": "近江八幡市公式サイト",
+    "description": "近江八幡市地域生活支援拠点等(以下「拠点等」といいます。)では、障がいのある人の重度化・高齢化や親亡き後を見据え、障がいのある人が住み慣れた地域で安心して暮らし続けられるよう、地域全体で障がいのある人を支えるサービス提供体制の整備を進めています。",
+    "pubDate": "Wed, 19 Aug 2026 00:00:00 +0900"
   },
   {
     "title": "市内で農業体験をしてみませんか？",
