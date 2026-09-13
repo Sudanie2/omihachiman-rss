@@ -152,14 +152,34 @@ def title_from_body(item) -> str:
 
 
 def extract_link(item):
-    """リンクを取り出す(Atomは<link href=...>、RSSは<link>本文)"""
+    """
+    記事本文へのリンクを取り出す。
+
+    Blogger(Blogspot)のAtomフィードは1記事につき複数の<link>タグを持つ
+    (本文ページ・コメント欄・編集用など)。単純に最初の<link>を使うと、
+    Bloggerが最初に出力する「コメント欄へのリンク」を誤って拾ってしまうため、
+    rel="alternate"(実際の記事ページ)を優先して探す。
+    (RSS 2.0/1.0は<link>が1つしかないため、この優先順位でも影響しない)
+    """
+    fallback = None
     for child in item:
-        if local_name(child.tag) == "link":
-            href = child.get("href")
-            if href and href.strip():
+        if local_name(child.tag) != "link":
+            continue
+        href = child.get("href")
+        rel = (child.get("rel") or "").lower()
+
+        if href and href.strip():
+            if rel in ("alternate", ""):
                 return href.strip()
-            if child.text and child.text.strip():
-                return child.text.strip()
+            if fallback is None:
+                fallback = href.strip()
+        elif child.text and child.text.strip():
+            # RSSは<link>本文がそのままURL(rel属性は無い)
+            return child.text.strip()
+
+    if fallback:
+        return fallback
+
     # 最後の手段として RDF の about 属性
     for key, value in item.attrib.items():
         if local_name(key) == "about" and value.strip():
