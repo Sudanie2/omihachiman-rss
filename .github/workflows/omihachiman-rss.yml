@@ -23,6 +23,10 @@ on:
         description: "観光サイトの記事を削除し新着順一覧から取り直す(1回限り)"
         type: boolean
         default: false
+      fix_blogger_links:
+        description: "Bloggerのコメント欄リンク誤登録を修正する(1回限り)"
+        type: boolean
+        default: false
 permissions:
   contents: write
 # 実行が重なるとpushが競合するため、同時に1つしか動かさない
@@ -51,6 +55,10 @@ jobs:
         if: github.event.inputs.reset_omi8_stories == 'true'
         run: |
           python reset_omi8_stories.py
+      - name: Fix Blogger comment-feed links (manual only, one-time)
+        if: github.event.inputs.fix_blogger_links == 'true'
+        run: |
+          python fix_blogger_comment_links.py
       - name: Collect city top-page lists (JSON)
         run: |
           python fetch_city_lists.py
