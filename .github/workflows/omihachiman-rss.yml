@@ -27,6 +27,10 @@ on:
         description: "Bloggerのコメント欄リンク誤登録を修正する(1回限り)"
         type: boolean
         default: false
+      reset_library_titles:
+        description: "図書館だより記事のタイトルを一覧ページの文字で取り直す(1回限り)"
+        type: boolean
+        default: false
 permissions:
   contents: write
 # 実行が重なるとpushが競合するため、同時に1つしか動かさない
@@ -59,6 +63,10 @@ jobs:
         if: github.event.inputs.fix_blogger_links == 'true'
         run: |
           python fix_blogger_comment_links.py
+      - name: Reset library titles (manual only, one-time)
+        if: github.event.inputs.reset_library_titles == 'true'
+        run: |
+          python reset_library_titles.py
       - name: Collect city top-page lists (JSON)
         run: |
           python fetch_city_lists.py
