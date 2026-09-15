@@ -30,6 +30,7 @@ from common import (
     extract_page_date,
     extract_page_summary,
     extract_page_title,
+    _suppress_if_duplicates_title,
     normalize_url,
     now_iso,
     KNOWN_LINKS_FILE,
@@ -174,7 +175,7 @@ def process_source(source, known, session):
                 pub = page_date.strftime("%a, %d %b %Y %H:%M:%S %z")
             else:
                 pub = (detected_at - timedelta(seconds=i)).strftime("%a, %d %b %Y %H:%M:%S %z")
-            summary = extract_page_summary(soup)
+            summary = _suppress_if_duplicates_title(extract_page_summary(soup), title)
 
         known_updates[url] = {"title": title, "first_seen": ts}
         new_items.append(
