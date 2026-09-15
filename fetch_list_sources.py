@@ -19,6 +19,7 @@ RSS配信がなく、「日付 + タイトルリンク」が並ぶ一覧ペー�
 
 import re
 import sys
+import time
 from datetime import datetime
 from urllib.parse import urljoin, urlparse, parse_qsl, urlencode, urlunparse
 
@@ -28,6 +29,8 @@ from bs4 import BeautifulSoup
 from common import (
     fetch_bytes,
     decode_response,
+    fetch_summary_safe,
+    _suppress_if_duplicates_title,
     get_robot_parser,
     load_json,
     merge_new_items,
@@ -164,7 +167,7 @@ def split_tag_and_title(text: str, tags):
     return None, text
 
 
-def process_source(source, known, seen):
+def process_source(source, known, seen, session):
     rp = get_robot_parser(source["base"])
     if not rp.can_fetch(USER_AGENT, source["url"]):
         print(f"[{source['name']}] robots.txtでブロックされているため中止します。")
@@ -230,11 +233,16 @@ def process_source(source, known, seen):
             pub_dt = datetime.now(JST)
 
         known_updates[url] = {"title": title, "first_seen": ts}
+        summary = fetch_summary_safe(url, session)
+        summary = _suppress_if_duplicates_title(summary, title)
+        if summary:
+            time.sleep(REQUEST_INTERVAL_SEC)
         new_items.append(
             {
                 "title": title,
                 "link": url,
                 "source": source["name"],
+                "description": summary,
                 "pubDate": pub_dt.strftime("%a, %d %b %Y %H:%M:%S %z"),
             }
         )
@@ -247,13 +255,14 @@ def process_source(source, known, seen):
 
 def main():
     known = load_json(KNOWN_LINKS_FILE, {})
+    session = requests.Session()
     all_new = []
     all_known_updates = {}
     seen = set()
 
     for source in LIST_SOURCES:
         try:
-            new_items, known_updates = process_source(source, known, seen)
+            new_items, known_updates = process_source(source, known, seen, session)
             all_new.extend(new_items)
             all_known_updates.update(known_updates)
             print(f"[{source['name']}] 新着 {len(new_items)}件")
