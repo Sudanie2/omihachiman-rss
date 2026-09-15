@@ -33,6 +33,7 @@ from common import (
     extract_page_date,
     extract_page_summary,
     extract_page_title,
+    _suppress_if_duplicates_title,
     get_robot_parser,
     load_json,
     merge_new_items,
@@ -180,7 +181,7 @@ def main():
             continue
 
         pub = page_date.strftime("%a, %d %b %Y %H:%M:%S %z")
-        summary = extract_page_summary(soup)
+        summary = _suppress_if_duplicates_title(extract_page_summary(soup), title)
 
         known_updates[url] = {"title": title, "first_seen": ts}
         new_items.append(
