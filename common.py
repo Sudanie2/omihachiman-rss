@@ -7,6 +7,7 @@
 文字コード・XML補正・重複管理などの修正は、このファイル1箇所で済む。
 """
 
+import difflib
 import json
 import re
 from datetime import datetime, timedelta, timezone
@@ -16,6 +17,7 @@ from urllib.parse import urlparse, urlunparse
 import urllib.robotparser
 
 import requests
+from bs4 import BeautifulSoup
 
 # ---- 定数 ----
 USER_AGENT = "OmihachimanRSSBot/1.0 (+personal monitoring; contact: TS/KURA)"
@@ -265,6 +267,7 @@ REJECT_TITLES = {
     "【公式】近江八幡市観光情報サイト",
     "近江八幡市観光情報サイト",
     "近江八幡市立図書館",
+    "図書館だより",
     "近江八幡市",
     "滋賀県警",
     "近江八幡市立総合医療センター",
@@ -316,6 +319,27 @@ def extract_page_title(soup) -> str:
             return cleaned
 
     return "(タイトル不明)"
+# 概要取得の対象にしない拡張子(PDF等を開いて概要抽出を試みるのは無駄なため)
+NON_HTML_EXTENSIONS = (".pdf", ".jpg", ".jpeg", ".png", ".gif", ".zip", ".doc", ".docx", ".xls", ".xlsx")
+
+
+def fetch_summary_safe(url: str, session=None) -> str:
+    """
+    一覧ページ方式のソース用に、個別記事ページを開いて概要だけを安全に取得する。
+    PDF等はそもそも開かない。取得や解析に失敗した場合も空文字を返し、
+    収集処理全体を止めない。
+    """
+    if url.lower().split("?")[0].endswith(NON_HTML_EXTENSIONS):
+        return ""
+    try:
+        resp = fetch_bytes(url, session)
+        html = decode_response(resp)
+        soup = BeautifulSoup(html, "html.parser")
+        return extract_page_summary(soup)
+    except Exception:
+        return ""
+
+
 # ---- ページの要約 ----
 SUMMARY_MAX_LENGTH = 150
 SUMMARY_MIN_LENGTH = 100
@@ -340,6 +364,28 @@ def _trim_summary(text: str) -> str:
         if pos >= SUMMARY_MIN_LENGTH:
             return cut[: pos + 1]
     return cut.rstrip() + "…"
+
+
+def _suppress_if_duplicates_title(summary: str, title: str) -> str:
+    """
+    概要がタイトルの言い換えに過ぎない(実質的に同じ内容)場合、
+    価値がないので空にする。
+
+    単純な部分一致(タイトルの文字列が概要に含まれるか)は使わない。
+    観光スポット等では「『安土城天主 信長の館』は、織田信長が築いた…」のように
+    タイトルを引用しつつ豊富な独自情報を続ける正当な概要が多く、
+    部分一致判定だとこれらまで誤って抑制してしまうため。
+    """
+    if not summary:
+        return summary
+    norm_summary = re.sub(r"[\s。、！？]", "", summary)
+    norm_title = re.sub(r"[\s。、！？]", "", title or "")
+    if not norm_title:
+        return summary
+    ratio = difflib.SequenceMatcher(None, norm_summary, norm_title).ratio()
+    if ratio >= 0.85:
+        return ""
+    return summary
 
 
 def extract_page_summary(soup) -> str:
