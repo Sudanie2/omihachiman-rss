@@ -1126,17 +1126,17 @@
     "pubDate": "Mon, 07 Sep 2026 21:39:00 +0000"
   },
   {
+    "title": "工事着手届のスマート申請受付を開始します",
+    "link": "https://www.city.omihachiman.lg.jp/shigoto/kaihatsu/42440.html",
+    "source": "近江八幡市公式サイト",
+    "description": "工事着手届(開発・盛土)の提出はスマート申請が利用できます。申請様式は以下をご確認ください。",
+    "pubDate": "Mon, 07 Sep 2026 00:00:00 +0900"
+  },
+  {
     "title": "高齢者福祉施設等における感染症等集団発生事例の報告について",
     "link": "https://www.city.omihachiman.lg.jp/iryo/3/2/3385.html",
     "source": "近江八幡市公式サイト",
     "description": "本年度も流行が予想されますインフルエンザや感染症などについて感染予防等に十分留意されますとともに、集団発生があった場合は、「感染症等集団発生事例報告書」により、近江八幡市所管課及び施設等所在圏域の保健所あて報告願います。",
-    "pubDate": "Mon, 07 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "工事着手届のスマート申請受付を開始します",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/toshi/kaihatsu/42439.html",
-    "source": "近江八幡市公式サイト",
-    "description": "工事着手届(開発・盛土)の提出はスマート申請が利用できます。申請様式は以下をご確認ください。",
     "pubDate": "Mon, 07 Sep 2026 00:00:00 +0900"
   },
   {
@@ -1175,6 +1175,13 @@
     "pubDate": "Fri, 04 Sep 2026 06:39:00 +0900"
   },
   {
+    "title": "馬淵こども園の園だより",
+    "link": "https://www.city.omihachiman.lg.jp/soshiki/kodomoen/mabuti/2031.html",
+    "source": "近江八幡市公式サイト",
+    "description": "9月園だより (PDFファイル: 663.6KB) 8月園だより (PDFファイル: 465.8KB) 7月園だより (PDFファイル: 559.6KB) 6月園だより (PDFファイル: 623.4KB)",
+    "pubDate": "Fri, 04 Sep 2026 00:00:00 +0900"
+  },
+  {
     "title": "国民健康保険葬祭費",
     "link": "https://www.city.omihachiman.lg.jp/iryo/iryo/7/3068.html",
     "source": "近江八幡市公式サイト",
@@ -1186,13 +1193,6 @@
     "link": "https://www.city.omihachiman.lg.jp/gyosei/shisetsu/6/4033.html",
     "source": "近江八幡市公式サイト",
     "description": "保育目標・重点取り組み (PDFファイル: 343.5KB) 2026年度年間計画 (PDFファイル: 565.8KB) 2026年度にこにこひろば年間計画 (PDFファイル: 144.0KB)",
-    "pubDate": "Fri, 04 Sep 2026 00:00:00 +0900"
-  },
-  {
-    "title": "馬淵こども園の園だより",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/kodomoen/mabuti/2031.html",
-    "source": "近江八幡市公式サイト",
-    "description": "9月園だより (PDFファイル: 663.6KB) 8月園だより (PDFファイル: 465.8KB) 7月園だより (PDFファイル: 559.6KB) 6月園だより (PDFファイル: 623.4KB)",
     "pubDate": "Fri, 04 Sep 2026 00:00:00 +0900"
   },
   {
@@ -1840,7 +1840,7 @@
   },
   {
     "title": "令和8年度事業所内公正採用選考・人権啓発推進状況調について",
-    "link": "https://www.city.omihachiman.lg.jp/soshiki/shoko/koyou/kigyou-jinken/18940.html",
+    "link": "https://www.city.omihachiman.lg.jp/shigoto/koyo/19282.html",
     "source": "近江八幡市公式サイト",
     "description": "事業所内で発生し得るあらゆる人権問題の解決を目指し、公正採用選考や人権啓発の推進のため、例年、市内事業所の取組み状況の調査を実施しております。下記様式にて令和8年9月30日(水曜日)までに回答いただき、調査にご協力ください。",
     "pubDate": "Wed, 19 Aug 2026 00:00:00 +0900"
