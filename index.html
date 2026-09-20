@@ -1,270 +1,112 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>近江八幡市.com</title>
 <meta name="description" content="近江八幡市に関する各種公式サイトの新着情報をまとめた非公式サイトです。">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F6F3EC'/%3E%3Cpath d='M4 20 L16 8 L28 20 Z' fill='none' stroke='%238C3B2E' stroke-width='2'/%3E%3Cline x1='4' y1='24' x2='28' y2='24' stroke='%232B2A26' stroke-width='2'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #F6F3EC;
-    --bg-panel: #FBFAF6;
-    --ink: #2B2A26;
-    --ink-soft: #6B6558;
-    --line: #DED7C8;
-    --important: #8C3B2E;
-    --news: #35586B;
-    --bosyu: #8A6A17;
-    --event: #4B6A53;
-    --dept: #5B5850;
-    --external: #6B4A85;
-    --focus: #1F5FA8;
-  }
 
-  * { box-sizing: border-box; }
+  :root{
+    --take:#2F6B5B;      /* 青竹 */
+    --wakaba:#8FAE6B;    /* 若葉 */
+    --inaho:#C9A227;     /* 稲穂 */
+    --mizu:#EAF2EE;
+    --ink:#23302C;
+    --ink-soft:#5C6B65;
+    --line:#E2EAE5;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:#fff;color:var(--ink);
+    font-family:"Noto Sans JP",system-ui,sans-serif;font-size:17px;line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
 
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
-    line-height: 1.75;
-    -webkit-font-smoothing: antialiased;
+  /* --- 朝のヨシ原 --- */
+  .hero{position:relative;overflow:hidden;
+    background:linear-gradient(180deg,#FFFDF6 0%,#F4F9F4 58%,#FFFFFF 100%)}
+  .hero-inner{position:relative;z-index:2;max-width:880px;margin:0 auto;padding:70px 24px 108px;text-align:center}
+  .brand{
+    font-family:"Zen Maru Gothic",system-ui,sans-serif;font-weight:700;margin:0;
+    font-size:clamp(33px,6.2vw,56px);letter-spacing:.04em;color:var(--take);
   }
+  .lead{margin:16px auto 0;max-width:26em;color:var(--ink-soft);font-size:16px}
+  .reeds{position:absolute;left:0;right:0;bottom:-2px;height:150px;z-index:1}
+  .reeds svg{display:block;width:100%;height:100%}
+  .reed{transform-origin:bottom center;animation:sway 7s ease-in-out infinite}
+  .reed:nth-child(2n){animation-duration:9s;animation-delay:-1.4s}
+  .reed:nth-child(3n){animation-duration:11s;animation-delay:-2.7s}
+  @keyframes sway{0%,100%{transform:rotate(-1.6deg)}50%{transform:rotate(1.8deg)}}
+  .sun{position:absolute;top:44px;right:12%;width:88px;height:88px;border-radius:50%;
+    background:radial-gradient(circle,rgba(201,162,39,.32),rgba(201,162,39,0) 70%);z-index:1}
 
-  a { color: inherit; }
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px 80px}
+  .notice{background:var(--mizu);border-radius:12px;padding:16px 20px;margin:30px 0 0;
+    font-size:14.5px;color:var(--ink-soft)}
+  .notice strong{color:var(--take);font-weight:700}
 
-  .wrap {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 0 20px 80px;
-  }
+  .meta-row{display:flex;justify-content:space-between;gap:16px;margin:28px 0 12px;font-size:13.5px;color:var(--ink-soft)}
+  .search-row{margin:0 0 18px}
+  #search-box{width:100%;padding:15px 18px;font:inherit;font-size:16px;background:#fff;color:var(--ink);
+    border:2px solid var(--line);border-radius:12px;outline:none}
+  #search-box:focus{border-color:var(--wakaba);box-shadow:0 0 0 4px rgba(143,174,107,.18)}
 
-  /* ---- Hero ---- */
-  .hero {
-    position: relative;
-    padding: 56px 20px 40px;
-    text-align: center;
-    overflow: hidden;
-  }
+  .filters{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 32px}
+  .filters button{font:inherit;font-size:14.5px;padding:9px 17px;cursor:pointer;color:var(--ink-soft);
+    background:#fff;border:2px solid var(--line);border-radius:999px}
+  .filters button:hover{border-color:var(--wakaba);color:var(--take)}
+  .filters button[aria-pressed="true"]{background:var(--take);border-color:var(--take);color:#fff}
+  .filters button:focus-visible{outline:3px solid var(--inaho);outline-offset:2px}
 
-  .hero svg.wave {
-    position: absolute;
-    left: 0; right: 0; bottom: 0;
-    width: 100%;
-    height: 60px;
-    opacity: 0.35;
-  }
+  .day-group{margin:0 0 30px}
+  .day-label{display:inline-block;font-family:"Zen Maru Gothic",sans-serif;font-size:15px;font-weight:700;
+    color:#fff;background:var(--take);padding:5px 15px;border-radius:999px;margin:0 0 14px}
+  .items{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+  .item{display:flex;gap:14px;padding:18px 20px;background:#fff;
+    border:1px solid var(--line);border-radius:14px}
+  .item .bar{flex:none;width:5px;border-radius:3px;background:var(--wakaba)}
+  .tag{display:inline-block;font-size:12.5px;color:var(--take);background:var(--mizu);
+    padding:2px 10px;border-radius:999px;margin:0 0 7px}
+  .title{display:block;font-family:"Zen Maru Gothic",sans-serif;font-size:18.5px;font-weight:700;
+    line-height:1.65;color:var(--ink);text-decoration:none}
+  .title:hover{color:var(--take);text-decoration:underline;text-underline-offset:4px}
+  .summary{margin:9px 0 0;font-size:14.5px;line-height:1.95;color:var(--ink-soft)}
+  .url{margin-top:9px;font-size:13px;color:#7C8A84}
+  .state{padding:52px 0;text-align:center;color:var(--ink-soft)}
 
-  .hero h1 {
-    font-family: 'Shippori Mincho', serif;
-    font-weight: 700;
-    font-size: clamp(28px, 6vw, 40px);
-    letter-spacing: 0.04em;
-    margin: 0 0 10px;
-  }
+  footer.site{margin-top:46px;padding-top:24px;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-soft)}
+  footer.site p{margin:6px 0}
+  footer.site a{color:var(--take);text-decoration:underline;text-underline-offset:2px}
 
-  .hero p.lead {
-    color: var(--ink-soft);
-    font-size: 15px;
-    margin: 0;
-    max-width: 46ch;
-    margin-inline: auto;
+  @media (max-width:640px){
+    .hero-inner{padding:52px 20px 86px}
+    .wrap{padding:0 20px 60px}
+    .sun{right:6%;width:64px;height:64px}
   }
+  @media (prefers-reduced-motion:reduce){ .reed{animation:none} }
 
-  @media (prefers-reduced-motion: no-preference) {
-    .hero h1 { animation: rise 0.6s ease-out; }
-  }
-  @keyframes rise {
-    from { opacity: 0; transform: translateY(6px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ---- Notice banner ---- */
-  .notice {
-    background: var(--bg-panel);
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    padding: 16px 18px;
-    font-size: 13.5px;
-    color: var(--ink-soft);
-    margin: 0 0 32px;
-  }
-  .notice strong { color: var(--ink); }
-  .notice a { text-decoration: underline; text-underline-offset: 2px; }
-
-  /* ---- Meta row ---- */
-  .meta-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 8px;
-    margin-bottom: 18px;
-    font-size: 13px;
-    color: var(--ink-soft);
-  }
-
-  /* ---- Filters ---- */
-  nav.filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 36px;
-  }
-  nav.filters button {
-    font-family: inherit;
-    font-size: 13px;
-    padding: 7px 14px;
-    border-radius: 999px;
-    border: 1px solid var(--line);
-    background: var(--bg-panel);
-    color: var(--ink-soft);
-    cursor: pointer;
-  }
-  nav.filters button[aria-pressed="true"] {
-    background: var(--ink);
-    color: var(--bg-panel);
-    border-color: var(--ink);
-  }
-  nav.filters button:focus-visible,
-  a:focus-visible,
-  summary:focus-visible {
-    outline: 2px solid var(--focus);
-    outline-offset: 2px;
-  }
-
-  /* ---- Date groups ---- */
-  .day-group { margin-bottom: 30px; }
-  .day-label {
-    font-family: 'Shippori Mincho', serif;
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--ink);
-    border-bottom: 1px solid var(--line);
-    padding-bottom: 8px;
-    margin-bottom: 4px;
-  }
-
-  ul.items { list-style: none; margin: 0; padding: 0; }
-  .item {
-    display: grid;
-    grid-template-columns: 4px 1fr;
-    gap: 14px;
-    padding: 16px 0;
-    border-bottom: 1px solid var(--line);
-  }
-  .item:last-child { border-bottom: none; }
-  .item .bar { border-radius: 2px; }
-  .item.cat-event .bar     { background: var(--event); }
-  .item.cat-kns .bar       { background: var(--important); }
-  .item.cat-kosodate .bar  { background: var(--bosyu); }
-  .item.cat-gomi .bar      { background: var(--event); }
-  .item.cat-juminhyou .bar { background: var(--news); }
-  .item.cat-kenkoiryo .bar { background: var(--important); }
-  .item.cat-hikkoshi .bar  { background: var(--dept); }
-  .item.cat-okuyami .bar   { background: var(--dept); }
-  .item.cat-kaigo .bar     { background: var(--external); }
-  .item.cat-zeikin .bar    { background: var(--bosyu); }
-  .item.cat-kanko .bar     { background: var(--event); }
-  .item.cat-bunka .bar     { background: var(--dept); }
-  .item.cat-shizen .bar    { background: var(--news); }
-  .item.cat-shigoto .bar   { background: var(--external); }
-  .item.cat-bosai .bar     { background: var(--important); }
-  .item.cat-gyosei .bar    { background: var(--ink-soft); }
-  .item.cat-other .bar     { background: var(--line); }
-
-  .item .tag {
-    font-size: 12px;
-    font-weight: 500;
-  }
-  .item.cat-event .tag     { color: var(--event); }
-  .item.cat-kns .tag       { color: var(--important); }
-  .item.cat-kosodate .tag  { color: var(--bosyu); }
-  .item.cat-gomi .tag      { color: var(--event); }
-  .item.cat-juminhyou .tag { color: var(--news); }
-  .item.cat-kenkoiryo .tag { color: var(--important); }
-  .item.cat-hikkoshi .tag  { color: var(--dept); }
-  .item.cat-okuyami .tag   { color: var(--dept); }
-  .item.cat-kaigo .tag     { color: var(--external); }
-  .item.cat-zeikin .tag    { color: var(--bosyu); }
-  .item.cat-kanko .tag     { color: var(--event); }
-  .item.cat-bunka .tag     { color: var(--dept); }
-  .item.cat-shizen .tag    { color: var(--news); }
-  .item.cat-shigoto .tag   { color: var(--external); }
-  .item.cat-bosai .tag     { color: var(--important); }
-  .item.cat-gyosei .tag    { color: var(--ink-soft); }
-  .item.cat-other .tag     { color: var(--ink-soft); }
-
-  .item a.title {
-    display: block;
-    font-size: 16px;
-    font-weight: 500;
-    margin-top: 3px;
-    text-decoration: none;
-  }
-  .item a.title:hover,
-  .item a.title:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
-
-  .item .summary {
-    margin: 6px 0 0;
-    font-size: 13.5px;
-    line-height: 1.75;
-    color: var(--ink-soft);
-  }
-  .item .url {
-    font-size: 12px;
-    color: var(--ink-soft);
-    margin-top: 4px;
-    word-break: break-all;
-  }
-
-  /* ---- States ---- */
-  .state {
-    text-align: center;
-    color: var(--ink-soft);
-    font-size: 14px;
-    padding: 60px 20px;
-  }
-
-  details.about {
-    margin-top: 40px;
-    font-size: 13.5px;
-    color: var(--ink-soft);
-    border-top: 1px solid var(--line);
-    padding-top: 18px;
-  }
-  details.about summary {
-    cursor: pointer;
-    color: var(--ink);
-    font-weight: 500;
-  }
-  details.about div { margin-top: 10px; }
-  details.about ul { padding-left: 18px; }
-
-  footer.site {
-    text-align: center;
-    font-size: 12px;
-    color: var(--ink-soft);
-    margin-top: 50px;
-  }
-  footer.site a { text-decoration: underline; text-underline-offset: 2px; }
 </style>
 </head>
 <body>
 
-<div class="hero">
-  <h1>近江八幡市.com</h1>
-  <p class="lead">市公式サイトをはじめ、公共性の高い新着情報をまとめています</p>
-  <svg class="wave" viewBox="0 0 720 60" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0 30 Q 60 10 120 30 T 240 30 T 360 30 T 480 30 T 600 30 T 720 30" fill="none" stroke="#4B6A53" stroke-width="2"/>
-    <path d="M0 42 Q 60 22 120 42 T 240 42 T 360 42 T 480 42 T 600 42 T 720 42" fill="none" stroke="#35586B" stroke-width="1.5"/>
-  </svg>
-</div>
+<header class="hero">
+  <div class="sun" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <h1 class="brand">近江八幡市.com</h1>
+    <p class="lead">市公式サイトをはじめ、市内の公共的な新着情報をまとめています。</p>
+  </div>
+  <div class="reeds" aria-hidden="true">
+    <svg viewBox="0 0 960 150" preserveAspectRatio="none">
+      <rect y="132" width="960" height="18" fill="#EAF2EE"/>
+      <g class="reed" style="transform-origin:-10px 150px"><path d="M-10 150 Q -14 103.5 -18 57" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.78"/><ellipse cx="-18" cy="52" rx="2.6" ry="7" fill="#C9A227" opacity="0.78"/></g><g class="reed" style="transform-origin:0px 150px"><path d="M0 150 Q 0 118.0 0 86" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.9"/><ellipse cx="0" cy="81" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.9"/></g><g class="reed" style="transform-origin:12px 150px"><path d="M12 150 Q 5 122.0 -2 94" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.66"/><ellipse cx="-2" cy="89" rx="2.6" ry="7" fill="#C9A227" opacity="0.66"/></g><g class="reed" style="transform-origin:24px 150px"><path d="M24 150 Q 31 118.5 38 87" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.48"/><ellipse cx="38" cy="82" rx="2.6" ry="7" fill="#C9A227" opacity="0.48"/></g><g class="reed" style="transform-origin:34px 150px"><path d="M34 150 Q 41 110.0 48 70" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.74"/><ellipse cx="48" cy="65" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.74"/></g><g class="reed" style="transform-origin:49px 150px"><path d="M49 150 Q 45 121.0 41 92" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.73"/><ellipse cx="41" cy="87" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.73"/></g><g class="reed" style="transform-origin:60px 150px"><path d="M60 150 Q 64 105.5 68 61" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.72"/><ellipse cx="68" cy="56" rx="2.6" ry="7" fill="#A8BE85" opacity="0.72"/></g><g class="reed" style="transform-origin:73px 150px"><path d="M73 150 Q 66 112.5 59 75" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.64"/><ellipse cx="59" cy="70" rx="2.6" ry="7" fill="#A8BE85" opacity="0.64"/></g><g class="reed" style="transform-origin:90px 150px"><path d="M90 150 Q 97 120.0 104 90" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.76"/><ellipse cx="104" cy="85" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.76"/></g><g class="reed" style="transform-origin:106px 150px"><path d="M106 150 Q 106 97.0 106 44" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.74"/><ellipse cx="106" cy="39" rx="2.6" ry="7" fill="#C9A227" opacity="0.74"/></g><g class="reed" style="transform-origin:122px 150px"><path d="M122 150 Q 122 101.0 122 52" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.85"/><ellipse cx="122" cy="47" rx="2.6" ry="7" fill="#A8BE85" opacity="0.85"/></g><g class="reed" style="transform-origin:134px 150px"><path d="M134 150 Q 141 119.0 148 88" stroke="#6F9257" stroke-width="2.1" fill="none" opacity="0.71"/><ellipse cx="148" cy="83" rx="2.6" ry="7" fill="#6F9257" opacity="0.71"/></g><g class="reed" style="transform-origin:148px 150px"><path d="M148 150 Q 148 95.5 148 41" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.51"/><ellipse cx="148" cy="36" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.51"/></g><g class="reed" style="transform-origin:163px 150px"><path d="M163 150 Q 163 113.5 163 77" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.92"/><ellipse cx="163" cy="72" rx="2.6" ry="7" fill="#A8BE85" opacity="0.92"/></g><g class="reed" style="transform-origin:178px 150px"><path d="M178 150 Q 171 121.5 164 93" stroke="#6F9257" stroke-width="2.1" fill="none" opacity="0.62"/><ellipse cx="164" cy="88" rx="2.6" ry="7" fill="#6F9257" opacity="0.62"/></g><g class="reed" style="transform-origin:192px 150px"><path d="M192 150 Q 199 92.5 206 35" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.48"/><ellipse cx="206" cy="30" rx="2.6" ry="7" fill="#C9A227" opacity="0.48"/></g><g class="reed" style="transform-origin:202px 150px"><path d="M202 150 Q 206 107.0 210 64" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.48"/><ellipse cx="210" cy="59" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.48"/></g><g class="reed" style="transform-origin:215px 150px"><path d="M215 150 Q 215 95.5 215 41" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.89"/><ellipse cx="215" cy="36" rx="2.6" ry="7" fill="#C9A227" opacity="0.89"/></g><g class="reed" style="transform-origin:229px 150px"><path d="M229 150 Q 233 123.0 237 96" stroke="#6F9257" stroke-width="2.1" fill="none" opacity="0.53"/><ellipse cx="237" cy="91" rx="2.6" ry="7" fill="#6F9257" opacity="0.53"/></g><g class="reed" style="transform-origin:239px 150px"><path d="M239 150 Q 232 92.5 225 35" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.83"/><ellipse cx="225" cy="30" rx="2.6" ry="7" fill="#A8BE85" opacity="0.83"/></g><g class="reed" style="transform-origin:250px 150px"><path d="M250 150 Q 254 108.5 258 67" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.91"/><ellipse cx="258" cy="62" rx="2.6" ry="7" fill="#C9A227" opacity="0.91"/></g><g class="reed" style="transform-origin:266px 150px"><path d="M266 150 Q 262 119.0 258 88" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.65"/><ellipse cx="258" cy="83" rx="2.6" ry="7" fill="#C9A227" opacity="0.65"/></g><g class="reed" style="transform-origin:279px 150px"><path d="M279 150 Q 283 115.5 287 81" stroke="#6F9257" stroke-width="2.1" fill="none" opacity="0.8"/><ellipse cx="287" cy="76" rx="2.6" ry="7" fill="#6F9257" opacity="0.8"/></g><g class="reed" style="transform-origin:293px 150px"><path d="M293 150 Q 289 100.0 285 50" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.49"/><ellipse cx="285" cy="45" rx="2.6" ry="7" fill="#A8BE85" opacity="0.49"/></g><g class="reed" style="transform-origin:304px 150px"><path d="M304 150 Q 300 109.5 296 69" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.69"/><ellipse cx="296" cy="64" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.69"/></g><g class="reed" style="transform-origin:315px 150px"><path d="M315 150 Q 315 107.5 315 65" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.52"/><ellipse cx="315" cy="60" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.52"/></g><g class="reed" style="transform-origin:332px 150px"><path d="M332 150 Q 339 100.5 346 51" stroke="#6F9257" stroke-width="2.1" fill="none" opacity="0.93"/><ellipse cx="346" cy="46" rx="2.6" ry="7" fill="#6F9257" opacity="0.93"/></g><g class="reed" style="transform-origin:349px 150px"><path d="M349 150 Q 353 121.0 357 92" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.65"/><ellipse cx="357" cy="87" rx="2.6" ry="7" fill="#C9A227" opacity="0.65"/></g><g class="reed" style="transform-origin:364px 150px"><path d="M364 150 Q 368 117.5 372 85" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.48"/><ellipse cx="372" cy="80" rx="2.6" ry="7" fill="#C9A227" opacity="0.48"/></g><g class="reed" style="transform-origin:374px 150px"><path d="M374 150 Q 378 111.0 382 72" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.5"/><ellipse cx="382" cy="67" rx="2.6" ry="7" fill="#A8BE85" opacity="0.5"/></g><g class="reed" style="transform-origin:383px 150px"><path d="M383 150 Q 376 117.5 369 85" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.72"/><ellipse cx="369" cy="80" rx="2.6" ry="7" fill="#A8BE85" opacity="0.72"/></g><g class="reed" style="transform-origin:397px 150px"><path d="M397 150 Q 390 122.5 383 95" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.76"/><ellipse cx="383" cy="90" rx="2.6" ry="7" fill="#A8BE85" opacity="0.76"/></g><g class="reed" style="transform-origin:408px 150px"><path d="M408 150 Q 408 108.0 408 66" stroke="#6F9257" stroke-width="2.1" fill="none" opacity="0.69"/><ellipse cx="408" cy="61" rx="2.6" ry="7" fill="#6F9257" opacity="0.69"/></g><g class="reed" style="transform-origin:418px 150px"><path d="M418 150 Q 422 93.0 426 36" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.69"/><ellipse cx="426" cy="31" rx="2.6" ry="7" fill="#C9A227" opacity="0.69"/></g><g class="reed" style="transform-origin:428px 150px"><path d="M428 150 Q 421 115.0 414 80" stroke="#6F9257" stroke-width="2.1" fill="none" opacity="0.82"/><ellipse cx="414" cy="75" rx="2.6" ry="7" fill="#6F9257" opacity="0.82"/></g><g class="reed" style="transform-origin:444px 150px"><path d="M444 150 Q 451 114.0 458 78" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.55"/><ellipse cx="458" cy="73" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.55"/></g><g class="reed" style="transform-origin:461px 150px"><path d="M461 150 Q 457 101.0 453 52" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.83"/><ellipse cx="453" cy="47" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.83"/></g><g class="reed" style="transform-origin:474px 150px"><path d="M474 150 Q 474 118.5 474 87" stroke="#6F9257" stroke-width="2.1" fill="none" opacity="0.9"/><ellipse cx="474" cy="82" rx="2.6" ry="7" fill="#6F9257" opacity="0.9"/></g><g class="reed" style="transform-origin:488px 150px"><path d="M488 150 Q 495 110.0 502 70" stroke="#6F9257" stroke-width="2.1" fill="none" opacity="0.77"/><ellipse cx="502" cy="65" rx="2.6" ry="7" fill="#6F9257" opacity="0.77"/></g><g class="reed" style="transform-origin:500px 150px"><path d="M500 150 Q 504 109.0 508 68" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.55"/><ellipse cx="508" cy="63" rx="2.6" ry="7" fill="#A8BE85" opacity="0.55"/></g><g class="reed" style="transform-origin:516px 150px"><path d="M516 150 Q 509 101.5 502 53" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.85"/><ellipse cx="502" cy="48" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.85"/></g><g class="reed" style="transform-origin:532px 150px"><path d="M532 150 Q 528 107.5 524 65" stroke="#6F9257" stroke-width="2.1" fill="none" opacity="0.67"/><ellipse cx="524" cy="60" rx="2.6" ry="7" fill="#6F9257" opacity="0.67"/></g><g class="reed" style="transform-origin:546px 150px"><path d="M546 150 Q 539 101.0 532 52" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.5"/><ellipse cx="532" cy="47" rx="2.6" ry="7" fill="#A8BE85" opacity="0.5"/></g><g class="reed" style="transform-origin:562px 150px"><path d="M562 150 Q 562 111.5 562 73" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.69"/><ellipse cx="562" cy="68" rx="2.6" ry="7" fill="#A8BE85" opacity="0.69"/></g><g class="reed" style="transform-origin:571px 150px"><path d="M571 150 Q 571 93.5 571 37" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.87"/><ellipse cx="571" cy="32" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.87"/></g><g class="reed" style="transform-origin:581px 150px"><path d="M581 150 Q 577 99.5 573 49" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.89"/><ellipse cx="573" cy="44" rx="2.6" ry="7" fill="#C9A227" opacity="0.89"/></g><g class="reed" style="transform-origin:596px 150px"><path d="M596 150 Q 589 103.0 582 56" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.68"/><ellipse cx="582" cy="51" rx="2.6" ry="7" fill="#C9A227" opacity="0.68"/></g><g class="reed" style="transform-origin:606px 150px"><path d="M606 150 Q 602 114.0 598 78" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.46"/><ellipse cx="598" cy="73" rx="2.6" ry="7" fill="#A8BE85" opacity="0.46"/></g><g class="reed" style="transform-origin:622px 150px"><path d="M622 150 Q 629 115.0 636 80" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.78"/><ellipse cx="636" cy="75" rx="2.6" ry="7" fill="#C9A227" opacity="0.78"/></g><g class="reed" style="transform-origin:636px 150px"><path d="M636 150 Q 643 114.5 650 79" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.46"/><ellipse cx="650" cy="74" rx="2.6" ry="7" fill="#A8BE85" opacity="0.46"/></g><g class="reed" style="transform-origin:646px 150px"><path d="M646 150 Q 650 115.5 654 81" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.86"/><ellipse cx="654" cy="76" rx="2.6" ry="7" fill="#A8BE85" opacity="0.86"/></g><g class="reed" style="transform-origin:658px 150px"><path d="M658 150 Q 658 122.5 658 95" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.6"/><ellipse cx="658" cy="90" rx="2.6" ry="7" fill="#A8BE85" opacity="0.6"/></g><g class="reed" style="transform-origin:670px 150px"><path d="M670 150 Q 670 103.5 670 57" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.87"/><ellipse cx="670" cy="52" rx="2.6" ry="7" fill="#C9A227" opacity="0.87"/></g><g class="reed" style="transform-origin:679px 150px"><path d="M679 150 Q 683 101.5 687 53" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.86"/><ellipse cx="687" cy="48" rx="2.6" ry="7" fill="#C9A227" opacity="0.86"/></g><g class="reed" style="transform-origin:696px 150px"><path d="M696 150 Q 703 116.0 710 82" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.71"/><ellipse cx="710" cy="77" rx="2.6" ry="7" fill="#A8BE85" opacity="0.71"/></g><g class="reed" style="transform-origin:705px 150px"><path d="M705 150 Q 701 96.0 697 42" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.84"/><ellipse cx="697" cy="37" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.84"/></g><g class="reed" style="transform-origin:716px 150px"><path d="M716 150 Q 712 113.0 708 76" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.76"/><ellipse cx="708" cy="71" rx="2.6" ry="7" fill="#C9A227" opacity="0.76"/></g><g class="reed" style="transform-origin:726px 150px"><path d="M726 150 Q 726 120.5 726 91" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.84"/><ellipse cx="726" cy="86" rx="2.6" ry="7" fill="#C9A227" opacity="0.84"/></g><g class="reed" style="transform-origin:736px 150px"><path d="M736 150 Q 732 120.5 728 91" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.59"/><ellipse cx="728" cy="86" rx="2.6" ry="7" fill="#A8BE85" opacity="0.59"/></g><g class="reed" style="transform-origin:746px 150px"><path d="M746 150 Q 750 92.0 754 34" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.83"/><ellipse cx="754" cy="29" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.83"/></g><g class="reed" style="transform-origin:756px 150px"><path d="M756 150 Q 756 96.0 756 42" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.8"/><ellipse cx="756" cy="37" rx="2.6" ry="7" fill="#A8BE85" opacity="0.8"/></g><g class="reed" style="transform-origin:772px 150px"><path d="M772 150 Q 779 91.5 786 33" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.7"/><ellipse cx="786" cy="28" rx="2.6" ry="7" fill="#C9A227" opacity="0.7"/></g><g class="reed" style="transform-origin:784px 150px"><path d="M784 150 Q 784 91.0 784 32" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.87"/><ellipse cx="784" cy="27" rx="2.6" ry="7" fill="#A8BE85" opacity="0.87"/></g><g class="reed" style="transform-origin:795px 150px"><path d="M795 150 Q 788 97.5 781 45" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.67"/><ellipse cx="781" cy="40" rx="2.6" ry="7" fill="#C9A227" opacity="0.67"/></g><g class="reed" style="transform-origin:805px 150px"><path d="M805 150 Q 809 109.0 813 68" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.56"/><ellipse cx="813" cy="63" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.56"/></g><g class="reed" style="transform-origin:818px 150px"><path d="M818 150 Q 814 116.5 810 83" stroke="#6F9257" stroke-width="2.1" fill="none" opacity="0.52"/><ellipse cx="810" cy="78" rx="2.6" ry="7" fill="#6F9257" opacity="0.52"/></g><g class="reed" style="transform-origin:829px 150px"><path d="M829 150 Q 825 94.5 821 39" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.65"/><ellipse cx="821" cy="34" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.65"/></g><g class="reed" style="transform-origin:845px 150px"><path d="M845 150 Q 841 114.0 837 78" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.8"/><ellipse cx="837" cy="73" rx="2.6" ry="7" fill="#A8BE85" opacity="0.8"/></g><g class="reed" style="transform-origin:862px 150px"><path d="M862 150 Q 862 98.5 862 47" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.55"/><ellipse cx="862" cy="42" rx="2.6" ry="7" fill="#C9A227" opacity="0.55"/></g><g class="reed" style="transform-origin:876px 150px"><path d="M876 150 Q 876 118.5 876 87" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.62"/><ellipse cx="876" cy="82" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.62"/></g><g class="reed" style="transform-origin:892px 150px"><path d="M892 150 Q 885 96.0 878 42" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.62"/><ellipse cx="878" cy="37" rx="2.6" ry="7" fill="#C9A227" opacity="0.62"/></g><g class="reed" style="transform-origin:905px 150px"><path d="M905 150 Q 898 91.5 891 33" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.94"/><ellipse cx="891" cy="28" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.94"/></g><g class="reed" style="transform-origin:917px 150px"><path d="M917 150 Q 910 117.5 903 85" stroke="#6F9257" stroke-width="2.1" fill="none" opacity="0.59"/><ellipse cx="903" cy="80" rx="2.6" ry="7" fill="#6F9257" opacity="0.59"/></g><g class="reed" style="transform-origin:928px 150px"><path d="M928 150 Q 924 107.0 920 64" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.87"/><ellipse cx="920" cy="59" rx="2.6" ry="7" fill="#C9A227" opacity="0.87"/></g><g class="reed" style="transform-origin:941px 150px"><path d="M941 150 Q 937 98.5 933 47" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.8"/><ellipse cx="933" cy="42" rx="2.6" ry="7" fill="#C9A227" opacity="0.8"/></g><g class="reed" style="transform-origin:951px 150px"><path d="M951 150 Q 944 106.5 937 63" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.66"/><ellipse cx="937" cy="58" rx="2.6" ry="7" fill="#A8BE85" opacity="0.66"/></g><g class="reed" style="transform-origin:961px 150px"><path d="M961 150 Q 954 107.0 947 64" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.85"/><ellipse cx="947" cy="59" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.85"/></g><g class="reed" style="transform-origin:971px 150px"><path d="M971 150 Q 964 110.0 957 70" stroke="#6F9257" stroke-width="2.1" fill="none" opacity="0.88"/><ellipse cx="957" cy="65" rx="2.6" ry="7" fill="#6F9257" opacity="0.88"/></g>
+    </svg>
+  </div>
+</header>
 
 <div class="wrap">
 
@@ -298,6 +140,7 @@
 </div>
 
 <script>
+
 (function () {
   const CITY_HOST = 'www.city.omihachiman.lg.jp';
 
@@ -589,6 +432,5 @@
     });
 })();
 </script>
-
 </body>
 </html>
