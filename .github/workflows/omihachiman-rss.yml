@@ -1,445 +1,131 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GN0F70GBED"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-GN0F70GBED');
-</script>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>近江八幡市.com｜近江八幡市の新着情報まとめ(非公式)</title>
-<meta name="description" content="近江八幡市に関する各種公式サイトの新着情報をまとめた非公式サイトです。">
-<link rel="alternate" type="application/rss+xml" title="近江八幡市.com" href="https://sudanie2.github.io/omihachiman-rss/rss.xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
+name: Generate RSS Feed (Omihachiman City)
+on:
+  schedule:
+    - cron: "10 1 * * *"   # JST 10:10
+    - cron: "10 5 * * *"   # JST 14:10
+    - cron: "10 8 * * *"   # JST 17:10
+    - cron: "0 17 1 * *"   # 毎月1日 JST 2:00 ハブページ一覧の再構築
+  workflow_dispatch: # 手動実行も可能
+    inputs:
+      rebuild_hubs:
+        description: "ハブページ一覧(hubs.json)を再構築する"
+        type: boolean
+        default: false
+      repair_titles:
+        description: "既存記事のタイトル・日付・要約を取り直す(修復用)"
+        type: boolean
+        default: false
+      rebuild_items:
+        description: "掲載枠から消えた既知記事を復元する(復旧用・複数回実行可)"
+        type: boolean
+        default: false
+      reset_omi8_stories:
+        description: "観光サイトの記事を削除し新着順一覧から取り直す(1回限り)"
+        type: boolean
+        default: false
+      fix_blogger_links:
+        description: "Bloggerのコメント欄リンク誤登録を修正する(1回限り)"
+        type: boolean
+        default: false
+      reset_library_titles:
+        description: "図書館だより記事のタイトルを一覧ページの文字で取り直す(1回限り)"
+        type: boolean
+        default: false
+permissions:
+  contents: write
+# 実行が重なるとpushが競合するため、同時に1つしか動かさない
+concurrency:
+  group: rss-feed
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4
+      - name: Rebuild hub list (monthly or manual)
+        if: github.event.schedule == '0 17 1 * *' || github.event.inputs.rebuild_hubs == 'true'
+        run: |
+          set -euo pipefail
+          python discover_hubs.py
+      - name: Reset omi8.com stories (manual only, one-time)
+        if: github.event.inputs.reset_omi8_stories == 'true'
+        run: |
+          python reset_omi8_stories.py
+      - name: Fix Blogger comment-feed links (manual only, one-time)
+        if: github.event.inputs.fix_blogger_links == 'true'
+        run: |
+          python fix_blogger_comment_links.py
+      - name: Reset library titles (manual only, one-time)
+        if: github.event.inputs.reset_library_titles == 'true'
+        run: |
+          python reset_library_titles.py
+      - name: Collect city top-page lists (JSON)
+        run: |
+          python fetch_city_lists.py
+      - name: Collect from city website
+        run: |
+          python watch_hubs_and_generate_rss.py
+      - name: Collect from RSS sources
+        run: |
+          python fetch_rss_sources.py
+      - name: Collect from hub-watch sources
+        run: |
+          python watch_hub_sources.py
+      - name: Collect from Shiga Police page
+        run: |
+          python fetch_shiga_police_omihachiman.py
+      - name: Collect from list pages
+        run: |
+          python fetch_list_sources.py
+      - name: Collect Tabelog new-open shops
+        run: |
+          python fetch_tabelog_newopen.py
+      - name: Collect from section pages
+        run: |
+          python fetch_section_links.py
+      - name: Repair existing titles and dates (manual only)
+        if: github.event.inputs.repair_titles == 'true'
+        run: |
+          python repair_titles.py
+      - name: Rebuild items from known links (manual only)
+        if: github.event.inputs.rebuild_items == 'true'
+        run: |
+          python rebuild_from_known.py
+      - name: Build RSS feed
+        run: |
+          set -euo pipefail
+          python build_feed.py
+      - name: Commit and Push RSS
+        run: |
+          git add hubs.json hub_cursor.json dept_names.json known_links.json rss.xml rss_items.json feed_fingerprint.txt
+          if git diff --quiet --cached; then
+            echo "No changes in rss.xml. Skipping commit."
+            exit 0
+          fi
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git commit -m "Updated RSS feed"
 
-  :root{
-    --take:#2F6B5B;      /* 青竹 */
-    --wakaba:#8FAE6B;    /* 若葉 */
-    --inaho:#C9A227;     /* 稲穂 */
-    --mizu:#EAF2EE;
-    --ink:#23302C;
-    --ink-soft:#5C6B65;
-    --line:#E2EAE5;
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0;background:#fff;color:var(--ink);
-    font-family:"Noto Sans JP",system-ui,sans-serif;font-size:17px;line-height:1.9;
-    -webkit-font-smoothing:antialiased;
-  }
-  a{color:inherit}
+          if git push; then
+            echo "Push succeeded."
+            exit 0
+          fi
 
-  /* --- 朝のヨシ原 --- */
-  .hero{position:relative;overflow:hidden;
-    background:linear-gradient(180deg,#FFFDF6 0%,#F4F9F4 58%,#FFFFFF 100%)}
-  .hero-inner{position:relative;z-index:2;max-width:880px;margin:0 auto;padding:70px 24px 108px;text-align:center}
-  .brand{
-    font-family:"Zen Maru Gothic",system-ui,sans-serif;font-weight:700;margin:0;
-    font-size:clamp(33px,6.2vw,56px);letter-spacing:.04em;color:var(--take);
-  }
-  .lead{margin:16px auto 0;max-width:26em;color:var(--ink-soft);font-size:16px}
-  .reeds{position:absolute;left:0;right:0;bottom:-2px;height:150px;z-index:1}
-  .reeds svg{display:block;width:100%;height:100%}
-  .reed{transform-origin:bottom center;animation:sway 7s ease-in-out infinite}
-  .reed:nth-child(2n){animation-duration:9s;animation-delay:-1.4s}
-  .reed:nth-child(3n){animation-duration:11s;animation-delay:-2.7s}
-  @keyframes sway{0%,100%{transform:rotate(-1.6deg)}50%{transform:rotate(1.8deg)}}
-  .sun{position:absolute;top:44px;right:12%;width:88px;height:88px;border-radius:50%;
-    background:radial-gradient(circle,rgba(201,162,39,.32),rgba(201,162,39,0) 70%);z-index:1}
-
-  .wrap{max-width:880px;margin:0 auto;padding:0 24px 80px}
-  .notice{background:var(--mizu);border-radius:12px;padding:16px 20px;margin:30px 0 0;
-    font-size:14.5px;color:var(--ink-soft)}
-  .notice strong{color:var(--take);font-weight:700}
-
-  .meta-row{display:flex;justify-content:space-between;gap:16px;margin:28px 0 12px;font-size:13.5px;color:var(--ink-soft)}
-  .search-row{margin:0 0 18px}
-  #search-box{width:100%;padding:15px 18px;font:inherit;font-size:16px;background:#fff;color:var(--ink);
-    border:2px solid var(--line);border-radius:12px;outline:none}
-  #search-box:focus{border-color:var(--wakaba);box-shadow:0 0 0 4px rgba(143,174,107,.18)}
-
-  .filters{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 32px}
-  .filters button{font:inherit;font-size:14.5px;padding:9px 17px;cursor:pointer;color:var(--ink-soft);
-    background:#fff;border:2px solid var(--line);border-radius:999px}
-  .filters button:hover{border-color:var(--wakaba);color:var(--take)}
-  .filters button[aria-pressed="true"]{background:var(--take);border-color:var(--take);color:#fff}
-  .filters button:focus-visible{outline:3px solid var(--inaho);outline-offset:2px}
-
-  .day-group{margin:0 0 30px}
-  .day-label{display:inline-block;font-family:"Zen Maru Gothic",sans-serif;font-size:15px;font-weight:700;
-    color:#fff;background:var(--take);padding:5px 15px;border-radius:999px;margin:0 0 14px}
-  .items{list-style:none;margin:0;padding:0;display:grid;gap:12px}
-  .item{display:flex;gap:14px;padding:18px 20px;background:#fff;
-    border:1px solid var(--line);border-radius:14px}
-  .item .bar{flex:none;width:5px;border-radius:3px;background:var(--wakaba)}
-  .tag{display:inline-block;font-size:12.5px;color:var(--take);background:var(--mizu);
-    padding:2px 10px;border-radius:999px;margin:0 0 7px}
-  .title{display:block;font-family:"Zen Maru Gothic",sans-serif;font-size:18.5px;font-weight:700;
-    line-height:1.65;color:var(--ink);text-decoration:none}
-  .title:hover{color:var(--take);text-decoration:underline;text-underline-offset:4px}
-  .summary{margin:9px 0 0;font-size:14.5px;line-height:1.95;color:var(--ink-soft)}
-  .url{margin-top:9px;font-size:13px;color:#7C8A84}
-  .state{padding:52px 0;text-align:center;color:var(--ink-soft)}
-
-  footer.site{margin-top:46px;padding-top:24px;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-soft)}
-  footer.site p{margin:6px 0}
-  footer.site a{color:var(--take);text-decoration:underline;text-underline-offset:2px}
-
-  @media (max-width:640px){
-    .hero-inner{padding:52px 20px 86px}
-    .wrap{padding:0 20px 60px}
-    .sun{right:6%;width:64px;height:64px}
-  }
-  @media (prefers-reduced-motion:reduce){ .reed{animation:none} }
-
-</style>
-</head>
-<body>
-
-<header class="hero">
-  <div class="sun" aria-hidden="true"></div>
-  <div class="hero-inner">
-    <h1 class="brand">近江八幡市.com</h1>
-    <p class="lead">市公式サイトをはじめ、市内の公共的な新着情報をまとめています。</p>
-  </div>
-  <div class="reeds" aria-hidden="true">
-    <svg viewBox="0 0 960 150" preserveAspectRatio="none">
-      <rect y="132" width="960" height="18" fill="#EAF2EE"/>
-      <g class="reed" style="transform-origin:-10px 150px"><path d="M-10 150 Q -14 103.5 -18 57" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.78"/><ellipse cx="-18" cy="52" rx="2.6" ry="7" fill="#C9A227" opacity="0.78"/></g><g class="reed" style="transform-origin:0px 150px"><path d="M0 150 Q 0 118.0 0 86" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.9"/><ellipse cx="0" cy="81" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.9"/></g><g class="reed" style="transform-origin:12px 150px"><path d="M12 150 Q 5 122.0 -2 94" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.66"/><ellipse cx="-2" cy="89" rx="2.6" ry="7" fill="#C9A227" opacity="0.66"/></g><g class="reed" style="transform-origin:24px 150px"><path d="M24 150 Q 31 118.5 38 87" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.48"/><ellipse cx="38" cy="82" rx="2.6" ry="7" fill="#C9A227" opacity="0.48"/></g><g class="reed" style="transform-origin:34px 150px"><path d="M34 150 Q 41 110.0 48 70" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.74"/><ellipse cx="48" cy="65" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.74"/></g><g class="reed" style="transform-origin:49px 150px"><path d="M49 150 Q 45 121.0 41 92" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.73"/><ellipse cx="41" cy="87" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.73"/></g><g class="reed" style="transform-origin:60px 150px"><path d="M60 150 Q 64 105.5 68 61" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.72"/><ellipse cx="68" cy="56" rx="2.6" ry="7" fill="#A8BE85" opacity="0.72"/></g><g class="reed" style="transform-origin:73px 150px"><path d="M73 150 Q 66 112.5 59 75" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.64"/><ellipse cx="59" cy="70" rx="2.6" ry="7" fill="#A8BE85" opacity="0.64"/></g><g class="reed" style="transform-origin:90px 150px"><path d="M90 150 Q 97 120.0 104 90" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.76"/><ellipse cx="104" cy="85" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.76"/></g><g class="reed" style="transform-origin:106px 150px"><path d="M106 150 Q 106 97.0 106 44" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.74"/><ellipse cx="106" cy="39" rx="2.6" ry="7" fill="#C9A227" opacity="0.74"/></g><g class="reed" style="transform-origin:122px 150px"><path d="M122 150 Q 122 101.0 122 52" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.85"/><ellipse cx="122" cy="47" rx="2.6" ry="7" fill="#A8BE85" opacity="0.85"/></g><g class="reed" style="transform-origin:134px 150px"><path d="M134 150 Q 141 119.0 148 88" stroke="#6F9257" stroke-width="2.1" fill="none" opacity="0.71"/><ellipse cx="148" cy="83" rx="2.6" ry="7" fill="#6F9257" opacity="0.71"/></g><g class="reed" style="transform-origin:148px 150px"><path d="M148 150 Q 148 95.5 148 41" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.51"/><ellipse cx="148" cy="36" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.51"/></g><g class="reed" style="transform-origin:163px 150px"><path d="M163 150 Q 163 113.5 163 77" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.92"/><ellipse cx="163" cy="72" rx="2.6" ry="7" fill="#A8BE85" opacity="0.92"/></g><g class="reed" style="transform-origin:178px 150px"><path d="M178 150 Q 171 121.5 164 93" stroke="#6F9257" stroke-width="2.1" fill="none" opacity="0.62"/><ellipse cx="164" cy="88" rx="2.6" ry="7" fill="#6F9257" opacity="0.62"/></g><g class="reed" style="transform-origin:192px 150px"><path d="M192 150 Q 199 92.5 206 35" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.48"/><ellipse cx="206" cy="30" rx="2.6" ry="7" fill="#C9A227" opacity="0.48"/></g><g class="reed" style="transform-origin:202px 150px"><path d="M202 150 Q 206 107.0 210 64" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.48"/><ellipse cx="210" cy="59" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.48"/></g><g class="reed" style="transform-origin:215px 150px"><path d="M215 150 Q 215 95.5 215 41" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.89"/><ellipse cx="215" cy="36" rx="2.6" ry="7" fill="#C9A227" opacity="0.89"/></g><g class="reed" style="transform-origin:229px 150px"><path d="M229 150 Q 233 123.0 237 96" stroke="#6F9257" stroke-width="2.1" fill="none" opacity="0.53"/><ellipse cx="237" cy="91" rx="2.6" ry="7" fill="#6F9257" opacity="0.53"/></g><g class="reed" style="transform-origin:239px 150px"><path d="M239 150 Q 232 92.5 225 35" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.83"/><ellipse cx="225" cy="30" rx="2.6" ry="7" fill="#A8BE85" opacity="0.83"/></g><g class="reed" style="transform-origin:250px 150px"><path d="M250 150 Q 254 108.5 258 67" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.91"/><ellipse cx="258" cy="62" rx="2.6" ry="7" fill="#C9A227" opacity="0.91"/></g><g class="reed" style="transform-origin:266px 150px"><path d="M266 150 Q 262 119.0 258 88" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.65"/><ellipse cx="258" cy="83" rx="2.6" ry="7" fill="#C9A227" opacity="0.65"/></g><g class="reed" style="transform-origin:279px 150px"><path d="M279 150 Q 283 115.5 287 81" stroke="#6F9257" stroke-width="2.1" fill="none" opacity="0.8"/><ellipse cx="287" cy="76" rx="2.6" ry="7" fill="#6F9257" opacity="0.8"/></g><g class="reed" style="transform-origin:293px 150px"><path d="M293 150 Q 289 100.0 285 50" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.49"/><ellipse cx="285" cy="45" rx="2.6" ry="7" fill="#A8BE85" opacity="0.49"/></g><g class="reed" style="transform-origin:304px 150px"><path d="M304 150 Q 300 109.5 296 69" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.69"/><ellipse cx="296" cy="64" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.69"/></g><g class="reed" style="transform-origin:315px 150px"><path d="M315 150 Q 315 107.5 315 65" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.52"/><ellipse cx="315" cy="60" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.52"/></g><g class="reed" style="transform-origin:332px 150px"><path d="M332 150 Q 339 100.5 346 51" stroke="#6F9257" stroke-width="2.1" fill="none" opacity="0.93"/><ellipse cx="346" cy="46" rx="2.6" ry="7" fill="#6F9257" opacity="0.93"/></g><g class="reed" style="transform-origin:349px 150px"><path d="M349 150 Q 353 121.0 357 92" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.65"/><ellipse cx="357" cy="87" rx="2.6" ry="7" fill="#C9A227" opacity="0.65"/></g><g class="reed" style="transform-origin:364px 150px"><path d="M364 150 Q 368 117.5 372 85" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.48"/><ellipse cx="372" cy="80" rx="2.6" ry="7" fill="#C9A227" opacity="0.48"/></g><g class="reed" style="transform-origin:374px 150px"><path d="M374 150 Q 378 111.0 382 72" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.5"/><ellipse cx="382" cy="67" rx="2.6" ry="7" fill="#A8BE85" opacity="0.5"/></g><g class="reed" style="transform-origin:383px 150px"><path d="M383 150 Q 376 117.5 369 85" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.72"/><ellipse cx="369" cy="80" rx="2.6" ry="7" fill="#A8BE85" opacity="0.72"/></g><g class="reed" style="transform-origin:397px 150px"><path d="M397 150 Q 390 122.5 383 95" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.76"/><ellipse cx="383" cy="90" rx="2.6" ry="7" fill="#A8BE85" opacity="0.76"/></g><g class="reed" style="transform-origin:408px 150px"><path d="M408 150 Q 408 108.0 408 66" stroke="#6F9257" stroke-width="2.1" fill="none" opacity="0.69"/><ellipse cx="408" cy="61" rx="2.6" ry="7" fill="#6F9257" opacity="0.69"/></g><g class="reed" style="transform-origin:418px 150px"><path d="M418 150 Q 422 93.0 426 36" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.69"/><ellipse cx="426" cy="31" rx="2.6" ry="7" fill="#C9A227" opacity="0.69"/></g><g class="reed" style="transform-origin:428px 150px"><path d="M428 150 Q 421 115.0 414 80" stroke="#6F9257" stroke-width="2.1" fill="none" opacity="0.82"/><ellipse cx="414" cy="75" rx="2.6" ry="7" fill="#6F9257" opacity="0.82"/></g><g class="reed" style="transform-origin:444px 150px"><path d="M444 150 Q 451 114.0 458 78" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.55"/><ellipse cx="458" cy="73" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.55"/></g><g class="reed" style="transform-origin:461px 150px"><path d="M461 150 Q 457 101.0 453 52" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.83"/><ellipse cx="453" cy="47" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.83"/></g><g class="reed" style="transform-origin:474px 150px"><path d="M474 150 Q 474 118.5 474 87" stroke="#6F9257" stroke-width="2.1" fill="none" opacity="0.9"/><ellipse cx="474" cy="82" rx="2.6" ry="7" fill="#6F9257" opacity="0.9"/></g><g class="reed" style="transform-origin:488px 150px"><path d="M488 150 Q 495 110.0 502 70" stroke="#6F9257" stroke-width="2.1" fill="none" opacity="0.77"/><ellipse cx="502" cy="65" rx="2.6" ry="7" fill="#6F9257" opacity="0.77"/></g><g class="reed" style="transform-origin:500px 150px"><path d="M500 150 Q 504 109.0 508 68" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.55"/><ellipse cx="508" cy="63" rx="2.6" ry="7" fill="#A8BE85" opacity="0.55"/></g><g class="reed" style="transform-origin:516px 150px"><path d="M516 150 Q 509 101.5 502 53" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.85"/><ellipse cx="502" cy="48" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.85"/></g><g class="reed" style="transform-origin:532px 150px"><path d="M532 150 Q 528 107.5 524 65" stroke="#6F9257" stroke-width="2.1" fill="none" opacity="0.67"/><ellipse cx="524" cy="60" rx="2.6" ry="7" fill="#6F9257" opacity="0.67"/></g><g class="reed" style="transform-origin:546px 150px"><path d="M546 150 Q 539 101.0 532 52" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.5"/><ellipse cx="532" cy="47" rx="2.6" ry="7" fill="#A8BE85" opacity="0.5"/></g><g class="reed" style="transform-origin:562px 150px"><path d="M562 150 Q 562 111.5 562 73" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.69"/><ellipse cx="562" cy="68" rx="2.6" ry="7" fill="#A8BE85" opacity="0.69"/></g><g class="reed" style="transform-origin:571px 150px"><path d="M571 150 Q 571 93.5 571 37" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.87"/><ellipse cx="571" cy="32" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.87"/></g><g class="reed" style="transform-origin:581px 150px"><path d="M581 150 Q 577 99.5 573 49" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.89"/><ellipse cx="573" cy="44" rx="2.6" ry="7" fill="#C9A227" opacity="0.89"/></g><g class="reed" style="transform-origin:596px 150px"><path d="M596 150 Q 589 103.0 582 56" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.68"/><ellipse cx="582" cy="51" rx="2.6" ry="7" fill="#C9A227" opacity="0.68"/></g><g class="reed" style="transform-origin:606px 150px"><path d="M606 150 Q 602 114.0 598 78" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.46"/><ellipse cx="598" cy="73" rx="2.6" ry="7" fill="#A8BE85" opacity="0.46"/></g><g class="reed" style="transform-origin:622px 150px"><path d="M622 150 Q 629 115.0 636 80" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.78"/><ellipse cx="636" cy="75" rx="2.6" ry="7" fill="#C9A227" opacity="0.78"/></g><g class="reed" style="transform-origin:636px 150px"><path d="M636 150 Q 643 114.5 650 79" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.46"/><ellipse cx="650" cy="74" rx="2.6" ry="7" fill="#A8BE85" opacity="0.46"/></g><g class="reed" style="transform-origin:646px 150px"><path d="M646 150 Q 650 115.5 654 81" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.86"/><ellipse cx="654" cy="76" rx="2.6" ry="7" fill="#A8BE85" opacity="0.86"/></g><g class="reed" style="transform-origin:658px 150px"><path d="M658 150 Q 658 122.5 658 95" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.6"/><ellipse cx="658" cy="90" rx="2.6" ry="7" fill="#A8BE85" opacity="0.6"/></g><g class="reed" style="transform-origin:670px 150px"><path d="M670 150 Q 670 103.5 670 57" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.87"/><ellipse cx="670" cy="52" rx="2.6" ry="7" fill="#C9A227" opacity="0.87"/></g><g class="reed" style="transform-origin:679px 150px"><path d="M679 150 Q 683 101.5 687 53" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.86"/><ellipse cx="687" cy="48" rx="2.6" ry="7" fill="#C9A227" opacity="0.86"/></g><g class="reed" style="transform-origin:696px 150px"><path d="M696 150 Q 703 116.0 710 82" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.71"/><ellipse cx="710" cy="77" rx="2.6" ry="7" fill="#A8BE85" opacity="0.71"/></g><g class="reed" style="transform-origin:705px 150px"><path d="M705 150 Q 701 96.0 697 42" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.84"/><ellipse cx="697" cy="37" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.84"/></g><g class="reed" style="transform-origin:716px 150px"><path d="M716 150 Q 712 113.0 708 76" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.76"/><ellipse cx="708" cy="71" rx="2.6" ry="7" fill="#C9A227" opacity="0.76"/></g><g class="reed" style="transform-origin:726px 150px"><path d="M726 150 Q 726 120.5 726 91" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.84"/><ellipse cx="726" cy="86" rx="2.6" ry="7" fill="#C9A227" opacity="0.84"/></g><g class="reed" style="transform-origin:736px 150px"><path d="M736 150 Q 732 120.5 728 91" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.59"/><ellipse cx="728" cy="86" rx="2.6" ry="7" fill="#A8BE85" opacity="0.59"/></g><g class="reed" style="transform-origin:746px 150px"><path d="M746 150 Q 750 92.0 754 34" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.83"/><ellipse cx="754" cy="29" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.83"/></g><g class="reed" style="transform-origin:756px 150px"><path d="M756 150 Q 756 96.0 756 42" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.8"/><ellipse cx="756" cy="37" rx="2.6" ry="7" fill="#A8BE85" opacity="0.8"/></g><g class="reed" style="transform-origin:772px 150px"><path d="M772 150 Q 779 91.5 786 33" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.7"/><ellipse cx="786" cy="28" rx="2.6" ry="7" fill="#C9A227" opacity="0.7"/></g><g class="reed" style="transform-origin:784px 150px"><path d="M784 150 Q 784 91.0 784 32" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.87"/><ellipse cx="784" cy="27" rx="2.6" ry="7" fill="#A8BE85" opacity="0.87"/></g><g class="reed" style="transform-origin:795px 150px"><path d="M795 150 Q 788 97.5 781 45" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.67"/><ellipse cx="781" cy="40" rx="2.6" ry="7" fill="#C9A227" opacity="0.67"/></g><g class="reed" style="transform-origin:805px 150px"><path d="M805 150 Q 809 109.0 813 68" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.56"/><ellipse cx="813" cy="63" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.56"/></g><g class="reed" style="transform-origin:818px 150px"><path d="M818 150 Q 814 116.5 810 83" stroke="#6F9257" stroke-width="2.1" fill="none" opacity="0.52"/><ellipse cx="810" cy="78" rx="2.6" ry="7" fill="#6F9257" opacity="0.52"/></g><g class="reed" style="transform-origin:829px 150px"><path d="M829 150 Q 825 94.5 821 39" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.65"/><ellipse cx="821" cy="34" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.65"/></g><g class="reed" style="transform-origin:845px 150px"><path d="M845 150 Q 841 114.0 837 78" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.8"/><ellipse cx="837" cy="73" rx="2.6" ry="7" fill="#A8BE85" opacity="0.8"/></g><g class="reed" style="transform-origin:862px 150px"><path d="M862 150 Q 862 98.5 862 47" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.55"/><ellipse cx="862" cy="42" rx="2.6" ry="7" fill="#C9A227" opacity="0.55"/></g><g class="reed" style="transform-origin:876px 150px"><path d="M876 150 Q 876 118.5 876 87" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.62"/><ellipse cx="876" cy="82" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.62"/></g><g class="reed" style="transform-origin:892px 150px"><path d="M892 150 Q 885 96.0 878 42" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.62"/><ellipse cx="878" cy="37" rx="2.6" ry="7" fill="#C9A227" opacity="0.62"/></g><g class="reed" style="transform-origin:905px 150px"><path d="M905 150 Q 898 91.5 891 33" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.94"/><ellipse cx="891" cy="28" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.94"/></g><g class="reed" style="transform-origin:917px 150px"><path d="M917 150 Q 910 117.5 903 85" stroke="#6F9257" stroke-width="2.1" fill="none" opacity="0.59"/><ellipse cx="903" cy="80" rx="2.6" ry="7" fill="#6F9257" opacity="0.59"/></g><g class="reed" style="transform-origin:928px 150px"><path d="M928 150 Q 924 107.0 920 64" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.87"/><ellipse cx="920" cy="59" rx="2.6" ry="7" fill="#C9A227" opacity="0.87"/></g><g class="reed" style="transform-origin:941px 150px"><path d="M941 150 Q 937 98.5 933 47" stroke="#C9A227" stroke-width="2.1" fill="none" opacity="0.8"/><ellipse cx="933" cy="42" rx="2.6" ry="7" fill="#C9A227" opacity="0.8"/></g><g class="reed" style="transform-origin:951px 150px"><path d="M951 150 Q 944 106.5 937 63" stroke="#A8BE85" stroke-width="2.1" fill="none" opacity="0.66"/><ellipse cx="937" cy="58" rx="2.6" ry="7" fill="#A8BE85" opacity="0.66"/></g><g class="reed" style="transform-origin:961px 150px"><path d="M961 150 Q 954 107.0 947 64" stroke="#8FAE6B" stroke-width="2.1" fill="none" opacity="0.85"/><ellipse cx="947" cy="59" rx="2.6" ry="7" fill="#8FAE6B" opacity="0.85"/></g><g class="reed" style="transform-origin:971px 150px"><path d="M971 150 Q 964 110.0 957 70" stroke="#6F9257" stroke-width="2.1" fill="none" opacity="0.88"/><ellipse cx="957" cy="65" rx="2.6" ry="7" fill="#6F9257" opacity="0.88"/></g>
-    </svg>
-  </div>
-</header>
-
-<div class="wrap">
-
-  <div class="notice">
-    <strong>このサイトは近江八幡市の公式サイトではありません。</strong>
-    近江八幡市に関する各種公式サイトの新着情報をまとめた非公式のサイトです。
-    正式な情報は必ず各種公式サイトでご確認ください。
-  </div>
-
-  <div class="meta-row">
-    <span id="updated-at">読み込み中...</span>
-    <span id="item-count"></span>
-  </div>
-
-  <div class="search-row">
-    <input type="search" id="search-box" placeholder="キーワードで探す（例：ごみ、保育、健診）" aria-label="キーワード検索">
-  </div>
-
-  <nav class="filters" id="filters" aria-label="カテゴリで絞り込み"></nav>
-
-  <main id="content">
-    <div class="state">情報を読み込んでいます...</div>
-  </main>
-
-  <footer class="site">
-    <p>掲載日は元記事の更新日です。元記事に日付の記載がない場合は、当サイトが掲載を確認した日を用いています</p>
-    <p>RSSで購読: <a href="./rss.xml">rss.xml</a>（FeedlyなどのRSSリーダーに登録できます）</p>
-    <p>個人により運営される非公式サイトです</p>
-  </footer>
-
-</div>
-
-<script>
-
-(function () {
-  const CITY_HOST = 'www.city.omihachiman.lg.jp';
-
-  const SOURCE_BY_HOST = {
-    'www.city.omihachiman.lg.jp': '近江八幡市公式サイト',
-    'omihachiman.keizai.biz': '近江八幡経済新聞',
-    'higashiomi-omihachiman.goguynet.jp': '号外NET',
-    'www.omi8.com': '近江八幡市観光サイト',
-    'www.kenkou1.com': '近江八幡市立総合医療センター',
-    'www.pref.shiga.lg.jp': '近江八幡警察署(滋賀県警)',
-    'library.city.omihachiman.shiga.jp': '近江八幡市立図書館',
-    'bungei.or.jp': '安土文芸の郷',
-    '8cci.com': '近江八幡商工会議所',
-    'taneya.jp': 'ラコリーナ近江八幡',
-    'tabelog.com': '食べログ(新規オープン)',
-    'www.ohmitetudo.co.jp': '八幡山ロープウェー',
-    'himure.jp': '日牟禮八幡宮',
-    'www.workpia-omi-hachiman.jp': '近江八幡地域勤労者福祉サービスセンター',
-    'omihachiman-classicfes.jp': '近江八幡音楽祭',
-    'ohshakyo.or.jp': '近江八幡市社会福祉協議会',
-    'www.zd.ztv.ne.jp': '安土学区まちづくり協議会',
-    'azuchi-shiga.com': '安土学区まちづくり協議会',
-    'azuchi-museum.blogspot.com': '安土城考古博物館長のつぶやき',
-    'azuchi-museum.or.jp': '安土城考古博物館',
-    'www.shiga-bunkazai.jp': 'シガブンシンブン(滋賀県文化財保護協会)',
-    'www.azuchi-museum.or.jp': '安土城考古博物館',
-    'www.omihachiman-shiryoukan-kawara.jp': '近江八幡市立資料館・かわらミュージアム',
-    'www.omi8man-kenkofureai.jp': '近江八幡市立健康ふれあい公園',
-    'www.8cci.com': '近江八幡商工会議所',
-    'www.bungei.or.jp': '安土文芸の郷',
-  };
-
-  function sourceFromUrl(url) {
-    try {
-      const host = new URL(url).hostname;
-      return SOURCE_BY_HOST[host] || host;
-    } catch (e) {
-      return '不明';
-    }
-  }
-  // 市の「目的別で探す」に倣った分類タグ。
-  // 各記事にはこのうち最大2つまで付ける。「すべて」「イベント情報」はこの数に含めない。
-  // 市の「目的別で探す」9項目を土台に、実際に集まる記事の内容へ合わせて拡張した分類。
-  // 1記事につき最大3つまで付ける。「すべて」「イベント情報」はこの数に含めない。
-  const TOPIC_TAGS = [
-    // --- 市の「目的別で探す」に対応する9項目 ---
-    { key: 'kns',       label: '結婚･妊娠･出産', words: ['結婚', '婚姻', '妊娠', '出産', '産後', '不妊', '母子健康手帳', '乳児', '新生児', '婚活', '多胎児', '育児'] },
-    { key: 'kosodate',  label: '子育て･教育',   words: ['子育て', '保育', '幼稚園', 'こども園', '児童', '学童', '小学校', '中学校', '学校', '教育', '給食', '子ども', 'こども', '青少年', 'PTA', '就学', '入学', '親子', '乳幼児'] },
-    { key: 'gomi',      label: 'ごみ･リサイクル', words: ['ごみ', 'ゴミ', 'リサイクル', '分別', '廃棄物', '粗大', '清掃', '不法投棄', '資源回収', '生ごみ'] },
-    { key: 'juminhyou', label: '住民票･証明',   words: ['住民票', '証明書', 'マイナンバー', 'マイナ', '戸籍', '印鑑', 'パスポート', 'コンビニ交付', '各種手続'] },
-    { key: 'kenkoiryo', label: '健康･医療',     words: ['健康', '医療', '検診', '健診', '予防接種', 'ワクチン', '感染', '保健', '病院', '診療', 'こころ', 'がん', '献血', '食育', '医療センター', '感染症', '豚熱', '衛生'] },
-    { key: 'hikkoshi',  label: '引っ越し･住まい', words: ['引っ越し', '転入', '転出', '転居', '住まい', '住宅', '空き家', '建築', '耐震', '上下水道', '水道', '下水', '排水', '道路', '都市計画', 'マンション', '移住'] },
-    { key: 'okuyami',   label: 'おくやみ',       words: ['おくやみ', '死亡届', '葬儀', '相続', '火葬', '墓地', '埋葬', '遺族'] },
-    { key: 'kaigo',     label: '高齢･障がい･介護', words: ['高齢', '介護', '障がい', '障害', '福祉', '年金', 'シニア', '認知症', '地域包括', '生活支援', '社協', '民生委員', 'グループホーム', '施設稼働'] },
-    { key: 'zeikin',    label: '税金',           words: ['税金', '市民税', '固定資産税', '軽自動車税', '納税', '課税', '確定申告', '控除', 'ふるさと納税', '国民健康保険', '保険料', '家計', '給付金', 'チケット'] },
-
-    // --- 実際の記事内容に合わせて追加した6項目 ---
-    { key: 'kanko',     label: '観光･おでかけ',   words: ['観光', 'スポット', 'めぐり', '散策', 'モデルコース', '名所', 'ロープウェー', '八幡堀', '近江牛', '土産', '旅', 'ガイド', 'まち歩き', '御城印'] },
-    { key: 'bunka',     label: '文化･歴史･学び', words: ['文化財', '歴史', '史跡', '城', '資料館', '博物館', '図書館', '講演', '文芸', '美術', '郷土', '伝統', '遺跡', '発掘', '展示', '講座', '生涯学習', '信長', '安土城', 'ヴォーリズ', '神社', '奉納', '音楽', 'コンサート', 'リサイタル', '藝能', '芸能'] },
-    { key: 'shizen',    label: '自然･環境',       words: ['環境', '自然', '琵琶湖', '西の湖', 'ヨシ', '生き物', '植物', 'SDGs', '有機農業', '景観', '公園', '緑地', '農業', '生態'] },
-    { key: 'shigoto',   label: 'しごと･事業者',   words: ['事業者', '補助金', '助成金', '融資', '創業', '起業', '商工', '企業', '就職', '求人', '採用', '職員募集', '販路', '中小企業', '経営', '労働', '勤労'] },
-    { key: 'bosai',     label: '防災･防犯･安全', words: ['防災', '災害', '地震', '台風', '大雨', '避難', '消防', '防犯', '詐欺', '交通安全', '警察', 'ハザード', '注意報', '警報', '不審', '安全'] },
-    { key: 'gyosei',    label: '市政･相談',       words: ['議会', '審議会', '委員会', '計画', '会議録', '議事録', 'パブリックコメント', '条例', '入札', '指定管理', '市長', '統計', '人口', '公募', '市政', '相談', '消費生活', 'アンケート', '選挙', '人権', '男女共同参画', '協働', 'パートナーシップ', '公開', '交際費', '視察', '協定'] },
-  ];
-
-  const EVENT_TAG = { key: 'event', label: 'イベント情報' };
-
-  // イベント情報とみなす手がかり
-  const EVENT_WORDS = ['イベント', 'まつり', '祭', 'フェス', '開催', '講座', '教室', '展', 'ツアー', 'コンサート', '体験', 'ワークショップ', '募集', '大会', '上映', 'マルシェ'];
-  // このサイトからの記事は地域のイベント・話題として扱う
-  const EVENT_HOSTS = new Set([
-    'www.omi8.com', 'omihachiman.keizai.biz', 'higashiomi-omihachiman.goguynet.jp',
-    'taneya.jp', 'bungei.or.jp', 'www.bungei.or.jp', 'azuchi-museum.or.jp',
-    'azuchi-museum.blogspot.com', 'www.omihachiman-shiryoukan-kawara.jp',
-    'www.zd.ztv.ne.jp', 'azuchi-shiga.com', 'www.omi8man-kenkofureai.jp',
-  ]);
-
-  let deptNames = {};  // 部署slug -> 課名
-
-  function sourceLabelOf(source, dept) {
-    // 市公式サイトは「近江八幡市公式サイト（○○課）」とくくらず、担当部署を正確に示す。
-    //   生活環境課(課・室など) -> 近江八幡市HP生活環境課
-    //   文化会館(施設名)       -> 近江八幡市文化会館
-    if (source !== '近江八幡市公式サイト') return source;
-    if (!dept) return '近江八幡市HP';
-    if (/(課|室|局|係|グループ|担当|本部|事務局)$/.test(dept)) {
-      return `近江八幡市HP${dept}`;
-    }
-    return `近江八幡市${dept}`;
-  }
-
-  function departmentOf(url) {
-    try {
-      const u = new URL(url);
-      if (u.hostname !== CITY_HOST) return null;
-      const m = u.pathname.match(/^\/soshiki\/([^/]+)\//);
-      return m ? (deptNames[m[1]] || null) : null;
-    } catch (e) {
-      return null;
-    }
-  }
-
-  function isEventItem(url, title) {
-    try {
-      const u = new URL(url);
-      if (EVENT_HOSTS.has(u.hostname)) return true;
-      if (u.hostname === CITY_HOST && u.pathname.startsWith('/event/')) return true;
-    } catch (e) { /* fall through */ }
-    return EVENT_WORDS.some((w) => title.includes(w));
-  }
-
-  function topicTagsOf(url, title, dept, summary) {
-    // タイトル・URL・課名・要約を手がかりに、当てはまるタグを最大3つ選ぶ。
-    // 要約(本文冒頭)は偶然の一致が起きやすいため、タイトル等より軽く扱い、
-    // 要約だけが根拠のタグは採用しない。
-    //   例:「ふるさと音楽祭」の要約に「ふるさと納税寄附金を活用し」とあり税金と誤判定
-    //   例:「災害ボランティア」の要約に「災害ごみの搬出」とありごみと誤判定
-    let path = '';
-    try { path = decodeURIComponent(new URL(url).pathname); } catch (e) { /* noop */ }
-    const strong = `${title} ${path} ${dept || ''}`;   // 確度の高い手がかり
-    const weak = summary || '';                        // 補助的な手がかり
-
-    const scored = [];
-    for (const tag of TOPIC_TAGS) {
-      let strongScore = 0;
-      let weakScore = 0;
-      for (const w of tag.words) {
-        if (strong.includes(w)) strongScore += 1;
-        else if (weak.includes(w)) weakScore += 1;
-      }
-      // タイトル等に根拠がないタグは付けない
-      if (strongScore > 0) scored.push({ tag, score: strongScore * 10 + weakScore });
-    }
-    scored.sort((a, b) => b.score - a.score);
-    return scored.slice(0, 3).map((s) => s.tag);
-  }
-
-  function formatDay(date) {
-    return date.toLocaleDateString('ja-JP', {
-      timeZone: 'Asia/Tokyo', year: 'numeric', month: 'long', day: 'numeric', weekday: 'short'
-    });
-  }
-  function formatUpdated(date) {
-    return date.toLocaleString('ja-JP', {
-      timeZone: 'Asia/Tokyo', year: 'numeric', month: 'numeric', day: 'numeric',
-      hour: '2-digit', minute: '2-digit'
-    });
-  }
-
-  let allItems = [];
-  let activeFilter = 'all';
-  let searchQuery = '';
-
-  function render() {
-    const content = document.getElementById('content');
-    let filtered = activeFilter === 'all'
-      ? allItems
-      : allItems.filter((it) => it.tags.some((t) => t.key === activeFilter));
-    if (searchQuery) {
-      const q = searchQuery.toLowerCase();
-      filtered = filtered.filter((it) =>
-        it.title.toLowerCase().includes(q)
-        || it.sourceLabel.toLowerCase().includes(q)
-        || it.summary.toLowerCase().includes(q)
-      );
-    }
-
-    document.getElementById('item-count').textContent = `${filtered.length}件表示中`;
-
-    if (filtered.length === 0) {
-      content.innerHTML = '<div class="state">該当するお知らせはまだありません。</div>';
-      return;
-    }
-
-    // 日付ごとにグループ化
-    const groups = new Map();
-    for (const it of filtered) {
-      const key = formatDay(it.date);
-      if (!groups.has(key)) groups.set(key, []);
-      groups.get(key).push(it);
-    }
-
-    let html = '';
-    for (const [day, items] of groups) {
-      html += `<section class="day-group"><h2 class="day-label">${day}</h2><ul class="items">`;
-      for (const it of items) {
-        html += `
-          <li class="item cat-${it.tags[0] ? it.tags[0].key : 'other'}">
-            <span class="bar" aria-hidden="true"></span>
-            <div>
-              <span class="tag">${it.tags.map((t) => escapeHtml(t.label)).join(' / ') || 'お知らせ'}</span>
-              <a class="title" href="${it.link}" target="_blank" rel="noopener">${escapeHtml(it.title)}</a>
-              ${it.summary ? `<p class="summary">${escapeHtml(it.summary)}</p>` : ''}
-              <div class="url">出典：${escapeHtml(it.sourceLabel)}</div>
-            </div>
-          </li>`;
-      }
-      html += `</ul></section>`;
-    }
-    content.innerHTML = html;
-  }
-
-  function escapeHtml(s) {
-    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  }
-
-  function buildFilters() {
-    const counts = {};
-    for (const it of allItems) {
-      for (const t of it.tags) {
-        counts[t.key] = (counts[t.key] || 0) + 1;
-      }
-    }
-    const options = [
-      { key: 'all', label: 'すべて' },
-      EVENT_TAG,
-      ...TOPIC_TAGS,
-    ].filter((o) => o.key === 'all' || counts[o.key] > 0);
-
-    const nav = document.getElementById('filters');
-    nav.innerHTML = '';
-    for (const opt of options) {
-      const btn = document.createElement('button');
-      btn.textContent = opt.label;
-      btn.setAttribute('aria-pressed', String(opt.key === activeFilter));
-      btn.addEventListener('click', () => {
-        activeFilter = opt.key;
-        [...nav.children].forEach((b) => b.setAttribute('aria-pressed', 'false'));
-        btn.setAttribute('aria-pressed', 'true');
-        render();
-      });
-      nav.appendChild(btn);
-    }
-  }
-
-  function fetchJsonSafe(path) {
-    // manual_items.json はまだ存在しない場合があるため、失敗時は空配列として扱う
-    return fetch(path, { cache: 'no-store' })
-      .then((res) => (res.ok ? res.json() : []))
-      .catch(() => []);
-  }
-
-  Promise.all([
-    fetchJsonSafe('./rss_items.json'),
-    fetchJsonSafe('./manual_items.json'),
-    fetchJsonSafe('./dept_names.json'),
-  ])
-    .then(([rssData, manualData, deptData]) => {
-      deptNames = (deptData && !Array.isArray(deptData)) ? deptData : {};
-      if (rssData.length === 0 && manualData.length === 0) {
-        throw new Error('情報を取得できませんでした');
-      }
-
-      const combined = [...rssData, ...manualData].map((it) => {
-        const source = it.source || sourceFromUrl(it.link);
-        const dept = departmentOf(it.link);
-        const tags = [];
-        if (isEventItem(it.link, it.title)) tags.push(EVENT_TAG);
-        tags.push(...topicTagsOf(it.link, it.title, dept, it.description || ''));
-        return {
-          title: it.title,
-          link: it.link,
-          date: new Date(it.pubDate),
-          summary: (it.description || '').trim(),
-          tags,
-          sourceLabel: sourceLabelOf(source, dept),
-        };
-      });
-
-      combined.sort((a, b) => b.date - a.date);
-      allItems = combined;
-
-      document.getElementById('updated-at').textContent = allItems.length > 0
-        ? `最終確認: ${formatUpdated(allItems[0].date)}`
-        : '最終確認: -';
-
-      buildFilters();
-      document.getElementById('search-box').addEventListener('input', (e) => {
-        searchQuery = e.target.value.trim();
-        render();
-      });
-      render();
-    })
-    .catch((err) => {
-      document.getElementById('content').innerHTML =
-        '<div class="state">情報を取得できませんでした。ページを再読み込みするか、しばらく経ってからお試しください。</div>';
-      document.getElementById('updated-at').textContent = '';
-      console.error(err);
-    });
-})();
-</script>
-</body>
-</html>
+          # 競合した場合、自動生成されたJSONファイルはテキストとして
+          # 安全に混ぜ合わせられないため、無理なrebaseはしない。
+          # リモート側を正として今回の収集結果は諦める(次回実行で再収集される)。
+          echo "Push rejected. Discarding this run's changes and deferring to the next run."
+          git rebase --abort 2>/dev/null || true
+          git merge --abort 2>/dev/null || true
+          git fetch origin main
+          git reset --hard origin/main
+          echo "今回の更新は破棄しました。次回の実行で改めて収集されます。"
+          exit 0
