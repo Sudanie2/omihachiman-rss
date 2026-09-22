@@ -25,6 +25,7 @@ from common import (
     parse_pubdate,
     FEED_ITEMS_FILE,
     FEED_FILE,
+    KNOWN_LINKS_FILE,
     FEED_MAX_ITEMS,
     FEED_MIN_DATE,
 )
@@ -90,12 +91,29 @@ def item_date(it):
     return dt
 
 
-def dedupe(items):
+def dedupe(items, known=None):
     """
-    同じ記事が複数のURLで掲載されている場合(市サイトは分野別と組織別の
-    両方に同じ内容を載せることがある)、1件にまとめる。
-    タイトルと出典が同じものを同一とみなし、日付が新しいものを残す。
+    同じ記事が複数のURLで掲載されている場合(市サイトは組織別・分野別・
+    利用者別の複数の階層に、別々のページ番号で同じ内容を載せることがある)、
+    1件にまとめる。タイトルと出典が同じものを同一とみなす。
+
+    どのURLを残すかの規則:
+      1. 日付が新しい方を残す(本当に更新された場合は、その更新を伝える)
+      2. 日付が同じなら、当システムが先に検知した方(=既に読者へ届けた方)を残す
+
+    2 が重要。以前は「短いURLを残す」規則だったため、後日になって同じ記事の
+    別URL版が見つかると、代表URLが入れ替わってRSSの識別子(guid)が変わり、
+    Feedly等では古い記事が「新着」として再配信されてしまっていた。
+    (実例: 8月31日付の記事が、9月22日に分野別ページの複製が見つかった
+     ことで、Feedlyに9月22日の新着として表示された)
     """
+    known = known or {}
+
+    def first_seen(it):
+        rec = known.get(it.get("link", "")) or {}
+        # 検知記録が無いものは最も遅く見つかった扱いにする
+        return rec.get("first_seen") or "9999"
+
     best = {}
     order = []
     for it in items:
@@ -107,12 +125,14 @@ def dedupe(items):
             best[key] = it
             order.append(key)
             continue
-        # 日付が新しい方を残す。同じなら短いURL(元ページに近い)を残す。
         current = best[key]
         if item_date(it) > item_date(current):
             best[key] = it
-        elif item_date(it) == item_date(current) and len(it.get("link", "")) < len(current.get("link", "")):
-            best[key] = it
+        elif item_date(it) == item_date(current):
+            if first_seen(it) < first_seen(current):
+                best[key] = it
+            elif first_seen(it) == first_seen(current) and len(it.get("link", "")) < len(current.get("link", "")):
+                best[key] = it
     return [best[k] for k in order]
 
 
@@ -152,7 +172,7 @@ def main():
     items = kept
 
     # 同じ内容の重複をまとめる
-    deduped = dedupe(items)
+    deduped = dedupe(items, load_json(KNOWN_LINKS_FILE, {}))
     duplicates = len(items) - len(deduped)
     items = deduped
 
