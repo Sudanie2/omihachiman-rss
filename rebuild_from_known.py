@@ -22,6 +22,8 @@ import requests
 from bs4 import BeautifulSoup
 
 from common import (
+    dateless_baselines,
+    is_dateless_backlog,
     fetch_bytes,
     decode_response,
     extract_page_date,
@@ -56,7 +58,13 @@ def main():
     present = {it.get("link") for it in items}
 
     # 既知だが掲載されていないURL
-    missing = [url for url in known if url not in present and url.startswith("http")]
+    # 日付を持たないサイトの初回巡回分(公開日不明の過去記事)は復元しない
+    baselines = dateless_baselines(known)
+    missing = [
+        url for url in known
+        if url not in present and url.startswith("http")
+        and not is_dateless_backlog(url, known, baselines)
+    ]
     if not missing:
         print("復元が必要な記事はありません。")
         return
