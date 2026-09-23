@@ -25,6 +25,7 @@ import re
 import sys
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
+from urllib.parse import urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -32,6 +33,7 @@ from bs4 import BeautifulSoup
 from common import (
     fetch_bytes,
     decode_response,
+    get_robot_parser,
     sanitize_xml_text,
     load_json,
     merge_new_items,
@@ -40,6 +42,7 @@ from common import (
     parse_pubdate,
     _trim_summary,
     KNOWN_LINKS_FILE,
+    USER_AGENT,
 )
 
 RSS_SOURCES = [
@@ -189,6 +192,12 @@ def extract_link(item):
 
 def process_source(source, known, seen_links):
     """1つのRSSソースを処理し、新着itemsと既知キー更新を返す"""
+    base = f"{urlparse(source['url']).scheme}://{urlparse(source['url']).netloc}"
+    rp = get_robot_parser(base)
+    if not rp.can_fetch(USER_AGENT, source["url"]):
+        print(f"[{source['name']}] robots.txtでブロックされているため中止します。")
+        return [], {}
+
     resp = fetch_bytes(source["url"])
     raw_text = decode_response(resp)
     cleaned = sanitize_xml_text(raw_text)
