@@ -70,6 +70,13 @@
     background:#fff;border:2px solid var(--line);border-radius:999px}
   .filters button:hover{border-color:var(--wakaba);color:var(--take)}
   .filters button[aria-pressed="true"]{background:var(--take);border-color:var(--take);color:#fff}
+
+  .pager{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:36px 0 8px}
+  .page-btn{font:inherit;font-size:14.5px;min-width:40px;padding:8px 12px;cursor:pointer;
+    color:var(--ink-soft);background:#fff;border:2px solid var(--line);border-radius:999px}
+  .page-btn:hover{border-color:var(--wakaba);color:var(--take)}
+  .page-btn[aria-current="page"]{background:var(--take);border-color:var(--take);color:#fff}
+  .page-btn:focus-visible{outline:3px solid var(--inaho);outline-offset:2px}
   .filters button:focus-visible{outline:3px solid var(--inaho);outline-offset:2px}
 
   .day-group{margin:0 0 30px}
@@ -126,7 +133,6 @@
   </div>
 
   <div class="meta-row">
-    <span id="updated-at">読み込み中...</span>
     <span id="item-count"></span>
   </div>
 
@@ -169,6 +175,7 @@
     'himure.jp': '日牟禮八幡宮',
     'www.workpia-omi-hachiman.jp': '近江八幡地域勤労者福祉サービスセンター',
     'omihachiman-classicfes.jp': '近江八幡音楽祭',
+    'omihachiman.media-streaming.jp': '近江八幡市議会 インターネット中継',
     'ohshakyo.or.jp': '近江八幡市社会福祉協議会',
     'www.zd.ztv.ne.jp': '安土学区まちづくり協議会',
     'azuchi-shiga.com': '安土学区まちづくり協議会',
@@ -292,16 +299,12 @@
       timeZone: 'Asia/Tokyo', year: 'numeric', month: 'long', day: 'numeric', weekday: 'short'
     });
   }
-  function formatUpdated(date) {
-    return date.toLocaleString('ja-JP', {
-      timeZone: 'Asia/Tokyo', year: 'numeric', month: 'numeric', day: 'numeric',
-      hour: '2-digit', minute: '2-digit'
-    });
-  }
 
   let allItems = [];
   let activeFilter = 'all';
   let searchQuery = '';
+  let currentPage = 1;
+  const PAGE_SIZE = 100;
 
   function render() {
     const content = document.getElementById('content');
@@ -324,9 +327,14 @@
       return;
     }
 
-    // 日付ごとにグループ化
+    const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+    if (currentPage > totalPages) currentPage = totalPages;
+    const pageStart = (currentPage - 1) * PAGE_SIZE;
+    const pageItems = filtered.slice(pageStart, pageStart + PAGE_SIZE);
+
+    // 日付ごとにグループ化(ページ内のみ)
     const groups = new Map();
-    for (const it of filtered) {
+    for (const it of pageItems) {
       const key = formatDay(it.date);
       if (!groups.has(key)) groups.set(key, []);
       groups.get(key).push(it);
@@ -349,7 +357,26 @@
       }
       html += `</ul></section>`;
     }
+
+    if (totalPages > 1) {
+      html += '<nav class="pager" aria-label="ページ送り">';
+      for (let p = 1; p <= totalPages; p++) {
+        html += `<button type="button" class="page-btn" data-page="${p}" aria-current="${p === currentPage ? 'page' : 'false'}">${p}</button>`;
+      }
+      html += '</nav>';
+    }
+
     content.innerHTML = html;
+
+    if (totalPages > 1) {
+      content.querySelectorAll('.page-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          currentPage = Number(btn.dataset.page);
+          render();
+          content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+    }
   }
 
   function escapeHtml(s) {
@@ -377,6 +404,7 @@
       btn.setAttribute('aria-pressed', String(opt.key === activeFilter));
       btn.addEventListener('click', () => {
         activeFilter = opt.key;
+        currentPage = 1;
         [...nav.children].forEach((b) => b.setAttribute('aria-pressed', 'false'));
         btn.setAttribute('aria-pressed', 'true');
         render();
@@ -422,13 +450,10 @@
       combined.sort((a, b) => b.date - a.date);
       allItems = combined;
 
-      document.getElementById('updated-at').textContent = allItems.length > 0
-        ? `最終確認: ${formatUpdated(allItems[0].date)}`
-        : '最終確認: -';
-
       buildFilters();
       document.getElementById('search-box').addEventListener('input', (e) => {
         searchQuery = e.target.value.trim();
+        currentPage = 1;
         render();
       });
       render();
@@ -436,7 +461,6 @@
     .catch((err) => {
       document.getElementById('content').innerHTML =
         '<div class="state">情報を取得できませんでした。ページを再読み込みするか、しばらく経ってからお試しください。</div>';
-      document.getElementById('updated-at').textContent = '';
       console.error(err);
     });
 })();
