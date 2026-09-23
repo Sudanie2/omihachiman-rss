@@ -46,9 +46,55 @@ def is_excluded_link(url: str) -> bool:
 
 
 # 公開ページ・RSSに載せる記事の下限日付(これより古い記事は掲載しない)。
-# 古い記事が枠を埋めて新着が押し出されるのを防ぐ。
+# 本サイトは2026年9月から本格運用を開始したため、それ以前の記事は載せない。
 # 期間を変えたい場合はこの日付だけ書き換える。
-FEED_MIN_DATE = datetime(2026, 8, 1, tzinfo=JST)
+FEED_MIN_DATE = datetime(2026, 9, 1, tzinfo=JST)
+
+
+# ---- 日付を持たないサイトの過去記事 ----
+# 元ページに公開日・更新日の記載が無いため、当システムが「検知した日」を
+# 掲載日として使っているサイト。
+# これらのサイトを初めて巡回した際には、過去の記事がまとめて見つかり、
+# すべて「その巡回日」の日付で登録されてしまう(実際の公開日は不明)。
+# そのため、各サイトの初回巡回で見つかった記事は「過去記事」とみなして
+# 掲載せず、それ以降に新しく見つかった記事だけを掲載する。
+# (以降の記事は1日3回の巡回で検知するため、検知日≒公開日とみなせる)
+DATELESS_HOSTS = {
+    "www.omi8.com",
+    "library.city.omihachiman.shiga.jp",
+    "www.zd.ztv.ne.jp",
+    "azuchi-shiga.com",
+}
+
+
+def _jst_date(iso_text: str):
+    try:
+        return datetime.fromisoformat(iso_text).astimezone(JST).date()
+    except (TypeError, ValueError):
+        return None
+
+
+def dateless_baselines(known: dict) -> dict:
+    """日付を持たない各サイトについて、初回巡回日(最も早い検知日)を求める"""
+    baselines = {}
+    for url, rec in known.items():
+        host = urlparse(url).netloc
+        if host not in DATELESS_HOSTS or not isinstance(rec, dict):
+            continue
+        d = _jst_date(rec.get("first_seen"))
+        if d and (host not in baselines or d < baselines[host]):
+            baselines[host] = d
+    return baselines
+
+
+def is_dateless_backlog(url: str, known: dict, baselines: dict) -> bool:
+    """日付を持たないサイトの、初回巡回で見つかった過去記事かどうか"""
+    host = urlparse(url or "").netloc
+    if host not in DATELESS_HOSTS or host not in baselines:
+        return False
+    rec = known.get(url) or {}
+    d = _jst_date(rec.get("first_seen"))
+    return d is not None and d <= baselines[host]
 
 # URLのドメインから出典名を引くための対応表
 SOURCE_BY_HOST = {
