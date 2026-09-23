@@ -18,6 +18,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from common import (
+    dateless_baselines,
+    is_dateless_backlog,
     is_excluded_link,
     load_json,
     save_json,
@@ -161,10 +163,17 @@ def report_sizes():
 def main():
     items = load_json(FEED_ITEMS_FILE, [])
     before = len(items)
+    known = load_json(KNOWN_LINKS_FILE, {})
 
     # 掲載対象外のURL(個別店舗の紹介など)を取り除く
     items = [it for it in items if not is_excluded_link(it.get("link", ""))]
     excluded = before - len(items)
+
+    # 日付を持たないサイトの、初回巡回で見つかった過去記事(公開日不明)を取り除く
+    baselines = dateless_baselines(known)
+    kept = [it for it in items if not is_dateless_backlog(it.get("link", ""), known, baselines)]
+    backlog = len(items) - len(kept)
+    items = kept
 
     # 掲載対象期間より古い記事(および日付不明の記事)を取り除く
     kept = [it for it in items if item_date(it) >= FEED_MIN_DATE]
@@ -172,7 +181,7 @@ def main():
     items = kept
 
     # 同じ内容の重複をまとめる
-    deduped = dedupe(items, load_json(KNOWN_LINKS_FILE, {}))
+    deduped = dedupe(items, known)
     duplicates = len(items) - len(deduped)
     items = deduped
 
@@ -183,7 +192,7 @@ def main():
     if before != len(items):
         save_json(FEED_ITEMS_FILE, items)
         print(
-            f"整理: 期間外 {removed}件 / 対象外 {excluded}件 / 重複 {duplicates}件 "
+            f"整理: 期間外 {removed}件 / 対象外 {excluded}件 / 日付不明の過去記事 {backlog}件 / 重複 {duplicates}件 "
             f"を除きました(残り {len(items)}件)。"
         )
 
