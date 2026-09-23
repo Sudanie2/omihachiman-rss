@@ -91,6 +91,9 @@ jobs:
       - name: Collect Omihachiman council video
         run: |
           python fetch_council_video.py
+      - name: Collect NO-MA archive exhibitions
+        run: |
+          python fetch_noma_archive.py
       - name: Collect from section pages
         run: |
           python fetch_section_links.py
