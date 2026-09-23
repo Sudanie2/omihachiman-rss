@@ -35,6 +35,7 @@ from common import (
     merge_new_items,
     normalize_url,
     now_iso,
+    _trim_summary,
     JST,
     KNOWN_LINKS_FILE,
     USER_AGENT,
@@ -46,7 +47,9 @@ SECTION_SOURCES = [
         "base": "https://www.zd.ztv.ne.jp",
         "url": "https://www.zd.ztv.ne.jp/azuchi-cc/index.html",
         # この文字列の間にあるリンクを対象にする(表記ゆれに備え候補を複数持つ)
-        "start_markers": ["まち協．お知らせ", "まち協.お知らせ", "まち協お知らせ"],
+        # 「まち協．お知らせ」という文字の目印は実在しないことが判明(実HTMLで確認)。
+        # 見出しが画像("images/mayikyo-osirase.gif")になっているため、そちらを使う。
+        "start_marker_img_src": ["mayikyo-osirase", "matikyo-osirase"],
         "end_markers": ["連絡事項2", "連絡事項２"],
         # 対象とする拡張子(イベント告知は画像やPDFの場合もある)
         "allowed_ext": [".pdf", ".html", ".htm", ".jpg", ".jpeg", ".png", ".gif", ""],
@@ -65,24 +68,34 @@ def find_section_links(soup, source):
     """
     開始・終了の目印の間にあるリンクを、文書の並び順に沿って集める。
     目印がタグで分割されていても拾えるよう、空白を除いた文字列で判定する。
+
+    開始の目印は「文字」(start_markers)だけでなく「画像ファイル名」
+    (start_marker_img_src)でも指定できる。文字の見出しが無く、
+    見出し自体が画像になっているページ(まち協サイト等)に対応するため。
     """
     start_pos = None
     end_pos = None
     links = []  # (出現位置, aタグ)
 
-    starts = [compact(m) for m in source["start_markers"]]
+    starts = [compact(m) for m in source.get("start_markers", [])]
     ends = [compact(m) for m in source["end_markers"]]
+    img_starts = [s.lower() for s in source.get("start_marker_img_src", [])]
 
     buffer = ""  # ここまでに現れた文字(空白除去)
     for pos, node in enumerate(soup.descendants):
         if isinstance(node, NavigableString):
             buffer += compact(str(node))
-            if start_pos is None and any(m and m in buffer for m in starts):
+            if start_pos is None and starts and any(m and m in buffer for m in starts):
                 start_pos = pos
                 buffer = ""
             elif start_pos is not None and end_pos is None and any(m and m in buffer for m in ends):
                 end_pos = pos
                 break
+        elif isinstance(node, Tag) and node.name == "img" and img_starts:
+            src = (node.get("src") or "").lower()
+            if start_pos is None and any(m in src for m in img_starts):
+                start_pos = pos
+                buffer = ""
         elif isinstance(node, Tag) and node.name == "a" and node.get("href"):
             if start_pos is not None and end_pos is None:
                 links.append(node)
@@ -131,6 +144,74 @@ def extract_title(a_tag, url: str) -> str:
             return near
 
     return title_from_filename(url)
+
+
+# --- osirase.html: 「今の1件」を丸ごと差し替える掲示板ページ ---
+# リンクを持たず、本文の冒頭に「R8　9/3更新」のような更新スタンプがある。
+# ページ自体のURLは常に同じなので、更新スタンプの日付を識別子に含めて
+# 新着(=更新スタンプが変わった)かどうかを判定する。
+# <title>タグの日付は編集し忘れで実態とずれていることがあるため使わない。
+NOTICE_BOARD_SOURCES = [
+    {
+        "name": "安土学区まちづくり協議会",
+        "base": "https://www.zd.ztv.ne.jp",
+        "url": "https://www.zd.ztv.ne.jp/azuchi-cc/osirase.html",
+    },
+]
+
+UPDATE_STAMP_PATTERN = re.compile(r"(?:令和|R)\s*(\d+|元)\s*年?\s*(\d{1,2})[/／](\d{1,2})\s*更新")
+
+
+def process_notice_board(source, known, seen):
+    rp = get_robot_parser(source["base"])
+    if not rp.can_fetch(USER_AGENT, source["url"]):
+        print(f"[{source['name']}(掲示板)] robots.txtでブロックされているため中止します。")
+        return [], {}
+
+    resp = fetch_bytes(source["url"])
+    html = decode_response(resp)
+    soup = BeautifulSoup(html, "html.parser")
+
+    body = soup.body or soup
+    lines = [re.sub(r"\s+", "", ln) and ln.strip() for ln in body.get_text("\n").split("\n")]
+    lines = [ln for ln in lines if ln]
+    if not lines:
+        print(f"[{source['name']}(掲示板)] 本文が空です。")
+        return [], {}
+
+    m = UPDATE_STAMP_PATTERN.search(re.sub(r"\s", "", lines[0]))
+    if not m:
+        print(f"[{source['name']}(掲示板)] 更新日の記載が見つかりません。ページ構造が変わった可能性があります。")
+        return [], {}
+
+    year_num = 1 if m.group(1) == "元" else int(m.group(1))
+    year = 2018 + year_num  # 令和
+    month, day = int(m.group(2)), int(m.group(3))
+    try:
+        pub_dt = datetime(year, month, day, tzinfo=JST)
+    except ValueError:
+        print(f"[{source['name']}(掲示板)] 更新日の解釈に失敗しました({m.group(0)})。")
+        return [], {}
+
+    key = f"{source['url']}#{pub_dt.strftime('%Y%m%d')}"
+    if key in known or key in seen:
+        return [], {}
+    seen.add(key)
+
+    title = lines[1] if len(lines) > 1 else "お知らせ"
+    body_text = " ".join(lines[2:])
+    summary = _trim_summary(body_text)
+
+    ts = now_iso()
+    item = {
+        "title": title,
+        "link": source["url"],
+        "guid": key,
+        "source": source["name"],
+        "description": summary,
+        "pubDate": pub_dt.strftime("%a, %d %b %Y %H:%M:%S %z"),
+    }
+    return [item], {key: {"title": title, "first_seen": ts}}
 
 
 def process_source(source, known, seen):
@@ -191,6 +272,16 @@ def main():
             all_known_updates.update(known_updates)
         except Exception as e:
             print(f"[{source['name']}] 取得失敗: {e}")
+
+    for source in NOTICE_BOARD_SOURCES:
+        try:
+            new_items, known_updates = process_notice_board(source, known, seen)
+            all_new.extend(new_items)
+            all_known_updates.update(known_updates)
+            if new_items:
+                print(f"[{source['name']}(掲示板)] 更新を検知: {new_items[0]['title'][:30]}")
+        except Exception as e:
+            print(f"[{source['name']}(掲示板)] 取得失敗: {e}")
 
     merge_new_items(all_new, all_known_updates)
     print(f"範囲指定ソース合計: 新着 {len(all_new)}件")
