@@ -67,6 +67,7 @@ SOURCE_BY_HOST = {
     "himure.jp": "日牟禮八幡宮",
     "www.workpia-omi-hachiman.jp": "近江八幡地域勤労者福祉サービスセンター",
     "omihachiman-classicfes.jp": "近江八幡音楽祭",
+    "omihachiman.media-streaming.jp": "近江八幡市議会 インターネット中継",
     "ohshakyo.or.jp": "近江八幡市社会福祉協議会",
     "www.zd.ztv.ne.jp": "安土学区まちづくり協議会",
     "azuchi-shiga.com": "安土学区まちづくり協議会",
