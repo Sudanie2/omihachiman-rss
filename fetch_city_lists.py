@@ -26,6 +26,7 @@ from common import (
     fetch_bytes,
     decode_response,
     extract_page_summary,
+    get_robot_parser,
     load_json,
     merge_new_items,
     normalize_url,
@@ -36,6 +37,7 @@ from common import (
     JST,
     KNOWN_LINKS_FILE,
     REQUEST_INTERVAL_SEC,
+    USER_AGENT,
 )
 
 BASE_URL = "https://www.city.omihachiman.lg.jp"
@@ -59,7 +61,11 @@ def parse_publish(text):
         return None
 
 
-def process_list(entry, known, current_links, seen, session, budget):
+def process_list(entry, known, current_links, seen, session, budget, rp):
+    if not rp.can_fetch(USER_AGENT, entry["url"]):
+        print(f"[市サイト/{entry['label']}] robots.txtでブロックされているため中止します。")
+        return [], {}
+
     resp = fetch_bytes(entry["url"], session)
     data = json.loads(decode_response(resp))
     time.sleep(REQUEST_INTERVAL_SEC)
@@ -145,6 +151,7 @@ def main():
     known = load_json(KNOWN_LINKS_FILE, {})
     current_links = {it.get("link") for it in load_json(FEED_ITEMS_FILE, [])}
     session = requests.Session()
+    rp = get_robot_parser(BASE_URL)
 
     all_new = []
     all_known_updates = {}
@@ -154,7 +161,7 @@ def main():
     for entry in CITY_LISTS:
         try:
             new_items, known_updates = process_list(
-                entry, known, current_links, seen, session, budget
+                entry, known, current_links, seen, session, budget, rp
             )
             all_new.extend(new_items)
             all_known_updates.update(known_updates)
