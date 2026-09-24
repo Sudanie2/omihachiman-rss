@@ -139,19 +139,20 @@ def child_text(item, names):
 
 def title_from_body(item) -> str:
     """
-    タイトルが空の記事(ブログでよくある)で、本文の冒頭から見出しを作る。
-    HTMLタグを取り除き、先頭の一定文字数を使う。
+    タイトルが空の記事(ブログでよくある)で、見出しを作る。
+
+    本文そのものを切り出してタイトルにすると、本文の複製になってしまう。
+    そこで、記事冒頭の＜…＞で囲まれた見出し(著者自身が付けた題名)だけを使う。
+    見出しが無い場合は本文を使わず、空を返す(呼び出し側で日付入りの
+    定型タイトルにする)。
     """
     body = child_text(item, set(BODY_TAGS))
     if not body:
         return ""
     text = BeautifulSoup(body, "html.parser").get_text(" ", strip=True)
     text = re.sub(r"\s+", " ", text).strip()
-    if not text:
-        return ""
-    if len(text) > FALLBACK_TITLE_LENGTH:
-        return text[:FALLBACK_TITLE_LENGTH].rstrip() + "…"
-    return text
+    m = re.match(r"^[＜<〈《【]\s*([^＞>〉》】]{1,60})\s*[＞>〉》】]", text)
+    return m.group(1).strip() if m else ""
 
 
 def extract_link(item):
@@ -213,6 +214,11 @@ def process_source(source, known, seen_links):
     for item in iter_items(root):
         title = child_text(item, {"title"}) or title_from_body(item)
         link = extract_link(item)
+        if not title and link:
+            # 見出しも無い記事は、本文を使わず出典名と日付で定型タイトルにする
+            d = child_text(item, set(DATE_TAGS))
+            dt = parse_pubdate(d) if d else collected_at
+            title = f"{source['name']}（{dt.month}月{dt.day}日の投稿）"
         if not title or not link:
             continue
         link = normalize_url(link)  # httpのままのリンクをhttpsへ統一
