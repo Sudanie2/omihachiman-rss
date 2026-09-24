@@ -24,7 +24,6 @@ import sys
 from datetime import datetime
 from urllib.parse import urljoin, urlparse, unquote
 
-import requests
 from bs4 import BeautifulSoup, NavigableString, Tag
 
 from common import (
@@ -35,7 +34,6 @@ from common import (
     merge_new_items,
     normalize_url,
     now_iso,
-    _trim_summary,
     JST,
     KNOWN_LINKS_FILE,
     USER_AGENT,
@@ -199,8 +197,6 @@ def process_notice_board(source, known, seen):
     seen.add(key)
 
     title = lines[1] if len(lines) > 1 else "お知らせ"
-    body_text = " ".join(lines[2:])
-    summary = _trim_summary(body_text)
 
     ts = now_iso()
     item = {
