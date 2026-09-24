@@ -144,7 +144,8 @@ def main():
                 "link": PAGE_URL,
                 "guid": key,
                 "source": SOURCE_NAME,
-                "description": entry_text[:300],
+                # 本文は県警サイトの著作物のため、説明欄には載せない(タイトルとリンクのみ)
+                "description": "",
                 "pubDate": pub_dt.strftime("%a, %d %b %Y %H:%M:%S %z"),
             }
         )
