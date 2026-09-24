@@ -19,6 +19,7 @@ from pathlib import Path
 
 from common import (
     dateless_baselines,
+    description_allowed,
     is_dateless_backlog,
     is_excluded_link,
     load_json,
@@ -165,6 +166,15 @@ def main():
     before = len(items)
     known = load_json(KNOWN_LINKS_FILE, {})
 
+    # 要約(description)は、許可された出典(事実情報を当サイトが書いたもの)以外は
+    # 公開しない。データファイル自体もリポジトリで公開されているため、
+    # rss_items.json からも取り除く。
+    stripped = 0
+    for it in items:
+        if it.get("description") and not description_allowed(it.get("source", "")):
+            it["description"] = ""
+            stripped += 1
+
     # 掲載対象外のURL(個別店舗の紹介など)を取り除く
     items = [it for it in items if not is_excluded_link(it.get("link", ""))]
     excluded = before - len(items)
@@ -189,8 +199,10 @@ def main():
     items.sort(key=item_date, reverse=True)
 
     # 整理結果をデータ側にも反映する(次回以降の処理を軽くする)
-    if before != len(items):
+    if before != len(items) or stripped:
         save_json(FEED_ITEMS_FILE, items)
+        if stripped:
+            print(f"要約(元記事の文章)を {stripped}件 取り除きました。")
         print(
             f"整理: 期間外 {removed}件 / 対象外 {excluded}件 / 日付不明の過去記事 {backlog}件 / 重複 {duplicates}件 "
             f"を除きました(残り {len(items)}件)。"
