@@ -94,6 +94,11 @@ jobs:
       - name: Collect NO-MA archive exhibitions
         run: |
           python fetch_noma_archive.py
+      - name: Collect Omihachiman official YouTube channel
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: |
+          python fetch_youtube_channel.py
       - name: Collect from section pages
         run: |
           python fetch_section_links.py
