@@ -15,7 +15,6 @@ import re
 import sys
 from datetime import datetime
 
-import requests
 from bs4 import BeautifulSoup
 
 from common import (
