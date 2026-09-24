@@ -208,7 +208,8 @@ def process_notice_board(source, known, seen):
         "link": source["url"],
         "guid": key,
         "source": source["name"],
-        "description": summary,
+        # 本文は掲示板の著作物のため、説明欄には載せない(タイトルとリンクのみ)
+        "description": "",
         "pubDate": pub_dt.strftime("%a, %d %b %Y %H:%M:%S %z"),
     }
     return [item], {key: {"title": title, "first_seen": ts}}
