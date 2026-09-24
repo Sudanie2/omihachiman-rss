@@ -18,6 +18,7 @@ RSS(rss.xml)とWebサイト(index.html / GitHub Pages)で公開する仕組み�
 | 近江八幡商工会議所 | 一覧ページ解析(「お知らせ」「補助金」タグの記事のみ) |
 | 近江八幡市立健康ふれあい公園 | 一覧ページ解析(新着情報の全記事) |
 | 近江八幡音楽祭 | 一覧ページ解析(お知らせの全記事) |
+| 近江八幡市公式YouTubeチャンネル | YouTube Data API v3で新着動画を取得(GitHub Secretsの YOUTUBE_API_KEY が必要) |
 | ボーダレス・アートミュージアムNO-MA | 一覧ページ解析(お知らせ一覧の全記事) |
 | NO-MA ARCHIVE(展覧会情報) | 展覧会一覧を解析(会期・展覧会名をタグ構造から直接取得) |
 | 近江八幡市議会 インターネット中継 | 会期一覧を解析(録画へのリンクのみ。映像・議事録本文は取得しない) |
@@ -51,6 +52,7 @@ RSS(rss.xml)とWebサイト(index.html / GitHub Pages)で公開する仕組み�
 | fetch_tabelog_newopen.py | 食べログの新規オープン店の収集 | 6 |
 | fetch_council_video.py | 市議会インターネット中継の録画一覧の収集 | 7 |
 | fetch_noma_archive.py | NO-MA ARCHIVEの展覧会情報の収集 | 8 |
+| fetch_youtube_channel.py | 市公式YouTubeチャンネルの新着動画収集(要APIキー) | 9 |
 | fetch_section_links.py | ページ内の指定範囲のリンクを収集(安土学区まちづくり協議会) | 7 |
 | build_feed.py | 収集結果からrss.xmlを生成(日付順に整列) | 8 |
 | repair_titles.py | 既存記事のタイトル・日付・要約を取り直す(手動実行時のみ) | 任意 |
@@ -209,6 +211,14 @@ rss.xml生成時にも、日付が空・解釈できない記事は最古扱い�
 - 実行のたびに build_feed.py が容量をログに出力します。合計50MBを超えると
   警告が出るので、その時点で対処を検討すれば十分間に合います。
 - 変更がない場合はコミット自体をスキップするため、無駄な履歴は増えません。
+
+## YouTube Data APIについて
+
+YouTube自身のRSS機能(/feeds/videos.xml)はrobots.txtで明示的に禁止されているため
+使わず、公式のYouTube Data API v3を使っている。GitHubリポジトリの
+Settings > Secrets and variables > Actions に `YOUTUBE_API_KEY` という名前で
+APIキーを登録する必要がある(コードには含まれない)。キーが未設定の場合は
+エラーにせず、このソースの収集だけを静かにスキップする。
 
 ## 収集対象外としたサイトと理由
 
