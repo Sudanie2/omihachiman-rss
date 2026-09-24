@@ -31,7 +31,6 @@ from common import (
     merge_new_items,
     normalize_url,
     now_iso,
-    parse_pubdate,
     save_json,
     FEED_ITEMS_FILE,
     JST,
