@@ -11,7 +11,6 @@
   - 日牟禮八幡宮(要約は保存しない)
   - 近江八幡市社会福祉協議会
   - シガブンシンブン(近江八幡市で検索した結果のみ)
-  - 安土城考古博物館
   - 安土城考古博物館長のつぶやき(Bloggerブログ / Atom形式)
   - 安土文芸の郷 ニュース＆お知らせ
   - 安土文芸の郷 事業・活動のご報告
@@ -27,7 +26,6 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from urllib.parse import urlparse
 
-import requests
 from bs4 import BeautifulSoup
 
 from common import (
@@ -84,11 +82,6 @@ RSS_SOURCES = [
         "name": "シガブンシンブン(滋賀県文化財保護協会)",
         # 「近江八幡市」で検索した結果をRSS化したもの(WordPressの検索フィード)
         "url": "https://www.shiga-bunkazai.jp/shigabun-shinbun/?s=%E8%BF%91%E6%B1%9F%E5%85%AB%E5%B9%A1%E5%B8%82&feed=rss2",
-        "title_filter": None,
-    },
-    {
-        "name": "安土城考古博物館",
-        "url": "https://azuchi-museum.or.jp/feed/",
         "title_filter": None,
     },
     {
