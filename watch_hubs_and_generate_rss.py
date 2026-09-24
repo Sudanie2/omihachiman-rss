@@ -39,7 +39,6 @@ from common import (
     merge_new_items,
     normalize_url,
     now_iso,
-    now_rfc822,
     save_json,
     KNOWN_LINKS_FILE,
     REQUEST_INTERVAL_SEC,
