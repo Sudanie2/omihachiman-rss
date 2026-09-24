@@ -8,6 +8,7 @@ RSS配信がなく、「日付 + タイトルリンク」が並ぶ一覧ペー�
 対象:
   - 近江八幡商工会議所           : カテゴリタグ「お知らせ」「補助金」の記事のみ
   - 近江八幡市立健康ふれあい公園 : 新着情報の全記事
+  - ボーダレス・アートミュージアムNO-MA : お知らせ一覧の全記事
   - 近江八幡音楽祭                 : お知らせの全記事
   - 近江八幡地域勤労者福祉サービスセンター(ワークピア近江八幡) : お知らせの全記事
   - 八幡山ロープウェー(近江鉄道) : イベント・キャンペーン / お知らせ / ニュースリリース
@@ -20,7 +21,6 @@ RSS配信がなく、「日付 + タイトルリンク」が並ぶ一覧ペー�
 
 import re
 import sys
-import time
 from datetime import datetime
 from urllib.parse import urljoin, urlparse, parse_qsl, urlencode, urlunparse
 
@@ -30,8 +30,6 @@ from bs4 import BeautifulSoup
 from common import (
     fetch_bytes,
     decode_response,
-    fetch_summary_safe,
-    _suppress_if_duplicates_title,
     get_robot_parser,
     load_json,
     merge_new_items,
@@ -56,6 +54,15 @@ LIST_SOURCES = [
         # 記事リンクと判定するURLパターン(Noneならタグで判定)
         "link_pattern": None,
         # URLから取り除くクエリ(同じ記事が別URL扱いになるのを防ぐ)
+        "drop_query": [],
+    },
+    {
+        "name": "ボーダレス・アートミュージアムNO-MA",
+        "base": "https://no-ma.jp",
+        "url": "https://no-ma.jp/news/",
+        "tags": [],
+        "tag_filter": None,
+        "link_pattern": r"^/20\d{2}/\d{2}/\d{2}/",
         "drop_query": [],
     },
     {
@@ -121,7 +128,7 @@ LIST_SOURCES = [
     },
 ]
 
-DATE_PATTERN = re.compile(r"(20\d{2})[.\-/年](\d{1,2})[.\-/月](\d{1,2})")
+DATE_PATTERN = re.compile(r"(20\d{2})\s*[.\-/年]\s*(\d{1,2})\s*[.\-/月]\s*(\d{1,2})")
 # 記事ではない案内リンク(ボタン・ページ送り等)の文言
 NAVIGATION_TEXTS = {
     "一覧をみる", "一覧を見る", "もっと見る", "詳細はこちら", "こちら",
@@ -243,16 +250,15 @@ def process_source(source, known, seen, session):
             pub_dt = datetime.now(JST)
 
         known_updates[url] = {"title": title, "first_seen": ts}
-        summary = fetch_summary_safe(url, session)
-        summary = _suppress_if_duplicates_title(summary, title)
-        if summary:
-            time.sleep(REQUEST_INTERVAL_SEC)
+        # 要約は公開しない方針(著作権上の配慮)のため、記事ページを開きに行かない。
+        # (以前はここで要約を取得していたが、import漏れにより新着のたびに
+        #  エラーとなり、新着が一切登録されない不具合の原因になっていた)
         new_items.append(
             {
                 "title": title,
                 "link": url,
                 "source": source["name"],
-                "description": summary,
+                "description": "",
                 "pubDate": pub_dt.strftime("%a, %d %b %Y %H:%M:%S %z"),
             }
         )
