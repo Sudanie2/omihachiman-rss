@@ -132,10 +132,6 @@ def main():
         except ValueError:
             continue
 
-        seg_start = m.start()
-        seg_end = matches[i + 1].start() if i + 1 < len(matches) else len(content_blob)
-        entry_text = clean_text(content_blob[seg_start:seg_end])
-
         title = f"近江八幡警察署の活動（{month}月{day}日）"
         known_updates[key] = {"title": title, "first_seen": ts}
         new_items.append(
