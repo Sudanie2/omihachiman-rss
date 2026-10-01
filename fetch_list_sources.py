@@ -13,6 +13,7 @@ RSS配信がなく、「日付 + タイトルリンク」が並ぶ一覧ペー�
   - 近江八幡地域勤労者福祉サービスセンター(ワークピア近江八幡) : お知らせの全記事
   - 八幡山ロープウェー(近江鉄道) : イベント・キャンペーン / お知らせ / ニュースリリース
   - web滋賀プラスワン(滋賀県広報) : サイト内検索「近江八幡市」の検索結果(1ページ目)
+  - 広報おうみはちまん(マイ広報紙) : 広報紙バックナンバー一覧
 
 注意: サイトによっては「日付」と「タイトル」が別々のリンクになっており、
 どちらも同じ記事を指す。日付だけのリンクはタイトルとして採用しない。
@@ -157,6 +158,25 @@ LIST_SOURCES = [
             "https://shigaplusone.jp/information/202604_208/",
         ],
     },
+    # 広報おうみはちまん(マイ広報紙 mykoho.jp)のバックナンバー一覧。
+    # ページ上部の「最新号の記事を全部見る」も同じURLを指すため、
+    # container_selector でバックナンバーの一覧の中だけを見る。
+    # 一覧に日付は無く、タイトルが「広報おうみはちまん 2026年10月号」の形なので、
+    # 「年・月」から掲載日(その月の1日)を決める(title_date_pattern)。
+    # min_date より前の号は登録しない(過去の号を大量に登録しないため)。
+    {
+        "name": "広報おうみはちまん",
+        "base": "https://mykoho.jp",
+        "url": "https://mykoho.jp/lg/252042/577029",
+        "tags": [],
+        "tag_filter": None,
+        "link_pattern": r"/koho/252042/\d+",
+        "drop_query": [],
+        "container_selector": "#jichitaiBacknum",
+        "title_selector": "p",
+        "title_date_pattern": r"(20\d{2})年\s*(\d{1,2})月号",
+        "min_date": "2026-09-01",
+    },
 ]
 
 DATE_PATTERN = re.compile(r"(20\d{2})\s*[.\-/年]\s*(\d{1,2})\s*[.\-/月]\s*(\d{1,2})")
@@ -232,7 +252,12 @@ def process_source(source, known, seen, session):
     known_updates = {}
     matched = 0
 
-    for a in soup.find_all("a", href=True):
+    # 一覧の部分だけを見たいサイトでは、その範囲を絞る
+    root = soup
+    if source.get("container_selector"):
+        root = soup.select_one(source["container_selector"]) or soup
+
+    for a in root.find_all("a", href=True):
         url = urljoin(source["url"], a["href"])
 
         # 記事リンクかどうかの判定
@@ -280,6 +305,11 @@ def process_source(source, known, seen, session):
         if override:
             y, mo, d = (int(x) for x in override.split("-"))
             pub_dt = datetime(y, mo, d, tzinfo=JST)
+        elif source.get("title_date_pattern"):
+            # タイトルの「年・月」から掲載日(その月の1日)を決める
+            tm = re.search(source["title_date_pattern"], title)
+            if tm:
+                pub_dt = datetime(int(tm.group(1)), int(tm.group(2)), 1, tzinfo=JST)
         elif m:
             try:
                 pub_dt = datetime(int(m.group(1)), int(m.group(2)), int(m.group(3)), tzinfo=JST)
@@ -291,6 +321,12 @@ def process_source(source, known, seen, session):
                 seen.discard(url)
                 continue
             pub_dt = datetime.now(JST)
+
+        # min_date より前の記事は登録しない
+        if source.get("min_date"):
+            y, mo, d = (int(x) for x in source["min_date"].split("-"))
+            if pub_dt < datetime(y, mo, d, tzinfo=JST):
+                continue
 
         known_updates[url] = {"title": title, "first_seen": ts}
         # 要約は公開しない方針(著作権上の配慮)のため、記事ページを開きに行かない。
