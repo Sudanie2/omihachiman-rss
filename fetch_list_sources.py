@@ -14,6 +14,7 @@ RSS配信がなく、「日付 + タイトルリンク」が並ぶ一覧ペー�
   - 八幡山ロープウェー(近江鉄道) : イベント・キャンペーン / お知らせ / ニュースリリース
   - web滋賀プラスワン(滋賀県広報) : サイト内検索「近江八幡市」の検索結果(1ページ目)
   - 広報おうみはちまん(マイ広報紙) : 広報紙バックナンバー一覧
+  - webアミンチュ(びわ湖放送) : タグ「近江八幡市」の記事一覧(1ページ目)
 
 注意: サイトによっては「日付」と「タイトル」が別々のリンクになっており、
 どちらも同じ記事を指す。日付だけのリンクはタイトルとして採用しない。
@@ -177,6 +178,23 @@ LIST_SOURCES = [
         "title_date_pattern": r"(20\d{2})年\s*(\d{1,2})月号",
         "min_date": "2026-09-01",
     },
+    # webアミンチュ(びわ湖放送のウェブメディア)のタグ「近江八幡市」の記事一覧。
+    # 1件ごとの枠(article)の中に、サムネイル用・カテゴリ用・タイトル用など
+    # 複数のリンクが入っている。文字のあるタイトルのリンクだけを記事とみなし、
+    # 日付は同じ枠の中の日付(2026/08/04 形式)から取る(item_selector / date_selector)。
+    # タイトルと日付だけを載せ、要約は載せない。
+    {
+        "name": "webアミンチュ",
+        "base": "https://www.webaminchu.jp",
+        "url": "https://www.webaminchu.jp/tag/hachiman/",
+        "tags": [],
+        "tag_filter": None,
+        "link_pattern": r"/news/\d+/",
+        "drop_query": [],
+        "item_selector": "article.p-entries-item",
+        "date_selector": "span.p-entries-day",
+        "min_date": "2026-09-01",
+    },
 ]
 
 DATE_PATTERN = re.compile(r"(20\d{2})\s*[.\-/年]\s*(\d{1,2})\s*[.\-/月]\s*(\d{1,2})")
@@ -257,6 +275,11 @@ def process_source(source, known, seen, session):
     if source.get("container_selector"):
         root = soup.select_one(source["container_selector"]) or soup
 
+    # 記事1件ごとの枠(item_selector)がある場合は、その枠の中から日付を探す
+    item_ids = set()
+    if source.get("item_selector"):
+        item_ids = {id(x) for x in root.select(source["item_selector"])}
+
     for a in root.find_all("a", href=True):
         url = urljoin(source["url"], a["href"])
 
@@ -299,7 +322,16 @@ def process_source(source, known, seen, session):
             continue
         seen.add(url)
 
-        m = find_date_near(a)
+        m = None
+        if item_ids and source.get("date_selector"):
+            for parent in a.parents:
+                if id(parent) in item_ids:
+                    date_el = parent.select_one(source["date_selector"])
+                    if date_el:
+                        m = DATE_PATTERN.search(date_el.get_text(" ", strip=True))
+                    break
+        if m is None:
+            m = find_date_near(a)
         pub_dt = None
         override = source.get("date_overrides", {}).get(url)
         if override:
