@@ -12,6 +12,7 @@ RSS配信がなく、「日付 + タイトルリンク」が並ぶ一覧ペー�
   - 近江八幡音楽祭                 : お知らせの全記事
   - 近江八幡地域勤労者福祉サービスセンター(ワークピア近江八幡) : お知らせの全記事
   - 八幡山ロープウェー(近江鉄道) : イベント・キャンペーン / お知らせ / ニュースリリース
+  - web滋賀プラスワン(滋賀県広報) : サイト内検索「近江八幡市」の検索結果(1ページ目)
 
 注意: サイトによっては「日付」と「タイトル」が別々のリンクになっており、
 どちらも同じ記事を指す。日付だけのリンクはタイトルとして採用しない。
@@ -126,6 +127,36 @@ LIST_SOURCES = [
         # ref=/news/index.html は遷移元を示すだけなので除去する
         "drop_query": ["ref"],
     },
+    # web滋賀プラスワン(滋賀県の広報サイト)の「近江八幡市」検索結果。
+    # 一覧に日付は無いため、初めて見つけた日を掲載日とする。
+    # 1つのリンクの中にタイトルと本文の冒頭が両方入っているので、
+    # タイトルは title_selector で指定した要素の文字だけを使う。
+    {
+        "name": "web滋賀プラスワン",
+        "base": "https://shigaplusone.jp",
+        "url": "https://shigaplusone.jp/?s=%E8%BF%91%E6%B1%9F%E5%85%AB%E5%B9%A1%E5%B8%82",
+        "tags": [],
+        "tag_filter": None,
+        "link_pattern": r"/(?:information/\d{6}_\d+|post/[^/]+)/",
+        "drop_query": [],
+        "title_selector": "p.result-list-textBlock-title",
+        # 初回登録時に日付を指定する記事(一覧に日付が無いため手動で指定)
+        "date_overrides": {
+            "https://shigaplusone.jp/information/202608_112/": "2026-09-02",  # 「幻の安土城」復元プロジェクト・歴史セミナー
+            "https://shigaplusone.jp/information/202608_102/": "2026-09-03",  # VRで安土城を探検しよう!
+            "https://shigaplusone.jp/information/202609_015/": "2026-09-18",  # 滋賀で一緒に保育しよ!保育のしごと相談会
+        },
+        # 8月以前の記事のため登録しない
+        "ignore_urls": [
+            "https://shigaplusone.jp/information/202608_108/",
+            "https://shigaplusone.jp/post/biwapochi/",
+            "https://shigaplusone.jp/information/202606_120/",
+            "https://shigaplusone.jp/post/shiga-locarion-ofice/",
+            "https://shigaplusone.jp/information/202605_111/",
+            "https://shigaplusone.jp/post/kokyo_sakamai/",
+            "https://shigaplusone.jp/information/202604_208/",
+        ],
+    },
 ]
 
 DATE_PATTERN = re.compile(r"(20\d{2})\s*[.\-/年]\s*(\d{1,2})\s*[.\-/月]\s*(\d{1,2})")
@@ -208,7 +239,13 @@ def process_source(source, known, seen, session):
         if link_re and not link_re.search(urlparse(url).path + "?" + (urlparse(url).query or "")):
             continue
 
-        raw_text = a.get_text(" ", strip=True)
+        title_selector = source.get("title_selector")
+        if title_selector:
+            # タイトル専用の要素がある場合は、その文字だけを使う(本文の冒頭を混ぜない)
+            title_el = a.select_one(title_selector)
+            raw_text = title_el.get_text(" ", strip=True) if title_el else ""
+        else:
+            raw_text = a.get_text(" ", strip=True)
         if not raw_text:
             continue
 
@@ -231,13 +268,19 @@ def process_source(source, known, seen, session):
 
         matched += 1
         url = clean_url(url, source["drop_query"])
+        if url in source.get("ignore_urls", []):
+            continue
         if url in known or url in seen:
             continue
         seen.add(url)
 
         m = find_date_near(a)
         pub_dt = None
-        if m:
+        override = source.get("date_overrides", {}).get(url)
+        if override:
+            y, mo, d = (int(x) for x in override.split("-"))
+            pub_dt = datetime(y, mo, d, tzinfo=JST)
+        elif m:
             try:
                 pub_dt = datetime(int(m.group(1)), int(m.group(2)), int(m.group(3)), tzinfo=JST)
             except ValueError:
