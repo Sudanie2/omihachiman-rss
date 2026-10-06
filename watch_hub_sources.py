@@ -7,7 +7,8 @@
 
 対象:
   - 近江八幡市観光サイト(omi8.com): 9カテゴリの一覧ページ
-  - 近江八幡市立図書館: トップページと図書館だより一覧
+  (近江八幡市立図書館は、2026年10月のサイト刷新で記事のURLが変わったため、
+   fetch_list_sources.py に移した)
 
 1つのサイトで取得に失敗しても、他のサイトの処理は続行する。
 """
@@ -62,21 +63,6 @@ HUB_SOURCES = [
         "detail_pattern": r"/detail[_.]",
         # 個別店舗の紹介は収集しない
         "exclude_pattern": r"^/(restaurant|souvenir|stay|access|favorite)/",
-    },
-    {
-        "name": "近江八幡市立図書館",
-        "base": "https://library.city.omihachiman.shiga.jp",
-        "hubs": [
-            "/",
-            "/図書館だより・行事案内/図書館だより",
-        ],
-        "detail_pattern": r"active_action=bbs_view_main_post.*post_id=\d+",
-        "exclude_pattern": None,
-        # このサイトの記事詳細ページは、本文(タイトル含む)をJavaScriptで
-        # 後から読み込む作りになっており、静的HTMLの時点では中身が空。
-        # そのため詳細ページは開かず、一覧ページに表示されているリンクの
-        # 文字列そのものを記事タイトルとして使う。
-        "title_from_hub_link": True,
     },
 ]
 
