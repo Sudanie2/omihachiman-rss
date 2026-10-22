@@ -14,6 +14,7 @@
   - 安土城考古博物館長のつぶやき(Bloggerブログ / Atom形式)
   - 安土文芸の郷 ニュース＆お知らせ
   - 安土文芸の郷 事業・活動のご報告
+  - ヴォーリズ遺産を守る市民の会(WordPress.comのブログ。要約は保存しない)
 
 配信形式はサイトによって異なる(RSS 2.0 / RSS 1.0(RDF) / Atom)ため、
 形式を問わず記事を取り出せるようにしている。
@@ -98,6 +99,14 @@ RSS_SOURCES = [
         "name": "安土文芸の郷",
         "url": "http://bungei.or.jp/files/rss/block70.xml",  # 事業・活動のご報告
         "title_filter": None,
+    },
+    {
+        "name": "ヴォーリズ遺産を守る市民の会",
+        # WordPress.com の標準フィード。robots.txt でも禁止されていない。
+        "url": "https://voriesisan.wordpress.com/feed/",
+        "title_filter": None,
+        # タイトルとリンクのみを扱い、本文の要約は保存しない。
+        "no_summary": True,
     },
 ]
 
