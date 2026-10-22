@@ -15,6 +15,7 @@
   - 安土文芸の郷 ニュース＆お知らせ
   - 安土文芸の郷 事業・活動のご報告
   - ヴォーリズ遺産を守る市民の会(WordPress.comのブログ。要約は保存しない)
+  - 特定非営利活動法人Since(お知らせ。要約は保存しない)
 
 配信形式はサイトによって異なる(RSS 2.0 / RSS 1.0(RDF) / Atom)ため、
 形式を問わず記事を取り出せるようにしている。
@@ -104,6 +105,14 @@ RSS_SOURCES = [
         "name": "ヴォーリズ遺産を守る市民の会",
         # WordPress.com の標準フィード。robots.txt でも禁止されていない。
         "url": "https://voriesisan.wordpress.com/feed/",
+        "title_filter": None,
+        # タイトルとリンクのみを扱い、本文の要約は保存しない。
+        "no_summary": True,
+    },
+    {
+        "name": "特定非営利活動法人Since",
+        # WordPress の「お知らせ」フィード。robots.txt でも禁止されていない。
+        "url": "https://since.or.jp/news/feed/",
         "title_filter": None,
         # タイトルとリンクのみを扱い、本文の要約は保存しない。
         "no_summary": True,
