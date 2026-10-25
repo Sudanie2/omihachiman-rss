@@ -17,6 +17,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+from exclusions import is_excluded_city_item
 from common import (
     dateless_baselines,
     description_allowed,
@@ -177,6 +178,8 @@ def main():
 
     # 掲載対象外のURL(個別店舗の紹介など)を取り除く
     items = [it for it in items if not is_excluded_link(it.get("link", ""))]
+    # 市公式サイトの入札・調達/職員採用/任用職員に関する記事を取り除く
+    items = [it for it in items if not is_excluded_city_item(it)]
     excluded = before - len(items)
 
     # 日付を持たないサイトの、初回巡回で見つかった過去記事(公開日不明)を取り除く
