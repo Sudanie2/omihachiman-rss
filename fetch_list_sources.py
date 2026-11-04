@@ -79,6 +79,24 @@ LIST_SOURCES = [
         "link_pattern": r"/news/\d+\.html",
         "drop_query": [],
     },
+    # 近江八幡市社会福祉協議会「お知らせ」ページ(複数の掲載枠をまとめて表示している)。
+    # 公式のRSSは枠ごとに分かれており、広報紙の枠(b_id=149)の最新号が
+    # 反映されないことがあるため、一覧ページから広報紙の記事だけを補う。
+    # (お知らせの枠 b_id=614 の記事はRSSで取得できているので対象外)
+    {
+        "name": "近江八幡市社会福祉協議会",
+        "base": "https://ohshakyo.or.jp",
+        "url": "https://ohshakyo.or.jp/pages/176/",
+        "tags": [],
+        "tag_filter": None,
+        "link_pattern": r"/b_id=149/r_id=\d+",
+        "drop_query": [],
+        "strip_fragment": True,
+        "item_selector": "div.record",
+        "date_selector": "div.date",
+        "title_selector": "span.title",
+        "min_date": "2026-09-01",
+    },
     {
         "name": "近江八幡地域勤労者福祉サービスセンター",
         "base": "https://www.workpia-omi-hachiman.jp",
@@ -160,6 +178,18 @@ LIST_SOURCES = [
             "https://shigaplusone.jp/post/kokyo_sakamai/",
             "https://shigaplusone.jp/information/202604_208/",
         ],
+    },
+    # 広報おうみはちまん(市公式サイトの年度ページ)。号ごとに見出しとPDFが並ぶ。
+    # マイ広報紙(mykoho.jp)はロボットからのアクセスだと一覧が表示されず、
+    # 取得できないことがあるため、市の年度ページから号の追加を検知する。
+    # 年度が変わると(毎年4月)ページのURLが変わるため、その時に url を差し替える。(要確認)
+    {
+        "name": "広報おうみはちまん",
+        "kind": "issue_pdf",
+        "base": "https://www.city.omihachiman.lg.jp",
+        "url": "https://www.city.omihachiman.lg.jp/soshiki/hisho_koho/3/3/41373.html",
+        "heading_pattern": r"広報おうみはちまん\d{1,2}月号",
+        "min_date": "2026-09-01",
     },
     # 広報おうみはちまん(マイ広報紙 mykoho.jp)のバックナンバー一覧。
     # ページ上部の「最新号の記事を全部見る」も同じURLを指すため、
@@ -277,7 +307,70 @@ def split_tag_and_title(text: str, tags):
     return None, text
 
 
+def process_issue_page(source, known, seen):
+    """
+    広報紙の号ごとに見出し(h2)とPDFリンクが並ぶページ用。
+    見出し「広報おうみはちまん11月号」ごとに1件とし、リンクは各号の先頭のPDF(全ページ版)にする。
+    掲載日は、PDFのファイル名(例: 202611allmihiraki.pdf)の「年・月」から、その月の1日とする。
+    """
+    rp = get_robot_parser(source["base"])
+    if not rp.can_fetch(USER_AGENT, source["url"]):
+        print(f"[{source['name']}] robots.txtでブロックされているため中止します。")
+        return [], {}
+
+    soup = BeautifulSoup(decode_response(fetch_bytes(source["url"])), "html.parser")
+    head_re = re.compile(source["heading_pattern"])
+    ts = now_iso()
+    new_items = []
+    known_updates = {}
+    matched = 0
+
+    for h in soup.find_all("h2"):
+        title = h.get_text("", strip=True)
+        if not head_re.search(title):
+            continue
+        # 見出しの次に現れる最初のPDFリンクを、その号のリンクとする
+        a = None
+        for sib in h.find_all_next():
+            if sib.name == "h2" and sib is not h:
+                break
+            if sib.name == "a" and sib.get("href", "").lower().endswith(".pdf"):
+                a = sib
+                break
+        if a is None:
+            continue
+        matched += 1
+        url = urljoin(source["url"], a["href"])
+        m = re.search(r"(20\d{2})(0[1-9]|1[0-2])", url.rsplit("/", 1)[-1])
+        if not m:
+            continue
+        pub_dt = datetime(int(m.group(1)), int(m.group(2)), 1, tzinfo=JST)
+        if source.get("min_date"):
+            y, mo, d = (int(x) for x in source["min_date"].split("-"))
+            if pub_dt < datetime(y, mo, d, tzinfo=JST):
+                continue
+        if url in known or url in seen:
+            continue
+        seen.add(url)
+        known_updates[url] = {"title": title, "first_seen": ts}
+        new_items.append(
+            {
+                "title": title,
+                "link": url,
+                "source": source["name"],
+                "description": "",
+                "pubDate": pub_dt.strftime("%a, %d %b %Y %H:%M:%S %z"),
+            }
+        )
+
+    if matched == 0:
+        print(f"[{source['name']}] 対象の記事が見つかりません。ページ構造が変わった可能性があります。")
+    return new_items, known_updates
+
+
 def process_source(source, known, seen, session):
+    if source.get("kind") == "issue_pdf":
+        return process_issue_page(source, known, seen)
     rp = get_robot_parser(source["base"])
     if not rp.can_fetch(USER_AGENT, source["url"]):
         print(f"[{source['name']}] robots.txtでブロックされているため中止します。")
@@ -340,6 +433,9 @@ def process_source(source, known, seen, session):
 
         matched += 1
         url = clean_url(url, source["drop_query"])
+        if source.get("strip_fragment"):
+            # 「#…」と末尾の「/」を除く(RSSで取得済みの同じ記事と同一のURLにそろえる)
+            url = re.sub(r"/?(#.*)?$", "", url)
         if url in source.get("ignore_urls", []):
             continue
         if url in known or url in seen:
