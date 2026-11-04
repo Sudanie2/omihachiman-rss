@@ -10,6 +10,7 @@
   - 近江八幡市立資料館・かわらミュージアム
   - 日牟禮八幡宮(要約は保存しない)
   - 近江八幡市社会福祉協議会
+  - 近江八幡市文化会館
   - シガブンシンブン(近江八幡市で検索した結果のみ)
   - 安土城考古博物館長のつぶやき(Bloggerブログ / Atom形式)
   - 安土文芸の郷 ニュース＆お知らせ
@@ -113,6 +114,15 @@ RSS_SOURCES = [
         "name": "特定非営利活動法人Since",
         # WordPress の「お知らせ」フィード。robots.txt でも禁止されていない。
         "url": "https://since.or.jp/news/feed/",
+        "title_filter": None,
+        # タイトルとリンクのみを扱い、本文の要約は保存しない。
+        "no_summary": True,
+    },
+    {
+        "name": "近江八幡市文化会館",
+        # WordPress の標準フィード。「みつける一覧」(/blog/)と同じ記事
+        # (お知らせ・イベント・公演)が配信される。robots.txt でも禁止されていない。
+        "url": "https://omi8man-ch.jp/feed/",
         "title_filter": None,
         # タイトルとリンクのみを扱い、本文の要約は保存しない。
         "no_summary": True,
