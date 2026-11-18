@@ -14,7 +14,7 @@ import hashlib
 import json
 import re
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from exclusions import is_excluded_city_item
@@ -93,6 +93,40 @@ def item_date(it):
     if abs((dt - datetime.now(timezone.utc)).total_seconds()) < 5:
         return datetime(1970, 1, 1, tzinfo=timezone.utc)
     return dt
+
+
+def clamp_future_dates(items, known):
+    """
+    未来の日付(明日より先)になっている記事の日付を、最初に見つけた日に直す。
+    イベントの開催日や、年・月が混ざった題名を掲載日と取り違えた場合に、
+    「2099年」のような日付が公開ページに出るのを防ぐ。
+    最初に見つけた日(known_links.json の first_seen)が分からない場合は、今日の日付にする。
+    直した日付は rss_items.json にも保存されるので、毎回変わることはない。
+    """
+    limit = datetime.now(timezone.utc) + timedelta(days=1)
+    jst = timezone(timedelta(hours=9))
+    fixed = 0
+    for it in items:
+        text = (it.get("pubDate") or "").strip()
+        if not text:
+            continue
+        dt = parse_pubdate(text)
+        if dt <= limit:
+            continue
+        rec = known.get(it.get("guid") or "") or known.get(it.get("link") or "") or {}
+        first_seen = rec.get("first_seen") if isinstance(rec, dict) else None
+        try:
+            base = datetime.fromisoformat(first_seen) if first_seen else datetime.now(timezone.utc)
+        except ValueError:
+            base = datetime.now(timezone.utc)
+        if base.tzinfo is None:
+            base = base.replace(tzinfo=timezone.utc)
+        local = base.astimezone(jst)
+        it["pubDate"] = datetime(local.year, local.month, local.day, tzinfo=jst).strftime(
+            "%a, %d %b %Y %H:%M:%S %z"
+        )
+        fixed += 1
+    return fixed
 
 
 def dedupe(items, known=None):
@@ -188,6 +222,11 @@ def main():
     backlog = len(items) - len(kept)
     items = kept
 
+    # 未来の日付になっている記事の日付を直す
+    future_fixed = clamp_future_dates(items, known)
+    if future_fixed:
+        print(f"未来の日付の記事 {future_fixed}件 の日付を、最初に見つけた日に直しました。")
+
     # 掲載対象期間より古い記事(および日付不明の記事)を取り除く
     kept = [it for it in items if item_date(it) >= FEED_MIN_DATE]
     removed = len(items) - len(kept)
@@ -202,7 +241,7 @@ def main():
     items.sort(key=item_date, reverse=True)
 
     # 整理結果をデータ側にも反映する(次回以降の処理を軽くする)
-    if before != len(items) or stripped:
+    if before != len(items) or stripped or future_fixed:
         save_json(FEED_ITEMS_FILE, items)
         if stripped:
             print(f"要約(元記事の文章)を {stripped}件 取り除きました。")
