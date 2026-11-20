@@ -24,18 +24,6 @@ on:
         description: "掲載枠から消えた既知記事を復元する(復旧用・複数回実行可)"
         type: boolean
         default: false
-      reset_omi8_stories:
-        description: "観光サイトの記事を削除し新着順一覧から取り直す(1回限り)"
-        type: boolean
-        default: false
-      fix_blogger_links:
-        description: "Bloggerのコメント欄リンク誤登録を修正する(1回限り)"
-        type: boolean
-        default: false
-      reset_library_titles:
-        description: "図書館だより記事のタイトルを一覧ページの文字で取り直す(1回限り)"
-        type: boolean
-        default: false
 permissions:
   contents: write
 # 実行が重なるとpushが競合するため、同時に1つしか動かさない
@@ -45,83 +33,73 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
-          python-version: "3.11"
+          python-version: "3.12"
+          cache: pip
       - name: Install dependencies
         run: |
-          pip install requests beautifulsoup4
+          pip install -r requirements.txt
       - name: Rebuild hub list (monthly or manual)
         if: github.event.schedule == '0 17 1 * *' || github.event.inputs.rebuild_hubs == 'true'
         run: |
           set -euo pipefail
-          python discover_hubs.py
-      - name: Reset omi8.com stories (manual only, one-time)
-        if: github.event.inputs.reset_omi8_stories == 'true'
-        run: |
-          python reset_omi8_stories.py
-      - name: Fix Blogger comment-feed links (manual only, one-time)
-        if: github.event.inputs.fix_blogger_links == 'true'
-        run: |
-          python fix_blogger_comment_links.py
-      - name: Reset library titles (manual only, one-time)
-        if: github.event.inputs.reset_library_titles == 'true'
-        run: |
-          python reset_library_titles.py
+          python scripts/discover_hubs.py
       - name: Collect city top-page lists (JSON)
         run: |
-          python fetch_city_lists.py
+          python scripts/fetch_city_lists.py
       - name: Collect from city website
         run: |
-          python watch_hubs_and_generate_rss.py
+          python scripts/watch_hubs_and_generate_rss.py
       - name: Collect from RSS sources
         run: |
-          python fetch_rss_sources.py
+          python scripts/fetch_rss_sources.py
       - name: Collect from hub-watch sources
         run: |
-          python watch_hub_sources.py
+          python scripts/watch_hub_sources.py
       - name: Collect from Shiga Police page
         run: |
-          python fetch_shiga_police_omihachiman.py
+          python scripts/fetch_shiga_police_omihachiman.py
       - name: Collect from list pages
         run: |
-          python fetch_list_sources.py
+          python scripts/fetch_list_sources.py
       - name: Collect Tabelog new-open shops
         run: |
-          python fetch_tabelog_newopen.py
+          python scripts/fetch_tabelog_newopen.py
       - name: Collect Omihachiman council video
         run: |
-          python fetch_council_video.py
+          python scripts/fetch_council_video.py
       - name: Collect NO-MA archive exhibitions
         run: |
-          python fetch_noma_archive.py
+          python scripts/fetch_noma_archive.py
       - name: Collect Omihachiman official YouTube channel
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: |
-          python fetch_youtube_channel.py
+          python scripts/fetch_youtube_channel.py
       - name: Collect from section pages
         run: |
-          python fetch_section_links.py
+          python scripts/fetch_section_links.py
       - name: Repair existing titles and dates (manual only)
         if: github.event.inputs.repair_titles == 'true'
         run: |
-          python repair_titles.py
+          python tools/repair_titles.py
       - name: Rebuild items from known links (manual only)
         if: github.event.inputs.rebuild_items == 'true'
         run: |
-          python rebuild_from_known.py
+          python tools/rebuild_from_known.py
       - name: Build RSS feed
         run: |
           set -euo pipefail
-          python build_feed.py
+          python scripts/build_feed.py
       - name: Commit and Push RSS
         run: |
-          git add hubs.json hub_cursor.json dept_names.json known_links.json rss.xml rss_items.json feed_fingerprint.txt
+          git add hubs.json dept_names.json known_links.json rss.xml rss_items.json feed_fingerprint.txt sitemap.xml
           if git diff --quiet --cached; then
             echo "No changes in rss.xml. Skipping commit."
             exit 0
@@ -145,3 +123,20 @@ jobs:
           git reset --hard origin/main
           echo "今回の更新は破棄しました。次回の実行で改めて収集されます。"
           exit 0
+
+      # 収集スクリプトは1つが失敗しても他を止めないため、失敗はここでまとめて確認する。
+      # 失敗があれば実行を「失敗」にして、GitHubのメール通知で気づけるようにする。
+      - name: Report collection failures
+        if: always()
+        run: |
+          if [ -s failures.log ]; then
+            {
+              echo "### 収集に失敗したスクリプト"
+              echo '```'
+              cat failures.log
+              echo '```'
+            } >> "$GITHUB_STEP_SUMMARY"
+            echo "::error::収集に失敗したスクリプトがあります。上の注釈と要約を確認してください。"
+            exit 1
+          fi
+          echo "収集の失敗はありませんでした。"

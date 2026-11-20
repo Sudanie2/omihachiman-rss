@@ -18,6 +18,7 @@ from datetime import datetime
 import requests
 
 from common import (
+    run_main,
     load_json,
     merge_new_items,
     normalize_url,
@@ -92,8 +93,4 @@ def main():
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except Exception as e:
-        print(f"[ERROR] 予期しないエラー: {e}")
-        sys.exit(0)
+    run_main(main, "fetch_youtube_channel.py")

@@ -26,7 +26,9 @@ from urllib.parse import urljoin, urlparse, unquote
 
 from bs4 import BeautifulSoup, NavigableString, Tag
 
+from sources import SECTION_SOURCES
 from common import (
+    run_main,
     fetch_bytes,
     decode_response,
     get_robot_parser,
@@ -39,20 +41,6 @@ from common import (
     USER_AGENT,
 )
 
-SECTION_SOURCES = [
-    {
-        "name": "安土学区まちづくり協議会",
-        "base": "https://www.zd.ztv.ne.jp",
-        "url": "https://www.zd.ztv.ne.jp/azuchi-cc/index.html",
-        # この文字列の間にあるリンクを対象にする(表記ゆれに備え候補を複数持つ)
-        # 「まち協．お知らせ」という文字の目印は実在しないことが判明(実HTMLで確認)。
-        # 見出しが画像("images/mayikyo-osirase.gif")になっているため、そちらを使う。
-        "start_marker_img_src": ["mayikyo-osirase", "matikyo-osirase"],
-        "end_markers": ["連絡事項2", "連絡事項２"],
-        # 対象とする拡張子(イベント告知は画像やPDFの場合もある)
-        "allowed_ext": [".pdf", ".html", ".htm", ".jpg", ".jpeg", ".png", ".gif", ""],
-    },
-]
 
 # タイトルが取れない時にファイル名から作る際、除去する記号
 FILENAME_CLEAN = re.compile(r"[-_]+")
@@ -285,8 +273,4 @@ def main():
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except Exception as e:
-        print(f"[ERROR] 予期しないエラー: {e}")
-        sys.exit(0)
+    run_main(main, "fetch_section_links.py")

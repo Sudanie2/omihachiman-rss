@@ -1,0 +1,310 @@
+(function () {
+  const CITY_HOST = 'www.city.omihachiman.lg.jp';
+
+  const SOURCE_BY_HOST = {
+    'www.city.omihachiman.lg.jp': '近江八幡市公式サイト',
+    'omihachiman.keizai.biz': '近江八幡経済新聞',
+    'higashiomi-omihachiman.goguynet.jp': '号外NET',
+    'www.omi8.com': '近江八幡市観光サイト',
+    'www.kenkou1.com': '近江八幡市立総合医療センター',
+    'www.pref.shiga.lg.jp': '近江八幡警察署(滋賀県警)',
+    'library.city.omihachiman.shiga.jp': '近江八幡市立図書館',
+    'bungei.or.jp': '安土文芸の郷',
+    '8cci.com': '近江八幡商工会議所',
+    'taneya.jp': 'ラコリーナ近江八幡',
+    'tabelog.com': '食べログ(新規オープン)',
+    'www.ohmitetudo.co.jp': '八幡山ロープウェー',
+    'himure.jp': '日牟禮八幡宮',
+    'www.workpia-omi-hachiman.jp': '近江八幡地域勤労者福祉サービスセンター',
+    'omihachiman-classicfes.jp': '近江八幡音楽祭',
+    'www.youtube.com': '近江八幡市公式YouTubeチャンネル',
+    'omihachiman.media-streaming.jp': '近江八幡市議会 インターネット中継',
+    'no-ma.jp': 'ボーダレス・アートミュージアムNO-MA',
+    'no-maarchive.com': 'NO-MA ARCHIVE(展覧会情報)',
+    'ohshakyo.or.jp': '近江八幡市社会福祉協議会',
+    'www.zd.ztv.ne.jp': '安土学区まちづくり協議会',
+    'azuchi-shiga.com': '安土学区まちづくり協議会',
+    'azuchi-museum.blogspot.com': '安土城考古博物館長のつぶやき',
+    'www.shiga-bunkazai.jp': 'シガブンシンブン(滋賀県文化財保護協会)',
+    'www.azuchi-museum.or.jp': '安土城考古博物館',
+    'www.omihachiman-shiryoukan-kawara.jp': '近江八幡市立資料館・かわらミュージアム',
+    'www.omi8man-kenkofureai.jp': '近江八幡市立健康ふれあい公園',
+    'www.8cci.com': '近江八幡商工会議所',
+    'www.bungei.or.jp': '安土文芸の郷',
+  };
+
+  function sourceFromUrl(url) {
+    try {
+      const host = new URL(url).hostname;
+      return SOURCE_BY_HOST[host] || host;
+    } catch (e) {
+      return '不明';
+    }
+  }
+  // 市の「目的別で探す」に倣った分類タグ。
+  // 各記事にはこのうち最大2つまで付ける。「すべて」「イベント情報」はこの数に含めない。
+  // 市の「目的別で探す」9項目を土台に、実際に集まる記事の内容へ合わせて拡張した分類。
+  // 1記事につき最大3つまで付ける。「すべて」「イベント情報」はこの数に含めない。
+  const TOPIC_TAGS = [
+    // --- 市の「目的別で探す」に対応する9項目 ---
+    { key: 'kns',       label: '結婚･妊娠･出産', words: ['結婚', '婚姻', '妊娠', '出産', '産後', '不妊', '母子健康手帳', '乳児', '新生児', '婚活', '多胎児', '育児'] },
+    { key: 'kosodate',  label: '子育て･教育',   words: ['子育て', '保育', '幼稚園', 'こども園', '児童', '学童', '小学校', '中学校', '学校', '教育', '給食', '子ども', 'こども', '青少年', 'PTA', '就学', '入学', '親子', '乳幼児'] },
+    { key: 'gomi',      label: 'ごみ･リサイクル', words: ['ごみ', 'ゴミ', 'リサイクル', '分別', '廃棄物', '粗大', '清掃', '不法投棄', '資源回収', '生ごみ'] },
+    { key: 'juminhyou', label: '住民票･証明',   words: ['住民票', '証明書', 'マイナンバー', 'マイナ', '戸籍', '印鑑', 'パスポート', 'コンビニ交付', '各種手続'] },
+    { key: 'kenkoiryo', label: '健康･医療',     words: ['健康', '医療', '検診', '健診', '予防接種', 'ワクチン', '感染', '保健', '病院', '診療', 'こころ', 'がん', '献血', '食育', '医療センター', '感染症', '豚熱', '衛生', 'イノシシ', '不育症'] },
+    { key: 'hikkoshi',  label: '引っ越し･住まい', words: ['引っ越し', '転入', '転出', '転居', '住まい', '住宅', '空き家', '建築', '耐震', '上下水道', '水道', '下水', '排水', '道路', '都市計画', 'マンション', '移住', 'バス', '運行'] },
+    { key: 'okuyami',   label: 'おくやみ',       words: ['おくやみ', '死亡届', '葬儀', '相続', '火葬', '墓地', '埋葬', '遺族'] },
+    { key: 'kaigo',     label: '高齢･障がい･介護', words: ['高齢', '介護', '障がい', '障害', '福祉', '年金', 'シニア', '認知症', '地域包括', '生活支援', '社協', '民生委員', 'グループホーム', '施設稼働'] },
+    { key: 'zeikin',    label: '税金',           words: ['税金', '市民税', '固定資産税', '軽自動車税', '納税', '課税', '確定申告', '控除', 'ふるさと納税', '国民健康保険', '保険料', '家計', '給付金', 'チケット'] },
+
+    // --- 実際の記事内容に合わせて追加した6項目 ---
+    { key: 'kanko',     label: '観光･おでかけ',   words: ['観光', 'スポット', 'めぐり', '散策', 'モデルコース', '名所', 'ロープウェー', '八幡堀', '近江牛', '土産', '旅', 'ガイド', 'まち歩き', '御城印', '鉄道', '列車', 'お迎え'] },
+    { key: 'bunka',     label: '文化･歴史･学び', words: ['文化財', '歴史', '史跡', '城', '資料館', '博物館', '図書館', '講演', '文芸', '美術', '郷土', '伝統', '遺跡', '発掘', '展示', '講座', '生涯学習', '図書', '信長', '安土城', 'ヴォーリズ', '神社', '奉納', '音楽', 'コンサート', 'リサイタル', '藝能', '芸能'] },
+    { key: 'shizen',    label: '自然･環境',       words: ['環境', '自然', '琵琶湖', '西の湖', 'ヨシ', '生き物', '植物', 'SDGs', '有機農業', '景観', '公園', '緑地', '農業', '生態'] },
+    { key: 'shigoto',   label: 'しごと･事業者',   words: ['事業者', '補助金', '助成金', '融資', '創業', '起業', '商工', '企業', '就職', '求人', '採用', '職員募集', '販路', '中小企業', '経営', '労働', '勤労'] },
+    { key: 'bosai',     label: '防災･防犯･安全', words: ['防災', '災害', '地震', '台風', '大雨', '避難', '消防', '防犯', '詐欺', '交通安全', '警察', 'ハザード', '注意報', '警報', '不審', '安全'] },
+    { key: 'gyosei',    label: '市政･相談',       words: ['議会', '審議会', '委員会', '計画', '会議録', '議事録', 'パブリックコメント', '条例', '入札', '指定管理', '市長', '統計', '人口', '公募', '市政', '相談', '消費生活', 'アンケート', '選挙', '人権', '男女共同参画', '協働', 'パートナーシップ', '公開', '交際費', '視察', '協定', '予算', '施策', '要望', '協力隊', '広報', 'プロモーション', '啓発', '移転', 'スマート申請', '調査', '定例会', '本会議', '初日', '代表質問', '一般質問', '最終日', 'カレンダー', 'できごと', 'リポーター', 'Information', 'informativo'] },
+  ];
+
+  const EVENT_TAG = { key: 'event', label: 'イベント情報' };
+
+  // イベント情報とみなす手がかり
+  const EVENT_WORDS = ['イベント', 'まつり', '祭', 'フェス', '開催', '講座', '教室', '展', 'ツアー', 'コンサート', '体験', 'ワークショップ', '募集', '大会', '上映', 'マルシェ'];
+  // このサイトからの記事は地域のイベント・話題として扱う
+  const EVENT_HOSTS = new Set([
+    'www.omi8.com', 'omihachiman.keizai.biz', 'higashiomi-omihachiman.goguynet.jp',
+    'taneya.jp', 'bungei.or.jp', 'www.bungei.or.jp',
+    'azuchi-museum.blogspot.com', 'www.omihachiman-shiryoukan-kawara.jp',
+    'www.zd.ztv.ne.jp', 'azuchi-shiga.com', 'www.omi8man-kenkofureai.jp',
+  ]);
+
+  let deptNames = {};  // 部署slug -> 課名
+
+  function sourceLabelOf(source, dept) {
+    // 市公式サイトは「近江八幡市公式サイト（○○課）」とくくらず、担当部署を正確に示す。
+    //   生活環境課(課・室など) -> 近江八幡市HP生活環境課
+    //   文化会館(施設名)       -> 近江八幡市文化会館
+    if (source !== '近江八幡市公式サイト') return source;
+    if (!dept) return '近江八幡市HP';
+    if (/(課|室|局|係|グループ|担当|本部|事務局)$/.test(dept)) {
+      return `近江八幡市HP${dept}`;
+    }
+    return `近江八幡市${dept}`;
+  }
+
+  function departmentOf(url) {
+    try {
+      const u = new URL(url);
+      if (u.hostname !== CITY_HOST) return null;
+      const m = u.pathname.match(/^\/soshiki\/([^/]+)\//);
+      return m ? (deptNames[m[1]] || null) : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function isEventItem(url, title) {
+    try {
+      const u = new URL(url);
+      if (EVENT_HOSTS.has(u.hostname)) return true;
+      if (u.hostname === CITY_HOST && u.pathname.startsWith('/event/')) return true;
+    } catch (e) { /* fall through */ }
+    return EVENT_WORDS.some((w) => title.includes(w));
+  }
+
+  function topicTagsOf(url, title, dept, summary) {
+    // タイトル・URL・課名・要約を手がかりに、当てはまるタグを最大3つ選ぶ。
+    // 要約(本文冒頭)は偶然の一致が起きやすいため、タイトル等より軽く扱い、
+    // 要約だけが根拠のタグは採用しない。
+    //   例:「ふるさと音楽祭」の要約に「ふるさと納税寄附金を活用し」とあり税金と誤判定
+    //   例:「災害ボランティア」の要約に「災害ごみの搬出」とありごみと誤判定
+    let path = '';
+    try { path = decodeURIComponent(new URL(url).pathname); } catch (e) { /* noop */ }
+    const strong = `${title} ${path} ${dept || ''}`;   // 確度の高い手がかり
+    const weak = summary || '';                        // 補助的な手がかり
+
+    const scored = [];
+    for (const tag of TOPIC_TAGS) {
+      let strongScore = 0;
+      let weakScore = 0;
+      for (const w of tag.words) {
+        if (strong.includes(w)) strongScore += 1;
+        else if (weak.includes(w)) weakScore += 1;
+      }
+      // タイトル等に根拠がないタグは付けない
+      if (strongScore > 0) scored.push({ tag, score: strongScore * 10 + weakScore });
+    }
+    scored.sort((a, b) => b.score - a.score);
+    return scored.slice(0, 3).map((s) => s.tag);
+  }
+
+  function formatDay(date) {
+    return date.toLocaleDateString('ja-JP', {
+      timeZone: 'Asia/Tokyo', year: 'numeric', month: 'long', day: 'numeric', weekday: 'short'
+    });
+  }
+
+  let allItems = [];
+  let activeFilter = 'all';
+  let searchQuery = '';
+  let currentPage = 1;
+  const PAGE_SIZE = 200;
+
+  function render() {
+    const content = document.getElementById('content');
+    let filtered = activeFilter === 'all'
+      ? allItems
+      : allItems.filter((it) => it.tags.some((t) => t.key === activeFilter));
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase();
+      filtered = filtered.filter((it) =>
+        it.title.toLowerCase().includes(q)
+        || it.sourceLabel.toLowerCase().includes(q)
+        || it.summary.toLowerCase().includes(q)
+      );
+    }
+
+    document.getElementById('item-count').textContent = `${filtered.length}件表示中`;
+
+    if (filtered.length === 0) {
+      content.innerHTML = '<div class="state">該当するお知らせはまだありません。</div>';
+      return;
+    }
+
+    const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+    if (currentPage > totalPages) currentPage = totalPages;
+    const pageStart = (currentPage - 1) * PAGE_SIZE;
+    const pageItems = filtered.slice(pageStart, pageStart + PAGE_SIZE);
+
+    // 日付ごとにグループ化(ページ内のみ)
+    const groups = new Map();
+    for (const it of pageItems) {
+      const key = formatDay(it.date);
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(it);
+    }
+
+    let html = '';
+    for (const [day, items] of groups) {
+      html += `<section class="day-group"><h2 class="day-label">${day}</h2><ul class="items">`;
+      for (const it of items) {
+        html += `
+          <li class="item cat-${it.tags[0] ? it.tags[0].key : 'other'}">
+            <span class="bar" aria-hidden="true"></span>
+            <div>
+              <span class="tag">${it.tags.map((t) => escapeHtml(t.label)).join(' / ') || 'その他'}</span>
+              <a class="title" href="${it.link}" target="_blank" rel="noopener">${escapeHtml(it.title)}</a>
+              ${it.summary ? `<p class="summary">${escapeHtml(it.summary)}</p>` : ''}
+              <div class="url">出典：${escapeHtml(it.sourceLabel)}</div>
+            </div>
+          </li>`;
+      }
+      html += `</ul></section>`;
+    }
+
+    if (totalPages > 1) {
+      html += '<nav class="pager" aria-label="ページ送り">';
+      for (let p = 1; p <= totalPages; p++) {
+        html += `<button type="button" class="page-btn" data-page="${p}" aria-current="${p === currentPage ? 'page' : 'false'}">${p}</button>`;
+      }
+      html += '</nav>';
+    }
+
+    content.innerHTML = html;
+
+    if (totalPages > 1) {
+      content.querySelectorAll('.page-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          currentPage = Number(btn.dataset.page);
+          render();
+          content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+    }
+  }
+
+  function escapeHtml(s) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function buildFilters() {
+    const counts = {};
+    for (const it of allItems) {
+      for (const t of it.tags) {
+        counts[t.key] = (counts[t.key] || 0) + 1;
+      }
+    }
+    const options = [
+      { key: 'all', label: 'すべて' },
+      EVENT_TAG,
+      ...TOPIC_TAGS,
+    ].filter((o) => o.key === 'all' || counts[o.key] > 0);
+
+    const nav = document.getElementById('filters');
+    nav.innerHTML = '';
+    for (const opt of options) {
+      const btn = document.createElement('button');
+      btn.textContent = opt.label;
+      btn.setAttribute('aria-pressed', String(opt.key === activeFilter));
+      btn.addEventListener('click', () => {
+        activeFilter = opt.key;
+        currentPage = 1;
+        [...nav.children].forEach((b) => b.setAttribute('aria-pressed', 'false'));
+        btn.setAttribute('aria-pressed', 'true');
+        render();
+      });
+      nav.appendChild(btn);
+    }
+  }
+
+  function fetchJsonSafe(path) {
+    // manual_items.json はまだ存在しない場合があるため、失敗時は空配列として扱う
+    return fetch(path, { cache: 'no-store' })
+      .then((res) => (res.ok ? res.json() : []))
+      .catch(() => []);
+  }
+
+  Promise.all([
+    fetchJsonSafe('./rss_items.json'),
+    fetchJsonSafe('./manual_items.json'),
+    fetchJsonSafe('./dept_names.json'),
+  ])
+    .then(([rssData, manualData, deptData]) => {
+      deptNames = (deptData && !Array.isArray(deptData)) ? deptData : {};
+      if (rssData.length === 0 && manualData.length === 0) {
+        throw new Error('情報を取得できませんでした');
+      }
+
+      const combined = [...rssData, ...manualData].map((it) => {
+        const source = it.source || sourceFromUrl(it.link);
+        const dept = departmentOf(it.link);
+        const tags = [];
+        if (isEventItem(it.link, it.title)) tags.push(EVENT_TAG);
+        tags.push(...topicTagsOf(it.link, it.title, dept, it.description || ''));
+        return {
+          title: it.title,
+          link: it.link,
+          date: new Date(it.pubDate),
+          summary: (it.description || '').trim(),
+          tags,
+          sourceLabel: sourceLabelOf(source, dept),
+        };
+      });
+
+      combined.sort((a, b) => b.date - a.date);
+      allItems = combined;
+
+      buildFilters();
+      document.getElementById('search-box').addEventListener('input', (e) => {
+        searchQuery = e.target.value.trim();
+        currentPage = 1;
+        render();
+      });
+      render();
+    })
+    .catch((err) => {
+      document.getElementById('content').innerHTML =
+        '<div class="state">情報を取得できませんでした。ページを再読み込みするか、しばらく経ってからお試しください。</div>';
+      console.error(err);
+    });
+})();

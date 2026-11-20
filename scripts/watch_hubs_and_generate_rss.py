@@ -15,9 +15,10 @@ hubs.json に登録された一覧ページ(全体一覧・部署トップ・小
 分野別(/gyosei/ 行政情報、/kurashi/ くらし等)の階層も自動的に取り込まれ、
 新しい分野やページが追加されても追従できる。
 
-1回の実行で巡回するハブ数には上限を設け、続きは次回に持ち越す(サーバー負荷への配慮)。
+1回の実行で巡回するハブ数には上限を設け、残りは次回以降に回す(サーバー負荷への配慮)。
 """
 
+import os
 import re
 import sys
 import time
@@ -28,6 +29,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from common import (
+    run_main,
     fetch_bytes,
     decode_response,
     extract_page_date,
@@ -49,7 +51,6 @@ BASE_URL = "https://www.city.omihachiman.lg.jp"
 SOURCE_NAME = "近江八幡市公式サイト"
 
 HUBS_FILE = Path("hubs.json")
-HUB_CURSOR_FILE = Path("hub_cursor.json")
 
 # 1回の実行あたりの上限(サーバー負荷と実行時間の抑制)
 MAX_HUBS_PER_RUN = 300
@@ -89,6 +90,25 @@ def is_hub_page(url):
     return bool(HUB_PATH_PATTERN.search(path)) or path.endswith("/")
 
 
+def select_hub_chunk(hubs, now=None):
+    """
+    今回巡回するハブの区画を返す: (対象ハブ, 区画番号, 区画数)。
+
+    GitHub Actionsは2時間おきに動くため、「2時間ごとに1つ進む番号」を区画数で
+    割った余りで区画を決める。1日8回の実行で全区画をひととおり回れる。
+    環境変数 HUB_SLOT を指定すると区画番号を固定できる(手動確認用)。
+    """
+    chunks = max(1, -(-len(hubs) // MAX_HUBS_PER_RUN))  # 切り上げ
+    forced = os.environ.get("HUB_SLOT", "").strip()
+    if forced.isdigit():
+        slot = int(forced) % chunks
+    else:
+        now = time.time() if now is None else now
+        slot = int(now // 7200) % chunks
+    start = slot * MAX_HUBS_PER_RUN
+    return hubs[start:start + MAX_HUBS_PER_RUN], slot, chunks
+
+
 def main():
     hubs = load_json(HUBS_FILE, None)
     if hubs is None:
@@ -99,14 +119,10 @@ def main():
     known = load_json(KNOWN_LINKS_FILE, {})
     session = requests.Session()
 
-    # 前回の続きから巡回する(全ハブを数回に分けて回る)
-    cursor = load_json(HUB_CURSOR_FILE, {}).get("index", 0)
-    if cursor >= len(hubs):
-        cursor = 0
-    target_hubs = hubs[cursor:cursor + MAX_HUBS_PER_RUN]
-    next_cursor = cursor + len(target_hubs)
-    if next_cursor >= len(hubs):
-        next_cursor = 0
+    # 全ハブを数回に分けて巡回する。どの区画を回すかは「時刻」から決める。
+    # (以前は巡回位置をファイルに保存していたが、実行のたびにコミットが発生して
+    #  履歴が無駄に増えていたため、保存しない方式にした)
+    target_hubs, slot, chunks = select_hub_chunk(hubs)
 
     article_candidates = []
     seen_in_run = set()
@@ -194,19 +210,14 @@ def main():
         )
 
     merge_new_items(new_items, known_updates)
-    save_json(HUB_CURSOR_FILE, {"index": next_cursor})
 
     if skipped_no_date:
         print(f"[{SOURCE_NAME}] 更新日の記載が無いページ {skipped_no_date}件は掲載対象外としました。")
     print(
         f"[{SOURCE_NAME}] ハブ巡回 {len(target_hubs)}/{len(hubs)}件"
-        f"(次回は{next_cursor}件目から) / 記事候補 {len(article_candidates)}件 / 新着 {len(new_items)}件"
+        f"(区画 {slot + 1}/{chunks}) / 記事候補 {len(article_candidates)}件 / 新着 {len(new_items)}件"
     )
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except Exception as e:
-        print(f"[ERROR] 予期しないエラー: {e}")
-        sys.exit(0)
+    run_main(main, "watch_hubs_and_generate_rss.py")

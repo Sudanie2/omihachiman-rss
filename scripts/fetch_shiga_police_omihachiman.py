@@ -15,6 +15,7 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 
 from common import (
+    run_main,
     fetch_bytes,
     decode_response,
     get_robot_parser,
@@ -151,8 +152,4 @@ def main():
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except Exception as e:
-        print(f"[ERROR] 予期しないエラー: {e}")
-        sys.exit(0)
+    run_main(main, "fetch_shiga_police_omihachiman.py")
