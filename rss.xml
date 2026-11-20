@@ -6,7 +6,7 @@
     <atom:link href="https://sudanie2.github.io/omihachiman-rss/rss.xml" rel="self" type="application/rss+xml"/>
     <description>近江八幡市に関する各種公式サイトの新着情報をまとめた非公式RSSです。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 20 Nov 2026 02:12:34 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 03:09:18 +0000</lastBuildDate>
     <item>
       <title>まるで鳥？南国生まれの花「ストレリチア」。実は滋賀県が沖縄に次ぐ全国第２位の産地って知ってましたか？</title>
       <link>https://shigaplusone.jp/post/birdflower_dainaka/</link>
@@ -1244,6 +1244,12 @@
       <pubDate>Tue, 06 Oct 2026 15:00:21 +0900</pubDate>
     </item>
     <item>
+      <title>第１回近江八幡音楽祭を開催しました～日牟禮八幡宮コンサート～</title>
+      <link>https://omihachiman-classicfes.jp/news/579.html</link>
+      <guid isPermaLink="true">https://omihachiman-classicfes.jp/news/579.html</guid>
+      <pubDate>Tue, 06 Oct 2026 00:00:00 +0900</pubDate>
+    </item>
+    <item>
       <title>ガチャフェス 2026の開催について</title>
       <link>https://www.city.omihachiman.lg.jp/news/31318.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/31318.html</guid>
@@ -1284,6 +1290,18 @@
       <link>https://higashiomi-omihachiman.goguynet.jp/2026/10/05/sportsfes/</link>
       <guid isPermaLink="true">https://higashiomi-omihachiman.goguynet.jp/2026/10/05/sportsfes/</guid>
       <pubDate>Sun, 04 Oct 2026 21:39:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>第１回近江八幡音楽祭を開催しました～文芸セミナリヨコンサート～</title>
+      <link>https://omihachiman-classicfes.jp/news/577.html</link>
+      <guid isPermaLink="true">https://omihachiman-classicfes.jp/news/577.html</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>第１回近江八幡音楽祭を開催しました～八幡堀桟橋ミニコンサート～</title>
+      <link>https://omihachiman-classicfes.jp/news/575.html</link>
+      <guid isPermaLink="true">https://omihachiman-classicfes.jp/news/575.html</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 +0900</pubDate>
     </item>
     <item>
       <title>令和8年度第2回近江八幡市障害福祉計画等策定委員会の開催について</title>
@@ -2391,24 +2409,6 @@
       <title>交通事故など第三者行為による医療</title>
       <link>https://www.city.omihachiman.lg.jp/iryo/iryo/7/3097.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/iryo/iryo/7/3097.html</guid>
-      <pubDate>Wed, 02 Sep 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>近江八幡市下水道排水設備指定工事店一覧</title>
-      <link>https://www.city.omihachiman.lg.jp/kurashi/suido/1/26672.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/kurashi/suido/1/26672.html</guid>
-      <pubDate>Wed, 02 Sep 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>住民記録システムの標準化に伴う証明書の様式変更のお知らせ</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/shimin/syoumei_1/todokede/42411.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/shimin/syoumei_1/todokede/42411.html</guid>
-      <pubDate>Wed, 02 Sep 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>中村児童公園がリニューアルオープンしました</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/toshi/kouen/41711.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/toshi/kouen/41711.html</guid>
       <pubDate>Wed, 02 Sep 2026 00:00:00 +0900</pubDate>
     </item>
   </channel>
