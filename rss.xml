@@ -6,7 +6,13 @@
     <atom:link href="https://sudanie2.github.io/omihachiman-rss/rss.xml" rel="self" type="application/rss+xml"/>
     <description>近江八幡市に関する各種公式サイトの新着情報をまとめた非公式RSSです。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 20 Nov 2026 03:09:18 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 17:02:02 +0000</lastBuildDate>
+    <item>
+      <title>滋賀県指定文化財椿神社神門修理工事現場見学会のお知らせ</title>
+      <link>https://www.city.omihachiman.lg.jp/kanko/rekishi/1/42793.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/kanko/rekishi/1/42793.html</guid>
+      <pubDate>Sat, 21 Nov 2026 00:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>まるで鳥？南国生まれの花「ストレリチア」。実は滋賀県が沖縄に次ぐ全国第２位の産地って知ってましたか？</title>
       <link>https://shigaplusone.jp/post/birdflower_dainaka/</link>
@@ -2403,12 +2409,6 @@
       <title>「幻の安土城」復元プロジェクト・歴史セミナー「織田信長と城下町」</title>
       <link>https://shigaplusone.jp/information/202608_112/</link>
       <guid isPermaLink="true">https://shigaplusone.jp/information/202608_112/</guid>
-      <pubDate>Wed, 02 Sep 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>交通事故など第三者行為による医療</title>
-      <link>https://www.city.omihachiman.lg.jp/iryo/iryo/7/3097.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/iryo/iryo/7/3097.html</guid>
       <pubDate>Wed, 02 Sep 2026 00:00:00 +0900</pubDate>
     </item>
   </channel>
