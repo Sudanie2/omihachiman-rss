@@ -667,16 +667,25 @@ def is_known(key: str) -> bool:
 # failures.log に記録する。ワークフロー最後のステップがこれを読んで
 # 実行結果の要約に表示し、失敗があれば実行を「失敗」にして通知する。
 FAILURES_FILE = Path(os.environ.get("COLLECT_FAILURES_FILE", "failures.log"))
+# 失敗しても実行全体は失敗扱いにしない(警告として要約に載せるだけの)スクリプト用
+WARNINGS_FILE = Path(os.environ.get("COLLECT_WARNINGS_FILE", "warnings.log"))
 
 
-def run_main(main, name: str):
+def run_main(main, name: str, critical: bool = True):
+    """
+    main を実行し、例外が出ても外へは出さない(他の収集を止めないため)。
+    critical=True  : 失敗を failures.log に記録 → 実行全体を「失敗」にして通知する
+    critical=False : 失敗を warnings.log に記録 → 要約に警告として載せるだけ
+                     (相手サイトが自動アクセスを拒否している等、こちらで直せない場合用)
+    """
     try:
         main()
     except Exception as e:  # noqa: BLE001 - 最上位で全例外を記録する
         traceback.print_exc()
-        print(f"::error title={name} が失敗しました::{type(e).__name__}: {e}")
+        level = "error" if critical else "warning"
+        print(f"::{level} title={name} が失敗しました::{type(e).__name__}: {e}")
         try:
-            with open(FAILURES_FILE, "a", encoding="utf-8") as f:
+            with open(FAILURES_FILE if critical else WARNINGS_FILE, "a", encoding="utf-8") as f:
                 f.write(f"{name}: {type(e).__name__}: {e}\n")
         except OSError:
             pass

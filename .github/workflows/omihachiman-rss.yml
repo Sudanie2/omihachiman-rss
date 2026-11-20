@@ -129,6 +129,14 @@ jobs:
       - name: Report collection failures
         if: always()
         run: |
+          if [ -s warnings.log ]; then
+            {
+              echo "### 警告(失敗しても実行は成功扱いにしているスクリプト)"
+              echo '```'
+              cat warnings.log
+              echo '```'
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
           if [ -s failures.log ]; then
             {
               echo "### 収集に失敗したスクリプト"

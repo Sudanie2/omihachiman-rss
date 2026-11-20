@@ -172,3 +172,16 @@ def test_run_main_success_writes_nothing(tmp_path, monkeypatch):
     monkeypatch.setattr(common, "FAILURES_FILE", log)
     common.run_main(lambda: None, "ok.py")
     assert not log.exists()
+
+
+def test_run_main_noncritical_goes_to_warnings(tmp_path, monkeypatch):
+    fail, warn = tmp_path / "failures.log", tmp_path / "warnings.log"
+    monkeypatch.setattr(common, "FAILURES_FILE", fail)
+    monkeypatch.setattr(common, "WARNINGS_FILE", warn)
+
+    def boom():
+        raise ValueError("403")
+
+    common.run_main(boom, "tabelog.py", critical=False)
+    assert not fail.exists()  # 実行全体を失敗扱いにしない
+    assert "tabelog.py: ValueError: 403" in warn.read_text(encoding="utf-8")

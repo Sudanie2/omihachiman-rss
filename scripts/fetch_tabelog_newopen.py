@@ -116,4 +116,5 @@ def main():
 
 
 if __name__ == "__main__":
-    run_main(main, "fetch_tabelog_newopen.py")
+    # 食べログはGitHub Actionsからのアクセスを拒否(403)するため、失敗しても警告にとどめる
+    run_main(main, "fetch_tabelog_newopen.py", critical=False)
