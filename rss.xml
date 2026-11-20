@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>近江八幡市.com</title>
     <link>https://www.city.omihachiman.lg.jp/index.html</link>
+    <atom:link href="https://sudanie2.github.io/omihachiman-rss/rss.xml" rel="self" type="application/rss+xml"/>
     <description>近江八幡市に関する各種公式サイトの新着情報をまとめた非公式RSSです。</description>
-    <lastBuildDate>Thu, 19 Nov 2026 13:07:50 +0000</lastBuildDate>
+    <language>ja</language>
+    <lastBuildDate>Fri, 20 Nov 2026 02:12:34 +0000</lastBuildDate>
+    <item>
+      <title>まるで鳥？南国生まれの花「ストレリチア」。実は滋賀県が沖縄に次ぐ全国第２位の産地って知ってましたか？</title>
+      <link>https://shigaplusone.jp/post/birdflower_dainaka/</link>
+      <guid isPermaLink="true">https://shigaplusone.jp/post/birdflower_dainaka/</guid>
+      <pubDate>Fri, 20 Nov 2026 11:12:19 +0900</pubDate>
+    </item>
+    <item>
+      <title>「住生活に関する市民アンケート調査」へのご協力をお願いします</title>
+      <link>https://www.city.omihachiman.lg.jp/news/42624.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/42624.html</guid>
+      <pubDate>Fri, 20 Nov 2026 09:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>ホームページの問い合わせフォームなど一部機能を停止しています</title>
+      <link>https://www.city.omihachiman.lg.jp/juyo_info/42649.html</link>
+      <guid isPermaLink="false">https://www.city.omihachiman.lg.jp/juyo_info/42649.html#20261120</guid>
+      <pubDate>Fri, 20 Nov 2026 08:30:35 +0900</pubDate>
+    </item>
     <item>
       <title>近江八幡に産直市場「よってって」　地元野菜や近江牛、地元店とのコラボも</title>
       <link>https://omihachiman.keizai.biz/headline/216/</link>
@@ -742,12 +762,6 @@
       <link>https://www.city.omihachiman.lg.jp/soshiki/machizukuri/kyoudouiinkai/16559.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/machizukuri/kyoudouiinkai/16559.html</guid>
       <pubDate>Fri, 23 Oct 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>【復旧】ホームページの問い合わせフォームやページID検索など一部機能を停止します</title>
-      <link>https://www.city.omihachiman.lg.jp/juyo_info/42649.html</link>
-      <guid isPermaLink="false">https://www.city.omihachiman.lg.jp/juyo_info/42649.html#20261022</guid>
-      <pubDate>Thu, 22 Oct 2026 16:51:01 +0900</pubDate>
     </item>
     <item>
       <title>【周年祭の営業時間】</title>
@@ -2395,18 +2409,6 @@
       <title>中村児童公園がリニューアルオープンしました</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/toshi/kouen/41711.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/toshi/kouen/41711.html</guid>
-      <pubDate>Wed, 02 Sep 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>マルチスポーツクラブ参加者募集</title>
-      <link>https://www.city.omihachiman.lg.jp/bosyu/41375.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/bosyu/41375.html</guid>
-      <pubDate>Wed, 02 Sep 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>ふるさと音楽祭2026</title>
-      <link>https://www.city.omihachiman.lg.jp/event/42360.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/event/42360.html</guid>
       <pubDate>Wed, 02 Sep 2026 00:00:00 +0900</pubDate>
     </item>
   </channel>
