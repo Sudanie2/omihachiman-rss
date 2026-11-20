@@ -23,6 +23,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from common import (
+    run_main,
     fetch_bytes,
     decode_response,
     extract_page_summary,
@@ -174,8 +175,4 @@ def main():
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except Exception as e:
-        print(f"[ERROR] 予期しないエラー: {e}")
-        sys.exit(0)
+    run_main(main, "fetch_city_lists.py")

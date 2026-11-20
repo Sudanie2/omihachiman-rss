@@ -22,7 +22,9 @@ from urllib.parse import urljoin, urlparse
 import requests
 from bs4 import BeautifulSoup
 
+from sources import HUB_SOURCES
 from common import (
+    run_main,
     fetch_bytes,
     decode_response,
     get_robot_parser,
@@ -39,32 +41,6 @@ from common import (
     USER_AGENT,
 )
 
-HUB_SOURCES = [
-    {
-        "name": "近江八幡市観光サイト",
-        "base": "https://www.omi8.com",
-        # 公共性のある情報のみを対象にする。
-        # グルメ・土産・宿泊は個別店舗の紹介で、更新日の記載もなく
-        # 新着かどうかも判別できないため対象外とする(下のexclude_patternで除外)。
-        # 特集・モデルコース・スポット・イベントは、記事ページに日付の記載が無い。
-        # 新着順に並ぶ一覧ページ(index_1_0____0___.html)を先に巡回することで、
-        # 一覧の並び順をそのまま公開順として保てるようにする。
-        "hubs": [
-            "/stories/index_1_0____0___.html",      # 特集(新着順)
-            "/course/index_1_0____0___.html",       # モデルコース(新着順)
-            "/spot/index_1_0____0___.html",         # スポット・体験(新着順)
-            "/event/index_1_0____0___.html",        # イベント(新着順)
-            "/news/index.html",                     # お知らせ
-            "/stories/index_1_2__11__0___.html",    # はちまん観光ライター
-            "/pamphlet/index.html",                 # パンフレット
-            "/index.html",                          # トップ(Pick up!)
-        ],
-        # 個別記事とみなすURLパターン
-        "detail_pattern": r"/detail[_.]",
-        # 個別店舗の紹介は収集しない
-        "exclude_pattern": r"^/(restaurant|souvenir|stay|access|favorite)/",
-    },
-]
 
 MAX_NEW_PAGE_FETCH_PER_SOURCE = 60
 
@@ -198,8 +174,4 @@ def main():
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except Exception as e:
-        print(f"[ERROR] 予期しないエラー: {e}")
-        sys.exit(0)
+    run_main(main, "watch_hub_sources.py")

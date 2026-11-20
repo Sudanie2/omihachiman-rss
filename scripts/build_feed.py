@@ -6,7 +6,8 @@ rss.xml 生成スクリプト(最終ステップ)
 各収集スクリプトが rss_items.json に貯めた記事を読み込み、
 日付の新しい順に並べ替えて rss.xml を1回だけ生成する。
 
-- RSSのタイトル末尾に「（出典：◯◯）」を付与する
+- 掲載対象外の記事の除去・日付の補正・重複の整理を行ってから出力する
+- サイトマップ(sitemap.xml)も、記事が更新された時に作り直す
 - 記事内容に変化がない場合は rss.xml を書き換えない(無駄なコミットを防ぐ)
 """
 
@@ -26,7 +27,7 @@ from common import (
     load_json,
     save_json,
     now_rfc822,
-    parse_pubdate,
+    parse_pubdate_or_none,
     FEED_ITEMS_FILE,
     FEED_FILE,
     KNOWN_LINKS_FILE,
@@ -35,6 +36,12 @@ from common import (
 )
 
 FINGERPRINT_FILE = Path("feed_fingerprint.txt")
+SITEMAP_FILE = Path("sitemap.xml")
+SITE_URL = "https://sudanie2.github.io/omihachiman-rss/"
+FEED_URL = SITE_URL + "rss.xml"
+# rss.xml の書式(ヘッダー部分など)を変えたときに上げる。記事に変化が無くても
+# 次回の実行で rss.xml を作り直すための印(記事の識別子・日付は変わらない)。
+FEED_FORMAT_VERSION = "2"
 
 
 def esc(s: str) -> str:
@@ -68,11 +75,13 @@ def build_rss(items) -> str:
         )
 
     return f"""<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>近江八幡市.com</title>
     <link>https://www.city.omihachiman.lg.jp/index.html</link>
+    <atom:link href="{FEED_URL}" rel="self" type="application/rss+xml"/>
     <description>近江八幡市に関する各種公式サイトの新着情報をまとめた非公式RSSです。</description>
+    <language>ja</language>
     <lastBuildDate>{now_rfc822()}</lastBuildDate>
 {chr(10).join(entries_xml)}
   </channel>
@@ -80,19 +89,15 @@ def build_rss(items) -> str:
 """
 
 
+EPOCH = datetime(1970, 1, 1, tzinfo=timezone.utc)
+
+
 def item_date(it):
     """
-    並べ替え用の日付。日付が無い・壊れている記事は現在時刻とみなさず、
-    最も古い扱いにする(誤って最新記事として先頭に出るのを防ぐ)。
+    並べ替え用の日付。日付が無い・解釈できない記事は最も古い扱いにする
+    (誤って最新記事として先頭に出るのを防ぐ)。
     """
-    text = (it.get("pubDate") or "").strip()
-    if not text:
-        return datetime(1970, 1, 1, tzinfo=timezone.utc)
-    dt = parse_pubdate(text)
-    # parse_pubdateは解釈できない場合に現在時刻を返すため、その場合も最古扱いにする
-    if abs((dt - datetime.now(timezone.utc)).total_seconds()) < 5:
-        return datetime(1970, 1, 1, tzinfo=timezone.utc)
-    return dt
+    return parse_pubdate_or_none(it.get("pubDate")) or EPOCH
 
 
 def clamp_future_dates(items, known):
@@ -107,11 +112,8 @@ def clamp_future_dates(items, known):
     jst = timezone(timedelta(hours=9))
     fixed = 0
     for it in items:
-        text = (it.get("pubDate") or "").strip()
-        if not text:
-            continue
-        dt = parse_pubdate(text)
-        if dt <= limit:
+        dt = parse_pubdate_or_none(it.get("pubDate"))
+        if dt is None or dt <= limit:
             continue
         rec = known.get(it.get("guid") or "") or known.get(it.get("link") or "") or {}
         first_seen = rec.get("first_seen") if isinstance(rec, dict) else None
@@ -174,12 +176,24 @@ def dedupe(items, known=None):
     return [best[k] for k in order]
 
 
+def build_sitemap(lastmod: str) -> str:
+    return f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>{SITE_URL}</loc>
+    <lastmod>{lastmod}</lastmod>
+    <priority>1.0</priority>
+  </url>
+</urlset>
+"""
+
+
 def report_sizes():
     """
     公開ファイルの容量を報告する。
     GitHub Pagesの制限(リポジトリ1GB)に対する余裕を毎回確認できるようにする。
     """
-    targets = ["rss.xml", "rss_items.json", "known_links.json", "hubs.json", "index.html"]
+    targets = ["rss.xml", "rss_items.json", "known_links.json", "hubs.json", "index.html", "sitemap.xml"]
     total = 0
     parts = []
     for name in targets:
@@ -252,7 +266,7 @@ def main():
 
     # 記事内容に変化がなければ書き換えない
     fingerprint = hashlib.sha256(
-        json.dumps(items, ensure_ascii=False, sort_keys=True).encode("utf-8")
+        (FEED_FORMAT_VERSION + json.dumps(items, ensure_ascii=False, sort_keys=True)).encode("utf-8")
     ).hexdigest()
     prev_fingerprint = (
         FINGERPRINT_FILE.read_text(encoding="utf-8").strip()
@@ -266,6 +280,8 @@ def main():
 
     FEED_FILE.write_text(build_rss(items[:FEED_MAX_ITEMS]), encoding="utf-8")
     FINGERPRINT_FILE.write_text(fingerprint, encoding="utf-8")
+    jst = timezone(timedelta(hours=9))
+    SITEMAP_FILE.write_text(build_sitemap(datetime.now(jst).strftime("%Y-%m-%dT%H:%M:%S+09:00")), encoding="utf-8")
     print(f"rss.xml を更新しました({len(items)}件)。")
     report_sizes()
 

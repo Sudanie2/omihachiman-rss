@@ -31,7 +31,9 @@ from urllib.parse import urlparse
 
 from bs4 import BeautifulSoup
 
+from sources import RSS_SOURCES
 from common import (
+    run_main,
     fetch_bytes,
     decode_response,
     get_robot_parser,
@@ -46,88 +48,6 @@ from common import (
     USER_AGENT,
 )
 
-RSS_SOURCES = [
-    {
-        "name": "近江八幡経済新聞",
-        # 注意: /rss.html は「RSSについて」の説明ページ(HTML)。実際のフィードは /rss.xml
-        "url": "https://omihachiman.keizai.biz/rss.xml",
-        "title_filter": None,
-    },
-    {
-        "name": "号外NET",
-        "url": "https://higashiomi-omihachiman.goguynet.jp/feed/",
-        "title_filter": "近江八幡",  # このキーワードを含むタイトルだけ採用
-    },
-    {
-        "name": "近江八幡市立総合医療センター",
-        "url": "https://www.kenkou1.com/news.xml",
-        "title_filter": None,
-    },
-    {
-        "name": "近江八幡市立資料館・かわらミュージアム",
-        "url": "https://www.omihachiman-shiryoukan-kawara.jp/feed/",
-        "title_filter": None,
-    },
-    {
-        "name": "日牟禮八幡宮",
-        "url": "https://himure.jp/news/feed/",
-        "title_filter": None,
-        # サイトに「無断で転載・複製を行なうことはできません」と明記があるため、
-        # 本文の要約は保存せず、タイトルとリンクのみを扱う。
-        "no_summary": True,
-    },
-    {
-        "name": "近江八幡市社会福祉協議会",
-        "url": "https://ohshakyo.or.jp/files/rss/block614.xml",  # お知らせ
-        "title_filter": None,
-    },
-    {
-        "name": "シガブンシンブン(滋賀県文化財保護協会)",
-        # 「近江八幡市」で検索した結果をRSS化したもの(WordPressの検索フィード)
-        "url": "https://www.shiga-bunkazai.jp/shigabun-shinbun/?s=%E8%BF%91%E6%B1%9F%E5%85%AB%E5%B9%A1%E5%B8%82&feed=rss2",
-        "title_filter": None,
-    },
-    {
-        "name": "安土城考古博物館長のつぶやき",
-        "url": "https://azuchi-museum.blogspot.com/feeds/posts/default",
-        "title_filter": None,
-    },
-    {
-        "name": "安土文芸の郷",
-        "url": "http://bungei.or.jp/files/rss/block6.xml",  # ニュース＆お知らせ
-        "title_filter": None,
-    },
-    {
-        "name": "安土文芸の郷",
-        "url": "http://bungei.or.jp/files/rss/block70.xml",  # 事業・活動のご報告
-        "title_filter": None,
-    },
-    {
-        "name": "ヴォーリズ遺産を守る市民の会",
-        # WordPress.com の標準フィード。robots.txt でも禁止されていない。
-        "url": "https://voriesisan.wordpress.com/feed/",
-        "title_filter": None,
-        # タイトルとリンクのみを扱い、本文の要約は保存しない。
-        "no_summary": True,
-    },
-    {
-        "name": "特定非営利活動法人Since",
-        # WordPress の「お知らせ」フィード。robots.txt でも禁止されていない。
-        "url": "https://since.or.jp/news/feed/",
-        "title_filter": None,
-        # タイトルとリンクのみを扱い、本文の要約は保存しない。
-        "no_summary": True,
-    },
-    {
-        "name": "近江八幡市文化会館",
-        # WordPress の標準フィード。「みつける一覧」(/blog/)と同じ記事
-        # (お知らせ・イベント・公演)が配信される。robots.txt でも禁止されていない。
-        "url": "https://omi8man-ch.jp/feed/",
-        "title_filter": None,
-        # タイトルとリンクのみを扱い、本文の要約は保存しない。
-        "no_summary": True,
-    },
-]
 
 # 記事1件を表す要素名(RSS 2.0/1.0は item、Atomは entry)
 ITEM_TAGS = {"item", "entry"}
@@ -308,8 +228,4 @@ def main():
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except Exception as e:
-        print(f"[ERROR] 予期しないエラー: {e}")
-        sys.exit(0)
+    run_main(main, "fetch_rss_sources.py")

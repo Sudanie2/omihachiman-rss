@@ -17,6 +17,12 @@ watch_hub_sources.py が新着順一覧から正しい順序で登録し直す�
 import sys
 from urllib.parse import urlparse
 
+import sys as _sys
+from pathlib import Path as _Path
+
+# 手動用ツールは scripts/ 内の共通処理を使う
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+
 from common import (
     load_json,
     save_json,

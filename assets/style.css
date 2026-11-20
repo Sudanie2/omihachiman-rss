@@ -1,0 +1,135 @@
+
+  :root{
+    --take:#2F6B5B;      /* 青竹 */
+    --wakaba:#8FAE6B;    /* 若葉 */
+    --inaho:#C9A227;     /* 稲穂 */
+    --mizu:#EAF2EE;
+    --ink:#23302C;
+    --ink-soft:#5C6B65;
+    --line:#E2EAE5;
+
+    /* カテゴリーごとの色。明るさ・彩度をそろえた落ち着いたトーンで統一し、
+       複数並んでも視覚的にうるさくならないようにしている。 */
+    --c-event:     #2F6B5B; /* 青竹(イベント情報。サイトの基調色をそのまま使用) */
+    --c-kns:       #B4667A; /* 桜色 */
+    --c-kosodate:  #B98A3A; /* 山吹色 */
+    --c-gomi:      #6B7A3A; /* 苔色 */
+    --c-juminhyou: #6B6B99; /* 藤色 */
+    --c-kenkoiryo: #A8465A; /* 紅色 */
+    --c-hikkoshi:  #4A7A96; /* 空色 */
+    --c-okuyami:   #5C5866; /* 鈍色 */
+    --c-kaigo:     #9C5A3C; /* 檜皮色 */
+    --c-zeikin:    #A67C2E; /* 金茶 */
+    --c-kanko:     #3D6B8C; /* 群青 */
+    --c-bunka:     #7A3D52; /* 蘇芳 */
+    --c-shizen:    #5C8A5C; /* 若草 */
+    --c-shigoto:   #7A5C3D; /* 焦茶 */
+    --c-bosai:     #A8543D; /* 茜色 */
+    --c-gyosei:    #445566; /* 鉄紺 */
+    --c-other:     #5C6B65; /* その他(未分類時) */
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:#fff;color:var(--ink);
+    font-family:"Noto Sans JP",system-ui,sans-serif;font-size:17px;line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+
+  /* --- 朝のヨシ原 --- */
+  .hero{position:relative;overflow:hidden;
+    background:linear-gradient(180deg,#FFFDF6 0%,#F4F9F4 58%,#FFFFFF 100%)}
+  .hero-inner{position:relative;z-index:2;max-width:880px;margin:0 auto;padding:70px 24px 108px;text-align:center}
+  .brand{
+    font-family:"Zen Maru Gothic",system-ui,sans-serif;font-weight:700;margin:0;
+    font-size:clamp(33px,6.2vw,56px);letter-spacing:.04em;color:var(--take);
+  }
+  .lead{margin:16px auto 0;max-width:26em;color:var(--ink-soft);font-size:16px}
+  .reeds{position:absolute;left:0;right:0;bottom:-2px;height:150px;z-index:1}
+  .reeds svg{display:block;width:100%;height:100%}
+  .reed{transform-origin:bottom center;animation:sway 7s ease-in-out infinite}
+  .reed:nth-child(2n){animation-duration:9s;animation-delay:-1.4s}
+  .reed:nth-child(3n){animation-duration:11s;animation-delay:-2.7s}
+  @keyframes sway{0%,100%{transform:rotate(-1.6deg)}50%{transform:rotate(1.8deg)}}
+  .sun{position:absolute;top:44px;right:12%;width:88px;height:88px;border-radius:50%;
+    background:radial-gradient(circle,rgba(201,162,39,.32),rgba(201,162,39,0) 70%);z-index:1}
+
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px 80px}
+  .notice{background:var(--mizu);border-radius:12px;padding:16px 20px;margin:30px 0 0;
+    font-size:14.5px;color:var(--ink-soft)}
+  .notice strong{color:var(--take);font-weight:700}
+
+  .meta-row{display:flex;justify-content:space-between;gap:16px;margin:28px 0 12px;font-size:13.5px;color:var(--ink-soft)}
+  .search-row{margin:0 0 18px}
+  #search-box{width:100%;padding:15px 18px;font:inherit;font-size:16px;background:#fff;color:var(--ink);
+    border:2px solid var(--line);border-radius:12px;outline:none}
+  #search-box:focus{border-color:var(--wakaba);box-shadow:0 0 0 4px rgba(143,174,107,.18)}
+
+  .filters{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 32px}
+  .filters button{font:inherit;font-size:14.5px;padding:9px 17px;cursor:pointer;color:var(--ink-soft);
+    background:#fff;border:2px solid var(--line);border-radius:999px}
+  .filters button:hover{border-color:var(--wakaba);color:var(--take)}
+  .filters button[aria-pressed="true"]{background:var(--take);border-color:var(--take);color:#fff}
+
+  .pager{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:36px 0 8px}
+  .page-btn{font:inherit;font-size:14.5px;min-width:40px;padding:8px 12px;cursor:pointer;
+    color:var(--ink-soft);background:#fff;border:2px solid var(--line);border-radius:999px}
+  .page-btn:hover{border-color:var(--wakaba);color:var(--take)}
+  .page-btn[aria-current="page"]{background:var(--take);border-color:var(--take);color:#fff}
+  .page-btn:focus-visible{outline:3px solid var(--inaho);outline-offset:2px}
+  .filters button:focus-visible{outline:3px solid var(--inaho);outline-offset:2px}
+
+  .day-group{margin:0 0 30px}
+  .day-label{display:inline-block;font-family:"Zen Maru Gothic",sans-serif;font-size:15px;font-weight:700;
+    color:#fff;background:var(--take);padding:5px 15px;border-radius:999px;margin:0 0 14px}
+  .items{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+  .item{display:flex;gap:14px;padding:18px 20px;background:#fff;
+    border:1px solid var(--line);border-radius:14px}
+  .item .bar{flex:none;width:5px;border-radius:3px;background:var(--wakaba)}
+  .tag{display:inline-block;font-size:12.5px;color:var(--take);background:var(--mizu);
+    padding:2px 10px;border-radius:999px;margin:0 0 7px}
+
+  /* カテゴリー別の色分け。帯線と文字色だけを変え、背景は共通の淡色のまま
+     落ち着かせることで、色数が多くても視覚的にうるさくならないようにしている。 */
+  .item.cat-event     .bar{background:var(--c-event)}     .item.cat-event     .tag{color:var(--c-event)}
+  .item.cat-kns       .bar{background:var(--c-kns)}       .item.cat-kns       .tag{color:var(--c-kns)}
+  .item.cat-kosodate  .bar{background:var(--c-kosodate)}  .item.cat-kosodate  .tag{color:var(--c-kosodate)}
+  .item.cat-gomi      .bar{background:var(--c-gomi)}      .item.cat-gomi      .tag{color:var(--c-gomi)}
+  .item.cat-juminhyou .bar{background:var(--c-juminhyou)} .item.cat-juminhyou .tag{color:var(--c-juminhyou)}
+  .item.cat-kenkoiryo .bar{background:var(--c-kenkoiryo)} .item.cat-kenkoiryo .tag{color:var(--c-kenkoiryo)}
+  .item.cat-hikkoshi  .bar{background:var(--c-hikkoshi)}  .item.cat-hikkoshi  .tag{color:var(--c-hikkoshi)}
+  .item.cat-okuyami   .bar{background:var(--c-okuyami)}   .item.cat-okuyami   .tag{color:var(--c-okuyami)}
+  .item.cat-kaigo     .bar{background:var(--c-kaigo)}     .item.cat-kaigo     .tag{color:var(--c-kaigo)}
+  .item.cat-zeikin    .bar{background:var(--c-zeikin)}    .item.cat-zeikin    .tag{color:var(--c-zeikin)}
+  .item.cat-kanko     .bar{background:var(--c-kanko)}     .item.cat-kanko     .tag{color:var(--c-kanko)}
+  .item.cat-bunka     .bar{background:var(--c-bunka)}     .item.cat-bunka     .tag{color:var(--c-bunka)}
+  .item.cat-shizen    .bar{background:var(--c-shizen)}    .item.cat-shizen    .tag{color:var(--c-shizen)}
+  .item.cat-shigoto   .bar{background:var(--c-shigoto)}   .item.cat-shigoto   .tag{color:var(--c-shigoto)}
+  .item.cat-bosai     .bar{background:var(--c-bosai)}     .item.cat-bosai     .tag{color:var(--c-bosai)}
+  .item.cat-gyosei    .bar{background:var(--c-gyosei)}    .item.cat-gyosei    .tag{color:var(--c-gyosei)}
+  .item.cat-other     .bar{background:var(--c-other)}     .item.cat-other     .tag{color:var(--c-other)}
+  .title{display:block;font-family:"Zen Maru Gothic",sans-serif;font-size:18.5px;font-weight:700;
+    line-height:1.65;color:var(--ink);text-decoration:none}
+  .title:hover{color:var(--take);text-decoration:underline;text-underline-offset:4px}
+  .summary{margin:9px 0 0;font-size:14.5px;line-height:1.95;color:var(--ink-soft)}
+  .url{margin-top:9px;font-size:13px;color:#7C8A84}
+  .state{padding:52px 0;text-align:center;color:var(--ink-soft)}
+
+  .about{margin-top:56px;padding:24px 22px;background:var(--mizu);border-radius:14px;font-size:14.5px;line-height:1.95;color:var(--ink-soft)}
+  .about h2{margin:0 0 10px;font-family:"Zen Maru Gothic",sans-serif;font-size:18px;color:var(--take)}
+  .about h3{margin:18px 0 6px;font-family:"Zen Maru Gothic",sans-serif;font-size:15.5px;color:var(--ink)}
+  .about p{margin:6px 0}
+  .about ul{margin:6px 0 0;padding-left:1.3em}
+  .about li{margin:2px 0}
+
+  footer.site{margin-top:46px;padding-top:24px;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-soft)}
+  footer.site p{margin:6px 0}
+  footer.site a{color:var(--take);text-decoration:underline;text-underline-offset:2px}
+
+  @media (max-width:640px){
+    .hero-inner{padding:52px 20px 86px}
+    .wrap{padding:0 20px 60px}
+    .sun{right:6%;width:64px;height:64px}
+  }
+  @media (prefers-reduced-motion:reduce){ .reed{animation:none} }
+

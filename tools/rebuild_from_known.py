@@ -21,7 +21,14 @@ from urllib.parse import urlparse
 import requests
 from bs4 import BeautifulSoup
 
+import sys as _sys
+from pathlib import Path as _Path
+
+# 手動用ツールは scripts/ 内の共通処理を使う
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "scripts"))
+
 from common import (
+    run_main,
     dateless_baselines,
     is_dateless_backlog,
     fetch_bytes,
@@ -139,8 +146,4 @@ def main():
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except Exception as e:
-        print(f"[ERROR] 予期しないエラー: {e}")
-        sys.exit(0)
+    run_main(main, "rebuild_from_known.py")

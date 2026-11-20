@@ -1,0 +1,25 @@
+name: Tests
+on:
+  pull_request:
+  push:
+    # 自動収集のコミット(データファイルのみ)では動かさない
+    paths:
+      - "scripts/**"
+      - "tools/**"
+      - "tests/**"
+      - "requirements.txt"
+      - ".github/workflows/tests.yml"
+permissions:
+  contents: read
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt pytest
+      - run: python -m pytest -q tests

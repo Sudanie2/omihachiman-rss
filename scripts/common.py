@@ -9,7 +9,11 @@
 
 import difflib
 import json
+import os
 import re
+import sys
+import time
+import traceback
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
@@ -185,16 +189,15 @@ def now_rfc822() -> str:
     return datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S %z")
 
 
-def parse_pubdate(text):
+def parse_pubdate_or_none(text):
     """
-    日時文字列をdatetimeに変換する。
+    日時文字列をdatetimeに変換する。解釈できない場合は None を返す。
     RSS 2.0のRFC822形式("Thu, 11 Sep 2025 00:00:00 +0900")と、
     RSS 1.0/AtomのISO8601形式("2025-09-11T00:00:00+09:00")の両方に対応。
-    失敗時は現在時刻を返す。
     """
-    if not text:
-        return datetime.now(timezone.utc)
-    text = text.strip()
+    if not text or not str(text).strip():
+        return None
+    text = str(text).strip()
 
     try:
         dt = parsedate_to_datetime(text)
@@ -210,7 +213,16 @@ def parse_pubdate(text):
     except Exception:
         pass
 
-    return datetime.now(timezone.utc)
+    return None
+
+
+def parse_pubdate(text):
+    """
+    日時文字列をdatetimeに変換する。失敗時は現在時刻を返す
+    (収集時に「日付不明なら今」として扱う用途向け。並べ替えには
+    parse_pubdate_or_none を使うこと)。
+    """
+    return parse_pubdate_or_none(text) or datetime.now(timezone.utc)
 
 
 # ---- HTTP ----
@@ -223,11 +235,30 @@ DEFAULT_HEADERS = {
 }
 
 
+# 一時的な不調(通信エラー・時間切れ・サーバー側の一時エラー)では取りこぼさないよう、
+# 数回やり直す。404など「ページが無い」系のエラーはやり直さない。
+FETCH_MAX_ATTEMPTS = 3
+FETCH_BACKOFF_SEC = 2.0
+RETRY_STATUS = {429, 500, 502, 503, 504}
+
+
 def fetch_bytes(url: str, session=None):
     getter = session.get if session else requests.get
-    resp = getter(url, headers=DEFAULT_HEADERS, timeout=REQUEST_TIMEOUT_SEC)
-    resp.raise_for_status()
-    return resp
+    last_exc = None
+    for attempt in range(1, FETCH_MAX_ATTEMPTS + 1):
+        try:
+            resp = getter(url, headers=DEFAULT_HEADERS, timeout=REQUEST_TIMEOUT_SEC)
+            if resp.status_code in RETRY_STATUS and attempt < FETCH_MAX_ATTEMPTS:
+                last_exc = requests.HTTPError(f"HTTP {resp.status_code}", response=resp)
+            else:
+                resp.raise_for_status()
+                return resp
+        except (requests.ConnectionError, requests.Timeout) as e:
+            last_exc = e
+            if attempt >= FETCH_MAX_ATTEMPTS:
+                raise
+        time.sleep(FETCH_BACKOFF_SEC * attempt)
+    raise last_exc  # 到達しないはずだが念のため
 
 
 # Pythonが直接扱えない文字コード名の読み替え表
@@ -299,12 +330,18 @@ def sanitize_xml_text(text: str) -> str:
 
 
 # ---- robots.txt ----
+# 同じ実行内で同じサイトのrobots.txtを何度も取りに行かないための記憶
+_ROBOT_CACHE = {}
+
+
 def get_robot_parser(base_url: str):
     """
     robots.txtを取得する。Pythonの標準機能はUser-Agentを名乗らず
     アクセスしてサイト側に弾かれることがあるため、requestsで明示的に取得する。
     取得できない(404等)場合は「制限なし」として扱う。
     """
+    if base_url in _ROBOT_CACHE:
+        return _ROBOT_CACHE[base_url]
     rp = urllib.robotparser.RobotFileParser()
     try:
         resp = requests.get(
@@ -318,6 +355,7 @@ def get_robot_parser(base_url: str):
             rp.parse([])
     except Exception:
         rp.parse([])
+    _ROBOT_CACHE[base_url] = rp
     return rp
 
 
@@ -621,3 +659,24 @@ def merge_new_items(new_items, known_updates):
 def is_known(key: str) -> bool:
     known = load_json(KNOWN_LINKS_FILE, {})
     return key in known
+
+
+# ---- 実行の入口(失敗の記録) ----
+# 収集スクリプトは1つが失敗しても他を止めない(終了コードは0のまま)。
+# ただし失敗を黙って握りつぶさないよう、GitHub Actionsの注釈に出し、
+# failures.log に記録する。ワークフロー最後のステップがこれを読んで
+# 実行結果の要約に表示し、失敗があれば実行を「失敗」にして通知する。
+FAILURES_FILE = Path(os.environ.get("COLLECT_FAILURES_FILE", "failures.log"))
+
+
+def run_main(main, name: str):
+    try:
+        main()
+    except Exception as e:  # noqa: BLE001 - 最上位で全例外を記録する
+        traceback.print_exc()
+        print(f"::error title={name} が失敗しました::{type(e).__name__}: {e}")
+        try:
+            with open(FAILURES_FILE, "a", encoding="utf-8") as f:
+                f.write(f"{name}: {type(e).__name__}: {e}\n")
+        except OSError:
+            pass
