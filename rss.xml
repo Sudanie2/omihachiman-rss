@@ -6,7 +6,13 @@
     <atom:link href="https://sudanie2.github.io/omihachiman-rss/rss.xml" rel="self" type="application/rss+xml"/>
     <description>近江八幡市に関する各種公式サイトの新着情報をまとめた非公式RSSです。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 20 Nov 2026 17:02:02 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 03:15:26 +0000</lastBuildDate>
+    <item>
+      <title>親子で体験！ビワコパーツ＆天然石でキーリングづくり</title>
+      <link>https://www.omi8.com/stories/detail_171.html</link>
+      <guid isPermaLink="true">https://www.omi8.com/stories/detail_171.html</guid>
+      <pubDate>Sat, 21 Nov 2026 03:14:42 +0000</pubDate>
+    </item>
     <item>
       <title>滋賀県指定文化財椿神社神門修理工事現場見学会のお知らせ</title>
       <link>https://www.city.omihachiman.lg.jp/kanko/rekishi/1/42793.html</link>
@@ -2404,12 +2410,6 @@
       <link>https://azuchi-museum.blogspot.com/2026/09/nhk-923-httpswww.html</link>
       <guid isPermaLink="true">https://azuchi-museum.blogspot.com/2026/09/nhk-923-httpswww.html</guid>
       <pubDate>Wed, 02 Sep 2026 09:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>「幻の安土城」復元プロジェクト・歴史セミナー「織田信長と城下町」</title>
-      <link>https://shigaplusone.jp/information/202608_112/</link>
-      <guid isPermaLink="true">https://shigaplusone.jp/information/202608_112/</guid>
-      <pubDate>Wed, 02 Sep 2026 00:00:00 +0900</pubDate>
     </item>
   </channel>
 </rss>
