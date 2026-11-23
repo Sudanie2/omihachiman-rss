@@ -6,7 +6,13 @@
     <atom:link href="https://sudanie2.github.io/omihachiman-rss/rss.xml" rel="self" type="application/rss+xml"/>
     <description>近江八幡市に関する各種公式サイトの新着情報をまとめた非公式RSSです。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 21 Nov 2026 03:15:26 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 02:41:09 +0000</lastBuildDate>
+    <item>
+      <title>近江八幡で地酒をテーマにしたイベント　「近江八幡の郷土食を知って」</title>
+      <link>https://omihachiman.keizai.biz/headline/217/</link>
+      <guid isPermaLink="true">https://omihachiman.keizai.biz/headline/217/</guid>
+      <pubDate>Mon, 23 Nov 2026 10:23:24 +0900</pubDate>
+    </item>
     <item>
       <title>親子で体験！ビワコパーツ＆天然石でキーリングづくり</title>
       <link>https://www.omi8.com/stories/detail_171.html</link>
@@ -2404,12 +2410,6 @@
       <link>https://www.zd.ztv.ne.jp/azuchi-cc/osirase.html</link>
       <guid isPermaLink="false">https://www.zd.ztv.ne.jp/azuchi-cc/osirase.html#20260903</guid>
       <pubDate>Thu, 03 Sep 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>＜豊臣兄弟！キャスト集合！＞ NHK大河ドラマ「豊臣兄弟！」の主要キャストの方々に当館へ集合いただきました！ と言っても…</title>
-      <link>https://azuchi-museum.blogspot.com/2026/09/nhk-923-httpswww.html</link>
-      <guid isPermaLink="true">https://azuchi-museum.blogspot.com/2026/09/nhk-923-httpswww.html</guid>
-      <pubDate>Wed, 02 Sep 2026 09:00:00 +0900</pubDate>
     </item>
   </channel>
 </rss>
