@@ -6,7 +6,13 @@
     <atom:link href="https://sudanie2.github.io/omihachiman-rss/rss.xml" rel="self" type="application/rss+xml"/>
     <description>近江八幡市に関する各種公式サイトの新着情報をまとめた非公式RSSです。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 23 Nov 2026 02:41:09 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 06:03:43 +0000</lastBuildDate>
+    <item>
+      <title>市内でオーガニック農業に取り組んでいる農家の農産物を購入できる場所の情報を募集します</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kikaku/organic-village/42755.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kikaku/organic-village/42755.html</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>近江八幡で地酒をテーマにしたイベント　「近江八幡の郷土食を知って」</title>
       <link>https://omihachiman.keizai.biz/headline/217/</link>
@@ -24,6 +30,12 @@
       <link>https://www.city.omihachiman.lg.jp/kanko/rekishi/1/42793.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/kanko/rekishi/1/42793.html</guid>
       <pubDate>Sat, 21 Nov 2026 00:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>令和9年1月保育施設入所募集人数のお知らせ</title>
+      <link>https://www.city.omihachiman.lg.jp/bosyu/24423.html</link>
+      <guid isPermaLink="false">https://www.city.omihachiman.lg.jp/bosyu/24423.html#20261120</guid>
+      <pubDate>Fri, 20 Nov 2026 12:00:00 +0900</pubDate>
     </item>
     <item>
       <title>まるで鳥？南国生まれの花「ストレリチア」。実は滋賀県が沖縄に次ぐ全国第２位の産地って知ってましたか？</title>
@@ -342,6 +354,12 @@
       <link>https://higashiomi-omihachiman.goguynet.jp/2026/11/09/stamp-4/</link>
       <guid isPermaLink="true">https://higashiomi-omihachiman.goguynet.jp/2026/11/09/stamp-4/</guid>
       <pubDate>Sun, 08 Nov 2026 21:39:21 +0000</pubDate>
+    </item>
+    <item>
+      <title>オーガニックビレッジ推進に向けたマルシェを開催しました</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kikaku/organic-village/42735.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kikaku/organic-village/42735.html</guid>
+      <pubDate>Mon, 09 Nov 2026 00:00:00 +0900</pubDate>
     </item>
     <item>
       <title>令和9年 年賀会のご案内</title>
@@ -876,12 +894,6 @@
       <link>https://omihachiman.keizai.biz/headline/208/</link>
       <guid isPermaLink="true">https://omihachiman.keizai.biz/headline/208/</guid>
       <pubDate>Mon, 19 Oct 2026 15:32:12 +0900</pubDate>
-    </item>
-    <item>
-      <title>令和8年12月保育施設入所募集人数のお知らせ</title>
-      <link>https://www.city.omihachiman.lg.jp/bosyu/24423.html</link>
-      <guid isPermaLink="false">https://www.city.omihachiman.lg.jp/bosyu/24423.html#20261019</guid>
-      <pubDate>Mon, 19 Oct 2026 12:00:00 +0900</pubDate>
     </item>
     <item>
       <title>テレはち（10月第3週）マイナンバーカードを利用した各種証明書等のコンビニ交付サービスについて</title>
@@ -2398,18 +2410,6 @@
       <link>https://higashiomi-omihachiman.goguynet.jp/2026/09/03/panel-3/</link>
       <guid isPermaLink="true">https://higashiomi-omihachiman.goguynet.jp/2026/09/03/panel-3/</guid>
       <pubDate>Thu, 03 Sep 2026 06:39:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>VRで安土城を探検しよう！</title>
-      <link>https://shigaplusone.jp/information/202608_102/</link>
-      <guid isPermaLink="true">https://shigaplusone.jp/information/202608_102/</guid>
-      <pubDate>Thu, 03 Sep 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>安土学区ふれあいスポーツフェスティバル</title>
-      <link>https://www.zd.ztv.ne.jp/azuchi-cc/osirase.html</link>
-      <guid isPermaLink="false">https://www.zd.ztv.ne.jp/azuchi-cc/osirase.html#20260903</guid>
-      <pubDate>Thu, 03 Sep 2026 00:00:00 +0900</pubDate>
     </item>
   </channel>
 </rss>
