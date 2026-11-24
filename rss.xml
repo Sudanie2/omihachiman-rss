@@ -6,7 +6,19 @@
     <atom:link href="https://sudanie2.github.io/omihachiman-rss/rss.xml" rel="self" type="application/rss+xml"/>
     <description>近江八幡市に関する各種公式サイトの新着情報をまとめた非公式RSSです。</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 24 Nov 2026 06:03:43 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 09:52:36 +0000</lastBuildDate>
+    <item>
+      <title>新春恒例 上方落語「桂米朝一門会」</title>
+      <link>https://omi8man-ch.jp/20270111-992/</link>
+      <guid isPermaLink="true">https://omi8man-ch.jp/20270111-992/</guid>
+      <pubDate>Tue, 24 Nov 2026 08:34:49 +0000</pubDate>
+    </item>
+    <item>
+      <title>テレはち（11月第4週）図書館の障がい者サービス</title>
+      <link>https://www.youtube.com/watch?v=rWm_zA8T89k</link>
+      <guid isPermaLink="true">https://www.youtube.com/watch?v=rWm_zA8T89k</guid>
+      <pubDate>Tue, 24 Nov 2026 16:07:23 +0900</pubDate>
+    </item>
     <item>
       <title>市内でオーガニック農業に取り組んでいる農家の農産物を購入できる場所の情報を募集します</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/kikaku/organic-village/42755.html</link>
@@ -282,6 +294,12 @@
       <link>https://www.omi8.com/spot/detail_1298.html</link>
       <guid isPermaLink="true">https://www.omi8.com/spot/detail_1298.html</guid>
       <pubDate>Wed, 11 Nov 2026 01:58:49 +0000</pubDate>
+    </item>
+    <item>
+      <title>令和8年度 第1回近江八幡市公共下水道事業審議会 会議録</title>
+      <link>https://www.city.omihachiman.lg.jp/gyosei/shingikai/42752.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/gyosei/shingikai/42752.html</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 +0900</pubDate>
     </item>
     <item>
       <title>水道管にも冬支度を！</title>
@@ -2392,24 +2410,6 @@
       <link>https://www.city.omihachiman.lg.jp/gyosei/shingikai/41098.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/gyosei/shingikai/41098.html</guid>
       <pubDate>Fri, 04 Sep 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>【東近江市・近江八幡市】7日ごろまで大雨が続く可能性。あなたの家の浸水リスク、知っていますか？</title>
-      <link>https://higashiomi-omihachiman.goguynet.jp/2026/09/03/mamorioh-heavyrain/</link>
-      <guid isPermaLink="true">https://higashiomi-omihachiman.goguynet.jp/2026/09/03/mamorioh-heavyrain/</guid>
-      <pubDate>Thu, 03 Sep 2026 18:40:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>令和8年秋　日牟禮八幡宮能舞台奉納藝能予定</title>
-      <link>https://himure.jp/%e4%bb%a4%e5%92%8c8%e5%b9%b4%e7%a7%8b%e3%80%80%e6%97%a5%e7%89%9f%e7%a6%ae%e5%85%ab%e5%b9%a1%e5%ae%ae%e8%83%bd%e8%88%9e%e5%8f%b0%e5%a5%89%e7%b4%8d%e8%97%9d%e8%83%bd%e4%ba%88%e5%ae%9a/</link>
-      <guid isPermaLink="true">https://himure.jp/%e4%bb%a4%e5%92%8c8%e5%b9%b4%e7%a7%8b%e3%80%80%e6%97%a5%e7%89%9f%e7%a6%ae%e5%85%ab%e5%b9%a1%e5%ae%ae%e8%83%bd%e8%88%9e%e5%8f%b0%e5%a5%89%e7%b4%8d%e8%97%9d%e8%83%bd%e4%ba%88%e5%ae%9a/</guid>
-      <pubDate>Thu, 03 Sep 2026 00:07:41 +0000</pubDate>
-    </item>
-    <item>
-      <title>【近江八幡市】ドラマ出演者がズラリ。「秀吉の城」の関連行事として「豊臣兄弟！」全身パネル展が安土城考古博物館でスタートしました</title>
-      <link>https://higashiomi-omihachiman.goguynet.jp/2026/09/03/panel-3/</link>
-      <guid isPermaLink="true">https://higashiomi-omihachiman.goguynet.jp/2026/09/03/panel-3/</guid>
-      <pubDate>Thu, 03 Sep 2026 06:39:00 +0900</pubDate>
     </item>
   </channel>
 </rss>
