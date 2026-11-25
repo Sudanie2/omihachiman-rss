@@ -6,7 +6,7 @@
     <atom:link href="https://sudanie2.github.io/omihachiman-rss/rss.xml" rel="self" type="application/rss+xml"/>
     <description>近江八幡市に関する各種公式サイトの新着情報をまとめた非公式RSSです。</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 25 Nov 2026 11:21:14 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 14:20:50 +0000</lastBuildDate>
     <item>
       <title>2026年12月号</title>
       <link>https://www.zd.ztv.ne.jp/azuchi-cc/azuchi-wa/2026-12-wa.pdf</link>
@@ -174,6 +174,12 @@
       <link>https://higashiomi-omihachiman.goguynet.jp/2026/11/17/discount/</link>
       <guid isPermaLink="true">https://higashiomi-omihachiman.goguynet.jp/2026/11/17/discount/</guid>
       <pubDate>Mon, 16 Nov 2026 21:39:03 +0000</pubDate>
+    </item>
+    <item>
+      <title>第71回近江八幡市都市計画審議会について【会議記録】</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/toshi/news/shingikai/42787.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/toshi/news/shingikai/42787.html</guid>
+      <pubDate>Tue, 17 Nov 2026 00:00:00 +0900</pubDate>
     </item>
     <item>
       <title>令和8年度</title>
@@ -2404,12 +2410,6 @@
       <link>https://omihachiman.keizai.biz/headline/200/</link>
       <guid isPermaLink="true">https://omihachiman.keizai.biz/headline/200/</guid>
       <pubDate>Fri, 04 Sep 2026 15:16:12 +0900</pubDate>
-    </item>
-    <item>
-      <title>【近江八幡市】先着2,000名様に永久トッピング特典付きの「千社札シール」をプレゼント。9月8日に一魂家近江八幡店がオープンします</title>
-      <link>https://higashiomi-omihachiman.goguynet.jp/2026/09/04/ramen-2/</link>
-      <guid isPermaLink="true">https://higashiomi-omihachiman.goguynet.jp/2026/09/04/ramen-2/</guid>
-      <pubDate>Fri, 04 Sep 2026 06:39:00 +0900</pubDate>
     </item>
   </channel>
 </rss>
