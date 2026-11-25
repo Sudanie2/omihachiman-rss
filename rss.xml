@@ -6,7 +6,13 @@
     <atom:link href="https://sudanie2.github.io/omihachiman-rss/rss.xml" rel="self" type="application/rss+xml"/>
     <description>近江八幡市に関する各種公式サイトの新着情報をまとめた非公式RSSです。</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 25 Nov 2026 04:59:21 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 08:27:54 +0000</lastBuildDate>
+    <item>
+      <title>あかこんバス乗務員を募集します！！</title>
+      <link>https://www.city.omihachiman.lg.jp/news/42810.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/news/42810.html</guid>
+      <pubDate>Wed, 25 Nov 2026 16:31:47 +0900</pubDate>
+    </item>
     <item>
       <title>近江八幡で30団体以上が参加するイベント　「人と人がつながるきっかけに」</title>
       <link>https://omihachiman.keizai.biz/headline/218/</link>
@@ -2403,12 +2409,6 @@
       <title>近江八幡市立八幡保育所</title>
       <link>https://www.city.omihachiman.lg.jp/gyosei/shisetsu/6/4033.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/gyosei/shisetsu/6/4033.html</guid>
-      <pubDate>Fri, 04 Sep 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>馬淵こども園の園だより</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/kodomoen/mabuti/2031.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kodomoen/mabuti/2031.html</guid>
       <pubDate>Fri, 04 Sep 2026 00:00:00 +0900</pubDate>
     </item>
   </channel>
