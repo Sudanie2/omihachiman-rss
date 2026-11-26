@@ -6,7 +6,7 @@
     <atom:link href="https://sudanie2.github.io/omihachiman-rss/rss.xml" rel="self" type="application/rss+xml"/>
     <description>近江八幡市に関する各種公式サイトの新着情報をまとめた非公式RSSです。</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 26 Nov 2026 10:57:01 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 13:57:58 +0000</lastBuildDate>
     <item>
       <title>【応募受付中！】思いを作品にしよう  参加型アートプロジェクト</title>
       <link>https://www.city.omihachiman.lg.jp/event/42821.html</link>
@@ -24,6 +24,12 @@
       <link>https://www.shiga-bunkazai.jp/shigabun-shinbun/best-place-in-shiga/%e6%96%b0%e8%bf%91%e6%b1%9f%e5%90%8d%e6%89%80%e5%9c%96%e6%9c%83-%e7%ac%ac458%e5%9b%9e%e3%80%80%e3%81%b2%e3%82%89%e3%81%9f%e6%95%a3%e7%ad%96%e3%83%9e%e3%83%83%e3%83%97%e3%81%a8%e6%ad%a3%e5%af%bf/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=%25e6%2596%25b0%25e8%25bf%2591%25e6%25b1%259f%25e5%2590%258d%25e6%2589%2580%25e5%259c%2596%25e6%259c%2583-%25e7%25ac%25ac458%25e5%259b%259e%25e3%2580%2580%25e3%2581%25b2%25e3%2582%2589%25e3%2581%259f%25e6%2595%25a3%25e7%25ad%2596%25e3%2583%259e%25e3%2583%2583%25e3%2583%2597%25e3%2581%25a8%25e6%25ad%25a3%25e5%25af%25bf</link>
       <guid isPermaLink="true">https://www.shiga-bunkazai.jp/shigabun-shinbun/best-place-in-shiga/%e6%96%b0%e8%bf%91%e6%b1%9f%e5%90%8d%e6%89%80%e5%9c%96%e6%9c%83-%e7%ac%ac458%e5%9b%9e%e3%80%80%e3%81%b2%e3%82%89%e3%81%9f%e6%95%a3%e7%ad%96%e3%83%9e%e3%83%83%e3%83%97%e3%81%a8%e6%ad%a3%e5%af%bf/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=%25e6%2596%25b0%25e8%25bf%2591%25e6%25b1%259f%25e5%2590%258d%25e6%2589%2580%25e5%259c%2596%25e6%259c%2583-%25e7%25ac%25ac458%25e5%259b%259e%25e3%2580%2580%25e3%2581%25b2%25e3%2582%2589%25e3%2581%259f%25e6%2595%25a3%25e7%25ad%2596%25e3%2583%259e%25e3%2583%2583%25e3%2583%2597%25e3%2581%25a8%25e6%25ad%25a3%25e5%25af%25bf</guid>
       <pubDate>Wed, 25 Nov 2026 20:27:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>【応募受付中！】皆で巨大な絵を描こう 参加型アートプロジェクト</title>
+      <link>https://www.city.omihachiman.lg.jp/soshiki/kaikan/1/42819.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/kaikan/1/42819.html</guid>
+      <pubDate>Thu, 26 Nov 2026 00:00:00 +0900</pubDate>
     </item>
     <item>
       <title>2026年12月号</title>
@@ -2403,12 +2409,6 @@
       <title>今日のできごと(令和8年度)</title>
       <link>https://www.city.omihachiman.lg.jp/soshiki/hisho_koho/4/dekigoto/41855.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/hisho_koho/4/dekigoto/41855.html</guid>
-      <pubDate>Mon, 07 Sep 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>工事着手届のスマート申請受付を開始します</title>
-      <link>https://www.city.omihachiman.lg.jp/shigoto/kaihatsu/42440.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/shigoto/kaihatsu/42440.html</guid>
       <pubDate>Mon, 07 Sep 2026 00:00:00 +0900</pubDate>
     </item>
   </channel>
