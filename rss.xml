@@ -6,7 +6,13 @@
     <atom:link href="https://sudanie2.github.io/omihachiman-rss/rss.xml" rel="self" type="application/rss+xml"/>
     <description>近江八幡市に関する各種公式サイトの新着情報をまとめた非公式RSSです。</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 26 Nov 2026 08:12:30 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 10:57:01 +0000</lastBuildDate>
+    <item>
+      <title>【応募受付中！】思いを作品にしよう  参加型アートプロジェクト</title>
+      <link>https://www.city.omihachiman.lg.jp/event/42821.html</link>
+      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/event/42821.html</guid>
+      <pubDate>Thu, 26 Nov 2026 17:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>近江八幡駅南口にモミの木植樹　はちまん青年経営者会15周年記念事業</title>
       <link>https://omihachiman.keizai.biz/headline/219/</link>
@@ -2403,12 +2409,6 @@
       <title>工事着手届のスマート申請受付を開始します</title>
       <link>https://www.city.omihachiman.lg.jp/shigoto/kaihatsu/42440.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/shigoto/kaihatsu/42440.html</guid>
-      <pubDate>Mon, 07 Sep 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>高齢者福祉施設等における感染症等集団発生事例の報告について</title>
-      <link>https://www.city.omihachiman.lg.jp/iryo/3/2/3385.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/iryo/3/2/3385.html</guid>
       <pubDate>Mon, 07 Sep 2026 00:00:00 +0900</pubDate>
     </item>
   </channel>
