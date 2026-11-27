@@ -6,7 +6,13 @@
     <atom:link href="https://sudanie2.github.io/omihachiman-rss/rss.xml" rel="self" type="application/rss+xml"/>
     <description>近江八幡市に関する各種公式サイトの新着情報をまとめた非公式RSSです。</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 26 Nov 2026 16:55:16 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 04:15:43 +0000</lastBuildDate>
+    <item>
+      <title>【近江八幡市】滋賀県内で初の出店！　生クリームにこだわった「究極の生クリームクレープ専門店 CINQ MINUTES」が12月中旬にオープン予定です</title>
+      <link>https://higashiomi-omihachiman.goguynet.jp/2026/11/27/crepe/</link>
+      <guid isPermaLink="true">https://higashiomi-omihachiman.goguynet.jp/2026/11/27/crepe/</guid>
+      <pubDate>Thu, 26 Nov 2026 21:39:22 +0000</pubDate>
+    </item>
     <item>
       <title>12月のイベントカレンダーを作成しました</title>
       <link>https://www.city.omihachiman.lg.jp/news/27608.html</link>
@@ -2404,12 +2410,6 @@
       <link>https://www.city.omihachiman.lg.jp/soshiki/gyosei/1/42498.html</link>
       <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/gyosei/1/42498.html</guid>
       <pubDate>Tue, 08 Sep 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>今日のできごと(令和8年度)</title>
-      <link>https://www.city.omihachiman.lg.jp/soshiki/hisho_koho/4/dekigoto/41855.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/soshiki/hisho_koho/4/dekigoto/41855.html</guid>
-      <pubDate>Mon, 07 Sep 2026 00:00:00 +0900</pubDate>
     </item>
   </channel>
 </rss>
