@@ -6,7 +6,19 @@
     <atom:link href="https://sudanie2.github.io/omihachiman-rss/rss.xml" rel="self" type="application/rss+xml"/>
     <description>近江八幡市に関する各種公式サイトの新着情報をまとめた非公式RSSです。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 28 Nov 2026 07:45:08 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2026 10:28:16 +0000</lastBuildDate>
+    <item>
+      <title>【お知らせ】12月1日(火)よりR9年1月~3月期 教室新規受付開始</title>
+      <link>https://www.omi8man-kenkofureai.jp/news/detail.php?no=666</link>
+      <guid isPermaLink="true">https://www.omi8man-kenkofureai.jp/news/detail.php?no=666</guid>
+      <pubDate>Sat, 28 Nov 2026 19:27:58 +0900</pubDate>
+    </item>
+    <item>
+      <title>【重要】1-3月期子ども対象継続申込みは明日まで！！</title>
+      <link>https://www.omi8man-kenkofureai.jp/news/detail.php?no=665</link>
+      <guid isPermaLink="true">https://www.omi8man-kenkofureai.jp/news/detail.php?no=665</guid>
+      <pubDate>Sat, 28 Nov 2026 19:27:58 +0900</pubDate>
+    </item>
     <item>
       <title>【お知らせ】屋根付き多目的広場・サッカー場 R9年1月度のご利用受付を開始します</title>
       <link>https://www.omi8man-kenkofureai.jp/news/detail.php?no=664</link>
@@ -2398,18 +2410,6 @@
       <link>https://higashiomi-omihachiman.goguynet.jp/2026/09/09/festa-3/</link>
       <guid isPermaLink="true">https://higashiomi-omihachiman.goguynet.jp/2026/09/09/festa-3/</guid>
       <pubDate>Tue, 08 Sep 2026 21:39:13 +0000</pubDate>
-    </item>
-    <item>
-      <title>地方創生応援税制(企業版ふるさと納税)</title>
-      <link>https://www.city.omihachiman.lg.jp/mokutekibetu/zeikin/1/15410.html</link>
-      <guid isPermaLink="true">https://www.city.omihachiman.lg.jp/mokutekibetu/zeikin/1/15410.html</guid>
-      <pubDate>Wed, 09 Sep 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>近江八幡の旧伴家住宅で大津市出身の脚本家・徳永富彦さん講演会</title>
-      <link>http://omihachiman.keizai.biz/headline/201/</link>
-      <guid isPermaLink="true">http://omihachiman.keizai.biz/headline/201/</guid>
-      <pubDate>Tue, 08 Sep 2026 15:19:44 +0900</pubDate>
     </item>
   </channel>
 </rss>
